@@ -47,7 +47,7 @@ class RLPlayer(Player):
         """
         name = "Reiforcement Learning player loaded from {}".format(name_style)
         super().__init__(game_def, name, main_player)
-        model = RLInstance.from_file(name_style[3:])
+        model = RLInstance.from_file(game_def.name,name_style[3:])
         self.model = model
         self.model_name = name_style
 
@@ -59,7 +59,7 @@ class RLPlayer(Player):
         Returns: 
             String for the description
         """
-        return "rl-<file-name> where file-name indicates the name of the saved model inside rl_agent/saved_models"
+        return "rl-<file-name> where file-name indicates the name of the saved model inside rl_agent/game_name/saved_models"
 
     @staticmethod
     def match_name_style(name_style):
@@ -72,7 +72,7 @@ class RLPlayer(Player):
         Returns: 
             Boolean value indicating if the name_style is a match
         """
-        return name_style[:2]=="rl"
+        return name_style[:3]=="rl-"
 
 
     @staticmethod
@@ -99,7 +99,7 @@ class RLPlayer(Player):
         approach_parser.add_argument("--rewardf", type=str, default="dom",
                             help="reward function used by network;" +
                             " Available: 'dom', 'clipped'")
-        approach_parser.add_argument("--opponent", type=str, default="strategy-approaches/rl_agent/none.lp",
+        approach_parser.add_argument("--opponent", type=str, default="strategy",
                             help="model underlying opponent behaviour"+
                             " Available: 'random', 'strategy-[name]', 'ml'")
         approach_parser.add_argument("--n-steps", type=int, default=50000,

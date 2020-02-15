@@ -151,4 +151,4 @@ class DenseWide():
 
 class ResNetFifty():
 	def build(self):
-		pass
+		raise RuntimeError("Res net now available")

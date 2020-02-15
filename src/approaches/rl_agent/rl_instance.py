@@ -19,9 +19,10 @@ tf.compat.v1.disable_eager_execution()
 class RLInstance():
 
 	def __init__(self, architecture, agent, policy, epsilon, rewardf, opponent_name, n_steps, model_name, game_name, strategy_path):
+		self.input = locals()
+		self.game_name = game_name
 		game_def = GameDef.from_name(game_name)
 		self.build(architecture, agent, policy, epsilon, rewardf,opponent_name,n_steps, model_name, game_def, strategy_path)
-		self.input = locals()
 		del self.input['self']
 		
 		
@@ -46,7 +47,7 @@ class RLInstance():
 		#np.random.seed(666)
 		# env.seed(666)
 
-		training_logger = SaveTrackEpisodes(name=self.instance_name)
+		training_logger = SaveTrackEpisodes(name=self.instance_name,game_name=self.game_name)
 		
 		self.agent.fit(self.env, nb_steps=num_steps, visualize=False, nb_max_episode_steps=99,
 			callbacks=[training_logger])
@@ -61,22 +62,23 @@ class RLInstance():
 		self.env.game.debug = False
 
 	def save(self):
-		file_base = "./approaches/rl_agent/saved_models/"+self.instance_name
+		file_base = "./approaches/rl_agent/saved_models/{}/{}".format(self.game_name,self.instance_name)
 		file_weights = file_base + ".weights"
 		file_info = file_base + ".json"
 		self.agent.save_weights(file_weights, overwrite=True)
 		with open(file_info, 'w') as fp:
 			json.dump(self.input, fp)
+		log.info("RL instance saved in {}".format(file_base))
 
 
 	def load_weights(self, model_name):
-		file_name = "./approaches/rl_agent/saved_models/" + model_name + ".weights"
+		file_name = "./approaches/rl_agent/saved_models/{}/{}.weights".format(self.game_name, model_name)
 		self.agent.load_weights(file_name)
 
 
 	@classmethod
-	def from_file(cls, model_name):
-		file_info = "./approaches/rl_agent/saved_models/"+ model_name + ".json"
+	def from_file(cls, game_name, model_name):
+		file_info = "./approaches/rl_agent/saved_models/{}/{}.json".format(game_name, model_name)
 		with open(file_info, 'r') as fr:
 			dct = json.load(fr)
 		rl_instance = cls(**dct)

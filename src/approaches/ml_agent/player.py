@@ -42,7 +42,7 @@ class MLPlayer(Player):
         Returns: 
             String for the description
         """
-        return "ml-<file-name> where file-name indicates the name of the saved model inside ml_agent/saved_models"
+        return "ml-<file-name> where file-name indicates the name of the saved model inside ml_agent/game_name/saved_models"
 
     @staticmethod
     def match_name_style(name_style):
@@ -55,7 +55,7 @@ class MLPlayer(Player):
         Returns: 
             Boolean value indicating if the name_style is a match
         """
-        return name_style[:2]=="ml"
+        return name_style[:2]=="ml-"
 
 
     @staticmethod

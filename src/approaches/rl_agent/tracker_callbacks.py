@@ -1,3 +1,4 @@
+import os
 import pandas as pd
 import timeit	
 import numpy as np
@@ -7,7 +8,7 @@ from rl.callbacks import Callback
 from py_utils.logger import log
 
 class SaveTrackEpisodes(Callback):
-    def __init__(self, name):
+    def __init__(self, name, game_name):
         # Some algorithms compute multiple episodes at once since they are multi-threaded.
         # We therefore use a dictionary that is indexed by the episode to separate episodes
         # from each other.
@@ -18,6 +19,7 @@ class SaveTrackEpisodes(Callback):
         self.metrics = {}
         self.step = 0
         self.name = name
+        self.game_name = game_name
 
     def on_train_begin(self, logs):
         """ Print training values at beginning of training """
@@ -41,7 +43,7 @@ class SaveTrackEpisodes(Callback):
 
     def on_step_end(self, step, logs):
         """ Update statistics of episode after each step """
-       	episode = logs['episode']
+        episode = logs['episode']
         self.observations[episode].append(logs['observation'])
         self.actions[episode].append(logs['action'])
         self.metrics[episode].append(logs['metrics'])
@@ -66,18 +68,18 @@ class SaveTrackEpisodes(Callback):
             warnings.filterwarnings('error')
             for idx, name in enumerate(self.metrics_names):
                 try:
-                	value = np.nanmean(metrics[:, idx])
+                    value = np.nanmean(metrics[:, idx])
                 except Warning:
-                	value = '--'
+                    value = '--'
                 metrics_variables.append((name, value))      
 
         for tpl in metrics_variables:
-        	self.episode_var_dict[tpl[0]] = tpl[1]
+            self.episode_var_dict[tpl[0]] = tpl[1]
         
         self.all_info.append(self.episode_var_dict)
 
-       	 # Free up resources.
-       	del self.episode_var_dict
+            # Free up resources.
+        del self.episode_var_dict
         del self.episode_start[episode]
         del self.observations[episode]
         del self.rewards[episode]
@@ -91,13 +93,15 @@ class SaveTrackEpisodes(Callback):
         log.info('Done, took {:.3f} seconds'.format(duration))
 
     def save_to_file(self):
-    	COLUMN_NAMES = ['episode', 'duration', 'steps', 'reward', 'loss', 'mae', 'mean_q', 'final_state', 'final_action', 'observation_hist', 'action_hist']
-    	file_name = "/logs/" + self.name + "_training_log.csv"
-    	try:
-    		with open(file_name, 'w') as csvfile:
-    			writer = DictWriter(csvfile, fieldnames = COLUMN_NAMES)
-    			writer.writeheader()
-    			for data in self.all_info:
-    				writer.writerow(data)
-    	except IOError:
-    		log.error("Error saving")
+        COLUMN_NAMES = ['episode', 'duration', 'steps', 'reward', 'loss', 'mae', 'mean_q', 'final_state', 'final_action', 'observation_hist', 'action_hist']
+        file_name = "./approaches/saved_models/rl_agent/{}/logs/{}_training_log.csv".format(self.game_name,self.name)
+        os.makedirs(os.path.dirname(file_name), exist_ok=True)
+        try:
+            with open(file_name, 'w') as csvfile:
+                writer = DictWriter(csvfile, fieldnames = COLUMN_NAMES)
+                writer.writeheader()
+                for data in self.all_info:
+                    writer.writerow(data)
+            log.info("Tracker logs saved in " +file_name)
+        except IOError:
+            log.error("Error saving")
