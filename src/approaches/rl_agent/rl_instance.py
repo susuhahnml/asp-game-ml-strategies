@@ -36,7 +36,7 @@ class RLInstance():
 
 
 		self.env = ASPGameEnv(game_def,opponent,clip_rewards= clip_rewards)
-		self.model = ModelSelector(env = self.env).return_model(architecture)
+		self.model = ModelSelector(self.env.nb_observations, self.env.nb_actions).return_model(architecture)
 		self.policy = PolicySelector(env = self.env, epsilon = epsilon).return_policy(policy)
 		self.agent = AgentSelector(env = self.env, model = self.model, policy = self.policy).return_agent(agent)
 		self.instance_name = model_name

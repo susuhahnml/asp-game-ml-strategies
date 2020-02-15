@@ -1,6 +1,6 @@
 import os.path
 import csv
-from .game import Game
+from approaches.rl_agent.game import Game
 from py_utils.logger import log
 def training_data_to_csv(file_name, training_list, game_def, new_files,extra_array=['reward','win']):
     games = {'a': Game(game_def,player_name="a"),

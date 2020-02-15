@@ -6,7 +6,7 @@ from py_utils.logger import log
 from py_utils.colors import bcolors, paint
 from approaches.rl_agent.rl_instance import RLInstance
 from structures.players import Player
-
+from approaches.ml_agent.ml_instance import MLInstance
 class MLPlayer(Player):
     """
     A Supervised Machine learning player
@@ -33,6 +33,7 @@ class MLPlayer(Player):
         """
         name = "Supervised Machine Learning player loaded from {}".format(name_style)
         super().__init__(game_def, name, main_player)
+
 
     @classmethod
     def get_name_style_description(cls):
@@ -68,7 +69,15 @@ class MLPlayer(Player):
             approach_parser (argparser): An argparser used from the command line for
                 this specific approach. 
         """
-        pass
+        approach_parser.add_argument("--architecture", type=str, default="dense",
+                            help="underlying neural network architecture;" +
+                            " Available: 'dense', 'dense-deep', 'dense-wide', 'resnet-50'")
+        approach_parser.add_argument("--n-steps", type=int, default=50000,
+                            help="total number of steps to take in environment")
+        approach_parser.add_argument("--model-name", type=str, default="unnamed",
+                            help="name of the model, used for saving and logging")
+        approach_parser.add_argument("--training-file", type=str, required=True,
+                            help="Name of the file staring in train/game_name")
 
 
     @staticmethod
@@ -81,7 +90,8 @@ class MLPlayer(Player):
             game_def (GameDef): The game definition used for the creation
             args (NameSpace): A name space with all the attributes defined in add_parser_build_args
         """
-        pass
+        model = MLInstance(game_def, args.architecture, args.n_steps, args.model_name, args.training_file)
+        model.train(num_steps=args.n_steps)
 
 
         

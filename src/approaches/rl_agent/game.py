@@ -24,6 +24,9 @@ class Game:
         self.debug = debug
         self.clip_rewards = clip_rewards
         #Set current state
+        self.nb_actions = len(self.all_actions)
+        self.nb_observations = len(self.all_obs)
+
         self.random_reset()
 
     """
