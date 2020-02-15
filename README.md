@@ -1,36 +1,27 @@
-## Game play strategies powered by ASP :clubs: :game_die:
+## **Domiknows** 🧠:chart_with_upwards_trend:
+## *Dominos machine learning strategies powered by ASP*
 
 ### Overview
 
-This project involves the creation of a framework to play two player games using Answer Set Programming for game description and dynamics. It allows an easy incorporation of new approaches to analyze a game and create strategies for game play. 
+In this project we train agents using supervised learning and reinforcement learning to play the game of Dominoes for two players. To do so, we use a framework with Answer Set Programming as engine to describe the game and its dynamics.
 
 #### Game description
 
-The description of the games is represented in ASP and it is called from python using Clingo API to compute the legal actions and successor states.
+The description of the game is represented in ASP and it is called from python using Clingo API to compute the legal actions and successor states providing the game environment.
  
-To represent the game encoding we use [Game Description Language (GDL)](https://en.wikipedia.org/wiki/Game_Description_Language), allowing the formalization of any finite game with complete information. This framework only works with two player games with complete information where turns alternate after every move.
+To represent the game encoding the framework requires the use of [Game Description Language (GDL)](https://en.wikipedia.org/wiki/Game_Description_Language), allowing the formalization of any finite game with complete information. 
 
-##### Nim 
+#### Dominoes
 
-[Nim](https://en.wikipedia.org/wiki/Nim).
+Its a nice game
+
 
 
 ### Learning approaches
 
-We consider as a learning approach, a process that is capable of creating a strategy given a game description and use such strategy latter on to choose actions during game play. A strategy might involve an additional ASP file, a pre-computed tree search, a machine learning model among many other.
+#### Reinforcement learning
 
-All approaches can be found inside the [approaches](src/approaches) directory. Every folder in this directory will automatically generate command line arguments to run the building of the strategy and to play such approach against other, generating usefully benchmarks.
-
-The instructions to create a new strategic approach can be found [here](src/approaches/README.md). Please refer to the README.md file in each approach for any specific information.
-
-
-### Methodologies
-
-Information on our source code and workflow can be found in the [src](/src) directory.
-
-### Development
-
-A comprehensive changelog can be found [here](/docs/changelog.md). You can fork this repo and extend it with your own approach and game definitions.
+#### Supervised Learning
 
 ### Citations
 
@@ -62,6 +53,6 @@ Law, Russo and Broda, 2015 (ILASP)
 
 ### Authors
 
-Susana Hahn, Atreya Shankar
+Susana Hahn, Lukas
 
 Cognitive Systems, University of Potsdam, WiSe 2019/20
