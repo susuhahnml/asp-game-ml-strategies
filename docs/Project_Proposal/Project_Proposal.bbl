@@ -1,0 +1,29 @@
+\begin{thebibliography}{1}
+
+\bibitem{asp}
+Christian Anger, Kathrin Konczak, Thomas Linke, and Torsten Schaub.
+\newblock A glimpse of answer set programming.
+\newblock 19:12--, 2005.
+
+\bibitem{card}
+Henry Charlesworth.
+\newblock Application of self-play reinforcement learning to a four-player game
+  of imperfect information.
+\newblock {\em CoRR}, abs/1808.10442, 2018.
+
+\bibitem{alphago}
+David Silver, Aja Huang, Chris~J. Maddison, Arthur Guez, Laurent Sifre, George
+  van~den Driessche, Julian Schrittwieser, Ioannis Antonoglou, Veda
+  Panneershelvam, Marc Lanctot, Sander Dieleman, Dominik Grewe, John Nham, Nal
+  Kalchbrenner, Ilya Sutskever, Timothy Lillicrap, Madeleine Leach, Koray
+  Kavukcuoglu, Thore Graepel, and Demis Hassabis.
+\newblock Mastering the game of go with deep neural networks and tree search.
+\newblock {\em Nature}, 529:484 EP --, 01 2016.
+
+\bibitem{tdgammon}
+Gerald Tesauro.
+\newblock Td-gammon, a self-teaching backgammon program, achieves master-level
+  play.
+\newblock {\em Neural Comput.}, 6(2):215--219, March 1994.
+
+\end{thebibliography}
