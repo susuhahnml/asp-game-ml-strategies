@@ -20,9 +20,9 @@ class ASPGameEnv(Env):
     Refer to the [Gym documentation](https://gym.openai.com/docs/#environments).
     """
 
-    def __init__(self,game_def,opponent,clip_rewards=False,player_name="a"):
+    def __init__(self,game_def,opponent,clip_rewards=False,main_player="a"):
         self.game_def = game_def
-        self.game= Game(game_def, clip_rewards = clip_rewards,player_name=player_name)
+        self.game= Game(game_def, clip_rewards = clip_rewards,main_player=main_player)
         self.nb_actions = self.game.nb_actions
         self.nb_observations = self.game.nb_observations
         self.action_space = Discrete(self.nb_actions)

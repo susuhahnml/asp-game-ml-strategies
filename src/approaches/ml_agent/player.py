@@ -6,8 +6,11 @@ from py_utils.logger import log
 from py_utils.colors import bcolors, paint
 from approaches.rl_agent.rl_instance import RLInstance
 from structures.players import Player
-from approaches.ml_agent.ml_instance import MLInstance
+from approaches.ml_agent.train_utils import train, load_model_from_name, save_model
+from approaches.rl_agent.game import Game
+import numpy as np
 class MLPlayer(Player):
+
     """
     A Supervised Machine learning player
 
@@ -17,7 +20,7 @@ class MLPlayer(Player):
     main_player: The name of the player to optimize
     """
 
-    description = "A player trained using reiforcement learning"
+    description = "A player trained using supervided learning"
 
     def __init__(self, game_def, name_style, main_player):
         """
@@ -33,6 +36,8 @@ class MLPlayer(Player):
         """
         name = "Supervised Machine Learning player loaded from {}".format(name_style)
         super().__init__(game_def, name, main_player)
+        self.model = load_model_from_name(name_style[3:],game_def.name)
+        self.game = Game(game_def,main_player=main_player)
 
 
     @classmethod
@@ -43,7 +48,7 @@ class MLPlayer(Player):
         Returns: 
             String for the description
         """
-        return "ml-<file-name> where file-name indicates the name of the saved model inside ml_agent/game_name/saved_models"
+        return "ml-<file-name> where file-name indicates the name of the saved model inside ml_agent/saved_models/game_name"
 
     @staticmethod
     def match_name_style(name_style):
@@ -56,7 +61,7 @@ class MLPlayer(Player):
         Returns: 
             Boolean value indicating if the name_style is a match
         """
-        return name_style[:2]=="ml-"
+        return name_style[:3]=="ml-"
 
 
     @staticmethod
@@ -72,7 +77,7 @@ class MLPlayer(Player):
         approach_parser.add_argument("--architecture", type=str, default="dense",
                             help="underlying neural network architecture;" +
                             " Available: 'dense', 'dense-deep', 'dense-wide', 'resnet-50'")
-        approach_parser.add_argument("--n-steps", type=int, default=50000,
+        approach_parser.add_argument("--n-epochs", type=int, default=50000,
                             help="total number of steps to take in environment")
         approach_parser.add_argument("--model-name", type=str, default="unnamed",
                             help="name of the model, used for saving and logging")
@@ -90,8 +95,9 @@ class MLPlayer(Player):
             game_def (GameDef): The game definition used for the creation
             args (NameSpace): A name space with all the attributes defined in add_parser_build_args
         """
-        model = MLInstance(game_def, args.architecture, args.n_steps, args.model_name, args.training_file)
-        model.train(num_steps=args.n_steps)
+        model = train(game_def,args.architecture,args.n_epochs,args.training_file)
+        save_model(model,args.model_name,game_def.name)
+
 
 
         
@@ -105,4 +111,25 @@ class MLPlayer(Player):
         Returns:
             action (Action): The selected action. Should be one from the list of state.legal_actions
         """
-        return None
+        self.game.current_state = state
+        obs = self.game.current_observation
+        possible_actions_masked = [(str(a.action), self.game.mask_action(str(a.action))) for a in state.legal_actions]
+        inputs = [np.concatenate([obs,a]) for n,a in possible_actions_masked]
+        inputs = np.array(inputs)
+        predictions = self.model.predict([inputs])
+        v_predictions = predictions[0]
+        r_predictions = predictions[1]
+        
+        best = (None,-99999999)
+        for i,(n,p) in enumerate(possible_actions_masked):
+            v = v_predictions[i][0]
+            r = r_predictions[i][0]
+            if v>best[1]:
+                best = (n,v)
+            log.debug("Predictions for {} v={} r={}".format(n,v,r))
+        log.debug("Best prediction: {} ".format(best))
+        
+        legal_action = self.game.current_state.get_legal_action_from_str(best[0])
+        if not legal_action:
+            log.error("ML Player select a non leagal action")
+        return legal_action
