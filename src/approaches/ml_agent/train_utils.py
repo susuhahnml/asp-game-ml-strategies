@@ -15,7 +15,6 @@ from approaches.rl_agent.game import Game
 import tensorflow as tf
 tf.compat.v1.disable_eager_execution()
 import pandas as pd
-from keras.wrappers.scikit_learn import KerasClassifier
 from tensorflow.keras.layers import Dense, Activation, Flatten
 from tensorflow.keras.models import Sequential, Model
 import pdb
