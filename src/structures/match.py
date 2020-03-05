@@ -1,16 +1,18 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 import time
+from random import randint
 from py_utils.logger import log
 from collections import defaultdict
 from structures.state import State, StateExpanded
 from structures.action import ActionExpanded, Action
 from structures.step import Step
 from py_utils.colors import *
-
+import signal
 class Match:
     """
-    Class to represent a match 
+    Class to represent a match, this match is defined by a list of steps
+    indicating the actions taken and their corresponding changes in the environment
 
     Attributes
     ----------
@@ -22,7 +24,9 @@ class Match:
 
     def add_step(self, step):
         """
-        Adds a nex step
+        Adds a nex step to the list of steps
+        Args:
+            step (Step): Step to add in the end
         """
         self.steps.append(step)
 
@@ -52,6 +56,12 @@ class Match:
         return s
 
     def generate_train(self, training_list, i):
+        """
+        Adds a training instance to the list for the decision made at time_step i
+        Args:
+            training_list ([Dic]): the list will all training instances
+            i (int): the time step that must be added
+        """
         if training_list is None:
             return
         step = self.steps[i]
@@ -65,25 +75,21 @@ class Match:
             'win':-1 if control_goal<0 else 1})
 
     @staticmethod
-    def simulate_match(game_def, players, depth=None, ran_init=False):
+    def simulate(game_def, players, depth=None, ran_init=False):
         """
         Call it with the path to the game definition
 
-        Options:
-        player_config: A tuple of the player configurations
-            - random: Play against random player
-            - human: Play against human player
-            - strategy: Play against a strategy defined in a file as weak constraints
-            - minmax-asp: Play against a player using minmax strategy in asp
+        Args:
+            players (Player,Player): A tuple of the players
 
-        paths:
-            - optimal*: Generate only one path with optimal actions
-            - all: Generate full tree of matches TODO?
-
-        depth:
-            - n: Generate until depth n or terminal state reached
+            depth:
+                - n: Generate until depth n or terminal state reached
         """
 
+        def handler(signum, frame):
+            raise TimeoutError("Action time out")
+        
+        signal.signal(signal.SIGALRM, handler)
         if(ran_init):
             initial = game_def.get_random_initial()
         else:
@@ -101,8 +107,15 @@ class Match:
         letters = ['a','b']
         response_times = {'a':[],'b':[]}
         while(not state.is_terminal and continue_depth):
+            signal.alarm(3)
             t0 = time.time()
-            selected_action = players[time_step%2].choose_action(state)
+            try:
+                selected_action = players[time_step%2].choose_action(state)
+            except TimeoutError as ex:
+                log.info("Time out for player {}, choosing random action".format(letters[time_step%2]))
+                index = randint(0,len(state.legal_actions)-1)
+                selected_action = state.legal_actions[index]
+            signal.alarm(0)
             t1 = time.time()
             response_times[letters[time_step%2]].append(round((t1-t0)*1000,3))
             step = Step(state,selected_action,time_step)

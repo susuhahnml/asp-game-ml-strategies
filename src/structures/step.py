@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from .action import Action, ActionExpanded
+from structures.action import Action, ActionExpanded
 from py_utils.clingo_utils import *
 
 class Step:
     """
-    A class used to represent a Step on a match
+    A class used to represent a Step on a match.
 
     Attributes
     ----------
@@ -20,11 +20,42 @@ class Step:
         the score for taking the action. It is set to the goals in the last
         timestep and calculated for the internal steps
     """
-    def __init__(self,state,action,time_step):
+    def __init__(self,state,action,time_step,score=None):
         self.state = state
         self.action = action
         self.time_step = time_step
-        self.score = None
+        self.score = score
+
+    def __eq__(self, other):
+        eq = True
+        eq = self.state == other.state
+        eq = eq and self.action == other.action
+        eq = eq and self.score == other.score
+        return eq
+
+    @classmethod
+    def from_dic(cls,dic,game_def):
+        """
+        Constructs a Step from a dictionary
+        """
+        from structures.state import State
+        score = dic['score']
+        time_step = dic['time_step']
+        state = State.from_facts(dic['state'],game_def)
+        action = None if dic['action'] is None else Action.from_facts(dic['action'],game_def)
+        s = cls(state,action,time_step,score)
+        return s
+
+    def to_dic(self):
+        """
+        Returns a serializable dictionary to dump on a json
+        """
+        return {
+            "score": self.score,
+            "time_step": self.time_step,
+            "state": self.state.to_facts(),
+            "action": None if self.action is None else self.action.to_facts()
+        }
 
     def fluents_to_asp_syntax(self):
         """
@@ -67,6 +98,7 @@ class Step:
         if(player_name in self.state.goals):
             self.set_score(self.state.goals[player_name])
 
+
     def __str__(self):
         """
         Returns a condensed string representation of the step
@@ -81,7 +113,7 @@ class Step:
     @property
     def str_expanded(self):
         """
-        Returns an expanded string representation of the setp
+        Returns an expanded string representation of the step
         """
         if self.action:
             a_str = self.action.str_expanded

@@ -7,7 +7,7 @@ from .action import Action, ActionExpanded
 from py_utils.clingo_utils import  *
 from py_utils.colors import *
 from collections import defaultdict
-
+import clingo
 class State:
     """
     A class used to represent a State on the game
@@ -15,21 +15,56 @@ class State:
     Attributes
     ----------
     fluents : list(string)
-        the name of the animal
+        the names of the fluents that hold in this state
     terminal : boolean
         true if the state is terminal
     goals : dic
-        A dictionary with the reward per player name
+        A dictionary with the reward for each player
     control : name of the player in turn
     """
     def __init__(self, fluents, goals, game_def, is_terminal = False):
         self.fluents = fluents
         self.fluents_str = [str(n) for n in fluents]
+        self.fluents_str.sort()
         self.is_terminal = is_terminal
         self.goals = {g.arguments[0].name: g.arguments[1].number for g in goals}
         self.control = [f.arguments[0].name
                         for f in fluents if f.name=='control'][0]
         self.game_def = game_def
+
+    @classmethod
+    def from_model(cls, model,game_def):
+        """
+        Creates a State from a model
+        """
+        atoms = model.symbols(atoms=True)
+        is_terminal = model.contains(clingo.Function("terminal", []))
+        fluents = [a.arguments[0] for a in atoms if a.name=='true']
+        goals = [a for a in atoms if a.name=='goal']
+        return cls(fluents,goals,game_def,is_terminal)
+
+    @classmethod
+    def from_facts(cls, facts, game_def):
+        """
+        Creates a state from a set of facts
+        Args:
+            facts (str): String with all facts
+        """
+        ctl = get_new_control(game_def)
+        ctl.add("base",[],facts)
+        ctl.ground([("base", [])], context=Context())
+        with ctl.solve(yield_=True) as handle:
+            for model in handle:
+                return cls.from_model(model,game_def)
+
+    def __eq__(self, other):
+        return self.to_facts() == other.to_facts()
+                
+    def to_facts(self):
+        """
+        Constructs a string with all the facts definig the state
+        """
+        return " ".join("true({}).".format(f) for f in self.fluents_str)
 
     def get_fluents_string(self):
         """
@@ -42,10 +77,16 @@ class State:
 
     @property
     def ascii(self):
+        """
+        Returns the ascii representation of the state using the game definition.
+        """
         return self.game_def.state_to_ascii(self)
 
     @property
     def str_expanded(self):
+        """
+        Returns a string with the state and all its info
+        """
         s = """
         {}============== STATE ==============
         FLUENTS:
@@ -64,36 +105,27 @@ class State:
 
 class StateExpanded(State):
     """
-    A class used to represent a State on the game
+    A class used to represent a State on the game that includes all the
+    possible legal actions already expanded with the fluents of 
+    the next states
 
     Attributes
     ----------
     legal_actions : list(Action)
         List of possible actions from the current state
-    fluents : list(string)
-        the name of the animal
-    terminal : boolean
-        true if the state is terminal
-    goals : tuple
-        A list of goals Symbol
-        goal(player, reward)
-    control : name of the player in turn
     """
-    def __init__(self, legal_actions, fluents, goals, game_def, is_terminal):
-        super().__init__(fluents,goals,is_terminal,game_def)
+    def __init__(self, fluents, goals, game_def, is_terminal,legal_actions=[]):
+        super().__init__(fluents,goals,game_def,is_terminal)
         self.legal_actions = legal_actions
 
     @classmethod
-    def from_model(cls, model,game_def):
+    def from_model(cls, model, game_def):
         """
-        Creates a State from a model without considering the actions
+        Creates a State from a model without considering the legal actions
         """
-        
-        atoms = model.symbols(atoms=True)
-        is_terminal = model.contains(clingo.Function("terminal", []))
-        fluents = [a.arguments[0] for a in atoms if a.name=='true']
-        goals = [a for a in atoms if a.name=='goal']
-        return cls([],fluents,goals,is_terminal,game_def)
+        c = super(StateExpanded, cls).from_model(model,game_def)
+        c.legal_actions = []
+        return c
 
     @classmethod
     def from_game_def(cls, game_def, current_fluents, strategy=None):
@@ -181,6 +213,10 @@ class StateExpanded(State):
             return None
 
     def __str_detail__(self):
+        """
+        Returns a string with all the state detail. Including each
+        legal action
+        """
         f = self.get_fluents_string()
         a = "\n".join(["{}:{}".format(i,str(a)[2:])
                        for i,a in enumerate(self.legal_actions)])
@@ -201,6 +237,9 @@ class StateExpanded(State):
 
     @property
     def str_step_options(self):
+        """
+        String with all the available actions on this state
+        """
         f = self.get_fluents_string()
         s = "\n======== CURRENT STATE ========\n{}".format(self.ascii)
         s += "****** Available actions *******"
