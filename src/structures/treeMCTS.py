@@ -112,8 +112,8 @@ class TreeMCTS(Tree):
 
     def add_to_training_dic(self,n_total,dic,node):
         if node.name.step in dic:
-            log.info("Duplicated step")
-            log.info(node.name.step)
+            log.debug("Duplicated step")
+            log.debug(node.name.step)
             if dic[node.name.step]['n']>=node.name.n:
                 return
         next_nodes = node.children
