@@ -1,3 +1,4 @@
+import time
 from structures.players import Player
 from py_utils.clingo_utils import fluents_to_asp_syntax, rules_file_to_gdl
 from approaches.pruned_minmax.pruned_minmax import get_minmax_init
@@ -6,6 +7,7 @@ import os
 from approaches.ml_agent.train_utils import training_data_to_csv, remove_duplicates_training
 from random import randint
 from structures.tree import Tree
+from structures.treeMinmax import TreeMinmax
 from structures.action import Action
 class PrunedMinmaxPlayer(Player):
     """
@@ -42,7 +44,7 @@ class PrunedMinmaxPlayer(Player):
                 rules = [apply_rules_rule,"\n"] + rules
                 self.learned = rules
         elif style == "tree":
-            f = Tree.get_scores_from_file(file_path)
+            f = TreeMinmax.get_scores_from_file(file_path)
             self.tree_scores = f["tree_scores"]
             self.scores_main_player = f["main_player"]
         else:
@@ -127,7 +129,8 @@ class PrunedMinmaxPlayer(Player):
                                                             generating_training=generate_train,learning_rules=learn_rules, learning_examples=learn_examples)
         log.debug(minmax_match)
         
-                                                            
+        t0 = time.time()
+                                           
         if learn_examples:
             ilasp_examples_file_name = './approaches/ilasp/{}/examples/{}'.format(args.game_name,args.ilasp_examples_file_name)
             os.makedirs(os.path.dirname(ilasp_examples_file_name), exist_ok=True)
@@ -152,15 +155,18 @@ class PrunedMinmaxPlayer(Player):
                 
         if(not (args.tree_image_file_name is None)):
             image_file_name = '{}/{}'.format(args.game_name,args.tree_image_file_name)
-            min_max_tree.print_in_file(file_name=image_file_name,main_player=args.main_player)
+            min_max_tree.print_in_file(file_name=image_file_name)
         n_nodes = min_max_tree.get_number_of_nodes()
         if(not args.tree_name is None):
             file_path = "./approaches/pruned_minmax/trees/{}/{}".format(game_def.name,args.tree_name)
             min_max_tree.save_scores_in_file(file_path)
             log.debug("Tree saved in {}".format(file_path))
+        t1 = time.time()
+        save_time = round((t1-t0)*1000,3)
 
         return {
-            'number_of_nodes':n_nodes}
+            'number_of_nodes':n_nodes,
+            'save_time':save_time}
 
     def choose_action(self,state):
         """
