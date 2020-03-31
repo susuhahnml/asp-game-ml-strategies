@@ -13,10 +13,10 @@ class Game:
     Args: 
         game_def: Game Definition
     """
-    def __init__(self, game_def,debug=False,clip_rewards = False,player_name="a"):
+    def __init__(self, game_def,debug=False,clip_rewards = False,main_player="a"):
         self.game_def = game_def
         #Set all options for actions and observations
-        all_actions, all_obs = get_all_possible(game_def, game_def.background,player_name)
+        all_actions, all_obs = get_all_possible(game_def, game_def.background,main_player)
         self.all_actions = all_actions
         self.actionstr_to_idx = {str(a):i for i,a in enumerate(all_actions)}
         self.all_obs = all_obs
@@ -24,6 +24,9 @@ class Game:
         self.debug = debug
         self.clip_rewards = clip_rewards
         #Set current state
+        self.nb_actions = len(self.all_actions)
+        self.nb_observations = len(self.all_obs)
+
         self.random_reset()
 
     """

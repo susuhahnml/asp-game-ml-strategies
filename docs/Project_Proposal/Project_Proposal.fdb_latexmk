@@ -1,14 +1,15 @@
 # Fdb version 3
-["bibtex Project_Proposal"] 1572945103 "Project_Proposal.aux" "Project_Proposal.bbl" "Project_Proposal" 1572945104
+["bibtex Project_Proposal"] 1572945103 "Project_Proposal.aux" "Project_Proposal.bbl" "Project_Proposal" 1581936720
   "/usr/local/texlive/2016/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "Project_Proposal.aux" 1572945104 879 cec7debce07cf874d782462aa4ddae0f ""
+  "Project_Proposal.aux" 1581860358 879 cec7debce07cf874d782462aa4ddae0f ""
   "Project_Proposal.bcf" 0 -1 0 ""
   "biblio.bib" 1572540315 2311 e906fc88662daa5d1c53cdc12d6d3af5 ""
   (generated)
   "Project_Proposal.bbl"
   "Project_Proposal.blg"
-["pdflatex"] 1572945103 "/Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (RL Game)/Project_Proposal/Project_Proposal.tex" "/Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (RL Game)/Project_Proposal/Project_Proposal.pdf" "Project_Proposal" 1572945104
+["pdflatex"] 1572945103 "/Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/Project_Proposal/Project_Proposal.tex" "/Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/Project_Proposal/Project_Proposal.pdf" "Project_Proposal" 1581936720
   "/Users/susana/Library/texmf/tex/latex/llncs/llncs.cls" 1548785112 35297 11381d40bfa5ba79b47bee2acdd21705 ""
+  "/Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/Project_Proposal/Project_Proposal.tex" 1581936718 4363 79b8f9b396d858e499ae37108804d261 ""
   "/Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (RL Game)/Project_Proposal/Project_Proposal.aux" 1572945104 879 cec7debce07cf874d782462aa4ddae0f ""
   "/Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (RL Game)/Project_Proposal/Project_Proposal.tex" 1572945102 4363 79b8f9b396d858e499ae37108804d261 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
@@ -42,12 +43,14 @@
   "/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1490927086 1888048 f2c5faed5981a516f406b2ccc20bff71 ""
   "/usr/local/texlive/2016/texmf-var/web2c/pdftex/pdflatex.fmt" 1463979169 3873397 413fbfbbedb8e719ddc392043a7add02 ""
   "/usr/local/texlive/2016/texmf.cnf" 1463979140 577 2938757e76f31531e65cc647e3507693 ""
-  "Project_Proposal.aux" 1572945104 879 cec7debce07cf874d782462aa4ddae0f ""
+  "Project_Proposal.aux" 1581860358 879 cec7debce07cf874d782462aa4ddae0f ""
   "Project_Proposal.bbl" 1572945103 1070 056b9ccf78815018b3e7c6f051843f68 "bibtex Project_Proposal"
-  "Project_Proposal.tex" 1572945102 4363 79b8f9b396d858e499ae37108804d261 ""
+  "Project_Proposal.tex" 1581936718 4363 79b8f9b396d858e499ae37108804d261 ""
   (generated)
-  "Project_Proposal.pdf"
   "Project_Proposal.log"
-  "Project_Proposal.aux"
   "/Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (RL Game)/Project_Proposal/Project_Proposal.log"
   "/Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (RL Game)/Project_Proposal/Project_Proposal.pdf"
+  "/Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/Project_Proposal/Project_Proposal.log"
+  "Project_Proposal.pdf"
+  "Project_Proposal.aux"
+  "/Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/Project_Proposal/Project_Proposal.pdf"

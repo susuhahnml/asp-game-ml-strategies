@@ -110,7 +110,6 @@ class RLPlayer(Player):
                             help="name of the model, used for saving and logging")
         approach_parser.add_argument("--grid-search", type=bool, default=False,
                             help="true for performing a grid search")
-        pass
 
 
     @staticmethod
@@ -123,8 +122,6 @@ class RLPlayer(Player):
             game_def (GameDef): The game definition used for the creation
             args (NameSpace): A name space with all the attributes defined in add_parser_build_args
         """
-        log.set_level(args.log)
-
         if(args.grid_search):
             architecture = ['dense', 'dense-deep', 'dense-wide'] 
             epsilons = [0.1, 0.3, 0.5]
