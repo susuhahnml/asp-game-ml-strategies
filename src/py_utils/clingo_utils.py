@@ -114,7 +114,7 @@ def has_player_ref(symbol,player_name):
     else:
         return symbol.type == player_name
 
-def get_all_possible(game_def, all_path,player_name):
+def get_all_possible(game_def, player_name):
     """
     Obtains all possible actions and observations for a game_definition
     using the predicates 'input' and 'base'
@@ -123,7 +123,7 @@ def get_all_possible(game_def, all_path,player_name):
         player_name: The player name based on which the response will be ordered
     """
     ctl = get_new_control(game_def)
-    ctl.load(all_path)
+    ctl.load(game_def.background)
     ctl.ground([("base", [])], context=Context())
     with ctl.solve(yield_=True) as handle:
         for model in handle:

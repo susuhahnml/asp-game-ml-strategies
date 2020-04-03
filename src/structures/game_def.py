@@ -68,6 +68,7 @@ class GameDef():
             self.initial = self.path + "/default_initial.lp"
         else:
             self.initial = initial
+        
 
 
     @classmethod

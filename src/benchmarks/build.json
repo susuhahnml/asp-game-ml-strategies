@@ -148,7 +148,6 @@
             ],
             "average_build": 979.735,
             "std": 1091.336,
-            
             "special_results": {
                 "save_time": 0.409,
                 "number_of_nodes_prop": 0.21,
@@ -358,7 +357,7 @@
             "std": 0.0,
             "special_results": {
                 "number_of_nodes": 2675,
-                "number_of_nodes_prop": 0.04, 
+                "number_of_nodes_prop": 0.04,
                 "save_time": 44.303
             }
         }
@@ -464,7 +463,7 @@
             "std": 34.327,
             "special_results": {
                 "number_of_nodes": 896,
-                "number_of_nodes_prop ":1,
+                "number_of_nodes_prop ": 1,
                 "save_time": 10.604
             }
         }
@@ -503,7 +502,7 @@
             "std": 38.642,
             "special_results": {
                 "number_of_nodes": 105,
-                "number_of_nodes_prop ":0.11,
+                "number_of_nodes_prop ": 0.11,
                 "save_time": 2.523
             }
         }
@@ -542,7 +541,7 @@
             "std": 49.421,
             "special_results": {
                 "number_of_nodes": 109,
-                "number_of_nodes_prop ":0.12,
+                "number_of_nodes_prop ": 0.12,
                 "save_time": 2.32
             }
         }
@@ -585,7 +584,7 @@
             "std": 775.432,
             "special_results": {
                 "save_time": 0.52,
-                "number_of_nodes_prop ":0.11
+                "number_of_nodes_prop ": 0.11
             }
         }
     },
@@ -616,7 +615,7 @@
             "std": 375.229,
             "special_results": {
                 "number_of_nodes": 7583,
-                "number_of_nodes_prop ":1,
+                "number_of_nodes_prop ": 1,
                 "save_time": 85.296
             }
         }
@@ -757,7 +756,7 @@
             "std": 0.0,
             "special_results": {
                 "number_of_nodes": 59704,
-                "number_of_nodes_prop":1,
+                "number_of_nodes_prop": 1,
                 "save_time": 658.554
             }
         }
@@ -791,7 +790,7 @@
             "std": 0.0,
             "special_results": {
                 "number_of_nodes": 2835,
-                "number_of_nodes_prop":0.04,
+                "number_of_nodes_prop": 0.04,
                 "save_time": 58.398
             }
         }
@@ -825,7 +824,7 @@
             "std": 0.0,
             "special_results": {
                 "number_of_nodes": 2399,
-                "number_of_nodes_prop":0.04,
+                "number_of_nodes_prop": 0.04,
                 "save_time": 23.344
             }
         }
@@ -1092,6 +1091,613 @@
                 "save_time": 29.287
             }
         }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(b).has(1,0).has(2,0).has(3,2).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                8570.611
+            ],
+            "average_build": 8570.611,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 14,
+                "save_time": 135.648
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(b).has(1,0).has(2,0).has(3,2).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                11575.255
+            ],
+            "average_build": 11575.255,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 15,
+                "save_time": 127.54
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(b).has(1,0).has(2,0).has(3,2).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                8603.708
+            ],
+            "average_build": 8603.708,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 15,
+                "save_time": 97.321
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(b).has(1,0).has(2,0).has(3,2).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                9379.954
+            ],
+            "average_build": 9379.954,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 15,
+                "save_time": 87.221
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(b).has(1,0).has(2,0).has(3,1).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                8768.774
+            ],
+            "average_build": 8768.774,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 15,
+                "save_time": 122.855
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(b).has(1,0).has(2,0).has(3,2).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                8743.322
+            ],
+            "average_build": 8743.322,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 14,
+                "save_time": 100.436
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=5000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 5000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(b).has(1,0).has(2,0).has(3,2).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                43610.761
+            ],
+            "average_build": 43610.761,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 14,
+                "save_time": 129.0
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                8155.029
+            ],
+            "average_build": 8155.029,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 14,
+                "save_time": 102.233
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=ttt --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "ttt",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(a).free(cell(1,2)).free(cell(2,1)).free(cell(2,3)).free(cell(3,2)).free(cell(3,3)).has(a,cell(2,2)).has(a,cell(3,1)).has(b,cell(1,1)).has(b,cell(1,3))",
+        "results": {
+            "player": "mcts",
+            "build": [
+                30930.278
+            ],
+            "average_build": 30930.278,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 1762,
+                "save_time": 7429.258
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=ttt --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "ttt",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(a).has(a,cell(1,2)).has(a,cell(2,2)).has(a,cell(2,3)).has(a,cell(3,1)).has(b,cell(1,1)).has(b,cell(1,3)).has(b,cell(2,1)).has(b,cell(3,2)).has(b,cell(3,3))",
+        "results": {
+            "player": "mcts",
+            "build": [
+                11283.442
+            ],
+            "average_build": 11283.442,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 268,
+                "save_time": 884.759
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=ttt --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "ttt",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(a).has(a,cell(1,2)).has(a,cell(2,2)).has(a,cell(2,3)).has(a,cell(3,1)).has(b,cell(1,1)).has(b,cell(1,3)).has(b,cell(2,1)).has(b,cell(3,2)).has(b,cell(3,3))",
+        "results": {
+            "player": "mcts",
+            "build": [
+                12186.548
+            ],
+            "average_build": 12186.548,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 249,
+                "save_time": 874.697
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                7665.502
+            ],
+            "average_build": 7665.502,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 14,
+                "save_time": 88.929
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                10053.798
+            ],
+            "average_build": 10053.798,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 14,
+                "save_time": 92.771
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                8508.673
+            ],
+            "average_build": 8508.673,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 14,
+                "save_time": 94.008
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                8151.845
+            ],
+            "average_build": 8151.845,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 14,
+                "save_time": 98.119
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                8822.992
+            ],
+            "average_build": 8822.992,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 14,
+                "save_time": 95.331
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                7415.939
+            ],
+            "average_build": 7415.939,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 14,
+                "save_time": 93.281
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                8234.972
+            ],
+            "average_build": 8234.972,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 14,
+                "save_time": 90.223
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                7210.37
+            ],
+            "average_build": 7210.37,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 14,
+                "save_time": 91.722
+            }
+        }
     }
-
 ]

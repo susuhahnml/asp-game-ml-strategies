@@ -7,18 +7,19 @@ import json
 import pandas as pd
 import pdb
 import os
+from structures.game_encoder import GameEncoder
 
-def training_data_to_csv(file_name, training_list, game_def, new_files):
-    games = {'a': Game(game_def,main_player="a"),
-    "b": Game(game_def,main_player="b")}
+def training_data_to_csv(file_name, training_list, game_def, new_files,extra_array=['reward','win']):
+    games = {'a': GameEncoder(game_def,main_player="a"),
+    "b": GameEncoder(game_def,main_player="b")}
 
     obs = [str(o) for o in games['a'].all_obs]
     act = [str(o) for o in games['a'].all_actions]
     COLUMN_NAMES = ["'INIT:{}'".format(o) for o in obs]
     COLUMN_NAMES.extend(act)
     COLUMN_NAMES.extend(["'NEXT:{}'".format(o) for o in obs])
-    COLUMN_NAMES.extend(["reward","win"])
-
+    COLUMN_NAMES.extend(extra_array)
+    
     try:
 
         exists = os.path.isfile(file_name)
@@ -30,17 +31,18 @@ def training_data_to_csv(file_name, training_list, game_def, new_files):
             for l in training_list:
                 row = []
                 control = l['s_init'].control
-                games[control].current_state = l['s_init']
-                row.extend(games[control].current_observation)
+                current_state = l['s_init']
+                row.extend(games[control].mask_state(current_state))
                 row.extend(games[control].mask_action(str(l['action'].action)))
-                games[control].current_state = l['s_next']
-                row.extend(games[control].current_observation)
+                current_state = l['s_next']
+                row.extend(games[control].mask_state(current_state))
                 for k in extra_array:
                     row.extend([l[k]])
                 writer.writerow([int(r) for r in row[:-len(extra_array)]]+[r for r in row[-len(extra_array):]])
     except IOError as e:
         log.error("Error saving csv")
         log.error(e)
+
 
 def remove_duplicates_training(file_name):
     csv_file = open(file_name, "r")

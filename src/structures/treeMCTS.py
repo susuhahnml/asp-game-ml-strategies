@@ -45,26 +45,46 @@ class NodeMCTS(NodeBase):
         self.t = self.t + t
 
     @property
+    def prob(self):
+        parent_n = self.n if self.parent is None else (self.parent.n-1)
+        return self.n/parent_n
+    
+    @property
+    def q_value(self):
+        visited = self.n if self.n>0 else 1
+        return self.t/visited
+
+    @property
     def ascii(self):
         """
         Returns the ascii representation of the step including the visits and value
         Used for printing
         """
+        
+        p = round(self.prob,2)
+        q = round(self.q_value,2)
         if not self.step.action is None:
-            return "〔t:{} n:{}〕\n{}".format(self.t,self.n, self.step.ascii)
+            return "〔t:{} n:{} p:{} q:{}〕\n{}".format(self.t,self.n,p,q, self.step.ascii)
         else:
             if(self.step.state.is_terminal):
-                return ("〔t:{} n:{}〕".format(self.t,self.n))
+                return ("〔t:{} n:{} p:{} q:{}〕".format(self.t,self.n,p,q))
             else:
                 other_player = "b" if self.main_player=="a" else "a"
-                s ="〔t:{} n:{}〕\nmax:{}\nmin:{}\n{}".format(self.t,self.n,self.main_player,other_player,self.step.ascii)
+                s ="〔t:{} n:{} p:{} q:{}〕\nmax:{}\nmin:{}\n{}".format(self.t,self.n,p,q,self.main_player,other_player,self.step.ascii)
                 return s
+
 
     def style(self,parent):
         format_str = NodeBase.style(self)
-        a = self.n if parent is None else self.n/parent.n
+        if parent is None:
+            return format_str
+        # a = self.q_value
+        # base = ' fillcolor="#00FF00{}"' if a>0 else ' fillcolor="#FF0000{}"'
+        # final = 0.8*(-a) if a<0 else (a)*0.2
+        a = self.prob
         base = ' fillcolor="#00FF00{}"' if a>0.5 else ' fillcolor="#FF0000{}"'
         final = 0.8-a if a<0.5 else a -0.2
+        
         alpha = "{0:0=2d}".format(int(final*100))
         format_str += base.format(alpha)
         return format_str
@@ -91,10 +111,10 @@ class TreeMCTS(Tree):
     def get_train_list(self):
         dic = {}
         for n in self.root.children:
-            self.add_to_training_dic(self.root.n,dic,n)
+            self.add_to_training_dic(dic,n)
         return dic.values()
 
-    def add_to_training_dic(self,n_total,dic,node):
+    def add_to_training_dic(self,dic,node):
         if node.step in dic:
             log.info("Duplicated step")
             log.info(node.step)
@@ -106,22 +126,32 @@ class TreeMCTS(Tree):
         dic[node.step] = {'s_init':node.step.state,
             'action':node.step.action,
             's_next':next_nodes[0].step.state,
-            'p':node.n/n_total,
+            'p':node.prob,
             'n':node.n}
         
         for n in next_nodes:
-            self.add_to_training_dic(node.n,dic,n)
+            self.add_to_training_dic(dic,n)
         
 
     def run_mcts(self, n_iter, initial_node = None):
         node = self.root if initial_node is None else initial_node
         current_state = node.step.state
         for a in current_state.legal_actions:
-            step =Step(current_state,a,node.step.time_step)
+            step = Step(current_state,a,node.step.time_step)
             NodeMCTS(step,self.main_player,parent=node)
         
         for i in range(n_iter):
             self.tree_traverse(self.root)
+
+    @staticmethod
+    def ucb1(node,expl,main_player):
+        if node.n == 0:
+            return math.inf
+        r = node.q_value 
+        if node.step.state.control != main_player:
+            r = -1*r
+        r += expl*(math.sqrt(math.log(node.parent.n)/node.n))
+        return r
 
     def tree_traverse(self, node, expl =2 ):
         if node.is_leaf:
@@ -136,16 +166,7 @@ class TreeMCTS(Tree):
             v = self.rollout(next_node)
             self.backprop(next_node,v)
         else:
-            def ucb1(node):
-                if node.n == 0:
-                    return math.inf
-                r = (node.t/node.n) 
-                if node.step.state.control != self.main_player:
-                    r = -1*r
-                r += expl*(math.sqrt(math.log(node.parent.n)/node.n))
-                return r
-
-            next_node = max(node.children,key= ucb1) 
+            next_node = max(node.children,key= lambda x:self.__class__.ucb1(x,expl,self.main_player)) 
             self.tree_traverse(next_node)
     
     def expand(self, node):
@@ -161,6 +182,7 @@ class TreeMCTS(Tree):
         state = node.step.state
         if state.is_terminal:
             return state.goals[self.main_player]
+        state = state.get_next(node.step.action)
         self.game_def.initial = state.to_facts()
         import signal
         match, benchmarks = Match.simulate(self.game_def,[self.pa,self.pb],signal_on =False)
