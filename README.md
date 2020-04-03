@@ -15,6 +15,7 @@ To represent the game encoding the framework requires the use of [Game Descripti
 
 Its a nice game
 
+Some of the already available games are [Nim](https://en.wikipedia.org/wiki/Nim) and TicTacToe. 
 
 
 ### Learning approaches
@@ -39,7 +40,6 @@ Gebser, Kaminski, Kaufmann and Schaub, 2019 (Clingo)
   publisher={Cambridge University Press}
 }
 ```
-<!-- 
 Law, Russo and Broda, 2015 (ILASP)
 
 ```
@@ -49,7 +49,7 @@ Law, Russo and Broda, 2015 (ILASP)
   year="2015",
   howpublished={\url{www.ilasp.com}}
 }
-``` -->
+```
 
 ### Authors
 
