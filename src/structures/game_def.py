@@ -10,7 +10,8 @@ from py_utils.logger import log
 import os
 from structures.state import StateExpanded
 from importlib.machinery import SourceFileLoader
-
+from structures.game_encoder import GameEncoder
+from py_utils.clingo_utils import has_player_ref
 def game_def_sub_classes():
     """
     Obtains all the classes with different game_definitions 
@@ -69,6 +70,9 @@ class GameDef():
         else:
             self.initial = initial
         
+        all_actions, all_obs = get_all_possible(self)
+        self.encoder = GameEncoder(all_actions,all_obs)
+
 
 
     @classmethod

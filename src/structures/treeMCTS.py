@@ -47,12 +47,12 @@ class NodeMCTS(NodeBase):
     @property
     def prob(self):
         parent_n = self.n if self.parent is None else (self.parent.n-1)
-        return self.n/parent_n
+        return round(self.n/parent_n,2)
     
     @property
     def q_value(self):
         visited = self.n if self.n>0 else 1
-        return self.t/visited
+        return round(self.t/visited,2)
 
     @property
     def ascii(self):
@@ -61,8 +61,8 @@ class NodeMCTS(NodeBase):
         Used for printing
         """
         
-        p = round(self.prob,2)
-        q = round(self.q_value,2)
+        p = self.prob
+        q = self.q_value
         if not self.step.action is None:
             return "〔t:{} n:{} p:{} q:{}〕\n{}".format(self.t,self.n,p,q, self.step.ascii)
         else:
@@ -138,13 +138,12 @@ class TreeMCTS(Tree):
         current_state = node.step.state
         for a in current_state.legal_actions:
             step = Step(current_state,a,node.step.time_step)
-            NodeMCTS(step,self.main_player,parent=node)
+            self.__class__.node_class(step,self.main_player,parent=node)
         
         for i in range(n_iter):
             self.tree_traverse(self.root)
 
-    @staticmethod
-    def ucb1(node,expl,main_player):
+    def ucb1(self,node,expl,main_player):
         if node.n == 0:
             return math.inf
         r = node.q_value 
@@ -166,7 +165,7 @@ class TreeMCTS(Tree):
             v = self.rollout(next_node)
             self.backprop(next_node,v)
         else:
-            next_node = max(node.children,key= lambda x:self.__class__.ucb1(x,expl,self.main_player)) 
+            next_node = max(node.children,key= lambda x:self.ucb1(x,expl,self.main_player)) 
             self.tree_traverse(next_node)
     
     def expand(self, node):
@@ -175,7 +174,7 @@ class TreeMCTS(Tree):
         current_state = node.step.state.get_next(current_action)
         for a in current_state.legal_actions:
             step =Step(current_state,a,node.step.time_step)
-            NodeMCTS(step,self.main_player,parent=node)
+            self.__class__.node_class(step,self.main_player,parent=node)
         
 
     def rollout(self, node):

@@ -75,7 +75,7 @@ class MCTSPlayer(Player):
         approach_parser.add_argument("--tree-name", "--tree-name",type=str, default=None,
             help="Name of the file to save the computed tree, must have .json extention")
         approach_parser.add_argument("--train-file",type=str, default=None,
-            help="Name of the file to save the training data with mcts probabilites, must have .cvs extention")
+            help="Name of the file to save the training data with mcts probabilites, must have .csv extention")
         approach_parser.add_argument("--iter", type= int, default=100,
             help="Number of iteration to transverse the tree")
         approach_parser.add_argument("--main-player", type= str, default="a",

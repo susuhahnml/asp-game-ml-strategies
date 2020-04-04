@@ -114,13 +114,12 @@ def has_player_ref(symbol,player_name):
     else:
         return symbol.type == player_name
 
-def get_all_possible(game_def, player_name):
+def get_all_possible(game_def):
     """
     Obtains all possible actions and observations for a game_definition
     using the predicates 'input' and 'base'
     Args:
         game_def: The game definition
-        player_name: The player name based on which the response will be ordered
     """
     ctl = get_new_control(game_def)
     ctl.load(game_def.background)
@@ -134,7 +133,6 @@ def get_all_possible(game_def, player_name):
             actions = set([d.arguments[1] for d in inputs])
             actions = list(actions)
             observations = [f.arguments[0] for f in base]
-            observations = sorted(observations, key=lambda x: not has_player_ref(x,player_name))
         return actions, observations
 
 # ------------ ILASP ------------------

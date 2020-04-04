@@ -1,4 +1,4 @@
-from py_utils.clingo_utils import  generate_rule, get_all_possible
+from py_utils.clingo_utils import  generate_rule, has_player_ref
 from py_utils.colors import *
 from collections import defaultdict
 import numpy as np
@@ -6,25 +6,30 @@ from structures.state import StateExpanded, State
 from structures.match import Match
 from structures.step import Step
 from py_utils.logger import log
+
 class GameEncoder:
 
     """
     Creates a game from a game_def.
     Args: 
-        game_def: Game Definition
     """
-    def __init__(self, game_def, clip_rewards = False, main_player="a"):
-        self.game_def = game_def
+    def __init__(self, all_actions, all_obs, clip_rewards = False):
         #Set all options for actions and observations
-        all_actions, all_obs = get_all_possible(game_def, main_player)
+        all_actions = all_actions
         self.all_actions = all_actions
         self.actionstr_to_idx = {str(a):i for i,a in enumerate(all_actions)}
-        self.all_obs = all_obs
-        self.obsstr_to_idx = {str(o):i for i,o in enumerate(all_obs)}
+        self.all_obs = {
+            "a": sorted(all_obs, key=lambda x: not has_player_ref(x,"a")),
+            "b": sorted(all_obs, key=lambda x: not has_player_ref(x,"b"))
+        }
+        self.obsstr_to_idx = {
+            "a": {str(o):i for i,o in enumerate(self.all_obs["a"])},
+            "b": {str(o):i for i,o in enumerate(self.all_obs["b"])}
+        }
         self.clip_rewards = clip_rewards
         #Set current state
         self.nb_actions = len(self.all_actions)
-        self.nb_observations = len(self.all_obs)
+        self.nb_observations = len(all_obs)
 
     """
     Returns a nparray with True in the action and False in the rest
@@ -38,7 +43,7 @@ class GameEncoder:
     Returns a nparray with True in the legal actions and False in the rest
     """
     def mask_legal_actions(self,state):
-        actions = np.zeros(len(self.all_actions))
+        actions = np.zeros(self.nb_actions)
         legal_actions = state.get_symbol_legal_actions()
         for a in legal_actions:
             actions[self.actionstr_to_idx[a]] = 1
@@ -48,13 +53,13 @@ class GameEncoder:
     The list defining the current obstervation with the size of all possible fluents.
     Contains 1 in the position of fluents that are true in the current state
     """
-    @property
-    def mask_state(self,state):
-        obs = np.zeros(len(self.all_obs))
+    def mask_state(self,state,main_player=None):
+        main_player = state.control if main_player is None else main_player
+        obs = np.zeros(self.nb_observations)
         fluents = state.fluents_str
         fluents = [f for f in fluents if f!='terminal']
         for f in fluents:
-            obs[self.obsstr_to_idx[f]] = 1
+            obs[self.obsstr_to_idx[main_player][f]] = 1
         return obs
 
     """

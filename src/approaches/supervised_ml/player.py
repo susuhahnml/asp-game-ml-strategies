@@ -5,12 +5,13 @@ from structures.players import Player
 from py_utils.logger import log
 from py_utils.colors import bcolors, paint
 from structures.players import Player
+from approaches.supervised_ml.ml_utils import train
 from py_utils.train_utils import load_model_from_name, save_model
 import numpy as np
-class AlphaZero(Player):
+class MLPlayer(Player):
 
     """
-    A player using the AlphaZero algorithm
+    A Supervised Machine learning player
 
     Attributes
     ----------
@@ -18,9 +19,9 @@ class AlphaZero(Player):
     main_player: The name of the player to optimize
     """
 
-    description = "A player trained using alpha zero"
+    description = "A player trained using supervided learning"
 
-    def __init__(self, game_def, name_style, main_player, model=None):
+    def __init__(self, game_def, name_style, main_player):
         """
         Constructs a player using saved information, the information must be saved 
         when the build method is called. This information should be able to be accessed
@@ -32,9 +33,9 @@ class AlphaZero(Player):
             name_style (str): The name style used to create the built player. This name will be passed
                         from the command line. 
         """
-        name = "AlphaZero player loaded from {}".format(name_style)
+        name = "Supervised Machine Learning player loaded from {}".format(name_style)
         super().__init__(game_def, name, main_player)
-        self.model = model if not model is None else load_model_from_name(name_style[10:],game_def.name,"alpha_zero")
+        self.model = load_model_from_name(name_style[13:],game_def.name,"supervised_ml")
 
 
     @classmethod
@@ -45,7 +46,7 @@ class AlphaZero(Player):
         Returns: 
             String for the description
         """
-        return "alpha_zero-<file-name> where file-name indicates the name of the saved model inside ml_agent/saved_models/game_name"
+        return "supervised_ml-<file-name> where file-name indicates the name of the saved model inside ml_agent/saved_models/game_name"
 
     @staticmethod
     def match_name_style(name_style):
@@ -58,7 +59,7 @@ class AlphaZero(Player):
         Returns: 
             Boolean value indicating if the name_style is a match
         """
-        return name_style[:10]=="alpha_zero-"
+        return name_style[:13]=="supervised_ml-"
 
 
     @staticmethod
@@ -74,12 +75,12 @@ class AlphaZero(Player):
         approach_parser.add_argument("--architecture", type=str, default="dense",
                             help="underlying neural network architecture;" +
                             " Available: 'dense', 'dense-deep', 'dense-wide', 'resnet-50'")
-        approach_parser.add_argument("--n-iter", type=int, default=100,
-                            help="total number iterations")
-        approach_parser.add_argument("--n-episodes", type=int, default=5000,
-                            help="total number episodes")
+        approach_parser.add_argument("--n-epochs", type=int, default=50000,
+                            help="total number of steps to take in environment")
         approach_parser.add_argument("--model-name", type=str, default="unnamed",
                             help="name of the model, used for saving and logging")
+        approach_parser.add_argument("--training-file", type=str, required=True,
+                            help="Name of the file staring in train/game_name")
 
 
     @staticmethod
@@ -92,9 +93,8 @@ class AlphaZero(Player):
             game_def (GameDef): The game definition used for the creation
             args (NameSpace): A name space with all the attributes defined in add_parser_build_args
         """
-        model = train(game_def,args.architecture,args.n_episodes,args.n_iter)
-
-        save_model(model,args.model_name,game_def.name,"alpha_zero")
+        model = train(game_def,args.architecture,args.n_epochs,args.training_file)
+        save_model(model,args.model_name,game_def.name,"supervised_ml")
 
         
     def choose_action(self,state):
@@ -107,14 +107,24 @@ class AlphaZero(Player):
         Returns:
             action (Action): The selected action. Should be one from the list of state.legal_actions
         """
-        p = state.control
-        state_masked = self.game_def.encoder[p].mask_state(state)
-        possible_actions_masked = self.game_def.encoder.mask_legal_actions(state)
-        pi, v = self.model.predict(state_masked)
+        state_masked = self.game_def.encoder.mask_state(state)
+        possible_actions_masked = [(str(a.action), self.game_def.encoder.mask_action(str(a.action))) for a in state.legal_actions]
+        inputs = [np.concatenate([state_masked,a]) for n,a in possible_actions_masked]
+        inputs = np.array(inputs)
+        predictions = self.model.predict([inputs])
+        v_predictions = predictions[0]
+        r_predictions = predictions[1]
         
-        best_idx = np.argmax(possible_actions_masked*pi)
-        best_name = self.game_def.encoder.all_actions[best_idx]
-        log.debug("Best prediction {} with proba {} ".format(best_name,pi[best_idx]))
+        best = (None,-float("inf"))
+        for i,(n,p) in enumerate(possible_actions_masked):
+            v = v_predictions[i][0]
+            r = r_predictions[i][0]
+            if v>best[1]:
+                best = (n,v)
+            log.debug("Predictions for {} v={} r={}".format(n,v,r))
+        log.debug("Best prediction: {} ".format(best))
         
-        legal_action = state.get_legal_action_from_str(best_name)
+        legal_action = state.get_legal_action_from_str(best[0])
+        if not legal_action:
+            log.error("ML Player select a non leagal action")
         return legal_action
