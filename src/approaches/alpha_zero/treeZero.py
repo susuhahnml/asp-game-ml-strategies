@@ -21,7 +21,6 @@ from structures.treeMCTS import TreeMCTS,NodeMCTS
 from py_utils.logger import log
 import json
 from structures.tree import Tree, NodeBase
-from approaches.alpha_zero.alpha_utils import predict
 
 class NodeZero(NodeMCTS):
     def __init__(self, step, main_player, dic={}, parent = None, children = []):
@@ -71,13 +70,13 @@ class TreeZero(TreeMCTS):
     Tree class to handle search trees for games
     """
     node_class = NodeZero
-    def __init__(self,root,game_def,model,main_player="a"):
+    def __init__(self,root,game_def,net,main_player="a"):
         """ Initialize with empty root node and game class """
         super().__init__(root,game_def,main_player)
-        self.model = model
+        self.net = net
 
     def ucb1(self, node, expl, main_player):
-        pi, v = predict(self.game_def,node.step.state,self.model)
+        pi, v = self.net.predict_state(node.step.state)
         if node.step.state.is_terminal:
             return 1
         p_model = pi[self.game_def.encoder.actionstr_to_idx[str(node.step.action.action)]]
@@ -93,16 +92,15 @@ class TreeZero(TreeMCTS):
         state = node.step.state
         if state.is_terminal:
             return state.goals[self.main_player]
-        pi, v = predict(self.game_def,node.step.state,self.model)
+        pi, v = self.net.predict_state(node.step.state)
         return v
 
     @staticmethod
-    def run_episode(game_def, net, args,i):
+    def run_episode(game_def, net):
         examples = []
         state = game_def.get_initial_state()
 
         root = TreeZero.node_class(Step(state,None,0),"a")
-        # tree = TreeZero(root,game_def,net)
         
         current_state = state
         is_first = True
@@ -116,7 +114,7 @@ class TreeZero(TreeMCTS):
                 is_first = False
             root = TreeZero.node_class(Step(current_state,None,0),"a")
             tree = TreeZero(root,game_def,net)
-            tree.run_mcts(args.n_mcts_simulations,expl=3)
+            tree.run_mcts(net.args.n_mcts_simulations,expl=3)
             # tree.print_in_file("train-{}.png".format(j))
             if root.is_almost_terminal or root.step.state.is_terminal:
                 if root.is_almost_terminal:
@@ -136,10 +134,6 @@ class TreeZero(TreeMCTS):
             
             # tree.print_in_file("train-{}-{}.png".format(i,time.time()))
             examples.append([game_def.encoder.mask_state(current_state), pi, None])
-            try:
-                a = np.random.choice(game_def.encoder.all_actions, p=pi)
-            except Exception as e:
-                tree.print_in_file("error-ch-{}.png".format(i))
-                raise e
+            a = np.random.choice(game_def.encoder.all_actions, p=pi)
                 
             root = [n for n in root.children if str(n.step.action.action)==str(a)][0]

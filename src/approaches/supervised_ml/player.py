@@ -5,9 +5,8 @@ from structures.players import Player
 from py_utils.logger import log
 from py_utils.colors import bcolors, paint
 from structures.players import Player
-from approaches.supervised_ml.ml_utils import train
-from py_utils.train_utils import load_model_from_name, save_model
 import numpy as np
+from approaches.supervised_ml.net_supervised import NetSupervised
 class MLPlayer(Player):
 
     """
@@ -35,7 +34,9 @@ class MLPlayer(Player):
         """
         name = "Supervised Machine Learning player loaded from {}".format(name_style)
         super().__init__(game_def, name, main_player)
-        self.model = load_model_from_name(name_style[13:],game_def.name,"supervised_ml")
+        model_name = name_style[13:]
+        self.net = NetSupervised(game_def,model_name)
+        self.net.load_model_from_file(model_name)
 
 
     @classmethod
@@ -93,8 +94,9 @@ class MLPlayer(Player):
             game_def (GameDef): The game definition used for the creation
             args (NameSpace): A name space with all the attributes defined in add_parser_build_args
         """
-        model = train(game_def,args.architecture,args.n_epochs,args.training_file)
-        save_model(model,args.model_name,game_def.name,"supervised_ml")
+        net = NetSupervised(game_def,args.model_name,model=None,args=args)
+        net.train()
+        net.save_model()
 
         
     def choose_action(self,state):
@@ -111,9 +113,7 @@ class MLPlayer(Player):
         possible_actions_masked = [(str(a.action), self.game_def.encoder.mask_action(str(a.action))) for a in state.legal_actions]
         inputs = [np.concatenate([state_masked,a]) for n,a in possible_actions_masked]
         inputs = np.array(inputs)
-        predictions = self.model.predict([inputs])
-        v_predictions = predictions[0]
-        r_predictions = predictions[1]
+        v_predictions,r_predictions  = self.net.model.predict([inputs])
         
         best = (None,-float("inf"))
         for i,(n,p) in enumerate(possible_actions_masked):

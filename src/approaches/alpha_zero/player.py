@@ -6,13 +6,11 @@ from structures.players import Player
 from py_utils.logger import log
 from py_utils.colors import bcolors, paint
 from structures.players import Player
-from py_utils.train_utils import load_model_from_name, save_model
 import numpy as np
-from approaches.alpha_zero.alpha_utils import train, get_architecture,copy_model, predict
 from structures.match import Match
 from approaches.alpha_zero.treeZero import TreeZero
 from structures.step import Step
-
+from approaches.alpha_zero.net_alpha import NetAlpha
 class AlphaZero(Player):
 
     """
@@ -26,7 +24,7 @@ class AlphaZero(Player):
 
     description = "A player trained using alpha zero"
 
-    def __init__(self, game_def, name_style, main_player, model=None):
+    def __init__(self, game_def, name_style, main_player, net=None):
         """
         Constructs a player using saved information, the information must be saved 
         when the build method is called. This information should be able to be accessed
@@ -40,7 +38,13 @@ class AlphaZero(Player):
         """
         name = "AlphaZero player loaded from {}".format(name_style)
         super().__init__(game_def, name, main_player)
-        self.model = model if not model is None else load_model_from_name(name_style[11:],game_def.name,"alpha_zero")
+        if net is None:
+            model_name = name_style[11:]
+            self.net = NetAlpha(game_def,model_name)
+            self.net.load_model_from_file()
+        else:
+            self.net = net
+
 
 
     @classmethod
@@ -77,9 +81,9 @@ class AlphaZero(Player):
             approach_parser (argparser): An argparser used from the command line for
                 this specific approach. 
         """
-        approach_parser.add_argument("--architecture", type=str, default="dense",
-                            help="underlying neural network architecture;" +
-                            " Available: 'dense', 'dense-deep', 'dense-wide', 'resnet-50'")
+        approach_parser.add_argument("--architecture-name", type=str, default="default",
+                            help="underlying neural network architecture-name;" +
+                            " Available: 'default'")
         approach_parser.add_argument("--n-train", type=int, default=100,
                             help="Number of times the network will be trained and tested")
         approach_parser.add_argument("--n-episodes", type=int, default=5,
@@ -110,7 +114,8 @@ class AlphaZero(Player):
             game_def (GameDef): The game definition used for the creation
             args (NameSpace): A name space with all the attributes defined in add_parser_build_args
         """
-        best_net = get_architecture(game_def,args.lr,architecture_name=args.architecture)
+        best_net = NetAlpha(game_def,args.model_name,model=None,args=args)
+        best_net.load_model_from_args()
         game_def.get_random_initial()
         using_random = not args.rand_init is None
         if(using_random):
@@ -127,13 +132,12 @@ class AlphaZero(Player):
             training_examples = []
             for e in range(args.n_episodes):
                 log.info("\t\tEpisode {}...".format(e))
-                new_examples = TreeZero.run_episode(game_def, best_net, args,e)
+                new_examples = TreeZero.run_episode(game_def, best_net)
                 training_examples+=new_examples
                 game_def.initial = initial_states[i%len(initial_states)]
-            new_net = copy_model(game_def,best_net,args.lr)
+            new_net = best_net.copy()
             log.info("Training net with {} examples".format(len(training_examples)))
-            train(new_net,training_examples,args.n_epochs,args.batch_size)
-
+            new_net.train(training_examples)
             log.info("Comparing networks...")
             p_old = AlphaZero(game_def,"training_old","a",best_net)
             p_new = AlphaZero(game_def,"training_new","a",new_net)
@@ -143,7 +147,7 @@ class AlphaZero(Player):
                 best_net = new_net
 
         log.info("Saving model")
-        save_model(best_net,args.model_name,game_def.name,"alpha_zero")
+        best_net.save_model()
 
         
     def choose_action(self,state):
@@ -158,7 +162,7 @@ class AlphaZero(Player):
         """
         p = state.control
         possible_actions_masked = self.game_def.encoder.mask_legal_actions(state)
-        pi, v = predict(self.game_def,state,self.model)
+        pi, v = self.net.predict_state(state)
         
         best_idx = np.argmax(possible_actions_masked*pi)
         best_name = self.game_def.encoder.all_actions[best_idx]
