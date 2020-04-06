@@ -889,5 +889,71 @@
                 "std": 0.003
             }
         }
+    },
+    {
+        "command": "vs --pA-style=alpha_zero-unnamed --n=200 --play-symmetry --game-name=dom",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 200,
+            "benchmark_output_file": "console",
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-unnamed",
+            "pB_style": "random",
+            "play_symmetry": true
+        },
+        "initial_state": "control(a).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,3)).in_hand(b,domino(0,1)).in_hand(b,domino(0,2)).in_hand(b,domino(0,3)).stack(l,3).stack(r,3)",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-unnamed",
+                "wins": 226,
+                "total_reward": 96,
+                "average_response": 1.271,
+                "std": 1.218
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 174,
+                "total_reward": -96,
+                "average_response": 0.013,
+                "std": 0.003
+            }
+        }
+    },
+    {
+        "command": "vs --pA-style=alpha_zero-unnamed --n=200 --play-symmetry --game-name=dom",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 200,
+            "benchmark_output_file": "console",
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-unnamed",
+            "pB_style": "random",
+            "play_symmetry": true
+        },
+        "initial_state": "control(a).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,3)).in_hand(b,domino(0,1)).in_hand(b,domino(0,2)).in_hand(b,domino(0,3)).stack(l,3).stack(r,3)",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-unnamed",
+                "wins": 229,
+                "total_reward": 281,
+                "average_response": 1.267,
+                "std": 1.101
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 171,
+                "total_reward": -281,
+                "average_response": 0.013,
+                "std": 0.004
+            }
+        }
     }
 ]

@@ -84,19 +84,19 @@ class AlphaZero(Player):
         approach_parser.add_argument("--architecture-name", type=str, default="default",
                             help="underlying neural network architecture-name;" +
                             " Available: 'default'")
-        approach_parser.add_argument("--n-train", type=int, default=100,
+        approach_parser.add_argument("--n-train", type=int, default=200,
                             help="Number of times the network will be trained and tested")
         approach_parser.add_argument("--n-episodes", type=int, default=5,
                             help="Number episodes computed with MCTS to get training examples")
-        approach_parser.add_argument("--n-epochs", type=int, default=900,
+        approach_parser.add_argument("--n-epochs", type=int, default=1000,
                             help="Epochs for each training")
         approach_parser.add_argument("--batch-size", type=int, default=200,
                             help="Batch size for each training")
         approach_parser.add_argument("--lr", type=float, default=0.01,
                             help="Learning rate for training")
-        approach_parser.add_argument("--n-vs", type=float, default=30,
+        approach_parser.add_argument("--n-vs", type=float, default=100,
                             help="Number of matches to compare networks")
-        approach_parser.add_argument("--n-mcts-simulations", type=float, default=100,
+        approach_parser.add_argument("--n-mcts-simulations", type=float, default=200,
             help="Number of times the MCTS algorithm will transverse to compute probabilities")
         approach_parser.add_argument("--model-name", type=str, default="unnamed",
                             help="Name of the model, used for saving and logging")

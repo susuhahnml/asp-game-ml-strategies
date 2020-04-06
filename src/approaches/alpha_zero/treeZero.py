@@ -52,6 +52,12 @@ class NodeZero(NodeMCTS):
                 s ="〔t:{} n:{} p:{} q:{}〕\nmax:{}\nmin:{}\n{}".format(t,self.n,p,q,self.main_player,other_player,self.step.ascii)
                 return s
 
+    def incremet_value(self,t):
+        if t > 0:
+            v = 1
+        elif t < 0:
+            v = -1
+        self.t = self.t + v
 
     def pis(self,game_def):
         try:
@@ -122,7 +128,12 @@ class TreeZero(TreeMCTS):
                 else: 
                     goals = root.step.state.goals
                 v = goals[root.step.state.control]
-
+                #Clip 
+                if v > 0:
+                    v = 1
+                elif v < 0:
+                    v = -1
+                    
                 for e in examples[::-1]:
                     e[2]=v
                     v=-v
