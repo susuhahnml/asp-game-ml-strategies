@@ -28,8 +28,8 @@ class GameEncoder:
         }
         self.clip_rewards = clip_rewards
         #Set current state
-        self.nb_actions = len(self.all_actions)
-        self.nb_observations = len(all_obs)
+        self.action_size = len(self.all_actions)
+        self.state_size = len(all_obs)
 
     """
     Returns a nparray with True in the action and False in the rest
@@ -43,7 +43,7 @@ class GameEncoder:
     Returns a nparray with True in the legal actions and False in the rest
     """
     def mask_legal_actions(self,state):
-        actions = np.zeros(self.nb_actions)
+        actions = np.zeros(self.action_size)
         legal_actions = state.get_symbol_legal_actions()
         for a in legal_actions:
             actions[self.actionstr_to_idx[a]] = 1
@@ -55,12 +55,12 @@ class GameEncoder:
     """
     def mask_state(self,state,main_player=None):
         main_player = state.control if main_player is None else main_player
-        obs = np.zeros(self.nb_observations)
+        obs = np.zeros(self.state_size)
         fluents = state.fluents_str
         fluents = [f for f in fluents if f!='terminal']
         for f in fluents:
             obs[self.obsstr_to_idx[main_player][f]] = 1
-        return obs
+        return obs.astype(int)
 
     """
     Randomly sample an action from leagal actions in current state.

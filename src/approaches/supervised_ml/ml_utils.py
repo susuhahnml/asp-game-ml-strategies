@@ -36,8 +36,8 @@ def divide_data(training_path, input_size,action_size):
 
 
 def train(game_def, architecture_name, epochs, training_file):
-    action_size = game_def.encoder.nb_actions
-    input_size = action_size + game_def.encoder.nb_observations
+    action_size = game_def.encoder.action_size
+    input_size = action_size + game_def.encoder.state_size
     training_path = './approaches/supervised_ml/train/{}/{}'.format(game_def.name, training_file)
     train_data, test_data = divide_data(training_path,input_size,action_size)
 

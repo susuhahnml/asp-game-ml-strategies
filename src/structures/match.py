@@ -9,6 +9,7 @@ from structures.action import ActionExpanded, Action
 from structures.step import Step
 from py_utils.colors import *
 import signal
+import numpy as np
 class Match:
     """
     Class to represent a match, this match is defined by a list of steps
@@ -128,4 +129,32 @@ class Match:
         log.debug(match)
         return match, {k:round(sum(lst) / (len(lst) if len(lst)>0 else 1),3) for k,lst in response_times.items()}
 
-
+    @staticmethod
+    def vs(game_def, n, player_encounters,initial_states,styles,signal_on=False):
+        scores = [{'wins':0,'draws':0,'points':0,'response_times':[]},{'wins':0,'draws':0,'points':0,'response_times':[]}]
+        for i in range(n):
+            for turn, vs in enumerate(player_encounters):
+                idx = {'a':0+turn,'b':1-turn}
+                game_def.initial = initial_states[i%len(initial_states)]
+                match, metrics = Match.simulate(game_def,vs,ran_init=False,signal_on=signal_on)
+                goals = match.goals
+                for l,g in goals.items():
+                    scores[idx[l]]['points']+=g
+                    if g>0:
+                        scores[idx[l]]['wins']+=1
+                    elif g==0:
+                        scores[idx[l]]['draws']+=1
+                scores[idx['a']]['response_times'].append(metrics['a'])
+                scores[idx['b']]['response_times'].append(metrics['b'])
+        benchmarks = {}
+        players = ['a','b']
+        for i,p in enumerate(players):
+            benchmarks[p]={} 
+            benchmarks[p]['style_name']=styles[i]
+            benchmarks[p]['wins']=scores[i]['wins']
+            benchmarks[p]['wins']=scores[i]['wins']
+            benchmarks[p]['total_reward']=scores[i]['points']
+            response_times_np = np.array(scores[i]['response_times'])
+            benchmarks[p]['average_response']=round(np.mean(response_times_np),3)
+            benchmarks[p]['std']=round(np.std(response_times_np),3)
+        return benchmarks

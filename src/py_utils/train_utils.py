@@ -7,6 +7,8 @@ import json
 import pandas as pd
 import pdb
 import os
+from tensorflow.keras.models import model_from_json
+
 
 def save_model(model, model_name, game_name, approach):
     file_base = "./approaches/{}/saved_models/{}".format(approach,game_name)

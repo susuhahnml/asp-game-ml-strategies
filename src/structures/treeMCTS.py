@@ -47,13 +47,19 @@ class NodeMCTS(NodeBase):
     @property
     def prob(self):
         parent_n = self.n if self.parent is None else (self.parent.n-1)
-        return round(self.n/parent_n,2)
+        if(self.n==0):
+            return 1
+        return self.n/parent_n
     
     @property
     def q_value(self):
         visited = self.n if self.n>0 else 1
-        return round(self.t/visited,2)
-
+        return self.t/visited
+    
+    @property
+    def is_almost_terminal(self):
+        return len(self.children)==1 and self.children[0].step.action is None
+        
     @property
     def ascii(self):
         """
@@ -61,8 +67,8 @@ class NodeMCTS(NodeBase):
         Used for printing
         """
         
-        p = self.prob
-        q = self.q_value
+        p = round(self.prob,2)
+        q = round(self.q_value,2)
         if not self.step.action is None:
             return "〔t:{} n:{} p:{} q:{}〕\n{}".format(self.t,self.n,p,q, self.step.ascii)
         else:
@@ -133,7 +139,7 @@ class TreeMCTS(Tree):
             self.add_to_training_dic(dic,n)
         
 
-    def run_mcts(self, n_iter, initial_node = None):
+    def run_mcts(self, n_iter, initial_node = None, expl=2 ):
         node = self.root if initial_node is None else initial_node
         current_state = node.step.state
         for a in current_state.legal_actions:
@@ -141,7 +147,7 @@ class TreeMCTS(Tree):
             self.__class__.node_class(step,self.main_player,parent=node)
         
         for i in range(n_iter):
-            self.tree_traverse(self.root)
+            self.tree_traverse(self.root,expl)
 
     def ucb1(self,node,expl,main_player):
         if node.n == 0:
@@ -149,10 +155,11 @@ class TreeMCTS(Tree):
         r = node.q_value 
         if node.step.state.control != main_player:
             r = -1*r
-        r += expl*(math.sqrt(math.log(node.parent.n)/node.n))
+        # r += expl*(math.sqrt(math.log(node.parent.n)/node.n))
+        r += expl*(math.sqrt(node.parent.n/(1+node.n)))
         return r
 
-    def tree_traverse(self, node, expl =2 ):
+    def tree_traverse(self, node, expl):
         if node.is_leaf:
             if node.n == 0:
                 next_node = node
@@ -166,15 +173,21 @@ class TreeMCTS(Tree):
             self.backprop(next_node,v)
         else:
             next_node = max(node.children,key= lambda x:self.ucb1(x,expl,self.main_player)) 
-            self.tree_traverse(next_node)
+            self.tree_traverse(next_node,expl=expl)
     
     def expand(self, node):
         #Add one child per legal action
+        if node.step.state.is_terminal:
+            return
         current_action = node.step.action
         current_state = node.step.state.get_next(current_action)
         for a in current_state.legal_actions:
             step =Step(current_state,a,node.step.time_step)
             self.__class__.node_class(step,self.main_player,parent=node)
+        if current_state.is_terminal:
+            step =Step(current_state,None,node.step.time_step)
+            self.__class__.node_class(step,self.main_player,parent=node)
+        
         
 
     def rollout(self, node):
@@ -183,7 +196,6 @@ class TreeMCTS(Tree):
             return state.goals[self.main_player]
         state = state.get_next(node.step.action)
         self.game_def.initial = state.to_facts()
-        import signal
         match, benchmarks = Match.simulate(self.game_def,[self.pa,self.pb],signal_on =False)
         return match.goals[self.main_player]
 
@@ -192,6 +204,7 @@ class TreeMCTS(Tree):
             node.incremet_visits()
             node.incremet_value(v)
             node = node.parent
+            # v=-v
         pass
 
     

@@ -31,6 +31,11 @@ class Step:
         eq = eq and self.action == other.action
         return eq
 
+    def next_state(self):
+        if self.action is None:
+            raise RuntimeError("Traing to get next step for step without action")
+        return self.state.get_next(self.action)
+
     @classmethod
     def from_dic(cls,dic,game_def):
         """

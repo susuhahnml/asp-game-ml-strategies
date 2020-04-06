@@ -8,6 +8,7 @@ from py_utils.clingo_utils import  *
 from py_utils.colors import *
 from collections import defaultdict
 import clingo
+from py_utils.logger import log
 class State:
     """
     A class used to represent a State on the game
@@ -211,6 +212,7 @@ class StateExpanded(State):
         if action_str in self.legal_actions_to_idx:
             return self.legal_actions[self.legal_actions_to_idx[action_str]]
         else:
+            log.error("Action {} not in legal actions for {}:\n{}".format(action_str,self.ascii,self.legal_actions_to_idx))
             return None
 
     def __str_detail__(self):
