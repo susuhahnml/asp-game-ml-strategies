@@ -20,7 +20,14 @@ import os
 from structures.net import Net
 from tensorflow.keras.layers import Input
 from tensorflow.keras.optimizers import Adam
+import tensorflow.keras.backend as K
 
+def cross_entropy(y_true, y_pred):
+    eps = 1e-15
+    # clipping is used to ensure that we never take the log of exactly 1 or 0
+    p_pred = K.clip(y_pred, eps, 1 - eps)
+    p_true = K.clip(y_true, eps, 1 - eps) 
+    return -K.mean((p_true*K.log(p_pred))+((1-p_true)*K.log(1-p_pred)))
 
 class NetAlpha(Net):
 
@@ -43,24 +50,42 @@ class NetAlpha(Net):
             model = Model(inputs=inputs, outputs=[pi,v])
             self.model = model
             self.compile_model(self.model)
+            self.model.summary
         else :
             raise NotImplementedError("Architecture named {} is not defined ".format(arch))
 
     def compile_model(self,model):
         if model is None:
             raise RuntimeError("A loaded model is required for compiling")
-        model.compile(loss=['mean_squared_error','mean_squared_error'], optimizer=Adam(self.args.lr))
+        if self.args.loss == 'custom':
+            losses ={'pi':cross_entropy,
+            'v':'mean_squared_error'
+            }
+        else:
+            losses ={'pi':self.args.loss,
+            'v':'mean_squared_error'
+            }
 
+        lossWeights={'pi':0.5,
+          'v':0.5  
+        }
+        model.compile(optimizer=Adam(self.args.lr),
+             loss=losses,
+             loss_weights= lossWeights
+        )
 
+        
     def train(self, examples = []):
         if self.model is None:
             raise RuntimeError("A loaded model is required for training")
         log.info("Training for {} epochs with batch size {}".format(self.args.n_epochs,self.args.batch_size))
+        
         input_states, target_pis, target_vs = list(zip(*examples))
         input_states = np.asarray(input_states)
         target_pis = np.asarray(target_pis)
         target_vs = np.asarray(target_vs)
-        self.model.fit(x = input_states, y = [target_pis, target_vs], batch_size = self.args.batch_size, epochs = self.args.n_epochs)
+        history = self.model.fit(x = input_states, y = [target_pis, target_vs], batch_size = self.args.batch_size, epochs = self.args.n_epochs,verbose=0)
+        log.info("Initial loss: {}  Final loss: {}".format(history.history["loss"][0],history.history["loss"][-1]))
     
     def predict_state(self, state):
         if self.model is None:

@@ -133,7 +133,7 @@ class TreeZero(TreeMCTS):
                     v = 1
                 elif v < 0:
                     v = -1
-                    
+
                 for e in examples[::-1]:
                     e[2]=v
                     v=-v

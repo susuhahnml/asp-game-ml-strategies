@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+import numpy as np
 import math
 from approaches.random.player import RandomPlayer
 import os
@@ -146,8 +147,15 @@ class TreeMCTS(Tree):
             step = Step(current_state,a,node.step.time_step)
             self.__class__.node_class(step,self.main_player,parent=node)
         
+        old_q = np.array([])
         for i in range(n_iter):
             self.tree_traverse(self.root,expl)
+            if i%20==0:
+                new_q = np.array([n.q_value for n in self.root.leaves])
+                if np.array_equal(new_q,old_q):
+                    log.debug("Early stopping MCTS in iteration {}".format(i))
+                    break
+                old_q=new_q
 
     def ucb1(self,node,expl,main_player):
         if node.n == 0:

@@ -213,7 +213,9 @@ class StateExpanded(State):
             return self.legal_actions[self.legal_actions_to_idx[action_str]]
         else:
             log.error("Action {} not in legal actions for {}:\n{}".format(action_str,self.ascii,self.legal_actions_to_idx))
-            return None
+            raise RuntimeError("Ilegal action")
+            # return None
+
 
     def __str_detail__(self):
         """

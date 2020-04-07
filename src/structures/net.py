@@ -59,12 +59,8 @@ class Net():
         return model_copy
     
     def copy(self):
-        print("old")
-        print(self.model)
         model_copy= self.copy_model()
         new_copy =  self.__class__(self.game_def,self.model_name,model_copy,self.args)
-        print("new")
-        print(new_copy.model)
         return new_copy
 
 
