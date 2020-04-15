@@ -50,7 +50,7 @@ class HumanPlayer(Player):
         Returns: 
             Boolean value indicating if the name_style is a match
         """
-        return name_style=="huamn"
+        return name_style=="human"
 
 
     @staticmethod

@@ -9,6 +9,7 @@ from structures.players import Player
 import numpy as np
 from structures.match import Match
 from approaches.alpha_zero.treeZero import TreeZero
+from approaches.alpha_zero.treeNet import TreeNet
 from structures.step import Step
 from approaches.alpha_zero.net_alpha import NetAlpha
 class AlphaZero(Player):
@@ -166,10 +167,12 @@ class AlphaZero(Player):
         Returns:
             action (Action): The selected action. Should be one from the list of state.legal_actions
         """
+        tree = TreeNet.generate_from(self.game_def,self.net,state)
+        tree.print_in_file("testNet.png")
         p = state.control
         legal_actions_masked = self.game_def.encoder.mask_legal_actions(state)
         pi, v = self.net.predict_state(state)
-        
+        best_pi_idx = np.argmax(pi)
         legal_actions_pi = legal_actions_masked*pi
         if np.sum(legal_actions_pi)==0:
             log.info("All legal actions were predicted with 0 by {}, will choose first legal action".format(self.name))
@@ -187,3 +190,4 @@ class AlphaZero(Player):
             raise e
         # log.info("Best prediction of {} with proba {}: \n{}".format(self.name,round(pi[best_idx],2),Step(state,legal_action,0).ascii))
         return legal_action
+
