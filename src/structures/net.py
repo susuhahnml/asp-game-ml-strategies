@@ -9,7 +9,6 @@ import numpy as np
 import asyncio
 import json
 import tensorflow as tf
-tf.compat.v1.disable_eager_execution()
 import pandas as pd
 from keras.wrappers.scikit_learn import KerasClassifier
 from tensorflow.keras.layers import Dense, Activation, Flatten
