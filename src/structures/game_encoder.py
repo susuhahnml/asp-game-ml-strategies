@@ -15,9 +15,9 @@ class GameEncoder:
     """
     def __init__(self, all_actions, all_obs, clip_rewards = False):
         #Set all options for actions and observations
-        all_actions = all_actions
-        self.all_actions = all_actions
-        self.actionstr_to_idx = {str(a):i for i,a in enumerate(all_actions)}
+        all_actions = [str(a) for a in all_actions]
+        self.all_actions = sorted(all_actions)
+        self.actionstr_to_idx = {str(a):i for i,a in enumerate(self.all_actions)}
         self.all_obs = {
             "a": sorted(all_obs, key=lambda x: not has_player_ref(x,"a")),
             "b": sorted(all_obs, key=lambda x: not has_player_ref(x,"b"))

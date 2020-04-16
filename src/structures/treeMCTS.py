@@ -140,7 +140,7 @@ class TreeMCTS(Tree):
             self.add_to_training_dic(dic,n)
         
 
-    def run_mcts(self, n_iter, initial_node = None, expl=2 ):
+    def run_mcts(self, n_iter, initial_node = None, expl=3 ):
         node = self.root if initial_node is None else initial_node
         current_state = node.step.state
         for a in current_state.legal_actions:
