@@ -78,7 +78,7 @@ class HumanPlayer(Player):
         """
         pass
 
-    def choose_action(self,state):
+    def choose_action(self,state,time_step=None):
         """
         The player chooses an action given a current state.
 

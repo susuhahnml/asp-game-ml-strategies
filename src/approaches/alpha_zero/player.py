@@ -5,7 +5,7 @@ from py_utils.colors import bcolors, paint
 from structures.players import Player
 from py_utils.logger import log
 from py_utils.colors import bcolors, paint
-from structures.players import Player
+from structures.players import Player, IllegalActionError
 import numpy as np
 from structures.match import Match
 from approaches.alpha_zero.treeZero import TreeZero
@@ -25,7 +25,7 @@ class AlphaZero(Player):
 
     description = "A player trained using alpha zero"
 
-    def __init__(self, game_def, name_style, main_player, net=None):
+    def __init__(self, game_def, name_style, main_player, net=None,visualizing_net=True):
         """
         Constructs a player using saved information, the information must be saved 
         when the build method is called. This information should be able to be accessed
@@ -37,7 +37,7 @@ class AlphaZero(Player):
             name_style (str): The name style used to create the built player. This name will be passed
                         from the command line. 
         """
-        name = "AlphaZero player loaded from {}".format(name_style)
+        name = "AlphaZero-{}".format(name_style)
         super().__init__(game_def, name, main_player)
         if net is None:
             model_name = name_style[11:]
@@ -45,6 +45,7 @@ class AlphaZero(Player):
             self.net.load_model_from_file()
         else:
             self.net = net
+        self.visualizing_net=visualizing_net
 
 
 
@@ -97,7 +98,7 @@ class AlphaZero(Player):
                             help="Batch size for each training")
         approach_parser.add_argument("--lr", type=float, default=0.01,
                             help="Learning rate for training")
-        approach_parser.add_argument("--n-vs", type=float, default=150,
+        approach_parser.add_argument("--n-vs", type=int, default=150,
                             help="Number of matches to compare networks")
         approach_parser.add_argument("--n-mcts-simulations", type=int, default=300,
             help="Number of times the MCTS algorithm will transverse to compute probabilities")
@@ -145,9 +146,13 @@ class AlphaZero(Player):
             p_old = AlphaZero(game_def,"training_old","a",best_net)
             p_new = AlphaZero(game_def,"training_new","a",new_net)
             benchmarks = Match.vs(game_def,args.n_vs,[[p_old,p_new],[p_new,p_old]],initial_states,["old_net","new_net"])
+            log.info(benchmarks)
             new_wins = benchmarks["b"]["wins"]
             old_wins = benchmarks["a"]["wins"]
-            log.info("New network wan {} old network wan {}".format(new_wins,old_wins))
+            log.info("New: Wan {}  Lost Illegal {}\nOld network: Wan {} Lost Illegal {}".format(
+                new_wins,benchmarks["b"]["matches_lost_by_illegal"],
+                old_wins,benchmarks["a"]["matches_lost_by_illegal"]
+                ))
             if new_wins > old_wins:
                 log.info("{}--------------- New network is better {}vs{}------------------{}".format(bcolors.OKBLUE,new_wins,old_wins,bcolors.ENDC))
                 best_net = new_net
@@ -157,7 +162,7 @@ class AlphaZero(Player):
         best_net.save_model()
 
         
-    def choose_action(self,state):
+    def choose_action(self,state,time_step):
         """
         The player chooses an action given a current state.
 
@@ -167,27 +172,36 @@ class AlphaZero(Player):
         Returns:
             action (Action): The selected action. Should be one from the list of state.legal_actions
         """
-        tree = TreeNet.generate_from(self.game_def,self.net,state)
-        tree.print_in_file("testNet.png")
+        if(time_step<2):
+            #Save net tree from state
+            tree = TreeNet.generate_from(self.game_def,self.net,state)
+            tree.print_in_file("{}-{}.png".format(self.game_def.name, self.name))
+
+
         p = state.control
         legal_actions_masked = self.game_def.encoder.mask_legal_actions(state)
         pi, v = self.net.predict_state(state)
-        best_pi_idx = np.argmax(pi)
+        
+        
+        best_idx = np.argmax(pi)
+
+        #Require best prediction to be legal
+        # if(legal_actions_masked[best_idx]==0):
+        #     raise IllegalActionError("Invalid action",str(self.game_def.encoder.all_actions[best_idx]))
+        
+        # log.info("Best action is legal! for {}".format(self.name))
+        #Check best prediction from all legal
         legal_actions_pi = legal_actions_masked*pi
         if np.sum(legal_actions_pi)==0:
-            log.info("All legal actions were predicted with 0 by {}, will choose first legal action".format(self.name))
-            best_idx = np.argmax(legal_actions_masked)
+            log.info("All legal actions were predicted with 0 by {}".format(self.name))
+            raise IllegalActionError("Invalid action",None)
+            # best_idx = np.argmax(legal_actions_masked)
         else:
             best_idx = np.argmax(legal_actions_pi)
+
+
         best_name = self.game_def.encoder.all_actions[best_idx]
-        try:
-            legal_action = state.get_legal_action_from_str(str(best_name))
-        except Exception as e:
-            print(legal_actions_masked)
-            print(pi)
-            print(legal_actions_masked*pi)
-            print(self.game_def.encoder.all_actions)
-            raise e
+        legal_action = state.get_legal_action_from_str(str(best_name))
         # log.info("Best prediction of {} with proba {}: \n{}".format(self.name,round(pi[best_idx],2),Step(state,legal_action,0).ascii))
         return legal_action
 

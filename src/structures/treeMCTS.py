@@ -153,7 +153,6 @@ class TreeMCTS(Tree):
             if i%20==0:
                 new_q = np.array([n.q_value for n in self.root.leaves])
                 if np.array_equal(new_q,old_q):
-                    log.debug("Early stopping MCTS in iteration {}".format(i))
                     break
                 old_q=new_q
 

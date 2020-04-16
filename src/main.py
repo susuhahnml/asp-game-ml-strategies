@@ -57,6 +57,8 @@ if __name__ == "__main__":
         help="R|Playing style name for player b:\n• "+ "\n•  ".join(player_name_style_options))
     parser_vs.add_argument("--play-symmetry", default=False, action='store_true',
         help="When this flag is passed, all games will be played twice, one with player a starting and one with player b starting to increase fairness")
+    parser_vs.add_argument("--time-out-sec", type=int, default=3, 
+        help="Number of seconds for player timeout when choosing action")
 
     # ---------------------------- Parser for each approach ----------------------------
     
@@ -107,35 +109,8 @@ if __name__ == "__main__":
             Player.from_name_style(game_def,style_a,'b')
         ])
         
-        scores = [{'wins':0,'draws':0,'points':0,'response_times':[]},{'wins':0,'draws':0,'points':0,'response_times':[]}]
-        for i in tqdm(range(n)):
-            for turn, vs in enumerate(player_encounters):
-                idx = {'a':0+turn,'b':1-turn}
-                game_def.initial = initial_states[i%len(initial_states)]
-                match, metrics = Match.simulate(game_def,vs,ran_init=False)
-                goals = match.goals
-                for l,g in goals.items():
-                    scores[idx[l]]['points']+=g
-                    if g>0:
-                        scores[idx[l]]['wins']+=1
-                    elif g==0:
-                        scores[idx[l]]['draws']+=1
-                scores[idx['a']]['response_times'].append(metrics['a'])
-                scores[idx['b']]['response_times'].append(metrics['b'])
-        benchmarks = {}
+        benchmarks= Match.vs(game_def,n,player_encounters,initial_states,[style_a,style_b],time_out_sec=args.time_out_sec)
         
-        styles = [style_a,style_b]
-        players = ['a','b']
-        for i,p in enumerate(players):
-            benchmarks[p]={} 
-            benchmarks[p]['style_name']=styles[i]
-            benchmarks[p]['wins']=scores[i]['wins']
-            benchmarks[p]['wins']=scores[i]['wins']
-            benchmarks[p]['total_reward']=scores[i]['points']
-            response_times_np = np.array(scores[i]['response_times'])
-            benchmarks[p]['average_response']=round(np.mean(response_times_np),3)
-            benchmarks[p]['std']=round(np.std(response_times_np),3)
-
 
 
     # ---------------------------- Computing Build for Approach ----------------------------

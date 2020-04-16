@@ -83,7 +83,7 @@ class TreeNet(Tree):
 
     @classmethod
     def generate_from(cls,game_def,net,state,th=0.2):
-
+        log.debug("Generating net tree...")
         root = TreeNet.node_class(Step(state,None,0),"a",dic={"is_legal":1,"p":1,"v":0})
         tree = TreeNet(root,game_def,net)
         current_nodes = [root]
@@ -116,6 +116,5 @@ class TreeNet(Tree):
                     step = Step(state,action,n.step.time_step+1)
                     node = TreeNet.node_class(step,"a",parent=n,dic={"is_legal":legal_actions_masked[i]==1,"p":p,"v":0})
                     new_nodes.append(node)
-            tree.print_in_file("NetTree-{}.png".format(it))
             current_nodes = new_nodes
         return tree

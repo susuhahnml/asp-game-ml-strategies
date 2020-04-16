@@ -2708,5 +2708,209 @@
             "std": 0.0,
             "special_results": null
         }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --loss=mean_squared_error --model-name=vis-test2 --n-episodes=2 --n-train=10 --n-vs=2 --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "mean_squared_error",
+            "n_train": 10,
+            "n_episodes": 2,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 2,
+            "n_mcts_simulations": 300,
+            "model_name": "vis-test2",
+            "train_rand": null
+        },
+        "initial_state": "control(a).has(1,1).has(2,2).has(3,2).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                450129.439
+            ],
+            "average_build": 450129.439,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --loss=mean_squared_error --model-name=vis-test2 --n-episodes=2 --n-train=10 --n-vs=2 --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "mean_squared_error",
+            "n_train": 10,
+            "n_episodes": 2,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 2,
+            "n_mcts_simulations": 300,
+            "model_name": "vis-test2",
+            "train_rand": null
+        },
+        "initial_state": "control(a).has(1,1).has(2,2).has(3,2).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                466081.023
+            ],
+            "average_build": 466081.023,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --loss=mean_squared_error --model-name=vis-test2 --n-episodes=2 --n-train=3 --n-vs=2 --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "mean_squared_error",
+            "n_train": 3,
+            "n_episodes": 2,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 2,
+            "n_mcts_simulations": 300,
+            "model_name": "vis-test2",
+            "train_rand": null
+        },
+        "initial_state": "control(a).has(1,1).has(2,2).has(3,2).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                117417.306
+            ],
+            "average_build": 117417.306,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --loss=mean_squared_error --model-name=vis-test2 --n-episodes=2 --n-train=10 --n-vs=2 --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "mean_squared_error",
+            "n_train": 10,
+            "n_episodes": 2,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 2,
+            "n_mcts_simulations": 300,
+            "model_name": "vis-test2",
+            "train_rand": null
+        },
+        "initial_state": "control(a).has(1,1).has(2,2).has(3,2).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                418221.901
+            ],
+            "average_build": 418221.901,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --loss=mean_squared_error --model-name=vis-test3 --n-episodes=2 --n-train=10 --n-vs=2 --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "mean_squared_error",
+            "n_train": 10,
+            "n_episodes": 2,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 2,
+            "n_mcts_simulations": 300,
+            "model_name": "vis-test3",
+            "train_rand": null
+        },
+        "initial_state": "control(a).has(1,1).has(2,2).has(3,2).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                833709.322
+            ],
+            "average_build": 833709.322,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --loss=mean_squared_error --model-name=vis-test3 --n-episodes=2 --n-train=3 --n-vs=2 --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "mean_squared_error",
+            "n_train": 3,
+            "n_episodes": 2,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 2,
+            "n_mcts_simulations": 300,
+            "model_name": "vis-test3",
+            "train_rand": null
+        },
+        "initial_state": "control(a).has(1,1).has(2,2).has(3,2).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                31768.046
+            ],
+            "average_build": 31768.046,
+            "std": 0.0,
+            "special_results": null
+        }
     }
 ]

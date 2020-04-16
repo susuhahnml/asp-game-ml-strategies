@@ -10,6 +10,11 @@ from collections import defaultdict
 from structures.state import State, StateExpanded
 
 import os
+class IllegalActionError(Exception):
+    def __init__(self, message,action):
+        super().__init__(message)
+        self.action = action
+
 
 def player_approaches_sub_classes():
     """

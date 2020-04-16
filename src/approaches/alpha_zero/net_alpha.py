@@ -42,8 +42,10 @@ class NetAlpha(Net):
             hidden2 = Dense(30, activation='relu', activity_regularizer=l2(0.0001))(hidden1)
             hidden3 = Dense(120, activation='relu', activity_regularizer=l2(0.0001))(hidden2)
             hidden4 = BatchNormalization()(hidden3)
-            pi = Dense(action_size, activation='linear', activity_regularizer=l2(0.0001), name='pi_non_softmaxed')(hidden4) 
-            v = Dense(1, activation='tanh', activity_regularizer=l2(0.0001), name='v')(hidden4)         
+            pi = Dense(action_size, activation='linear', name='pi_non_softmaxed')(hidden4) 
+            v = Dense(1, activation='tanh', name='v')(hidden4)         
+            # pi = Dense(action_size, activation='softmax', name='pi')(hidden3)
+            # v = Dense(1, activation='tanh', name='v')(hidden4)
             model = Model(inputs=inputs, outputs=[pi,v])
             self.model = model
             self.compile_model(self.model)
@@ -55,15 +57,15 @@ class NetAlpha(Net):
         if model is None:
             raise RuntimeError("A loaded model is required for compiling")
         if self.args.loss == 'custom':
-            losses ={'pi_non_softmaxed':cross_entropy,
+            losses ={'pi':cross_entropy,
             'v':'mean_squared_error'
             }
         else:
-            losses ={'pi_non_softmaxed':self.args.loss,
+            losses ={'pi':self.args.loss,
             'v':'mean_squared_error'
             }
 
-        lossWeights={'pi_non_softmaxed':0.5,
+        lossWeights={'pi':0.5,
           'v':0.5  
         }
         model.compile(optimizer=Adam(self.args.lr),
@@ -81,9 +83,10 @@ class NetAlpha(Net):
         input_states = np.asarray(input_states)
         target_pis = np.asarray(target_pis)
         target_vs = np.asarray(target_vs)
-        history = self.model.fit(x = input_states, y = [target_pis, target_vs], batch_size = self.args.batch_size, epochs = self.args.n_epochs,verbose=1)
+        history = self.model.fit(x = input_states, y = [target_pis, target_vs], batch_size = self.args.batch_size, epochs = self.args.n_epochs,verbose=0)
         log.info("Initial loss: {}  Final loss: {}".format(history.history["loss"][0],history.history["loss"][-1]))
     
+        
     def predict_state(self, state):
         if self.model is None:
             raise RuntimeError("A loaded model is required for predicting")
