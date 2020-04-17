@@ -12,6 +12,8 @@ from approaches.alpha_zero.treeZero import TreeZero
 from approaches.alpha_zero.treeNet import TreeNet
 from structures.step import Step
 from approaches.alpha_zero.net_alpha import NetAlpha
+from random import randint
+
 class AlphaZero(Player):
 
     """
@@ -211,15 +213,13 @@ class AlphaZero(Player):
         # Check best prediction from all legal
         legal_actions_pi = legal_actions_masked*pi
         if np.sum(legal_actions_pi)==0:
-            log.info("All legal actions were predicted with 0 by {}".format(self.name))
-            raise IllegalActionError("Invalid action",None)
-            # best_idx = np.argmax(legal_actions_masked)
+            log.info("All legal actions were predicted with 0 by {} choosing random".format(self.name))
+            best_idx = randint(0,len(state.legal_actions)-1)
+            legal_action = state.legal_actions[best_idx]
         else:
             best_idx = np.argmax(legal_actions_pi)
-
-
-        best_name = self.game_def.encoder.all_actions[best_idx]
-        legal_action = state.get_legal_action_from_str(str(best_name))
+            best_name = self.game_def.encoder.all_actions[best_idx]
+            legal_action = state.get_legal_action_from_str(str(best_name))
         # log.info("Best prediction of {} with proba {}: \n{}".format(self.name,round(pi[best_idx],2),Step(state,legal_action,0).ascii))
         return legal_action
 

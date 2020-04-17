@@ -66,7 +66,10 @@ class NodeNet(NodeBase):
         # medium_prob=1/len(parent.step.state.legal_actions)
         # base = ' fillcolor="#00FF00{}"' if a>medium_prob else ' fillcolor="#FF0000{}"'
         # final = 0.8-a if a<0.5 else a -0.2
-        base = ' fillcolor="#466BCB{}"'.format(a*100)
+        if a==1:
+            base = ' fillcolor="#466BCB"'
+        else:
+            base = ' fillcolor="#466BCB{}"'.format(a*100)
         
         format_str += base
         return format_str
