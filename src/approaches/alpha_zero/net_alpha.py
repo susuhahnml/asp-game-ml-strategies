@@ -1,4 +1,3 @@
-        
 import os.path
 import csv
 from py_utils.logger import log
@@ -9,10 +8,9 @@ import numpy as np
 import asyncio
 import json
 import tensorflow as tf
-tf.compat.v1.disable_eager_execution()
 import pandas as pd
 from keras.wrappers.scikit_learn import KerasClassifier
-from tensorflow.keras.layers import Dense, Activation, Flatten
+from tensorflow.keras.layers import Dense, Activation, Flatten, BatchNormalization
 from tensorflow.keras.models import Sequential, Model
 import pdb
 from tensorflow.keras.models import model_from_json
@@ -21,13 +19,11 @@ from structures.net import Net
 from tensorflow.keras.layers import Input
 from tensorflow.keras.optimizers import Adam
 import tensorflow.keras.backend as K
+from tensorflow.keras.regularizers import l2
 
 def cross_entropy(y_true, y_pred):
-    eps = 1e-15
-    # clipping is used to ensure that we never take the log of exactly 1 or 0
-    p_pred = K.clip(y_pred, eps, 1 - eps)
-    p_true = K.clip(y_true, eps, 1 - eps) 
-    return -K.mean((p_true*K.log(p_pred))+((1-p_true)*K.log(1-p_pred)))
+    return tf.nn.softmax_cross_entropy_with_logits(labels=y_true, logits=y_pred)
+
 
 class NetAlpha(Net):
 
@@ -42,11 +38,12 @@ class NetAlpha(Net):
         arch = self.args.architecture_name
         if arch=="default":
             inputs = Input(shape=(state_size,))
-            hidden1 = Dense(120, activation='relu')(inputs)
-            hidden2 = Dense(30, activation='relu')(hidden1)
-            hidden3 = Dense(120, activation='relu')(hidden2)
-            pi = Dense(action_size, activation='softmax', name='pi')(hidden3) 
-            v = Dense(1, activation='tanh', name='v')(hidden3)         
+            hidden1 = Dense(120, activation='relu', activity_regularizer=l2(0.0001))(inputs)
+            hidden2 = Dense(30, activation='relu', activity_regularizer=l2(0.0001))(hidden1)
+            hidden3 = Dense(120, activation='relu', activity_regularizer=l2(0.0001))(hidden2)
+            hidden4 = BatchNormalization()(hidden3)
+            pi = Dense(action_size, activation='linear', activity_regularizer=l2(0.0001), name='pi_non_softmaxed')(hidden4) 
+            v = Dense(1, activation='tanh', activity_regularizer=l2(0.0001), name='v')(hidden4)         
             model = Model(inputs=inputs, outputs=[pi,v])
             self.model = model
             self.compile_model(self.model)
@@ -58,15 +55,15 @@ class NetAlpha(Net):
         if model is None:
             raise RuntimeError("A loaded model is required for compiling")
         if self.args.loss == 'custom':
-            losses ={'pi':cross_entropy,
+            losses ={'pi_non_softmaxed':cross_entropy,
             'v':'mean_squared_error'
             }
         else:
-            losses ={'pi':self.args.loss,
+            losses ={'pi_non_softmaxed':self.args.loss,
             'v':'mean_squared_error'
             }
 
-        lossWeights={'pi':0.5,
+        lossWeights={'pi_non_softmaxed':0.5,
           'v':0.5  
         }
         model.compile(optimizer=Adam(self.args.lr),
@@ -84,7 +81,7 @@ class NetAlpha(Net):
         input_states = np.asarray(input_states)
         target_pis = np.asarray(target_pis)
         target_vs = np.asarray(target_vs)
-        history = self.model.fit(x = input_states, y = [target_pis, target_vs], batch_size = self.args.batch_size, epochs = self.args.n_epochs,verbose=0)
+        history = self.model.fit(x = input_states, y = [target_pis, target_vs], batch_size = self.args.batch_size, epochs = self.args.n_epochs,verbose=1)
         log.info("Initial loss: {}  Final loss: {}".format(history.history["loss"][0],history.history["loss"][-1]))
     
     def predict_state(self, state):
@@ -92,4 +89,6 @@ class NetAlpha(Net):
             raise RuntimeError("A loaded model is required for predicting")
         state_masked = self.game_def.encoder.mask_state(state)
         pi, v = self.model.predict(np.array([state_masked]))
-        return pi[0], v[0][0]
+        pi_softmaxed = tf.nn.softmax(pi[0])
+        pi_softmaxed = pi_softmaxed.numpy()
+        return pi_softmaxed, v[0][0]

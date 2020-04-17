@@ -98,7 +98,7 @@ class AlphaZero(Player):
                             help="Learning rate for training")
         approach_parser.add_argument("--n-vs", type=float, default=150,
                             help="Number of matches to compare networks")
-        approach_parser.add_argument("--n-mcts-simulations", type=float, default=300,
+        approach_parser.add_argument("--n-mcts-simulations", type=int, default=300,
             help="Number of times the MCTS algorithm will transverse to compute probabilities")
         approach_parser.add_argument("--model-name", type=str, default="unnamed",
                             help="Name of the model, used for saving and logging")
