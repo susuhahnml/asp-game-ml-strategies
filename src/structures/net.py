@@ -17,8 +17,9 @@ import pdb
 from tensorflow.keras.models import model_from_json
 import os
 from tensorflow.keras.models import clone_model
-
-
+# tf.compat.v1.disable_eager_execution()
+from keras.backend import manual_variable_initialization 
+manual_variable_initialization(True)
 class Net():
 
     approach = "none"
@@ -31,9 +32,11 @@ class Net():
         self.model = model
         self.args = args
 
-    def load_model_from_file(self):    
-        file_weights = "{}/{}.h5".format(self.file_base,self.model_name)
-        file_model = "{}/{}.json".format(self.file_base,self.model_name)
+    def load_model_from_file(self):   
+        path = '{}/{}'.format(self.file_base,self.model_name)
+
+        file_weights = "{}.h5".format(path)
+        file_model = "{}.json".format(path)
 
         # load json and create model
         json_file = open(file_model, 'r')
@@ -42,7 +45,7 @@ class Net():
         loaded_model = model_from_json(loaded_model_json)
         # load weights into new model
         loaded_model.load_weights(file_weights)
-        log.info("Model loaded from {}".format(self.file_base))
+        log.info("Model loaded from {}".format(path))
         self.model = loaded_model
 
     def load_model_from_args(self):    
@@ -65,6 +68,9 @@ class Net():
 
     def save_model(self, model_name=None):
         model_name = self.model_name if model_name is None else model_name
+        path = '{}/{}'.format(self.file_base,model_name)
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        
         file_weights = "{}/{}.h5".format(self.file_base,model_name)
         file_model = "{}/{}.json".format(self.file_base,model_name)
         os.makedirs(os.path.dirname(file_weights), exist_ok=True)
@@ -76,7 +82,7 @@ class Net():
             json_file.write(model_json)
         # serialize weights to HDF5
         self.model.save_weights(file_weights)
-        log.info("Model saved in {}".format(self.file_base))
+        log.info("Model saved in {}".format(path))
 
     def train(self):
         #must train the model

@@ -53,20 +53,19 @@ class NodeZero(NodeMCTS):
                 return s
 
     def incremet_value(self,t):
-        if t > 0:
-            v = 1
-        elif t < 0:
-            v = -1
-        self.t = self.t + v
+        # if t > 0:
+        #     v = 1
+        # elif t < 0:
+        #     v = -1
+        # else:
+        #     v = 0
+        self.t = self.t + t
 
     def pis(self,game_def):
         try:
             pi = np.zeros(game_def.encoder.action_size)
             for n in self.children:
-                # print(str(n.step.action.action))
                 pi[game_def.encoder.actionstr_to_idx[str(n.step.action.action)]]=n.prob
-            # print(game_def.encoder.actionstr_to_idx)
-            # print(pi)
             return pi/pi.sum()
         except Exception as e:
             raise(e)
@@ -81,25 +80,45 @@ class TreeZero(TreeMCTS):
         super().__init__(root,game_def,main_player)
         self.net = net
 
-    def ucb1(self, node, expl, main_player):
-        pi, v = self.net.predict_state(node.step.state)
+    def ucb1(self, node, expl, main_player,pi):
+        # pi, v = self.net.predict_state(node.step.state)
+
         if node.step.state.is_terminal:
             return 1
         p_model = pi[self.game_def.encoder.actionstr_to_idx[str(node.step.action.action)]]
         if node.n == 0:
             return math.inf
         r = node.q_value 
-        if node.step.state.control != main_player:
-            r = -1*r
+        # if node.step.state.control != main_player:
+        #     r = -1*r
         r += expl*p_model*(math.sqrt(node.parent.n/(1+node.n)))
         return r
 
     def rollout(self, node):
         state = node.step.state
+        p = state.control
         if state.is_terminal:
-            return state.goals[self.main_player]
+            return state.goals[p]
         pi, v = self.net.predict_state(node.step.state)
         return v
+
+    def tree_traverse(self, node, expl):
+        if node.is_leaf:
+            if node.n == 0:
+                next_node = node
+            else:
+                self.expand(node)
+                if node.is_leaf:
+                    next_node = node
+                else:
+                    next_node = node.children[0]
+            v = self.rollout(next_node)
+            self.backprop(next_node,v)
+        else:
+            pi, v = self.net.predict_state(node.children[0].step.state)
+            next_node = max(node.children,key= lambda x:self.ucb1(x,expl,self.main_player,pi)) 
+            self.tree_traverse(next_node,expl=expl)
+
 
     @staticmethod
     def run_episode(game_def, net):
@@ -121,30 +140,29 @@ class TreeZero(TreeMCTS):
             root = TreeZero.node_class(Step(current_state,None,0),"a")
             tree = TreeZero(root,game_def,net)
             tree.run_mcts(net.args.n_mcts_simulations,expl=3)
-            # tree.print_in_file("train-{}.png".format(j))
-            if root.is_almost_terminal or root.step.state.is_terminal:
-                if root.is_almost_terminal:
-                    goals = root.children[0].step.state.goals
-                else: 
-                    goals = root.step.state.goals
+            # if j==1: tree.print_in_file("train-{}.png".format(j))
+            if root.step.state.is_terminal:
+                # if root.is_almost_terminal:
+                #     print("almost")
+                #     goals = root.children[0].step.state.goals
+                # else: 
+                examples.append((root.step.state,[game_def.encoder.mask_state(current_state), np.zeros(game_def.encoder.action_size), None]))
+                goals = root.step.state.goals
                 v = goals[root.step.state.control]
                 #Clip 
-                if v > 0:
-                    v = 1
-                elif v < 0:
-                    v = -1
-
-                for e in examples[::-1]:
+                # if v > 0:
+                #     v = 1
+                # elif v < 0:
+                #     v = -1
+                for s,e in examples[::-1]:
                     e[2]=v
+                    # print("Example: \n{}\n{}\n".format(s,v)) 
                     v=-v
-                return examples
+                return [e[1] for e in examples]
 
             pi = root.pis(game_def)
-            # print("Example: \n{}\n{}".format(root.ascii,pi)) 
-            # print(" ".join([str(n.step.action)+str(n.prob) for n in root.children]))
             
-            # tree.print_in_file("train-{}-{}.png".format(i,time.time()))
-            examples.append([game_def.encoder.mask_state(current_state), pi, None])
+            examples.append((current_state,[game_def.encoder.mask_state(current_state), pi, None]))
             a = np.random.choice(game_def.encoder.all_actions, p=pi)
                 
             root = [n for n in root.children if str(n.step.action.action)==str(a)][0]

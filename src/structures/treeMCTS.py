@@ -88,12 +88,17 @@ class NodeMCTS(NodeBase):
         # a = self.q_value
         # base = ' fillcolor="#00FF00{}"' if a>0 else ' fillcolor="#FF0000{}"'
         # final = 0.8*(-a) if a<0 else (a)*0.2
+        # medium_prob=1/len(parent.step.state.legal_actions)
         a = self.prob
-        base = ' fillcolor="#00FF00{}"' if a>0.5 else ' fillcolor="#FF0000{}"'
-        final = 0.8-a if a<0.5 else a -0.2
+        # base = ' fillcolor="#00FF00{}"' if a>medium_prob else ' fillcolor="#FF0000{}"'
+        # final = 0.8-a if a<0.5 else a -0.2
+        # alpha = "{0:0=2d}".format(int(final*100))
+        if a==1:
+            base = ' fillcolor="#466BCB"'
+        else:
+            base = ' fillcolor="#466BCB{}"'.format(a*100)
         
-        alpha = "{0:0=2d}".format(int(final*100))
-        format_str += base.format(alpha)
+        format_str += base
         return format_str
 
     def __str__(self):
@@ -140,7 +145,7 @@ class TreeMCTS(Tree):
             self.add_to_training_dic(dic,n)
         
 
-    def run_mcts(self, n_iter, initial_node = None, expl=2 ):
+    def run_mcts(self, n_iter, initial_node = None, expl=3 ):
         node = self.root if initial_node is None else initial_node
         current_state = node.step.state
         for a in current_state.legal_actions:
@@ -153,7 +158,6 @@ class TreeMCTS(Tree):
             if i%20==0:
                 new_q = np.array([n.q_value for n in self.root.leaves])
                 if np.array_equal(new_q,old_q):
-                    log.debug("Early stopping MCTS in iteration {}".format(i))
                     break
                 old_q=new_q
 
@@ -161,8 +165,8 @@ class TreeMCTS(Tree):
         if node.n == 0:
             return math.inf
         r = node.q_value 
-        if node.step.state.control != main_player:
-            r = -1*r
+        # if node.step.state.control != main_player:
+        #     r = -1*r
         # r += expl*(math.sqrt(math.log(node.parent.n)/node.n))
         r += expl*(math.sqrt(node.parent.n/(1+node.n)))
         return r
@@ -174,8 +178,10 @@ class TreeMCTS(Tree):
             else:
                 self.expand(node)
                 if node.is_leaf:
+                    #Terminal state
                     next_node = node
                 else:
+                    #Go te first node
                     next_node = node.children[0]
             v = self.rollout(next_node)
             self.backprop(next_node,v)
@@ -200,19 +206,20 @@ class TreeMCTS(Tree):
 
     def rollout(self, node):
         state = node.step.state
+        p = state.control
         if state.is_terminal:
-            return state.goals[self.main_player]
+            return state.goals[p]
         state = state.get_next(node.step.action)
         self.game_def.initial = state.to_facts()
         match, benchmarks = Match.simulate(self.game_def,[self.pa,self.pb],signal_on =False)
-        return match.goals[self.main_player]
+        return match.goals[p]
 
     def backprop(self, node, v):
         while(not node is None):
             node.incremet_visits()
             node.incremet_value(v)
             node = node.parent
-            # v=-v
+            v=-v
         pass
 
     

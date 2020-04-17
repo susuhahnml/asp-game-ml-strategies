@@ -15,7 +15,7 @@ input(X,remove(P,N)) :- P=1..num_piles, N=1..max_removable,role(X).
 
 
 % Legal action
-legal(X,remove(P,N)) :- true(has(P,M)), P = #min{L:true(has(L,M))}, N=1..max_removable, N<=M, true(control(X)), not terminal.
+legal(X,remove(P,N)) :- true(has(P,M)), N=1..max_removable, N<=M, true(control(X)), not terminal.
 
 % Action selection
 0 {does(X,A)} 1 :- legal(X,A), not terminal.
