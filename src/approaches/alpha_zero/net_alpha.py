@@ -42,7 +42,7 @@ class NetAlpha(Net):
             hidden2 = Dense(30, activation='relu', activity_regularizer=l2(0.0001))(hidden1)
             hidden3 = Dense(120, activation='relu', activity_regularizer=l2(0.0001))(hidden2)
             hidden4 = BatchNormalization()(hidden3)
-            pi = Dense(action_size, activation='relu', activity_regularizer=l2(0.0001), name='pi_non_softmaxed')(hidden4) 
+            pi = Dense(action_size, activation='linear', activity_regularizer=l2(0.0001), name='pi_non_softmaxed')(hidden4) 
             v = Dense(1, activation='tanh', activity_regularizer=l2(0.0001), name='v')(hidden4)         
             model = Model(inputs=inputs, outputs=[pi,v])
             self.model = model
