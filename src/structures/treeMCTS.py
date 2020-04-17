@@ -212,7 +212,6 @@ class TreeMCTS(Tree):
             node.incremet_visits()
             node.incremet_value(v)
             node = node.parent
-            # v=-v
         pass
 
     

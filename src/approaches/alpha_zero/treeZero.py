@@ -80,8 +80,8 @@ class TreeZero(TreeMCTS):
         super().__init__(root,game_def,main_player)
         self.net = net
 
-    def ucb1(self, node, expl, main_player):
-        pi, v = self.net.predict_state(node.step.state)
+    def ucb1(self, node, expl, main_player,pi):
+        # pi, v = self.net.predict_state(node.step.state)
 
         if node.step.state.is_terminal:
             return 1
@@ -101,22 +101,22 @@ class TreeZero(TreeMCTS):
         pi, v = self.net.predict_state(node.step.state)
         return v
 
-    # def tree_traverse(self, node, expl):
-    #     if node.is_leaf:
-    #         if node.n == 0:
-    #             next_node = node
-    #         else:
-    #             self.expand(node)
-    #             if node.is_leaf:
-    #                 next_node = node
-    #             else:
-    #                 next_node = node.children[0]
-    #         v = self.rollout(next_node)
-    #         self.backprop(next_node,v)
-    #     else:
-    #         pi, v = self.net.predict_state(node.children[0].step.state)
-    #         next_node = max(node.children,key= lambda x:self.ucb1(x,expl,self.main_player,pi)) 
-    #         self.tree_traverse(next_node,expl=expl)
+    def tree_traverse(self, node, expl):
+        if node.is_leaf:
+            if node.n == 0:
+                next_node = node
+            else:
+                self.expand(node)
+                if node.is_leaf:
+                    next_node = node
+                else:
+                    next_node = node.children[0]
+            v = self.rollout(next_node)
+            self.backprop(next_node,v)
+        else:
+            pi, v = self.net.predict_state(node.children[0].step.state)
+            next_node = max(node.children,key= lambda x:self.ucb1(x,expl,self.main_player,pi)) 
+            self.tree_traverse(next_node,expl=expl)
 
 
     @staticmethod

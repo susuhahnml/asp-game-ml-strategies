@@ -131,6 +131,7 @@ class AlphaZero(Player):
             log.info("Using default initial state in training {} ".format(game_def.initial))
             initial_states = [game_def.initial]
 
+        number_initial =  len(initial_states) if args.n_vs>len(initial_states) else args.n_vs
         for i in range(args.n_train):
             log.info("------- Iteration {} --------".format(i))
             training_examples = []
@@ -149,12 +150,11 @@ class AlphaZero(Player):
             log.info("Comparing networks...")
             p_old = AlphaZero(game_def,"training_old","a",best_net)
             p_new = AlphaZero(game_def,"training_new","a",new_net)
-            print(initial_states[0])
             #Visualize nets
             game_def.initial=initial_states[0]
             state = game_def.get_initial_state()
-            p_old.visualize_net(state,"train-{}-iter-{}-old".format(best_net.model_name,i))
-            p_new.visualize_net(state,"train-{}-iter-{}-new".format(new_net.model_name,i))
+            # p_old.visualize_net(state,"train-{}-iter-{}-old".format(best_net.model_name,i))
+            # p_new.visualize_net(state,"train-{}-iter-{}-new".format(new_net.model_name,i))
 
             benchmarks = Match.vs(game_def,args.n_vs,[[p_old,p_new],[p_new,p_old]],initial_states,["old_net","new_net"],penalize_illegal=args.penalize_illegal)
             log.info(benchmarks)
@@ -170,6 +170,8 @@ class AlphaZero(Player):
                 log.info("{}--------------- New network is better {}vs{}------------------{}".format(bcolors.FAIL,new_wins,old_wins,bcolors.ENDC))
                 best_net = new_net
                 best_net.save_model()
+                p_new.visualize_net(state,"train-{}-iter-{}-new".format(new_net.model_name,i))
+
 
         log.info("Saving model")
         best_net.save_model()
@@ -203,7 +205,6 @@ class AlphaZero(Player):
 
         # Require best prediction to be legal
         if(legal_actions_masked[best_idx]==0 and penalize_illegal):
-            print("Illegal")
             raise IllegalActionError("Invalid action",str(self.game_def.encoder.all_actions[best_idx]))
         
 
