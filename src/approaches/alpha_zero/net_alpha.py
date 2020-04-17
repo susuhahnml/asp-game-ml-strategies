@@ -42,10 +42,20 @@ class NetAlpha(Net):
             hidden2 = Dense(30, activation='relu', activity_regularizer=l2(0.0001))(hidden1)
             hidden3 = Dense(120, activation='relu', activity_regularizer=l2(0.0001))(hidden2)
             hidden4 = BatchNormalization()(hidden3)
+            pi = Dense(action_size, activation='softmax', name='pi')(hidden4)
+            v = Dense(1, activation='tanh', name='v')(hidden4)
+            model = Model(inputs=inputs, outputs=[pi,v])
+            self.model = model
+            self.compile_model(self.model)
+            self.model.summary
+        elif arch=="softmaxed":
+            inputs = Input(shape=(state_size,))
+            hidden1 = Dense(120, activation='relu', activity_regularizer=l2(0.0001))(inputs)
+            hidden2 = Dense(30, activation='relu', activity_regularizer=l2(0.0001))(hidden1)
+            hidden3 = Dense(120, activation='relu', activity_regularizer=l2(0.0001))(hidden2)
+            hidden4 = BatchNormalization()(hidden3)
             pi = Dense(action_size, activation='linear', name='pi_non_softmaxed')(hidden4) 
             v = Dense(1, activation='tanh', name='v')(hidden4)         
-            # pi = Dense(action_size, activation='softmax', name='pi')(hidden3)
-            # v = Dense(1, activation='tanh', name='v')(hidden4)
             model = Model(inputs=inputs, outputs=[pi,v])
             self.model = model
             self.compile_model(self.model)
@@ -56,16 +66,17 @@ class NetAlpha(Net):
     def compile_model(self,model):
         if model is None:
             raise RuntimeError("A loaded model is required for compiling")
+        pi_name = "pi" if self.args.architecture_name=="default" else "pi_non_softmaxed"
         if self.args.loss == 'custom':
-            losses ={'pi':cross_entropy,
+            losses ={pi_name:cross_entropy,
             'v':'mean_squared_error'
             }
         else:
-            losses ={'pi':self.args.loss,
+            losses ={pi_name:self.args.loss,
             'v':'mean_squared_error'
             }
 
-        lossWeights={'pi':0.5,
+        lossWeights={pi_name:0.5,
           'v':0.5  
         }
         model.compile(optimizer=Adam(self.args.lr),
@@ -92,6 +103,9 @@ class NetAlpha(Net):
             raise RuntimeError("A loaded model is required for predicting")
         state_masked = self.game_def.encoder.mask_state(state)
         pi, v = self.model.predict(np.array([state_masked]))
-        pi_softmaxed = tf.nn.softmax(pi[0])
-        pi_softmaxed = pi_softmaxed.numpy()
-        return pi_softmaxed, v[0][0]
+        if(self.args.architecture_name=="default"):
+            return pi[0], v[0][0]
+        else:
+            pi_softmaxed = tf.nn.softmax(pi[0])
+            pi_softmaxed = pi_softmaxed.numpy()
+            return pi_softmaxed, v[0][0]

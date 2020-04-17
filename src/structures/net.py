@@ -17,7 +17,7 @@ import pdb
 from tensorflow.keras.models import model_from_json
 import os
 from tensorflow.keras.models import clone_model
-tf.compat.v1.disable_eager_execution()
+# tf.compat.v1.disable_eager_execution()
 from keras.backend import manual_variable_initialization 
 manual_variable_initialization(True)
 class Net():
