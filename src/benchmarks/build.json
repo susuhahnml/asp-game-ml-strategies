@@ -3166,5 +3166,73 @@
         },
         "initial_state": "control(a).has(1,1).has(2,2).has(3,2).has(4,0)",
         "results": {}
+    },
+    {
+        "command": "alpha_zero --game-name=nim --model-name=custom-loss --n-episodes=9 --n-train=3 --n-vs=1 --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "custom",
+            "n_train": 3,
+            "n_episodes": 9,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "custom-loss",
+            "train_rand": null
+        },
+        "initial_state": "control(a).has(1,1).has(2,2).has(3,2).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                157143.621
+            ],
+            "average_build": 157143.621,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --model-name=invalid-actions --n-episodes=9 --n-train=3 --n-vs=1 --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "custom",
+            "n_train": 3,
+            "n_episodes": 9,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "invalid-actions",
+            "train_rand": null
+        },
+        "initial_state": "control(a).has(1,1).has(2,2).has(3,2).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                176244.657
+            ],
+            "average_build": 176244.657,
+            "std": 0.0,
+            "special_results": null
+        }
     }
 ]

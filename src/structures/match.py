@@ -78,7 +78,7 @@ class Match:
             'win':-1 if control_goal<0 else 1})
 
     @staticmethod
-    def simulate(game_def, players, depth=None, ran_init=False, signal_on=True,time_out_sec=3):
+    def simulate(game_def, players, depth=None, ran_init=False, signal_on=True,time_out_sec=3,penalize_illegal=False):
         """
         Call it with the path to the game definition
 
@@ -114,7 +114,7 @@ class Match:
             if signal_on: signal.alarm(time_out_sec)
             t0 = time.time()
             try:
-                selected_action = players[time_step%2].choose_action(state,time_step=time_step)
+                selected_action = players[time_step%2].choose_action(state,time_step=time_step,penalize_illegal=penalize_illegal)
             except TimeoutError as ex:
                 log.debug("Time out for player {}, choosing random action".format(current_control))
                 index = randint(0,len(state.legal_actions)-1)
@@ -140,7 +140,7 @@ class Match:
         return match, {k:round(sum(lst) / (len(lst) if len(lst)>0 else 1),3) for k,lst in response_times.items()}
 
     @staticmethod
-    def vs(game_def, n, player_encounters,initial_states,styles,signal_on=False,time_out_sec=3):
+    def vs(game_def, n, player_encounters,initial_states,styles,signal_on=False,time_out_sec=3,penalize_illegal=False):
         scores = [
             {'wins':0,'draws':0,'points':0,'response_times':[],"matches_lost_by_illegal":0,"time_steps_lost_by_illegal":set()},
             {'wins':0,'draws':0,'points':0,'response_times':[],"matches_lost_by_illegal":0,
@@ -149,7 +149,7 @@ class Match:
             for turn, vs in enumerate(player_encounters):
                 idx = {'a':0+turn,'b':1-turn}
                 game_def.initial = initial_states[i%len(initial_states)]
-                match, metrics = Match.simulate(game_def,vs,ran_init=False,signal_on=signal_on,time_out_sec=time_out_sec)
+                match, metrics = Match.simulate(game_def,vs,ran_init=False,signal_on=signal_on,time_out_sec=time_out_sec,penalize_illegal=penalize_illegal)
                 goals = match.goals
                 for l,g in goals.items():
                     scores[idx[l]]['points']+=g

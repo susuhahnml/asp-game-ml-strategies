@@ -33,6 +33,8 @@ def add_default_params(parser):
         help="Number of times the process will be repeated")
     parser.add_argument("--benchmark-output-file", "--out",type=str, default="console",
         help="Output file to save the benchmarks of the process that was runned")
+    parser.add_argument("--penalize-illegal", default=False, action='store_true',
+        help="When this flag is passed, illegal actions should be penalized")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(formatter_class=CustomHelpFormatter)
@@ -117,11 +119,11 @@ if __name__ == "__main__":
             Player.from_name_style(game_def,style_a,'b')
         ])
         
-        benchmarks= Match.vs(game_def,n,player_encounters,initial_states,[style_a,style_b],time_out_sec=args.time_out_sec)
+        benchmarks= Match.vs(game_def,n,player_encounters,initial_states,[style_a,style_b],time_out_sec=args.time_out_sec,penalize_illegal=args.penalize_illegal)
     
     # ---------------------------- Computing Load ----------------------------
 
-    if args.selected_approach == 'load':
+    elif args.selected_approach == 'load':
         style = args.style
         log.info("Loading player {}".format(style))
         player = Player.from_name_style(game_def,style,'a')

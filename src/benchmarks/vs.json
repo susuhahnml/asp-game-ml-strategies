@@ -2632,5 +2632,81 @@
                 "std": 0.0
             }
         }
+    },
+    {
+        "command": "vs --pA-style=alpha_zero-mse --pB-style=alpha_zero-custom-loss --n=1 --play-symmetry --game-name=nim --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-mse",
+            "pB_style": "alpha_zero-custom-loss",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "control(a).has(1,1).has(2,2).has(3,2).has(4,0)",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-mse",
+                "wins": 1,
+                "total_reward": 0,
+                "average_response": 31.708,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 12.258
+            },
+            "b": {
+                "style_name": "alpha_zero-custom-loss",
+                "wins": 1,
+                "total_reward": 0,
+                "average_response": 32.418,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 10.209
+            }
+        }
+    },
+    {
+        "command": "vs --pA-style=alpha_zero-mse --pB-style=alpha_zero-invalid-actions --n=1 --play-symmetry --game-name=nim --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-mse",
+            "pB_style": "alpha_zero-invalid-actions",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "control(a).has(1,1).has(2,2).has(3,2).has(4,0)",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-mse",
+                "wins": 1,
+                "total_reward": 0,
+                "average_response": 27.728,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 7.692
+            },
+            "b": {
+                "style_name": "alpha_zero-invalid-actions",
+                "wins": 1,
+                "total_reward": 0,
+                "average_response": 27.552,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 8.824
+            }
+        }
     }
 ]

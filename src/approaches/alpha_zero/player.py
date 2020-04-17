@@ -156,7 +156,7 @@ class AlphaZero(Player):
             p_old.visualize_net(state,"train-{}-iter-{}-old".format(best_net.model_name,i))
             p_new.visualize_net(state,"train-{}-iter-{}-new".format(new_net.model_name,i))
 
-            benchmarks = Match.vs(game_def,args.n_vs,[[p_old,p_new],[p_new,p_old]],initial_states,["old_net","new_net"])
+            benchmarks = Match.vs(game_def,args.n_vs,[[p_old,p_new],[p_new,p_old]],initial_states,["old_net","new_net"],penalize_illegal=args.penalize_illegal)
             log.info(benchmarks)
             new_wins = benchmarks["b"]["wins"]
             old_wins = benchmarks["a"]["wins"]
@@ -167,7 +167,7 @@ class AlphaZero(Player):
            
             #Updating best net           
             if new_wins > old_wins:
-                log.info("{}--------------- New network is better {}vs{}------------------{}".format(bcolors.OKBLUE,new_wins,old_wins,bcolors.ENDC))
+                log.info("{}--------------- New network is better {}vs{}------------------{}".format(bcolors.FAIL,new_wins,old_wins,bcolors.ENDC))
                 best_net = new_net
                 best_net.save_model()
 
@@ -184,7 +184,7 @@ class AlphaZero(Player):
         state = self.game_def.get_initial_state()
         self.visualize_net(state)
 
-    def choose_action(self,state,time_step):
+    def choose_action(self,state,time_step=None,penalize_illegal=False):
         """
         The player chooses an action given a current state.
 
@@ -194,9 +194,6 @@ class AlphaZero(Player):
         Returns:
             action (Action): The selected action. Should be one from the list of state.legal_actions
         """
-        self.visualize_net(state)
-
-
         p = state.control
         legal_actions_masked = self.game_def.encoder.mask_legal_actions(state)
         pi, v = self.net.predict_state(state)
@@ -204,12 +201,13 @@ class AlphaZero(Player):
         
         best_idx = np.argmax(pi)
 
-        #Require best prediction to be legal
-        # if(legal_actions_masked[best_idx]==0):
-        #     raise IllegalActionError("Invalid action",str(self.game_def.encoder.all_actions[best_idx]))
+        # Require best prediction to be legal
+        if(legal_actions_masked[best_idx]==0 and penalize_illegal):
+            print("Illegal")
+            raise IllegalActionError("Invalid action",str(self.game_def.encoder.all_actions[best_idx]))
         
-        # log.info("Best action is legal! for {}".format(self.name))
-        #Check best prediction from all legal
+
+        # Check best prediction from all legal
         legal_actions_pi = legal_actions_masked*pi
         if np.sum(legal_actions_pi)==0:
             log.info("All legal actions were predicted with 0 by {}".format(self.name))

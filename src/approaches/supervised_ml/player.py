@@ -99,7 +99,7 @@ class MLPlayer(Player):
         net.save_model()
 
         
-    def choose_action(self,state,time_step=None):
+    def choose_action(self,state,time_step=None,penalize_illegal=False):
         """
         The player chooses an action given a current state.
 
