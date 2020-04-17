@@ -3048,5 +3048,39 @@
             "std": 0.0,
             "special_results": null
         }
+    },
+    {
+        "command": "alpha_zero --game-name=dom --loss=mean_squared_error --model-name=lu --n-episodes=9 --n-train=10 --n-vs=1 --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "mean_squared_error",
+            "n_train": 10,
+            "n_episodes": 9,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "lu",
+            "train_rand": null
+        },
+        "initial_state": "control(a).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,3)).in_hand(b,domino(0,1)).in_hand(b,domino(0,2)).in_hand(b,domino(0,3)).stack(l,3).stack(r,3)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                686117.937
+            ],
+            "average_build": 686117.937,
+            "std": 0.0,
+            "special_results": null
+        }
     }
 ]

@@ -172,7 +172,7 @@ class GameDef():
             self.random_init = get_all_models(self, self.path + "/all_initial.lp")
         return random.choice(self.random_init)
 
-    def get_initial_state(self):
+    def get_initial_state(self,initial_state=None):
         """
         Gets the initial state as a class of State
         Returns:

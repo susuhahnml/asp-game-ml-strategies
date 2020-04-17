@@ -63,11 +63,12 @@ class NodeNet(NodeBase):
         if not self.is_legal:
             return format_str + ' fillcolor="#f5da42"'
         a = self.p
-        base = ' fillcolor="#00FF00{}"' if a>0.5 else ' fillcolor="#FF0000{}"'
-        final = 0.8-a if a<0.5 else a -0.2
+        # medium_prob=1/len(parent.step.state.legal_actions)
+        # base = ' fillcolor="#00FF00{}"' if a>medium_prob else ' fillcolor="#FF0000{}"'
+        # final = 0.8-a if a<0.5 else a -0.2
+        base = ' fillcolor="#466BCB{}"'.format(a*100)
         
-        alpha = "{0:0=2d}".format(int(final*100))
-        format_str += base.format(alpha)
+        format_str += base
         return format_str
 
 class TreeNet(Tree):
@@ -95,18 +96,29 @@ class TreeNet(Tree):
             for n in current_nodes:
                 s = n.step.state
                 if s.is_terminal:
+                    #Dont expand terminal nodes
                     continue
                 if not n.is_legal:
+                    #Dont expand illegal moves
                     continue
                 if n.step.action is None:
+                    #Case for root node
                     state = n.step.state
                 else:
                     state = n.step.next_state()
+                if state.is_terminal:
+                    pi, v = net.predict_state(state)
+                    n.v=v
+                    continue
                 pi, v = net.predict_state(state)
                 n.v=v
                 legal_actions_masked = game_def.encoder.mask_legal_actions(state)
+                
+                max_prob = pi[np.argmax(legal_actions_masked*pi)]+0.01
+
+                
                 for i,p in enumerate(pi):
-                    if p<th and legal_actions_masked[i]==0:
+                    if p<=max_prob and legal_actions_masked[i]==0:
                         continue
                     action_str= str(game_def.encoder.all_actions[i])
                     if legal_actions_masked[i]==0:

@@ -140,11 +140,22 @@ class AlphaZero(Player):
                 training_examples+=new_examples
                 game_def.initial = initial_states[i%len(initial_states)]
             new_net = best_net.copy()
+            
+            #Training new net
             log.info("Training net with {} examples".format(len(training_examples)))
             new_net.train(training_examples)
+            
+            #Comparing nets
             log.info("Comparing networks...")
             p_old = AlphaZero(game_def,"training_old","a",best_net)
             p_new = AlphaZero(game_def,"training_new","a",new_net)
+            print(initial_states[0])
+            #Visualize nets
+            game_def.initial=initial_states[0]
+            state = game_def.get_initial_state()
+            p_old.visualize_net(state,"train-{}-iter-{}-old".format(best_net.model_name,i))
+            p_new.visualize_net(state,"train-{}-iter-{}-new".format(new_net.model_name,i))
+
             benchmarks = Match.vs(game_def,args.n_vs,[[p_old,p_new],[p_new,p_old]],initial_states,["old_net","new_net"])
             log.info(benchmarks)
             new_wins = benchmarks["b"]["wins"]
@@ -153,6 +164,8 @@ class AlphaZero(Player):
                 new_wins,benchmarks["b"]["matches_lost_by_illegal"],
                 old_wins,benchmarks["a"]["matches_lost_by_illegal"]
                 ))
+           
+            #Updating best net           
             if new_wins > old_wins:
                 log.info("{}--------------- New network is better {}vs{}------------------{}".format(bcolors.OKBLUE,new_wins,old_wins,bcolors.ENDC))
                 best_net = new_net
@@ -161,7 +174,12 @@ class AlphaZero(Player):
         log.info("Saving model")
         best_net.save_model()
 
-        
+    def visualize_net(self, state,name=None):
+        tree = TreeNet.generate_from(self.game_def,self.net,state)
+        name = self.name if name is None else name
+        tree.print_in_file("{}/{}.png".format(self.game_def.name, name))
+
+
     def choose_action(self,state,time_step):
         """
         The player chooses an action given a current state.
@@ -172,10 +190,6 @@ class AlphaZero(Player):
         Returns:
             action (Action): The selected action. Should be one from the list of state.legal_actions
         """
-        if(time_step<2):
-            #Save net tree from state
-            tree = TreeNet.generate_from(self.game_def,self.net,state)
-            tree.print_in_file("{}-{}.png".format(self.game_def.name, self.name))
 
 
         p = state.control

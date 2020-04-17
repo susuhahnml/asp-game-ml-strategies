@@ -57,6 +57,8 @@ class NodeZero(NodeMCTS):
             v = 1
         elif t < 0:
             v = -1
+        else:
+            v = 0
         self.t = self.t + v
 
     def pis(self,game_def):

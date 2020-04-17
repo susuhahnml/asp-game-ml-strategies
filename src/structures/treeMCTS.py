@@ -88,8 +88,9 @@ class NodeMCTS(NodeBase):
         # a = self.q_value
         # base = ' fillcolor="#00FF00{}"' if a>0 else ' fillcolor="#FF0000{}"'
         # final = 0.8*(-a) if a<0 else (a)*0.2
+        medium_prob=1/len(parent.step.state.legal_actions)
         a = self.prob
-        base = ' fillcolor="#00FF00{}"' if a>0.5 else ' fillcolor="#FF0000{}"'
+        base = ' fillcolor="#00FF00{}"' if a>medium_prob else ' fillcolor="#FF0000{}"'
         final = 0.8-a if a<0.5 else a -0.2
         
         alpha = "{0:0=2d}".format(int(final*100))
