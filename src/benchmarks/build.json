@@ -3082,5 +3082,89 @@
             "std": 0.0,
             "special_results": null
         }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --loss=mean_squared_error --model-name=mse --n-episodes=9 --n-train=2 --n-vs=1 --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "mean_squared_error",
+            "n_train": 2,
+            "n_episodes": 9,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "mse",
+            "train_rand": null
+        },
+        "initial_state": "control(a).has(1,1).has(2,2).has(3,2).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                145587.579
+            ],
+            "average_build": 145587.579,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --loss=mean_squared_error --model-name=mse --n-episodes=9 --n-train=2 --n-vs=1 --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "mean_squared_error",
+            "n_train": 2,
+            "n_episodes": 9,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "mse",
+            "train_rand": null
+        },
+        "initial_state": "control(a).has(1,1).has(2,2).has(3,2).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                116235.712
+            ],
+            "average_build": 116235.712,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "load --style=alpha_zero-mse --n=1 --game-name=nim --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "load",
+            "style": "alpha_zero-mse"
+        },
+        "initial_state": "control(a).has(1,1).has(2,2).has(3,2).has(4,0)",
+        "results": {}
     }
 ]

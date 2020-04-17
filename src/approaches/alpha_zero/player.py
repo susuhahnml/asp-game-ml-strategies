@@ -37,7 +37,7 @@ class AlphaZero(Player):
             name_style (str): The name style used to create the built player. This name will be passed
                         from the command line. 
         """
-        name = "AlphaZero-{}".format(name_style)
+        name = "{}".format(name_style)
         super().__init__(game_def, name, main_player)
         if net is None:
             model_name = name_style[11:]
@@ -179,6 +179,10 @@ class AlphaZero(Player):
         name = self.name if name is None else name
         tree.print_in_file("{}/{}.png".format(self.game_def.name, name))
 
+    def show_info(self, initial_states):
+        self.game_def.initial=initial_states[0]
+        state = self.game_def.get_initial_state()
+        self.visualize_net(state)
 
     def choose_action(self,state,time_step):
         """
@@ -190,6 +194,7 @@ class AlphaZero(Player):
         Returns:
             action (Action): The selected action. Should be one from the list of state.legal_actions
         """
+        self.visualize_net(state)
 
 
         p = state.control

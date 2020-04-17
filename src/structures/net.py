@@ -34,7 +34,6 @@ class Net():
 
     def load_model_from_file(self):   
         path = '{}/{}'.format(self.file_base,self.model_name)
-        # loaded_model= tf.keras.models.load_model(path)
 
         file_weights = "{}.h5".format(path)
         file_model = "{}.json".format(path)
@@ -71,8 +70,6 @@ class Net():
         model_name = self.model_name if model_name is None else model_name
         path = '{}/{}'.format(self.file_base,model_name)
         os.makedirs(os.path.dirname(path), exist_ok=True)
-
-        # self.model.save(path, save_format='tf')
         
         file_weights = "{}/{}.h5".format(self.file_base,model_name)
         file_model = "{}/{}.json".format(self.file_base,model_name)

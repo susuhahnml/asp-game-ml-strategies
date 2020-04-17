@@ -60,6 +60,14 @@ if __name__ == "__main__":
     parser_vs.add_argument("--time-out-sec", type=int, default=3, 
         help="Number of seconds for player timeout when choosing action")
 
+    # ---------------------------- Load parser ----------------------------
+    parser_load = subs.add_parser('load', 
+        help="Loads one player",conflict_handler='resolve',formatter_class=CustomHelpFormatter)
+    add_default_params(parser_load)
+    
+    parser_load.add_argument("--style", type=str, default="random",
+        help="R|Playing style name for player :\n• "+ "\n•  ".join(player_name_style_options))
+
     # ---------------------------- Parser for each approach ----------------------------
     
     for n, pc in player_classes.items():
@@ -110,8 +118,15 @@ if __name__ == "__main__":
         ])
         
         benchmarks= Match.vs(game_def,n,player_encounters,initial_states,[style_a,style_b],time_out_sec=args.time_out_sec)
-        
+    
+    # ---------------------------- Computing Load ----------------------------
 
+    if args.selected_approach == 'load':
+        style = args.style
+        log.info("Loading player {}".format(style))
+        player = Player.from_name_style(game_def,style,'a')
+        player.show_info(initial_states)
+        benchmarks ={}
 
     # ---------------------------- Computing Build for Approach ----------------------------
 

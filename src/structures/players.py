@@ -150,3 +150,10 @@ class Player(abc.ABC):
             action (Action): The selected action. Should be one from the list of state.legal_actions
         """
         raise NotImplementedError
+
+    def show_info(self, initial_states):
+        """
+        Shows the info of a loaded player, can generate visualization and 
+        debugging material.
+        """
+        pass 

@@ -2594,5 +2594,43 @@
                 "std": 0.0
             }
         }
+    },
+    {
+        "command": "vs --pA-style=alpha_zero-mse --n=1 --game-name=nim --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-mse",
+            "pB_style": "random",
+            "play_symmetry": false,
+            "time_out_sec": 3
+        },
+        "initial_state": "control(a).has(1,1).has(2,2).has(3,2).has(4,0)",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-mse",
+                "wins": 1,
+                "total_reward": 1,
+                "average_response": 620.288,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.0
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 0,
+                "total_reward": -1,
+                "average_response": 0.073,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.0
+            }
+        }
     }
 ]
