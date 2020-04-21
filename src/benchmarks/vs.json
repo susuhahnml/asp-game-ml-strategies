@@ -2708,5 +2708,1548 @@
                 "std": 8.824
             }
         }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --rand=1 --n=5 --pA-style=alpha_zero-ce-5-penalized --pB-style=alpha_zero-ce-5-penalized-sm",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 5,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-ce-5-penalized",
+            "pB_style": "alpha_zero-ce-5-penalized-sm",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-ce-5-penalized",
+                "wins": 2,
+                "total_reward": -6,
+                "average_response": 6.762,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 9.074
+            },
+            "b": {
+                "style_name": "alpha_zero-ce-5-penalized-sm",
+                "wins": 8,
+                "total_reward": 6,
+                "average_response": 6.772,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 9.004
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --rand=1 --n=5 --pA-style=alpha_zero-ce-5-penalized --pB-style=alpha_zero-ce-5-penalized-sm",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 5,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-ce-5-penalized",
+            "pB_style": "alpha_zero-ce-5-penalized-sm",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-ce-5-penalized",
+                "wins": 3,
+                "total_reward": -4,
+                "average_response": 6.082,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 6.737
+            },
+            "b": {
+                "style_name": "alpha_zero-ce-5-penalized-sm",
+                "wins": 7,
+                "total_reward": 4,
+                "average_response": 6.745,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 8.473
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --rand=1 --n=5 --pA-style=alpha_zero-ce-5-penalized --pB-style=alpha_zero-ce-5-penalized-sm",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 5,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-ce-5-penalized",
+            "pB_style": "alpha_zero-ce-5-penalized-sm",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-ce-5-penalized",
+                "wins": 5,
+                "total_reward": 0,
+                "average_response": 6.903,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 9.068
+            },
+            "b": {
+                "style_name": "alpha_zero-ce-5-penalized-sm",
+                "wins": 5,
+                "total_reward": 0,
+                "average_response": 6.517,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 8.225
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --rand=1 --n=5 --pA-style=alpha_zero-ce-5-penalized --pB-style=alpha_zero-ce-5-penalized-sm",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 5,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-ce-5-penalized",
+            "pB_style": "alpha_zero-ce-5-penalized-sm",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-ce-5-penalized",
+                "wins": 2,
+                "total_reward": -6,
+                "average_response": 6.43,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 8.309
+            },
+            "b": {
+                "style_name": "alpha_zero-ce-5-penalized-sm",
+                "wins": 8,
+                "total_reward": 6,
+                "average_response": 6.798,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 9.222
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --rand=1 --n=5 --pA-style=alpha_zero-ce-5-penalized --pB-style=alpha_zero-ce-5-penalized-sm --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 5,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-ce-5-penalized",
+            "pB_style": "alpha_zero-ce-5-penalized-sm",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-ce-5-penalized",
+                "wins": 6,
+                "total_reward": 2,
+                "average_response": 17.521,
+                "matches_lost_by_illegal": 4,
+                "time_steps_lost_by_illegal": [
+                    1
+                ],
+                "std": 33.625
+            },
+            "b": {
+                "style_name": "alpha_zero-ce-5-penalized-sm",
+                "wins": 4,
+                "total_reward": -2,
+                "average_response": 11.251,
+                "matches_lost_by_illegal": 6,
+                "time_steps_lost_by_illegal": [
+                    1,
+                    2,
+                    3
+                ],
+                "std": 21.201
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --rand=1 --n=5 --pA-style=alpha_zero-ce-5-penalized --pB-style=alpha_zero-ce-5-penalized-sm --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 5,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-ce-5-penalized",
+            "pB_style": "alpha_zero-ce-5-penalized-sm",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-ce-5-penalized",
+                "wins": 6,
+                "total_reward": 2,
+                "average_response": 18.06,
+                "matches_lost_by_illegal": 4,
+                "time_steps_lost_by_illegal": [
+                    1
+                ],
+                "std": 34.839
+            },
+            "b": {
+                "style_name": "alpha_zero-ce-5-penalized-sm",
+                "wins": 4,
+                "total_reward": -2,
+                "average_response": 11.854,
+                "matches_lost_by_illegal": 6,
+                "time_steps_lost_by_illegal": [
+                    1,
+                    2,
+                    3
+                ],
+                "std": 22.88
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --rand=1 --n=5 --pA-style=alpha_zero-ce-5-penalized --pB-style=alpha_zero-ce-5-penalized-sm --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 5,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-ce-5-penalized",
+            "pB_style": "alpha_zero-ce-5-penalized-sm",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-ce-5-penalized",
+                "wins": 6,
+                "total_reward": 2,
+                "average_response": 17.937,
+                "matches_lost_by_illegal": 4,
+                "time_steps_lost_by_illegal": [
+                    1
+                ],
+                "std": 34.39
+            },
+            "b": {
+                "style_name": "alpha_zero-ce-5-penalized-sm",
+                "wins": 4,
+                "total_reward": -2,
+                "average_response": 11.286,
+                "matches_lost_by_illegal": 6,
+                "time_steps_lost_by_illegal": [
+                    1,
+                    2,
+                    3
+                ],
+                "std": 21.266
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --rand=1 --n=5 --pA-style=alpha_zero-ce-5-penalized --pB-style=alpha_zero-ce-5-sm --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 5,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-ce-5-penalized",
+            "pB_style": "alpha_zero-ce-5-sm",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-ce-5-penalized",
+                "wins": 9,
+                "total_reward": 8,
+                "average_response": 5.736,
+                "matches_lost_by_illegal": 1,
+                "time_steps_lost_by_illegal": [
+                    2
+                ],
+                "std": 15.504
+            },
+            "b": {
+                "style_name": "alpha_zero-ce-5-sm",
+                "wins": 1,
+                "total_reward": -8,
+                "average_response": 14.691,
+                "matches_lost_by_illegal": 9,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1
+                ],
+                "std": 26.817
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --rand=1 --n=5 --pA-style=alpha_zero-ce-5-sm --pB-style=alpha_zero-ce-5-penalized-sm --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 5,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-ce-5-sm",
+            "pB_style": "alpha_zero-ce-5-penalized-sm",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-ce-5-sm",
+                "wins": 2,
+                "total_reward": -6,
+                "average_response": 18.338,
+                "matches_lost_by_illegal": 8,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1
+                ],
+                "std": 34.609
+            },
+            "b": {
+                "style_name": "alpha_zero-ce-5-penalized-sm",
+                "wins": 8,
+                "total_reward": 6,
+                "average_response": 4.087,
+                "matches_lost_by_illegal": 2,
+                "time_steps_lost_by_illegal": [
+                    2
+                ],
+                "std": 10.421
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --rand=1 --n=15 --pA-style=alpha_zero-ce-5-sm --pB-style=alpha_zero-ce-5-penalized-sm --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 15,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-ce-5-sm",
+            "pB_style": "alpha_zero-ce-5-penalized-sm",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-ce-5-sm",
+                "wins": 6,
+                "total_reward": -18,
+                "average_response": 6.719,
+                "matches_lost_by_illegal": 24,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1
+                ],
+                "std": 20.944
+            },
+            "b": {
+                "style_name": "alpha_zero-ce-5-penalized-sm",
+                "wins": 24,
+                "total_reward": 18,
+                "average_response": 1.834,
+                "matches_lost_by_illegal": 6,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    2
+                ],
+                "std": 6.388
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --rand=1 --n=15 --pA-style=alpha_zero-ce-5-penalized --pB-style=alpha_zero-ce-5-penalized-sm --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 15,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-ce-5-penalized",
+            "pB_style": "alpha_zero-ce-5-penalized-sm",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-ce-5-penalized",
+                "wins": 17,
+                "total_reward": 4,
+                "average_response": 6.678,
+                "matches_lost_by_illegal": 13,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1
+                ],
+                "std": 21.071
+            },
+            "b": {
+                "style_name": "alpha_zero-ce-5-penalized-sm",
+                "wins": 13,
+                "total_reward": -4,
+                "average_response": 4.615,
+                "matches_lost_by_illegal": 17,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1,
+                    2,
+                    3
+                ],
+                "std": 13.425
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --rand=1 --n=25 --pA-style=alpha_zero-ce-5-penalized --pB-style=alpha_zero-ce-5-penalized-sm --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 25,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-ce-5-penalized",
+            "pB_style": "alpha_zero-ce-5-penalized-sm",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-ce-5-penalized",
+                "wins": 30,
+                "total_reward": 10,
+                "average_response": 4.319,
+                "matches_lost_by_illegal": 20,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1,
+                    2
+                ],
+                "std": 15.824
+            },
+            "b": {
+                "style_name": "alpha_zero-ce-5-penalized-sm",
+                "wins": 20,
+                "total_reward": -10,
+                "average_response": 3.28,
+                "matches_lost_by_illegal": 30,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1,
+                    2,
+                    3
+                ],
+                "std": 10.579
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --rand=1 --n=5 --pA-style=alpha_zero-ce-5-penalized --pB-style=alpha_zero-small-penalized-1 --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 5,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-ce-5-penalized",
+            "pB_style": "alpha_zero-small-penalized-1",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-ce-5-penalized",
+                "wins": 4,
+                "total_reward": -2,
+                "average_response": 12.118,
+                "matches_lost_by_illegal": 6,
+                "time_steps_lost_by_illegal": [
+                    1,
+                    2
+                ],
+                "std": 23.13
+            },
+            "b": {
+                "style_name": "alpha_zero-small-penalized-1",
+                "wins": 6,
+                "total_reward": 2,
+                "average_response": 14.872,
+                "matches_lost_by_illegal": 4,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1
+                ],
+                "std": 26.949
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --rand=2 --n=1 --pA-style=alpha_zero-ce-5-penalized --pB-style=alpha_zero-small-penalized-1 --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 2,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-ce-5-penalized",
+            "pB_style": "alpha_zero-small-penalized-1",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-ce-5-penalized",
+                "wins": 0,
+                "total_reward": -2,
+                "average_response": 86.132,
+                "matches_lost_by_illegal": 2,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1
+                ],
+                "std": 15.11
+            },
+            "b": {
+                "style_name": "alpha_zero-small-penalized-1",
+                "wins": 2,
+                "total_reward": 2,
+                "average_response": 35.722,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 35.722
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --rand=2 --n=10 --pA-style=alpha_zero-ce-5-penalized --pB-style=alpha_zero-small-penalized-1 --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 2,
+            "initial": null,
+            "num_repetitions": 10,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-ce-5-penalized",
+            "pB_style": "alpha_zero-small-penalized-1",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-ce-5-penalized",
+                "wins": 12,
+                "total_reward": 4,
+                "average_response": 8.09,
+                "matches_lost_by_illegal": 8,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1,
+                    2
+                ],
+                "std": 22.309
+            },
+            "b": {
+                "style_name": "alpha_zero-small-penalized-1",
+                "wins": 8,
+                "total_reward": -4,
+                "average_response": 7.764,
+                "matches_lost_by_illegal": 12,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1
+                ],
+                "std": 20.646
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --rand=2 --n=10 --pA-style=alpha_zero-ce-5-penalized --pB-style=alpha_zero-small-penalized-1 --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 2,
+            "initial": null,
+            "num_repetitions": 10,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-ce-5-penalized",
+            "pB_style": "alpha_zero-small-penalized-1",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-ce-5-penalized",
+                "wins": 12,
+                "total_reward": 4,
+                "average_response": 9.124,
+                "matches_lost_by_illegal": 8,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1,
+                    2
+                ],
+                "std": 25.716
+            },
+            "b": {
+                "style_name": "alpha_zero-small-penalized-1",
+                "wins": 8,
+                "total_reward": -4,
+                "average_response": 7.643,
+                "matches_lost_by_illegal": 12,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1
+                ],
+                "std": 20.285
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --rand=1 --n=5 --pA-style=alpha_zero-ce-5-penalized --pB-style=alpha_zero-small-penalized-1 --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 5,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-ce-5-penalized",
+            "pB_style": "alpha_zero-small-penalized-1",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-ce-5-penalized",
+                "wins": 4,
+                "total_reward": -2,
+                "average_response": 11.094,
+                "matches_lost_by_illegal": 6,
+                "time_steps_lost_by_illegal": [
+                    1,
+                    2
+                ],
+                "std": 20.947
+            },
+            "b": {
+                "style_name": "alpha_zero-small-penalized-1",
+                "wins": 6,
+                "total_reward": 2,
+                "average_response": 16.982,
+                "matches_lost_by_illegal": 4,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1
+                ],
+                "std": 31.844
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --rand=1 --n=5 --pA-style=alpha_zero-ce-5-penalized --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 5,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-ce-5-penalized",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-ce-5-penalized",
+                "wins": 0,
+                "total_reward": -10,
+                "average_response": 7.982,
+                "matches_lost_by_illegal": 10,
+                "time_steps_lost_by_illegal": [
+                    1,
+                    2,
+                    3,
+                    4,
+                    6
+                ],
+                "std": 13.3
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 10,
+                "total_reward": 10,
+                "average_response": 0.012,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.002
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --rand=1 --n=5 --pA-style=alpha_zero-ce-5-penalized --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 5,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-ce-5-penalized",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-ce-5-penalized",
+                "wins": 0,
+                "total_reward": -10,
+                "average_response": 8.024,
+                "matches_lost_by_illegal": 10,
+                "time_steps_lost_by_illegal": [
+                    1,
+                    2,
+                    3,
+                    4
+                ],
+                "std": 13.424
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 10,
+                "total_reward": 10,
+                "average_response": 0.011,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.002
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --rand=1 --n=5 --pA-style=alpha_zero-ce-5-penalized --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 5,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-ce-5-penalized",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-ce-5-penalized",
+                "wins": 0,
+                "total_reward": -10,
+                "average_response": 12.263,
+                "matches_lost_by_illegal": 9,
+                "time_steps_lost_by_illegal": [
+                    1,
+                    2,
+                    4,
+                    5
+                ],
+                "std": 23.182
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 10,
+                "total_reward": 10,
+                "average_response": 0.012,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.003
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --rand=1 --n=5 --pA-style=alpha_zero-ce-5-penalized",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 5,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-ce-5-penalized",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-ce-5-penalized",
+                "wins": 7,
+                "total_reward": 4,
+                "average_response": 6.101,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 9.321
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 3,
+                "total_reward": -4,
+                "average_response": 0.012,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.003
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --rand=1 --n=5 --pA-style=alpha_zero-ce-5-penalized",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 5,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-ce-5-penalized",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-ce-5-penalized",
+                "wins": 2,
+                "total_reward": -6,
+                "average_response": 6.674,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 10.148
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 8,
+                "total_reward": 6,
+                "average_response": 0.014,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.002
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --rand=1 --n=5 --pA-style=alpha_zero-ce-5-penalized",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 5,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-ce-5-penalized",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-ce-5-penalized",
+                "wins": 5,
+                "total_reward": 0,
+                "average_response": 12.661,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 20.933
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 5,
+                "total_reward": 0,
+                "average_response": 0.024,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.009
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --rand=1 --n=5 --pA-style=alpha_zero-ce-5-penalized",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 5,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-ce-5-penalized",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-ce-5-penalized",
+                "wins": 6,
+                "total_reward": 2,
+                "average_response": 10.228,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 15.663
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 4,
+                "total_reward": -2,
+                "average_response": 0.022,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.004
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --rand=1 --n=5 --pA-style=alpha_zero-ce-5-penalized",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 5,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-ce-5-penalized",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-ce-5-penalized",
+                "wins": 7,
+                "total_reward": 4,
+                "average_response": 6.006,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 9.35
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 3,
+                "total_reward": -4,
+                "average_response": 0.012,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.002
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=nim --play-symmetry --n=50 --pA-style=alpha_zero-medium-penalized --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 50,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-medium-penalized",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "control(a).has(1,3).has(2,3).has(3,2).has(4,1)",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-medium-penalized",
+                "wins": 85,
+                "total_reward": 70,
+                "average_response": 1.885,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 3.691
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 15,
+                "total_reward": -70,
+                "average_response": 0.011,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.001
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=nim --play-symmetry --n=50 --pA-style=alpha_zero-medium-penalized --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 50,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-medium-penalized",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "control(a).has(1,3).has(2,3).has(3,2).has(4,1)",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-medium-penalized",
+                "wins": 81,
+                "total_reward": 62,
+                "average_response": 2.022,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 3.587
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 19,
+                "total_reward": -62,
+                "average_response": 0.012,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.003
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=nim --play-symmetry --n=50 --pA-style=alpha_zero-medium-penalized --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 50,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-medium-penalized",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "control(a).has(1,3).has(2,3).has(3,2).has(4,1)",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-medium-penalized",
+                "wins": 78,
+                "total_reward": 56,
+                "average_response": 1.871,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 3.616
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 22,
+                "total_reward": -56,
+                "average_response": 0.011,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.001
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --rand=1 --n=100 --pA-style=alpha_zero-ce-5-penalized",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 100,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-ce-5-penalized",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-ce-5-penalized",
+                "wins": 93,
+                "total_reward": -14,
+                "average_response": 1.698,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 2.598
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 107,
+                "total_reward": 14,
+                "average_response": 0.012,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.002
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --rand=1 --n=100 --pA-style=alpha_zero-ce-5-penalized",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 100,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-ce-5-penalized",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-ce-5-penalized",
+                "wins": 104,
+                "total_reward": 8,
+                "average_response": 1.715,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 2.497
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 96,
+                "total_reward": -8,
+                "average_response": 0.012,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.002
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --rand=1 --n=100 --pA-style=alpha_zero-ce-5-penalized",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 100,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-ce-5-penalized",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-ce-5-penalized",
+                "wins": 97,
+                "total_reward": -6,
+                "average_response": 1.662,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 2.611
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 103,
+                "total_reward": 6,
+                "average_response": 0.011,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.001
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --n=100 --pA-style=alpha_zero-ce-5-penalized",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 100,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-ce-5-penalized",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "control(a).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,3)).in_hand(b,domino(0,1)).in_hand(b,domino(0,2)).in_hand(b,domino(0,3)).stack(l,3).stack(r,3)",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-ce-5-penalized",
+                "wins": 108,
+                "total_reward": 16,
+                "average_response": 1.994,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 3.683
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 92,
+                "total_reward": -16,
+                "average_response": 0.013,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.003
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --rand=1 --n=1000 --pA-style=alpha_zero-ce-5-penalized",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 1000,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-ce-5-penalized",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-ce-5-penalized",
+                "wins": 972,
+                "total_reward": -56,
+                "average_response": 1.461,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.846
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 1028,
+                "total_reward": 56,
+                "average_response": 0.011,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.003
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --rand=1 --n=1000 --pA-style=alpha_zero-ce-5-penalized --init-limit=5",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 1000,
+            "init_limit": 5,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-ce-5-penalized",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-ce-5-penalized",
+                "wins": 907,
+                "total_reward": -186,
+                "average_response": 1.611,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.868
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 1093,
+                "total_reward": 186,
+                "average_response": 0.012,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.004
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --rand=2 --n=1000 --pA-style=alpha_zero-small-penalized-1 --init-limit=1",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 2,
+            "initial": null,
+            "num_repetitions": 1000,
+            "init_limit": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-small-penalized-1",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-small-penalized-1",
+                "wins": 1311,
+                "total_reward": 622,
+                "average_response": 1.414,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.903
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 689,
+                "total_reward": -622,
+                "average_response": 0.011,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.002
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --rand=2 --n=1000 --pA-style=alpha_zero-small-penalized-1 --init-limit=1",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 2,
+            "initial": null,
+            "num_repetitions": 1000,
+            "init_limit": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-small-penalized-1",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-small-penalized-1",
+                "wins": 1361,
+                "total_reward": 722,
+                "average_response": 1.598,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.812
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 639,
+                "total_reward": -722,
+                "average_response": 0.013,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.003
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --rand=1 --n=1000 --pA-style=alpha_zero-small-penalized-1",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 1000,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-small-penalized-1",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-small-penalized-1",
+                "wins": 906,
+                "total_reward": -188,
+                "average_response": 1.572,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.943
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 1094,
+                "total_reward": 188,
+                "average_response": 0.013,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.003
+            }
+        }
     }
 ]

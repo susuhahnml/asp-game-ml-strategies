@@ -7,7 +7,7 @@ import os
 from py_utils.train_utils import training_data_to_csv, remove_duplicates_training
 from random import randint
 from structures.tree import Tree
-from structures.treeMinmax import TreeMinmax
+from structures.tree_minmax import TreeMinmax
 from structures.action import Action
 class PrunedMinmaxPlayer(Player):
     """

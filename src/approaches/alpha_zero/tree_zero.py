@@ -17,12 +17,15 @@ from structures.state import State, StateExpanded
 from structures.action import Action
 from structures.match import Match
 from structures.step import Step
-from structures.treeMCTS import TreeMCTS,NodeMCTS
+from structures.tree_MCTS import TreeMCTS,NodeMCTS
 from py_utils.logger import log
 import json
 from structures.tree import Tree, NodeBase
 
 class NodeZero(NodeMCTS):
+    """
+    Class representing a node from tree for the Alpha zero approach
+    """
     def __init__(self, step, main_player, dic={}, parent = None, children = []):
         """
         Constructs a node
@@ -37,8 +40,7 @@ class NodeZero(NodeMCTS):
         """
         Returns the ascii representation of the step including the visits and value
         Used for printing
-        """
-        
+        """ 
         p = round(self.prob,2)
         q = round(self.q_value,2)
         t = round(self.t,2)
@@ -52,16 +54,12 @@ class NodeZero(NodeMCTS):
                 s ="〔t:{} n:{} p:{} q:{}〕\nmax:{}\nmin:{}\n{}".format(t,self.n,p,q,self.main_player,other_player,self.step.ascii)
                 return s
 
-    def incremet_value(self,t):
-        # if t > 0:
-        #     v = 1
-        # elif t < 0:
-        #     v = -1
-        # else:
-        #     v = 0
-        self.t = self.t + t
-
     def pis(self,game_def):
+        """
+        Gets a numpy array with the probabilities 
+        for each legal action calculated in the tree
+        and 0 in all illegal actins.
+        """
         try:
             pi = np.zeros(game_def.encoder.action_size)
             for n in self.children:
@@ -72,7 +70,7 @@ class NodeZero(NodeMCTS):
 
 class TreeZero(TreeMCTS):
     """
-    Tree class to handle search trees for games
+    Class representing tree for the Alpha zero approach
     """
     node_class = NodeZero
     def __init__(self,root,game_def,net,main_player="a"):
@@ -80,21 +78,23 @@ class TreeZero(TreeMCTS):
         super().__init__(root,game_def,main_player)
         self.net = net
 
-    def ucb1(self, node, expl, main_player,pi):
-        # pi, v = self.net.predict_state(node.step.state)
-
+    def ucb1(self, node, expl, main_player, pi):
+        """
+        Function to calculate the best node to be visited
+        """
         if node.step.state.is_terminal:
             return 1
         p_model = pi[self.game_def.encoder.actionstr_to_idx[str(node.step.action.action)]]
         if node.n == 0:
             return math.inf
         r = node.q_value 
-        # if node.step.state.control != main_player:
-        #     r = -1*r
         r += expl*p_model*(math.sqrt(node.parent.n/(1+node.n)))
         return r
 
     def rollout(self, node):
+        """
+        Unlike the rollout from MCTS a match is never simulated, the prediction of the network is used instead.
+        """
         state = node.step.state
         p = state.control
         if state.is_terminal:
@@ -103,6 +103,10 @@ class TreeZero(TreeMCTS):
         return v
 
     def tree_traverse(self, node, expl):
+        """
+        Same function as the one in MCTS tree but calculating
+        the networks prediction here to avoid multiple calculations
+        """
         if node.is_leaf:
             if node.n == 0:
                 next_node = node
@@ -122,6 +126,13 @@ class TreeZero(TreeMCTS):
 
     @staticmethod
     def run_episode(game_def, net):
+        """
+        Runs one episode to generate examples.
+        The full episode will run a MCTS simulation in the root
+        if the tree, the choose the best action with the computed
+        probabilities and add this as one example. The process will
+        then be repeated with the new node until a terminal node in reached. It will generate as many examples as steps in the match.
+        """
         examples = []
         state = game_def.get_initial_state()
 
@@ -142,18 +153,9 @@ class TreeZero(TreeMCTS):
             tree.run_mcts(net.args.n_mcts_simulations,expl=3)
             # if j==1: tree.print_in_file("train-{}.png".format(j))
             if root.step.state.is_terminal:
-                # if root.is_almost_terminal:
-                #     print("almost")
-                #     goals = root.children[0].step.state.goals
-                # else: 
                 examples.append((root.step.state,[game_def.encoder.mask_state(current_state), np.zeros(game_def.encoder.action_size), None]))
                 goals = root.step.state.goals
                 v = goals[root.step.state.control]
-                #Clip 
-                # if v > 0:
-                #     v = 1
-                # elif v < 0:
-                #     v = -1
                 for s,e in examples[::-1]:
                     e[2]=v
                     # print("Example: \n{}\n{}\n".format(s,v)) 

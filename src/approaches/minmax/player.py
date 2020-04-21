@@ -1,7 +1,7 @@
 import time
 from structures.players import Player
 from structures.tree import Tree
-from structures.treeMinmax import TreeMinmax
+from structures.tree_minmax import TreeMinmax
 from approaches.minmax.minmax import minmax_from_game_def
 from py_utils.logger import log
 from structures.players import Player

@@ -4318,5 +4318,510 @@
             "std": 0.0,
             "special_results": null
         }
+    },
+    {
+        "command": "load --style=alpha_zero-ce-5-sm --n=1 --game-name=ttt --log=debug --init=initial_S.lp",
+        "args": {
+            "log": "debug",
+            "game_name": "ttt",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": "initial_S.lp",
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "alpha_zero-ce-5-sm"
+        },
+        "initial_state": "control(a).free(cell(1,3)).free(cell(2,1)).free(cell(2,2)).free(cell(2,3)).free(cell(3,1)).free(cell(3,2)).has(a,cell(1,2)).has(b,cell(1,1)).has(b,cell(3,3))",
+        "results": {}
+    },
+    {
+        "command": "load --style=alpha_zero-ce-5-sm --n=1 --game-name=ttt --log=debug --init=initial_S.lp",
+        "args": {
+            "log": "debug",
+            "game_name": "ttt",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": "initial_S.lp",
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "alpha_zero-ce-5-sm"
+        },
+        "initial_state": "control(a).free(cell(1,3)).free(cell(2,1)).free(cell(2,2)).free(cell(2,3)).free(cell(3,1)).free(cell(3,2)).has(a,cell(1,2)).has(b,cell(1,1)).has(b,cell(3,3))",
+        "results": {}
+    },
+    {
+        "command": "load --style=alpha_zero-ce-5-sm --n=1 --game-name=ttt --log=debug --init=initial_S.lp",
+        "args": {
+            "log": "debug",
+            "game_name": "ttt",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": "initial_S.lp",
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "alpha_zero-ce-5-sm"
+        },
+        "initial_state": "control(a).free(cell(1,3)).free(cell(2,1)).free(cell(2,2)).free(cell(2,3)).free(cell(3,1)).free(cell(3,2)).has(a,cell(1,2)).has(b,cell(1,1)).has(b,cell(3,3))",
+        "results": {}
+    },
+    {
+        "command": "alpha_zero --game-name=nim --model-name=mse --model-name=small-penalized-mse --n-episodes=30 --n-train=4 --n-vs=1 --penalize-illegal --vis-tree",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "custom",
+            "n_train": 4,
+            "n_episodes": 30,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "small-penalized-mse",
+            "train_rand": null,
+            "vis_tree": true
+        },
+        "initial_state": "control(a).has(1,2).has(2,2).has(3,1).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                244081.997
+            ],
+            "average_build": 244081.997,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --model-name=small-ce --n-episodes=30 --n-train=4 --n-vs=1 --vis-tree",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "custom",
+            "n_train": 4,
+            "n_episodes": 30,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "small-ce",
+            "train_rand": null,
+            "vis_tree": true
+        },
+        "initial_state": "control(a).has(1,2).has(2,2).has(3,1).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                243321.426
+            ],
+            "average_build": 243321.426,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --model-name=small-penalized --n-episodes=30 --n-train=10 --n-vs=1 --penalize-illegal --vis-tree",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "custom",
+            "n_train": 10,
+            "n_episodes": 30,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "small-penalized",
+            "train_rand": null,
+            "vis_tree": true
+        },
+        "initial_state": "control(a).has(1,2).has(2,2).has(3,1).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                513746.817
+            ],
+            "average_build": 513746.817,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "load --game-name=dom --style=alpha_zero-small-penalized --rand=2",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 2,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "alpha_zero-small-penalized"
+        },
+        "initial_state": "RANDOM",
+        "results": {}
+    },
+    {
+        "command": "load --game-name=dom --style=alpha_zero-small-penalized --rand=2",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 2,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "alpha_zero-small-penalized"
+        },
+        "initial_state": "RANDOM",
+        "results": {}
+    },
+    {
+        "command": "load --game-name=nim --style=alpha_zero-small-penalized",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "alpha_zero-small-penalized"
+        },
+        "initial_state": "control(a).has(1,3).has(2,2).has(3,1).has(4,1)",
+        "results": {}
+    },
+    {
+        "command": "load --game-name=dom --style=alpha_zero-ce-5-penalized --rand=1",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "alpha_zero-ce-5-penalized"
+        },
+        "initial_state": "RANDOM",
+        "results": {}
+    },
+    {
+        "command": "load --game-name=dom --style=alpha_zero-ce-5-penalized --rand=1 --n=2",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 2,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "alpha_zero-ce-5-penalized"
+        },
+        "initial_state": "RANDOM",
+        "results": {}
+    },
+    {
+        "command": "load --game-name=dom --style=alpha_zero-ce-5-penalized --rand=1 --n=2",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 2,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "alpha_zero-ce-5-penalized"
+        },
+        "initial_state": "RANDOM",
+        "results": {}
+    },
+    {
+        "command": "load --game-name=dom --style=alpha_zero-ce-5-penalized --rand=1 --n=3",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 3,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "alpha_zero-ce-5-penalized"
+        },
+        "initial_state": "RANDOM",
+        "results": {}
+    },
+    {
+        "command": "load --game-name=dom --style=alpha_zero-ce-5-penalized --rand=1 --n=4",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 4,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "alpha_zero-ce-5-penalized"
+        },
+        "initial_state": "RANDOM",
+        "results": {}
+    },
+    {
+        "command": "load --game-name=dom --style=alpha_zero-ce-5-penalized --rand=1 --n=1",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "alpha_zero-ce-5-penalized"
+        },
+        "initial_state": "RANDOM",
+        "results": {}
+    },
+    {
+        "command": "load --game-name=dom --style=alpha_zero-ce-5-penalized --rand=2 --n=0",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 2,
+            "initial": null,
+            "num_repetitions": 0,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "alpha_zero-ce-5-penalized"
+        },
+        "initial_state": "RANDOM",
+        "results": {}
+    },
+    {
+        "command": "alpha_zero --game-name=nim --model-name=medium-penalized --n-episodes=10 --n-train=1 --n-vs=1 --penalize-illegal --vis-tree",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "custom",
+            "n_train": 1,
+            "n_episodes": 10,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "medium-penalized",
+            "train_rand": null,
+            "vis_tree": true
+        },
+        "initial_state": "control(a).has(1,0).has(2,0).has(3,2).has(4,1)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                11324.755
+            ],
+            "average_build": 11324.755,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "mcts --game-name=nim",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "mcts",
+            "tree_image_file_name": null,
+            "tree_name": null,
+            "train_file": null,
+            "iter": 100,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(b).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                118.292
+            ],
+            "average_build": 118.292,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 17,
+                "save_time": 0.039
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --tree-name=test",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "mcts",
+            "tree_image_file_name": null,
+            "tree_name": "test",
+            "train_file": null,
+            "iter": 100,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(b).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                119.036
+            ],
+            "average_build": 119.036,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 17,
+                "save_time": 0.896
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --tree-name=test",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "mcts",
+            "tree_image_file_name": null,
+            "tree_name": "test",
+            "train_file": null,
+            "iter": 100,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(b).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                141.548
+            ],
+            "average_build": 141.548,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 17,
+                "save_time": 1.23
+            }
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --model-name=medium-penalized --n-episodes=10 --n-train=1 --n-vs=1 --penalize-illegal --vis-tree",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "custom",
+            "n_train": 1,
+            "n_episodes": 10,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "medium-penalized",
+            "train_rand": null,
+            "vis_tree": true
+        },
+        "initial_state": "control(a).has(1,0).has(2,0).has(3,2).has(4,1)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                13362.174
+            ],
+            "average_build": 13362.174,
+            "std": 0.0,
+            "special_results": null
+        }
     }
 ]

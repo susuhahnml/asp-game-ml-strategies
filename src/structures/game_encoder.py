@@ -8,12 +8,29 @@ from structures.step import Step
 from py_utils.logger import log
 
 class GameEncoder:
+    """
+    A class used to encode a game definition and its states and actions
+    into valued vectors using a hot-one encoding
+    """
+    def __init__(self, all_actions, all_obs):
+        """
+        Creates a game encoder from a game_def.
+        Args: 
+            all_actions (list): A list will all the possible actions 
+            all_obs (list): A list with all possible observations (fluents)
 
-    """
-    Creates a game from a game_def.
-    Args: 
-    """
-    def __init__(self, all_actions, all_obs, clip_rewards = False):
+            Automatically computed attributes:
+            actionstr_to_idx (dic): A dictionary that given a string representation 
+                                    of an action will return its index in the vector
+            all_obs (dic): One element is created for each player ordering the
+                           observations based on the player to make representations
+                           equivalent across players
+            obsstr_to_idx (dic): A dictionary that returns the index of an observation
+            
+            action_size (int): Number of actions
+            state_size (int): Number of states (observations)
+
+        """
         #Set all options for actions and observations
         all_actions = [str(a) for a in all_actions]
         self.all_actions = sorted(all_actions)
@@ -26,34 +43,40 @@ class GameEncoder:
             "a": {str(o):i for i,o in enumerate(self.all_obs["a"])},
             "b": {str(o):i for i,o in enumerate(self.all_obs["b"])}
         }
-        self.clip_rewards = clip_rewards
         #Set current state
         self.action_size = len(self.all_actions)
         self.state_size = len(all_obs)
 
-    """
-    Returns a nparray with True in the action and False in the rest
-    """
     def mask_action(self,action):
+        """
+        Returns a nparray with 1 in the action index and 0 in the rest
+
+        Args:
+            action (Action): The action to be masked
+        """
         actions = np.zeros(len(self.all_actions))
         actions[self.actionstr_to_idx[action]] = 1
         return actions
 
-    """
-    Returns a nparray with True in the legal actions and False in the rest
-    """
     def mask_legal_actions(self,state):
+        """
+        Returns a nparray with 1 in the legal actions and 0 in the rest
+        Args:
+            state (StateExpanded): The state with the legal actions
+        """
         actions = np.zeros(self.action_size)
         legal_actions = state.get_symbol_legal_actions()
         for a in legal_actions:
             actions[self.actionstr_to_idx[a]] = 1
         return actions
 
-    """
-    The list defining the current obstervation with the size of all possible fluents.
-    Contains 1 in the position of fluents that are true in the current state
-    """
     def mask_state(self,state,main_player=None):
+        """
+        The list defining the current observation with the size of all possible fluents.
+        Contains 1 in the position of fluents that are true in the given state
+        Args:
+            state (StateExpanded): The state to be masked
+        """
         main_player = state.control if main_player is None else main_player
         obs = np.zeros(self.state_size)
         fluents = state.fluents_str
@@ -62,11 +85,10 @@ class GameEncoder:
             obs[self.obsstr_to_idx[main_player][f]] = 1
         return obs.astype(int)
 
-    """
-    Randomly sample an action from leagal actions in current state.
-    Returns the idx of the action.
-    """
     def sample_random_legal_action(self, state):
+        """
+        Choose one random legal action
+        """
         n_legal = len(state.legal_actions)
         if n_legal==0: # "Cant sample without legal actions"
             return None
@@ -75,17 +97,3 @@ class GameEncoder:
         real_idx = self.actionstr_to_idx[legal_action_str]
 
         return real_idx, legal_action_str
-
-    """
-    Gets a dictionary with the rewards for all players in the current state
-    """
-    @property 
-    def current_rewards(self,state):
-        resdict = defaultdict(int,state.goals)
-        if self.clip_rewards:
-            for key in resdict.keys():
-                if resdict[key] > 0:
-                    resdict[key] = 1
-                elif resdict[key] < 0:
-                    resdict[key] = -1
-        return resdict

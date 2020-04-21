@@ -151,7 +151,7 @@ class Player(abc.ABC):
         """
         raise NotImplementedError
 
-    def show_info(self, initial_states):
+    def show_info(self, initial_states, args):
         """
         Shows the info of a loaded player, can generate visualization and 
         debugging material.

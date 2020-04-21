@@ -78,25 +78,24 @@ class Match:
             'win':-1 if control_goal<0 else 1})
 
     @staticmethod
-    def simulate(game_def, players, depth=None, ran_init=False, signal_on=True,time_out_sec=3,penalize_illegal=False):
+    def simulate(game_def, players, depth=None, time_out_sec=None,penalize_illegal=False):
         """
         Call it with the path to the game definition
 
         Args:
             players (Player,Player): A tuple of the players
 
-            depth:
-                - n: Generate until depth n or terminal state reached
+            depth: Generate until depth or terminal state reached
+            time_out_sec: The number of seconds the player will have to make a move
+            penalize_illegal: True if a selection of an illegal action should be highly
+                              penalized by the player
         """
-
+        signal_on= not time_out_sec is None
         def handler(signum, frame):
             raise TimeoutError("Action time out")
         
         if signal_on: signal.signal(signal.SIGALRM, handler)
-        if(ran_init):
-            initial = game_def.get_random_initial()
-        else:
-            initial = game_def.initial
+        initial = game_def.initial
         state = StateExpanded.from_game_def(game_def,
                         initial,
                         strategy = players[0].strategy)
@@ -140,7 +139,23 @@ class Match:
         return match, {k:round(sum(lst) / (len(lst) if len(lst)>0 else 1),3) for k,lst in response_times.items()}
 
     @staticmethod
-    def vs(game_def, n, player_encounters,initial_states,styles,signal_on=False,time_out_sec=3,penalize_illegal=False):
+    def vs(game_def, n, player_encounters,initial_states,styles,time_out_sec=None,penalize_illegal=False):
+        """
+        Plays every encounter of players in a series of matches using the initial
+        states. Returns a dictionary with the benchamarks
+
+        Args:
+            game_def: Definition for the game
+            n: Number of times the players will confrot each other
+            player_enconters: A list of tuples with the players (subclasses of Player)
+                            where every tuple indicates a confrontation.
+            initial_states: List of all initial states used. The list will circle if 
+                            the n is grater than the list size
+            styles: The styles of the players, used for the results
+            time_out_sec: The number of seconds the player will have to make a move
+            penalize_illegal: True if a selection of an illegal action should be highly
+                              penalized by the player
+        """
         scores = [
             {'wins':0,'draws':0,'points':0,'response_times':[],"matches_lost_by_illegal":0,"time_steps_lost_by_illegal":set()},
             {'wins':0,'draws':0,'points':0,'response_times':[],"matches_lost_by_illegal":0,
@@ -149,7 +164,7 @@ class Match:
             for turn, vs in enumerate(player_encounters):
                 idx = {'a':0+turn,'b':1-turn}
                 game_def.initial = initial_states[i%len(initial_states)]
-                match, metrics = Match.simulate(game_def,vs,ran_init=False,signal_on=signal_on,time_out_sec=time_out_sec,penalize_illegal=penalize_illegal)
+                match, metrics = Match.simulate(game_def,vs,time_out_sec=time_out_sec,penalize_illegal=penalize_illegal)
                 goals = match.goals
                 for l,g in goals.items():
                     scores[idx[l]]['points']+=g

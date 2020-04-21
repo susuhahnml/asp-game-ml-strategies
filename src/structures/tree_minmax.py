@@ -17,6 +17,12 @@ from py_utils.logger import log
 import json
 from structures.tree import Tree, NodeBase
 class NodeMinmax(NodeBase):
+    """
+    Class representing a node from a tree tree for the Minimax algorithm
+    Args:
+        step: The step in the node with an state and the action performed
+              in such state to take the game to this node
+    """
     def __init__(self, step, main_player, dic={}, parent = None, children = []):
         super().__init__(step,main_player=main_player,parent=parent, children=children)
         self.score = 0 if not "score" in dic else dic["score"]
@@ -28,6 +34,9 @@ class NodeMinmax(NodeBase):
         dic["score"] = self.score
 
     def set_score(self,score):
+        """
+        Sets the score of the node
+        """
         self.score = score
 
     @property
@@ -41,7 +50,6 @@ class NodeMinmax(NodeBase):
                 return "〔score {}〕\n{}".format(self.score, self.step.ascii)
             else:
                 if(self.step.state.is_terminal):
-                    # return ("Terminal:({})\n{}".format(self.score,self.state.ascii))
                     return ("〔score {}〕".format(self.score))
                 else:
                     other_player = "b" if self.main_player=="a" else "a"
@@ -50,7 +58,10 @@ class NodeMinmax(NodeBase):
         else:
             return ""
 
-    def style(self,parent=None):
+    def style(self):
+        """
+        Returns the style for the tree visualization
+        """
         format_str = NodeBase.style(self)
         if self.score is None:
             format_str += ' fillcolor="#FEFEFE"'
