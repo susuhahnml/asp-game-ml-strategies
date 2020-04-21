@@ -8,8 +8,8 @@ from py_utils.colors import bcolors, paint
 from structures.players import Player, IllegalActionError
 import numpy as np
 from structures.match import Match
-from approaches.alpha_zero.treeZero import TreeZero
-from approaches.alpha_zero.treeNet import TreeNet
+from approaches.alpha_zero.tree_zero import TreeZero
+from structures.tree_net import TreeNet
 from structures.step import Step
 from approaches.alpha_zero.net_alpha import NetAlpha
 from random import randint
@@ -108,6 +108,8 @@ class AlphaZero(Player):
                             help="Name of the model, used for saving and logging")
         approach_parser.add_argument("--train-rand", type=int, default=None,
         help="Random seed for creating initial states in training net")
+        approach_parser.add_argument("--vis-tree", default=False, action='store_true',
+        help="A visualization of each tree will be saved in every improved network")
 
 
     @staticmethod
@@ -152,12 +154,6 @@ class AlphaZero(Player):
             log.info("Comparing networks...")
             p_old = AlphaZero(game_def,"training_old","a",best_net)
             p_new = AlphaZero(game_def,"training_new","a",new_net)
-            #Visualize nets
-            game_def.initial=initial_states[0]
-            state = game_def.get_initial_state()
-            # p_old.visualize_net(state,"train-{}-iter-{}-old".format(best_net.model_name,i))
-            # p_new.visualize_net(state,"train-{}-iter-{}-new".format(new_net.model_name,i))
-
             benchmarks = Match.vs(game_def,args.n_vs,[[p_old,p_new],[p_new,p_old]],initial_states,["old_net","new_net"],penalize_illegal=args.penalize_illegal)
             log.info(benchmarks)
             new_wins = benchmarks["b"]["wins"]
@@ -172,19 +168,29 @@ class AlphaZero(Player):
                 log.info("{}--------------- New network is better {}vs{}------------------{}".format(bcolors.FAIL,new_wins,old_wins,bcolors.ENDC))
                 best_net = new_net
                 best_net.save_model()
-                p_new.visualize_net(state,"train-{}-iter-{}-new".format(new_net.model_name,i))
+                if args.vis_tree:
+                    # Visualizing tree of best net
+                    game_def.initial=initial_states[0]
+                    state = game_def.get_initial_state()
+                    p_new.visualize_net(state,"train-{}-iter-{}-new".format(new_net.model_name,i))
 
 
         log.info("Saving model")
         best_net.save_model()
 
     def visualize_net(self, state,name=None):
+        """
+        Visualizes the network of the player
+        """
         tree = TreeNet.generate_from(self.game_def,self.net,state)
         name = self.name if name is None else name
         tree.print_in_file("{}/{}.png".format(self.game_def.name, name))
 
-    def show_info(self, initial_states):
-        self.game_def.initial=initial_states[0]
+    def show_info(self, initial_states, args):
+        """
+        Shows the information for a loaded player
+        """
+        self.game_def.initial=initial_states[args.num_repetitions%len(initial_states)]
         state = self.game_def.get_initial_state()
         self.visualize_net(state)
 
@@ -208,7 +214,6 @@ class AlphaZero(Player):
         # Require best prediction to be legal
         if(legal_actions_masked[best_idx]==0 and penalize_illegal):
             raise IllegalActionError("Invalid action",str(self.game_def.encoder.all_actions[best_idx]))
-        
 
         # Check best prediction from all legal
         legal_actions_pi = legal_actions_masked*pi
@@ -220,6 +225,5 @@ class AlphaZero(Player):
             best_idx = np.argmax(legal_actions_pi)
             best_name = self.game_def.encoder.all_actions[best_idx]
             legal_action = state.get_legal_action_from_str(str(best_name))
-        # log.info("Best prediction of {} with proba {}: \n{}".format(self.name,round(pi[best_idx],2),Step(state,legal_action,0).ascii))
         return legal_action
 

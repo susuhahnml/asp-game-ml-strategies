@@ -55,6 +55,7 @@ class GameDef():
                 the default initial state
             constants (dic str->str): The dictionary of constants that must 
                 be passed to clingo on each execution.
+            encoder (GameEncoder): Object to encode states an actions in hot-one
         """
         self.name = name
         self.path = "./game_definitions/"+name

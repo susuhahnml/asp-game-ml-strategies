@@ -4,7 +4,7 @@ from collections import defaultdict
 import clingo
 import operator
 from structures.match import Match
-from structures.treeMinmax import TreeMinmax
+from structures.tree_minmax import TreeMinmax
 from anytree import RenderTree
 from py_utils.clingo_utils import Context, generate_example, generate_rule, get_new_control
 from py_utils.logger import log

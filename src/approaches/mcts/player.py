@@ -2,7 +2,7 @@ import os
 import time
 from structures.players import Player
 from structures.tree import Tree
-from structures.treeMCTS import TreeMCTS
+from structures.tree_MCTS import TreeMCTS
 from py_utils.logger import log
 from structures.players import Player
 from random import randint
@@ -127,6 +127,13 @@ class MCTSPlayer(Player):
         return {
             'number_of_nodes':n_nodes,
             'save_time':save_time}
+
+    def show_info(self, initial_states, args):
+        """
+        Shows the information for a loaded player
+        """
+        self.game_def.initial=initial_states[args.num_repetitions%len(initial_states)]
+        state = self.game_def.get_initial_state()
 
     def choose_action(self,state,time_step=None,penalize_illegal=False):
         """

@@ -32,6 +32,9 @@ class Step:
         return eq
 
     def next_state(self):
+        """
+        Gets the next state after performing the action if the step
+        """
         if self.action is None:
             raise RuntimeError("Traing to get next step for step without action")
         return self.state.get_next(self.action)

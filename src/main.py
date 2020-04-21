@@ -31,6 +31,8 @@ def add_default_params(parser):
         help="The name of the file with the initial state inside the game definition.")
     parser.add_argument("--num-repetitions","--n", type=int, default=1,
         help="Number of times the process will be repeated")
+    parser.add_argument("--init-limit", type=int, default=None,
+        help="Limit for the initial states, when used random initial states the random list will be cutetd after this number of elements")
     parser.add_argument("--benchmark-output-file", "--out",type=str, default="console",
         help="Output file to save the benchmarks of the process that was runned")
     parser.add_argument("--penalize-illegal", default=False, action='store_true',
@@ -102,6 +104,9 @@ if __name__ == "__main__":
         log.info("Using default initial state {}".format(game_def.initial))
         initial_states = [game_def.initial]
 
+    if using_random and not args.init_limit is None:
+        assert args.init_limit<len(initial_states)
+        initial_states = initial_states[:args.init_limit]
     # ---------------------------- Computing VS ----------------------------
 
     if args.selected_approach == 'vs':
@@ -127,7 +132,7 @@ if __name__ == "__main__":
         style = args.style
         log.info("Loading player {}".format(style))
         player = Player.from_name_style(game_def,style,'a')
-        player.show_info(initial_states)
+        player.show_info(initial_states,args)
         benchmarks ={}
 
     # ---------------------------- Computing Build for Approach ----------------------------

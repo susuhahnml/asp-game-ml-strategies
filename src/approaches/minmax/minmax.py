@@ -10,7 +10,7 @@ from structures.match import Match
 from structures.step import Step
 from py_utils.logger import log
 from structures.tree import Tree, NodeBase
-from structures.treeMinmax import TreeMinmax, NodeMinmax
+from structures.tree_minmax import TreeMinmax, NodeMinmax
 
 def minmax_from_game_def(game_def, initial_state = None, main_player="a"):
     """

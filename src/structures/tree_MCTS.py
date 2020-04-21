@@ -21,11 +21,17 @@ import json
 from structures.tree import Tree, NodeBase
 
 class NodeMCTS(NodeBase):
+    """
+    Class representing a node from a tree tree for a Monte Carlo Tree search
+    Args:
+        step: The step in the node with an state and the action performed
+              in such state to take the game to this node
+    """
     def __init__(self, step, main_player, dic={}, parent = None, children = []):
         """
         Constructs a node
         Args:
-            t: Value calculated with back prop
+            t: Value calculated with back prop. It is wrt the player in turn in the node
             n: Number of times it has been visited
         """
         super().__init__(step,main_player=main_player,parent=parent, children=children)
@@ -40,13 +46,22 @@ class NodeMCTS(NodeBase):
         dic["n"] = self.n
 
     def incremet_visits(self):
+        """
+        Increments the number of visits to the node
+        """
         self.n = self.n + 1
 
     def incremet_value(self,t):
+        """
+        Increments the value of the node by t
+        """
         self.t = self.t + t
 
     @property
     def prob(self):
+        """
+        Returns the probability of the node based on the parents visits
+        """
         parent_n = self.n if self.parent is None else (self.parent.n-1)
         if(self.n==0):
             return 1
@@ -54,12 +69,13 @@ class NodeMCTS(NodeBase):
     
     @property
     def q_value(self):
+        """
+        Returns the q value of the node. The average reward when this node 
+        is visited
+        """
         visited = self.n if self.n>0 else 1
         return self.t/visited
     
-    @property
-    def is_almost_terminal(self):
-        return len(self.children)==1 and self.children[0].step.action is None
         
     @property
     def ascii(self):
@@ -82,21 +98,18 @@ class NodeMCTS(NodeBase):
 
 
     def style(self,parent):
+        """
+        Returns the style of the node for visualization
+        """
         format_str = NodeBase.style(self)
         if parent is None:
             return format_str
-        # a = self.q_value
-        # base = ' fillcolor="#00FF00{}"' if a>0 else ' fillcolor="#FF0000{}"'
-        # final = 0.8*(-a) if a<0 else (a)*0.2
-        # medium_prob=1/len(parent.step.state.legal_actions)
-        a = self.prob
-        # base = ' fillcolor="#00FF00{}"' if a>medium_prob else ' fillcolor="#FF0000{}"'
-        # final = 0.8-a if a<0.5 else a -0.2
-        # alpha = "{0:0=2d}".format(int(final*100))
-        if a==1:
-            base = ' fillcolor="#466BCB"'
+        base = ' fillcolor="#466BCB{}"'
+        a = self.p
+        if a>0.98:
+            base = base[:-3]+'"'
         else:
-            base = ' fillcolor="#466BCB{}"'.format(a*100)
+            base = base.format(a*100)
         
         format_str += base
         return format_str
@@ -106,27 +119,38 @@ class NodeMCTS(NodeBase):
 
 class TreeMCTS(Tree):
     """
-    Tree class to handle search trees for games
+    Class representing a tree for a Monte Carlo Tree search
     """
     node_class = NodeMCTS
     def __init__(self,root,game_def,main_player="a"):
-        """ Initialize with empty root node and game class """
+        """ 
+        Initialize with empty root node and game class 
+        """
         super().__init__(root,main_player)
         self.game_def = game_def
         self.pa = RandomPlayer(game_def,"random",main_player)
         self.pb = RandomPlayer(game_def,"random",main_player)
 
     def get_best_action(self,node):
+        """
+        Gets the best action for a given node
+        """
         next_n =  max(node.children, key=lambda n: n.n)
         return next_n.step.action
         
     def get_train_list(self):
+        """
+        Gets a list for generating training data
+        """
         dic = {}
         for n in self.root.children:
             self.add_to_training_dic(dic,n)
         return dic.values()
 
     def add_to_training_dic(self,dic,node):
+        """
+        Adds the information from a node to a dictionary
+        """
         if node.step in dic:
             log.info("Duplicated step")
             log.info(node.step)
@@ -144,85 +168,6 @@ class TreeMCTS(Tree):
         for n in next_nodes:
             self.add_to_training_dic(dic,n)
         
-
-    def run_mcts(self, n_iter, initial_node = None, expl=3 ):
-        node = self.root if initial_node is None else initial_node
-        current_state = node.step.state
-        for a in current_state.legal_actions:
-            step = Step(current_state,a,node.step.time_step)
-            self.__class__.node_class(step,self.main_player,parent=node)
-        
-        old_q = np.array([])
-        for i in range(n_iter):
-            self.tree_traverse(self.root,expl)
-            if i%20==0:
-                new_q = np.array([n.q_value for n in self.root.leaves])
-                if np.array_equal(new_q,old_q):
-                    break
-                old_q=new_q
-
-    def ucb1(self,node,expl,main_player):
-        if node.n == 0:
-            return math.inf
-        r = node.q_value 
-        # if node.step.state.control != main_player:
-        #     r = -1*r
-        # r += expl*(math.sqrt(math.log(node.parent.n)/node.n))
-        r += expl*(math.sqrt(node.parent.n/(1+node.n)))
-        return r
-
-    def tree_traverse(self, node, expl):
-        if node.is_leaf:
-            if node.n == 0:
-                next_node = node
-            else:
-                self.expand(node)
-                if node.is_leaf:
-                    #Terminal state
-                    next_node = node
-                else:
-                    #Go te first node
-                    next_node = node.children[0]
-            v = self.rollout(next_node)
-            self.backprop(next_node,v)
-        else:
-            next_node = max(node.children,key= lambda x:self.ucb1(x,expl,self.main_player)) 
-            self.tree_traverse(next_node,expl=expl)
-    
-    def expand(self, node):
-        #Add one child per legal action
-        if node.step.state.is_terminal:
-            return
-        current_action = node.step.action
-        current_state = node.step.state.get_next(current_action)
-        for a in current_state.legal_actions:
-            step =Step(current_state,a,node.step.time_step)
-            self.__class__.node_class(step,self.main_player,parent=node)
-        if current_state.is_terminal:
-            step =Step(current_state,None,node.step.time_step)
-            self.__class__.node_class(step,self.main_player,parent=node)
-        
-        
-
-    def rollout(self, node):
-        state = node.step.state
-        p = state.control
-        if state.is_terminal:
-            return state.goals[p]
-        state = state.get_next(node.step.action)
-        self.game_def.initial = state.to_facts()
-        match, benchmarks = Match.simulate(self.game_def,[self.pa,self.pb],signal_on =False)
-        return match.goals[p]
-
-    def backprop(self, node, v):
-        while(not node is None):
-            node.incremet_visits()
-            node.incremet_value(v)
-            node = node.parent
-            v=-v
-        pass
-
-    
     def save_values_in_file(self,file_path):
         """
         Saves the tree states as a dictionary to define best scores
@@ -239,6 +184,112 @@ class TreeMCTS(Tree):
         final_json = {'main_player':self.main_player,'tree_values':state_dic}
         os.makedirs(os.path.dirname(file_path), exist_ok=True)
         with open(file_path, 'w') as feedsjson:
-            json.dump(final_json, feedsjson, indent=4)
+            json.dump(final_json, feedsjson, indent=4)   
+
+    ################## Standar functions for MCTS 
+
+    def run_mcts(self, n_iter, initial_node = None, expl=3 , check_early_stop=20):
+        """
+        Runs a MCTS
+
+        Args:
+            n_iter: Number of iterations to run the simulation
+            inital_node: The initial node used as root
+            expl: The exploration factor for the calculation of ubc1
+            check_early_stop: After this number if iterations 
+                              it will check if the tree has been updated
+                              If the tree stays the same will reach an early stop.
+        """
+        node = self.root if initial_node is None else initial_node
+        current_state = node.step.state
+        for a in current_state.legal_actions:
+            step = Step(current_state,a,node.step.time_step)
+            self.__class__.node_class(step,self.main_player,parent=node)
+        
+        old_q = np.array([])
+        for i in range(n_iter):
+            self.tree_traverse(self.root,expl)
+            if i%20==0:
+                new_q = np.array([n.q_value for n in self.root.leaves])
+                if np.array_equal(new_q,old_q):
+                    break
+                old_q=new_q
+
+    def ucb1(self, node, expl):
+        """
+        Function to calculate the likelyhood of a node to be visited
+        """
+        if node.n == 0:
+            return math.inf
+        r = node.q_value 
+        r += expl*(math.sqrt(node.parent.n/(1+node.n)))
+        return r
+
+    def tree_traverse(self, node, expl):
+        """
+        Transvers the tree from the given node.
+        """
+        if node.is_leaf:
+            if node.n == 0:
+                next_node = node
+            else:
+                self.expand(node)
+                if node.is_leaf:
+                    #Terminal state
+                    next_node = node
+                else:
+                    #Go te first node
+                    next_node = node.children[0]
+            v = self.rollout(next_node)
+            self.backprop(next_node,v)
+        else:
+            next_node = max(node.children,key= lambda x:self.ucb1(x,expl)) 
+            self.tree_traverse(next_node,expl=expl)
+    
+    def expand(self, node):
+        """
+        Expands the node with the possible children given the legal actions
+        """
+        #Add one child per legal action
+        if node.step.state.is_terminal:
+            return
+        current_action = node.step.action
+        current_state = node.step.state.get_next(current_action)
+        for a in current_state.legal_actions:
+            step =Step(current_state,a,node.step.time_step)
+            self.__class__.node_class(step,self.main_player,parent=node)
+        if current_state.is_terminal:
+            step =Step(current_state,None,node.step.time_step)
+            self.__class__.node_class(step,self.main_player,parent=node)
+         
+    def rollout(self, node):
+        """
+        Makes a rollout, if the node is terminal returns the goals if not, 
+        it simulates a match and returns the reached goals.
+        """
+        state = node.step.state
+        p = state.control
+        if state.is_terminal:
+            return state.goals[p]
+        state = state.get_next(node.step.action)
+        self.game_def.initial = state.to_facts()
+        match, benchmarks = Match.simulate(self.game_def,[self.pa,self.pb])
+        return match.goals[p]
+
+    def backprop(self, node, v):
+        """
+        Propagates the value up the tree starting from the node.
+        The value will be switch symbol to always represent the
+        reward from the point of view of the player in turn in the
+        each node.
+        """
+        while(not node is None):
+            node.incremet_visits()
+            node.incremet_value(v)
+            node = node.parent
+            v=-v
+        pass
+
+
 
     
