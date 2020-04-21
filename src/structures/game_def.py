@@ -10,7 +10,8 @@ from py_utils.logger import log
 import os
 from structures.state import StateExpanded
 from importlib.machinery import SourceFileLoader
-
+from structures.game_encoder import GameEncoder
+from py_utils.clingo_utils import has_player_ref
 def game_def_sub_classes():
     """
     Obtains all the classes with different game_definitions 
@@ -54,6 +55,7 @@ class GameDef():
                 the default initial state
             constants (dic str->str): The dictionary of constants that must 
                 be passed to clingo on each execution.
+            encoder (GameEncoder): Object to encode states an actions in hot-one
         """
         self.name = name
         self.path = "./game_definitions/"+name
@@ -68,6 +70,10 @@ class GameDef():
             self.initial = self.path + "/default_initial.lp"
         else:
             self.initial = initial
+        
+        all_actions, all_obs = get_all_possible(self)
+        self.encoder = GameEncoder(all_actions,all_obs)
+
 
 
     @classmethod
@@ -167,7 +173,7 @@ class GameDef():
             self.random_init = get_all_models(self, self.path + "/all_initial.lp")
         return random.choice(self.random_init)
 
-    def get_initial_state(self):
+    def get_initial_state(self,initial_state=None):
         """
         Gets the initial state as a class of State
         Returns:

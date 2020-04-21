@@ -148,7 +148,6 @@
             ],
             "average_build": 979.735,
             "std": 1091.336,
-            
             "special_results": {
                 "save_time": 0.409,
                 "number_of_nodes_prop": 0.21,
@@ -358,7 +357,7 @@
             "std": 0.0,
             "special_results": {
                 "number_of_nodes": 2675,
-                "number_of_nodes_prop": 0.04, 
+                "number_of_nodes_prop": 0.04,
                 "save_time": 44.303
             }
         }
@@ -464,7 +463,7 @@
             "std": 34.327,
             "special_results": {
                 "number_of_nodes": 896,
-                "number_of_nodes_prop ":1,
+                "number_of_nodes_prop ": 1,
                 "save_time": 10.604
             }
         }
@@ -503,7 +502,7 @@
             "std": 38.642,
             "special_results": {
                 "number_of_nodes": 105,
-                "number_of_nodes_prop ":0.11,
+                "number_of_nodes_prop ": 0.11,
                 "save_time": 2.523
             }
         }
@@ -542,7 +541,7 @@
             "std": 49.421,
             "special_results": {
                 "number_of_nodes": 109,
-                "number_of_nodes_prop ":0.12,
+                "number_of_nodes_prop ": 0.12,
                 "save_time": 2.32
             }
         }
@@ -585,7 +584,7 @@
             "std": 775.432,
             "special_results": {
                 "save_time": 0.52,
-                "number_of_nodes_prop ":0.11
+                "number_of_nodes_prop ": 0.11
             }
         }
     },
@@ -616,7 +615,7 @@
             "std": 375.229,
             "special_results": {
                 "number_of_nodes": 7583,
-                "number_of_nodes_prop ":1,
+                "number_of_nodes_prop ": 1,
                 "save_time": 85.296
             }
         }
@@ -757,7 +756,7 @@
             "std": 0.0,
             "special_results": {
                 "number_of_nodes": 59704,
-                "number_of_nodes_prop":1,
+                "number_of_nodes_prop": 1,
                 "save_time": 658.554
             }
         }
@@ -791,7 +790,7 @@
             "std": 0.0,
             "special_results": {
                 "number_of_nodes": 2835,
-                "number_of_nodes_prop":0.04,
+                "number_of_nodes_prop": 0.04,
                 "save_time": 58.398
             }
         }
@@ -825,7 +824,7 @@
             "std": 0.0,
             "special_results": {
                 "number_of_nodes": 2399,
-                "number_of_nodes_prop":0.04,
+                "number_of_nodes_prop": 0.04,
                 "save_time": 23.344
             }
         }
@@ -1092,6 +1091,3737 @@
                 "save_time": 29.287
             }
         }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(b).has(1,0).has(2,0).has(3,2).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                8570.611
+            ],
+            "average_build": 8570.611,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 14,
+                "save_time": 135.648
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(b).has(1,0).has(2,0).has(3,2).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                11575.255
+            ],
+            "average_build": 11575.255,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 15,
+                "save_time": 127.54
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(b).has(1,0).has(2,0).has(3,2).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                8603.708
+            ],
+            "average_build": 8603.708,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 15,
+                "save_time": 97.321
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(b).has(1,0).has(2,0).has(3,2).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                9379.954
+            ],
+            "average_build": 9379.954,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 15,
+                "save_time": 87.221
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(b).has(1,0).has(2,0).has(3,1).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                8768.774
+            ],
+            "average_build": 8768.774,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 15,
+                "save_time": 122.855
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(b).has(1,0).has(2,0).has(3,2).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                8743.322
+            ],
+            "average_build": 8743.322,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 14,
+                "save_time": 100.436
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=5000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 5000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(b).has(1,0).has(2,0).has(3,2).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                43610.761
+            ],
+            "average_build": 43610.761,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 14,
+                "save_time": 129.0
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                8155.029
+            ],
+            "average_build": 8155.029,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 14,
+                "save_time": 102.233
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=ttt --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "ttt",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(a).free(cell(1,2)).free(cell(2,1)).free(cell(2,3)).free(cell(3,2)).free(cell(3,3)).has(a,cell(2,2)).has(a,cell(3,1)).has(b,cell(1,1)).has(b,cell(1,3))",
+        "results": {
+            "player": "mcts",
+            "build": [
+                30930.278
+            ],
+            "average_build": 30930.278,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 1762,
+                "save_time": 7429.258
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=ttt --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "ttt",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(a).has(a,cell(1,2)).has(a,cell(2,2)).has(a,cell(2,3)).has(a,cell(3,1)).has(b,cell(1,1)).has(b,cell(1,3)).has(b,cell(2,1)).has(b,cell(3,2)).has(b,cell(3,3))",
+        "results": {
+            "player": "mcts",
+            "build": [
+                11283.442
+            ],
+            "average_build": 11283.442,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 268,
+                "save_time": 884.759
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=ttt --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "ttt",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(a).has(a,cell(1,2)).has(a,cell(2,2)).has(a,cell(2,3)).has(a,cell(3,1)).has(b,cell(1,1)).has(b,cell(1,3)).has(b,cell(2,1)).has(b,cell(3,2)).has(b,cell(3,3))",
+        "results": {
+            "player": "mcts",
+            "build": [
+                12186.548
+            ],
+            "average_build": 12186.548,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 249,
+                "save_time": 874.697
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                7665.502
+            ],
+            "average_build": 7665.502,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 14,
+                "save_time": 88.929
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                10053.798
+            ],
+            "average_build": 10053.798,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 14,
+                "save_time": 92.771
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                8508.673
+            ],
+            "average_build": 8508.673,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 14,
+                "save_time": 94.008
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                8151.845
+            ],
+            "average_build": 8151.845,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 14,
+                "save_time": 98.119
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                8822.992
+            ],
+            "average_build": 8822.992,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 14,
+                "save_time": 95.331
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                7415.939
+            ],
+            "average_build": 7415.939,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 14,
+                "save_time": 93.281
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                8234.972
+            ],
+            "average_build": 8234.972,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 14,
+                "save_time": 90.223
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                7210.37
+            ],
+            "average_build": 7210.37,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 14,
+                "save_time": 91.722
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                7176.239
+            ],
+            "average_build": 7176.239,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 14,
+                "save_time": 149.019
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=1000 --tree-img=testP.png --train-file=test.csv",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": "test.csv",
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                7152.425
+            ],
+            "average_build": 7152.425,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 14,
+                "save_time": 92.554
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=1000 --tree-img=testP.png --train-file=test.csv",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": "test.csv",
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                8347.897
+            ],
+            "average_build": 8347.897,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 14,
+                "save_time": 102.381
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=dom --iter=1000 --tree-img=testP.png --train-file=test.csv",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": "test.csv",
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(a).in_hand(a,domino(1,2)).stack(l,0).stack(r,3)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                14162.649
+            ],
+            "average_build": 14162.649,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 45,
+                "save_time": 250.706
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=dom --iter=1000 --train-file=corrected-200games-1000-iter.csv --rand=1 --n=200",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 200,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": null,
+            "tree_name": null,
+            "train_file": "corrected-200games-1000-iter.csv",
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "player": "mcts",
+            "build": [
+                15207.906,
+                13422.226,
+                14969.628,
+                14024.472,
+                15778.095,
+                14360.671,
+                13602.621,
+                13789.649,
+                13207.879,
+                13197.935,
+                12782.353,
+                12921.866,
+                13387.781,
+                13875.531,
+                12682.495,
+                13464.169,
+                12675.711,
+                12816.408,
+                13057.634,
+                14055.334,
+                12589.965,
+                12834.719,
+                12973.29,
+                12876.313,
+                13160.657,
+                12907.167,
+                13064.778,
+                16873.225,
+                14071.316,
+                14392.281,
+                14340.056,
+                14495.395,
+                14679.478,
+                14056.275,
+                14365.85,
+                14103.353,
+                13912.042,
+                14346.862,
+                14522.877,
+                14884.471,
+                13954.58,
+                14687.84,
+                16245.514,
+                14689.515,
+                14500.706,
+                14876.969,
+                14131.169,
+                14526.996,
+                13984.087,
+                16340.037,
+                14988.778,
+                14352.462,
+                14050.263,
+                13979.64,
+                14195.654,
+                14878.085,
+                14179.716,
+                14983.595,
+                14987.929,
+                14516.765,
+                14759.701,
+                14897.894,
+                14248.335,
+                14889.086,
+                14246.596,
+                14531.897,
+                16123.217,
+                14454.496,
+                14824.444,
+                14564.935,
+                14670.231,
+                14328.799,
+                14434.492,
+                16967.996,
+                14274.02,
+                14476.942,
+                14343.978,
+                14827.616,
+                14218.249,
+                13872.929,
+                15314.15,
+                15922.537,
+                16553.481,
+                14790.37,
+                14573.288,
+                14258.585,
+                16708.397,
+                14291.96,
+                14184.835,
+                14013.47,
+                14759.209,
+                13981.873,
+                14479.155,
+                13855.301,
+                14408.342,
+                14262.651,
+                14894.382,
+                16818.622,
+                14718.782,
+                14027.429,
+                14938.585,
+                15222.804,
+                14720.403,
+                14439.97,
+                14729.692,
+                14881.309,
+                13955.471,
+                15185.972,
+                13981.316,
+                13993.274,
+                14184.117,
+                14379.36,
+                14142.947,
+                16072.556,
+                14167.509,
+                14040.396,
+                14731.961,
+                14402.903,
+                14029.19,
+                14368.134,
+                14509.263,
+                14735.328,
+                13774.322,
+                15859.949,
+                14271.181,
+                14411.155,
+                13818.392,
+                12985.292,
+                15125.211,
+                13166.499,
+                13289.0,
+                13144.842,
+                13643.115,
+                14132.409,
+                14089.451,
+                13518.732,
+                13241.021,
+                13971.954,
+                14628.831,
+                14570.092,
+                13088.788,
+                13913.912,
+                12926.844,
+                13233.662,
+                13821.251,
+                13903.991,
+                13237.046,
+                13313.204,
+                13781.07,
+                13609.456,
+                12865.182,
+                13635.53,
+                13875.003,
+                14040.292,
+                13050.73,
+                13384.436,
+                13353.792,
+                13757.1,
+                13617.72,
+                12883.993,
+                13414.275,
+                13096.849,
+                13478.886,
+                14060.859,
+                14067.111,
+                14747.265,
+                14075.994,
+                14238.402,
+                15528.534,
+                15191.888,
+                14596.41,
+                14222.376,
+                14060.601,
+                14749.333,
+                13956.545,
+                16263.342,
+                14835.27,
+                13789.133,
+                14054.182,
+                14124.227,
+                14064.249,
+                15131.12,
+                13960.796,
+                14321.947,
+                14586.662,
+                15124.719,
+                14189.104,
+                15078.263,
+                14208.165,
+                15940.427,
+                13998.96,
+                14322.186,
+                15744.189,
+                14460.31,
+                14600.212,
+                14120.188,
+                14350.726,
+                14175.809,
+                13985.296,
+                16012.685
+            ],
+            "average_build": 14281.141,
+            "std": 852.154,
+            "special_results": {
+                "number_of_nodes": 280,
+                "save_time": 21.391
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=dom --iter=1000 --tree-img=testP.png --train-file=test.csv",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": "test.csv",
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(a).in_hand(a,domino(2,3)).stack(l,0).stack(r,1)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                1092.288
+            ],
+            "average_build": 1092.288,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 49,
+                "save_time": 285.585
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(b).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                264.199
+            ],
+            "average_build": 264.199,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 19,
+                "save_time": 107.974
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(b).has(1,0).has(2,0).has(3,1).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                328.011
+            ],
+            "average_build": 328.011,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 19,
+                "save_time": 147.695
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                299.419
+            ],
+            "average_build": 299.419,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 21,
+                "save_time": 99.98
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                291.555
+            ],
+            "average_build": 291.555,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 21,
+                "save_time": 108.958
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=1000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 1000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                288.389
+            ],
+            "average_build": 288.389,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 21,
+                "save_time": 113.83
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=2000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 2000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                308.62
+            ],
+            "average_build": 308.62,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 21,
+                "save_time": 105.402
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=2000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 2000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                317.754
+            ],
+            "average_build": 317.754,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 21,
+                "save_time": 115.03
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=2000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 2000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                297.39
+            ],
+            "average_build": 297.39,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 21,
+                "save_time": 112.49
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=2000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 2000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                312.173
+            ],
+            "average_build": 312.173,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 21,
+                "save_time": 115.398
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=2000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 2000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                312.573
+            ],
+            "average_build": 312.573,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 21,
+                "save_time": 105.249
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=2000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 2000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                307.224
+            ],
+            "average_build": 307.224,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 21,
+                "save_time": 113.995
+            }
+        }
+    },
+    {
+        "command": "alpha_zero",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "alpha_zero",
+            "architecture": "dense",
+            "n_train": 100,
+            "n_episodes": 3,
+            "n_epochs": 100,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 10,
+            "n_mcts_simulations": 100,
+            "model_name": "unnamed",
+            "rand_init": null
+        },
+        "initial_state": "control(a).has(1,3).has(2,2).has(3,2).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                5393146.99
+            ],
+            "average_build": 5393146.99,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --n-episodes=1 --n-train=2 --n-epochs=10",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "n_train": 2,
+            "n_episodes": 1,
+            "n_epochs": 10,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 30,
+            "n_mcts_simulations": 100,
+            "model_name": "unnamed",
+            "rand_init": null
+        },
+        "initial_state": "control(a).has(1,3).has(2,2).has(3,2).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                19528.184
+            ],
+            "average_build": 19528.184,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --n-episodes=1 --n-train=2 --n-epochs=10 --rand-init=1",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "n_train": 2,
+            "n_episodes": 1,
+            "n_epochs": 10,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 30,
+            "n_mcts_simulations": 100,
+            "model_name": "unnamed",
+            "rand_init": 1
+        },
+        "initial_state": "control(a).has(1,7).has(2,2).has(3,1)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                17064.081
+            ],
+            "average_build": 17064.081,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --n-episodes=1 --n-train=2 --n-epochs=10 --rand-init=1 --game-name=dom",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "n_train": 2,
+            "n_episodes": 1,
+            "n_epochs": 10,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 30,
+            "n_mcts_simulations": 100,
+            "model_name": "unnamed",
+            "rand_init": 1
+        },
+        "initial_state": "control(a).in_hand(a,domino(0,1)).in_hand(a,domino(0,3)).in_hand(a,domino(1,1)).in_hand(a,domino(1,2)).in_hand(a,domino(2,2)).in_hand(b,domino(0,0)).in_hand(b,domino(0,2)).in_hand(b,domino(1,3)).in_hand(b,domino(2,3)).stack(l,3).stack(r,3)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                28526.914
+            ],
+            "average_build": 28526.914,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --n-episodes=1 --n-train=2 --n-epochs=10 --rand-init=1 --game-name=dom",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "n_train": 2,
+            "n_episodes": 1,
+            "n_epochs": 10,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 30,
+            "n_mcts_simulations": 100,
+            "model_name": "unnamed",
+            "rand_init": 1
+        },
+        "initial_state": "control(a).in_hand(a,domino(0,1)).in_hand(a,domino(0,3)).in_hand(a,domino(1,1)).in_hand(a,domino(1,2)).in_hand(a,domino(2,2)).in_hand(b,domino(0,0)).in_hand(b,domino(0,2)).in_hand(b,domino(1,3)).in_hand(b,domino(2,3)).stack(l,3).stack(r,3)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                25295.232
+            ],
+            "average_build": 25295.232,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --n-episodes=1 --n-train=2 --n-epochs=10 --rand-init=1 --game-name=dom",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "n_train": 2,
+            "n_episodes": 1,
+            "n_epochs": 10,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 30,
+            "n_mcts_simulations": 100,
+            "model_name": "unnamed",
+            "rand_init": 1
+        },
+        "initial_state": "control(a).in_hand(a,domino(0,1)).in_hand(a,domino(0,3)).in_hand(a,domino(1,1)).in_hand(a,domino(1,2)).in_hand(a,domino(2,2)).in_hand(b,domino(0,0)).in_hand(b,domino(0,2)).in_hand(b,domino(1,3)).in_hand(b,domino(2,3)).stack(l,3).stack(r,3)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                28369.569
+            ],
+            "average_build": 28369.569,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=dom --loss=mean_squared_error --model-name=vis-test --n-episodes=3 --n-train=1",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "mean_squared_error",
+            "n_train": 1,
+            "n_episodes": 3,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 150,
+            "n_mcts_simulations": 300,
+            "model_name": "vis-test",
+            "train_rand": null
+        },
+        "initial_state": "control(a).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,3)).in_hand(b,domino(0,1)).in_hand(b,domino(0,2)).in_hand(b,domino(0,3)).stack(l,3).stack(r,3)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                33308.891
+            ],
+            "average_build": 33308.891,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --loss=mean_squared_error --model-name=vis-test --n-episodes=50 --n-train=10",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "mean_squared_error",
+            "n_train": 10,
+            "n_episodes": 50,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 150,
+            "n_mcts_simulations": 300,
+            "model_name": "vis-test",
+            "train_rand": null
+        },
+        "initial_state": "control(a).has(1,1).has(2,2).has(3,2).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                1139042.185
+            ],
+            "average_build": 1139042.185,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --loss=mean_squared_error --model-name=vis-test2 --n-episodes=2 --n-train=10 --n-vs=2 --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "mean_squared_error",
+            "n_train": 10,
+            "n_episodes": 2,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 2,
+            "n_mcts_simulations": 300,
+            "model_name": "vis-test2",
+            "train_rand": null
+        },
+        "initial_state": "control(a).has(1,1).has(2,2).has(3,2).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                450129.439
+            ],
+            "average_build": 450129.439,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --loss=mean_squared_error --model-name=vis-test2 --n-episodes=2 --n-train=10 --n-vs=2 --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "mean_squared_error",
+            "n_train": 10,
+            "n_episodes": 2,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 2,
+            "n_mcts_simulations": 300,
+            "model_name": "vis-test2",
+            "train_rand": null
+        },
+        "initial_state": "control(a).has(1,1).has(2,2).has(3,2).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                466081.023
+            ],
+            "average_build": 466081.023,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --loss=mean_squared_error --model-name=vis-test2 --n-episodes=2 --n-train=3 --n-vs=2 --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "mean_squared_error",
+            "n_train": 3,
+            "n_episodes": 2,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 2,
+            "n_mcts_simulations": 300,
+            "model_name": "vis-test2",
+            "train_rand": null
+        },
+        "initial_state": "control(a).has(1,1).has(2,2).has(3,2).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                117417.306
+            ],
+            "average_build": 117417.306,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --loss=mean_squared_error --model-name=vis-test2 --n-episodes=2 --n-train=10 --n-vs=2 --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "mean_squared_error",
+            "n_train": 10,
+            "n_episodes": 2,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 2,
+            "n_mcts_simulations": 300,
+            "model_name": "vis-test2",
+            "train_rand": null
+        },
+        "initial_state": "control(a).has(1,1).has(2,2).has(3,2).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                418221.901
+            ],
+            "average_build": 418221.901,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --loss=mean_squared_error --model-name=vis-test3 --n-episodes=2 --n-train=10 --n-vs=2 --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "mean_squared_error",
+            "n_train": 10,
+            "n_episodes": 2,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 2,
+            "n_mcts_simulations": 300,
+            "model_name": "vis-test3",
+            "train_rand": null
+        },
+        "initial_state": "control(a).has(1,1).has(2,2).has(3,2).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                833709.322
+            ],
+            "average_build": 833709.322,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --loss=mean_squared_error --model-name=vis-test3 --n-episodes=2 --n-train=3 --n-vs=2 --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "mean_squared_error",
+            "n_train": 3,
+            "n_episodes": 2,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 2,
+            "n_mcts_simulations": 300,
+            "model_name": "vis-test3",
+            "train_rand": null
+        },
+        "initial_state": "control(a).has(1,1).has(2,2).has(3,2).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                31768.046
+            ],
+            "average_build": 31768.046,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --loss=mean_squared_error --model-name=lu --n-episodes=3 --n-train=3 --n-vs=1 --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "mean_squared_error",
+            "n_train": 3,
+            "n_episodes": 3,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "lu",
+            "train_rand": null
+        },
+        "initial_state": "control(a).has(1,1).has(2,2).has(3,2).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                43061.84
+            ],
+            "average_build": 43061.84,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --loss=mean_squared_error --model-name=lu --n-episodes=6 --n-train=3 --n-vs=1 --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "mean_squared_error",
+            "n_train": 3,
+            "n_episodes": 6,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "lu",
+            "train_rand": null
+        },
+        "initial_state": "control(a).has(1,1).has(2,2).has(3,2).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                73412.634
+            ],
+            "average_build": 73412.634,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --loss=mean_squared_error --model-name=lu --n-episodes=9 --n-train=3 --n-vs=1 --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "mean_squared_error",
+            "n_train": 3,
+            "n_episodes": 9,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "lu",
+            "train_rand": null
+        },
+        "initial_state": "control(a).has(1,1).has(2,2).has(3,2).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                88914.097
+            ],
+            "average_build": 88914.097,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --loss=mean_squared_error --model-name=lu --n-episodes=9 --n-train=10 --n-vs=1 --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "mean_squared_error",
+            "n_train": 10,
+            "n_episodes": 9,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "lu",
+            "train_rand": null
+        },
+        "initial_state": "control(a).has(1,1).has(2,2).has(3,2).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                322215.031
+            ],
+            "average_build": 322215.031,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=dom --loss=mean_squared_error --model-name=lu --n-episodes=9 --n-train=10 --n-vs=1 --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "mean_squared_error",
+            "n_train": 10,
+            "n_episodes": 9,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "lu",
+            "train_rand": null
+        },
+        "initial_state": "control(a).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,3)).in_hand(b,domino(0,1)).in_hand(b,domino(0,2)).in_hand(b,domino(0,3)).stack(l,3).stack(r,3)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                686117.937
+            ],
+            "average_build": 686117.937,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --loss=mean_squared_error --model-name=mse --n-episodes=9 --n-train=2 --n-vs=1 --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "mean_squared_error",
+            "n_train": 2,
+            "n_episodes": 9,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "mse",
+            "train_rand": null
+        },
+        "initial_state": "control(a).has(1,1).has(2,2).has(3,2).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                145587.579
+            ],
+            "average_build": 145587.579,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --loss=mean_squared_error --model-name=mse --n-episodes=9 --n-train=2 --n-vs=1 --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "mean_squared_error",
+            "n_train": 2,
+            "n_episodes": 9,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "mse",
+            "train_rand": null
+        },
+        "initial_state": "control(a).has(1,1).has(2,2).has(3,2).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                116235.712
+            ],
+            "average_build": 116235.712,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "load --style=alpha_zero-mse --n=1 --game-name=nim --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "load",
+            "style": "alpha_zero-mse"
+        },
+        "initial_state": "control(a).has(1,1).has(2,2).has(3,2).has(4,0)",
+        "results": {}
+    },
+    {
+        "command": "alpha_zero --game-name=nim --model-name=custom-loss --n-episodes=9 --n-train=3 --n-vs=1 --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "custom",
+            "n_train": 3,
+            "n_episodes": 9,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "custom-loss",
+            "train_rand": null
+        },
+        "initial_state": "control(a).has(1,1).has(2,2).has(3,2).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                157143.621
+            ],
+            "average_build": 157143.621,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --model-name=invalid-actions --n-episodes=9 --n-train=3 --n-vs=1 --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "custom",
+            "n_train": 3,
+            "n_episodes": 9,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "invalid-actions",
+            "train_rand": null
+        },
+        "initial_state": "control(a).has(1,1).has(2,2).has(3,2).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                176244.657
+            ],
+            "average_build": 176244.657,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=dom --n-vs=1 --model-name=ce-1 --n-episodes=1 --n-train=1",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "custom",
+            "n_train": 1,
+            "n_episodes": 1,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "ce-1",
+            "train_rand": null
+        },
+        "initial_state": "control(a).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,3)).in_hand(b,domino(0,1)).in_hand(b,domino(0,2)).in_hand(b,domino(0,3)).stack(l,3).stack(r,3)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                13601.368
+            ],
+            "average_build": 13601.368,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=dom --n-vs=5 --model-name=mse-5 --n-episodes=1 --n-train=1 --rand=1",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "custom",
+            "n_train": 1,
+            "n_episodes": 1,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 5,
+            "n_mcts_simulations": 300,
+            "model_name": "mse-5",
+            "train_rand": null
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                65037.873
+            ],
+            "average_build": 65037.873,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=dom --n-vs=5 --model-name=mse-5 --n-episodes=1 --n-train=1 --rand=1 --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "custom",
+            "n_train": 1,
+            "n_episodes": 1,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 5,
+            "n_mcts_simulations": 300,
+            "model_name": "mse-5",
+            "train_rand": null
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                49656.405
+            ],
+            "average_build": 49656.405,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --loss=mean_squared_error --model-name=mse --n-episodes=9 --n-train=2 --n-vs=1 --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "mean_squared_error",
+            "n_train": 2,
+            "n_episodes": 9,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "mse",
+            "train_rand": null
+        },
+        "initial_state": "control(a).has(1,1).has(2,2).has(3,2).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                58318.476
+            ],
+            "average_build": 58318.476,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --loss=mean_squared_error --model-name=mse --n-episodes=9 --n-train=2 --n-vs=1 --log=debug --penalize-illegal",
+        "args": {
+            "log": "debug",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "mean_squared_error",
+            "n_train": 2,
+            "n_episodes": 9,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "mse",
+            "train_rand": null
+        },
+        "initial_state": "control(a).has(1,1).has(2,2).has(3,2).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                83219.51
+            ],
+            "average_build": 83219.51,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --loss=mean_squared_error --model-name=mse --n-episodes=9 --n-train=2 --n-vs=1 --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "mean_squared_error",
+            "n_train": 2,
+            "n_episodes": 9,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "mse",
+            "train_rand": null
+        },
+        "initial_state": "control(a).has(1,1).has(2,2).has(3,2).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                50692.602
+            ],
+            "average_build": 50692.602,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --loss=mean_squared_error --model-name=mse --n-episodes=20 --n-train=2 --n-vs=1 --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "mean_squared_error",
+            "n_train": 2,
+            "n_episodes": 20,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "mse",
+            "train_rand": null
+        },
+        "initial_state": "control(a).has(1,1).has(2,2).has(3,2).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                99102.891
+            ],
+            "average_build": 99102.891,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=dom --model-name=test --n-episodes=20 --n-train=2 --n-vs=1 --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "custom",
+            "n_train": 2,
+            "n_episodes": 20,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "test",
+            "train_rand": null
+        },
+        "initial_state": "control(a).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,3)).in_hand(b,domino(0,1)).in_hand(b,domino(0,2)).in_hand(b,domino(0,3)).stack(l,3).stack(r,3)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                120913.076
+            ],
+            "average_build": 120913.076,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=2000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 2000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(b).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                1599.455
+            ],
+            "average_build": 1599.455,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 174,
+                "save_time": 484.207
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=2000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 2000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(b).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                1793.201
+            ],
+            "average_build": 1793.201,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 202,
+                "save_time": 529.533
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=2000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 2000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(b).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                2274.142
+            ],
+            "average_build": 2274.142,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 178,
+                "save_time": 626.947
+            }
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --loss=mean_squared_error --model-name=mse --n-episodes=20 --n-train=2 --n-vs=1 --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "mean_squared_error",
+            "n_train": 2,
+            "n_episodes": 20,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "mse",
+            "train_rand": null
+        },
+        "initial_state": "control(a).has(1,1).has(2,2).has(3,2).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                87626.642
+            ],
+            "average_build": 87626.642,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --loss=mean_squared_error --model-name=mse --n-episodes=30 --n-train=4 --n-vs=1 --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "mean_squared_error",
+            "n_train": 4,
+            "n_episodes": 30,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "mse",
+            "train_rand": null
+        },
+        "initial_state": "control(a).has(1,1).has(2,2).has(3,0).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                102240.971
+            ],
+            "average_build": 102240.971,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --loss=mean_squared_error --model-name=mse --n-episodes=30 --n-train=6 --n-vs=1 --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "mean_squared_error",
+            "n_train": 6,
+            "n_episodes": 30,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "mse",
+            "train_rand": null
+        },
+        "initial_state": "control(a).has(1,1).has(2,2).has(3,0).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                162365.483
+            ],
+            "average_build": 162365.483,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --loss=mean_squared_error --model-name=mse --n-episodes=30 --n-train=4 --n-vs=1 --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "mean_squared_error",
+            "n_train": 4,
+            "n_episodes": 30,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "mse",
+            "train_rand": null
+        },
+        "initial_state": "control(a).has(1,1).has(2,2).has(3,0).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                114300.411
+            ],
+            "average_build": 114300.411,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --loss=mean_squared_error --model-name=mse --n-episodes=30 --n-train=4 --n-vs=1 --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "mean_squared_error",
+            "n_train": 4,
+            "n_episodes": 30,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "mse",
+            "train_rand": null
+        },
+        "initial_state": "control(a).has(1,1).has(2,2).has(3,0).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                120438.346
+            ],
+            "average_build": 120438.346,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=2000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 2000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(b).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                192.266
+            ],
+            "average_build": 192.266,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 17,
+                "save_time": 89.013
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=2000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 2000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                442.843
+            ],
+            "average_build": 442.843,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 43,
+                "save_time": 158.493
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --iter=2000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 2000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(b).has(1,0).has(2,1).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                411.945
+            ],
+            "average_build": 411.945,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 43,
+                "save_time": 144.656
+            }
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=dom --n-vs=1 --model-name=ce-1 --n-episodes=1 --n-train=1",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "custom",
+            "n_train": 1,
+            "n_episodes": 1,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "ce-1",
+            "train_rand": null
+        },
+        "initial_state": "control(a).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,3)).in_hand(b,domino(0,1)).in_hand(b,domino(0,2)).in_hand(b,domino(0,3)).stack(l,3).stack(r,3)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                7923.635
+            ],
+            "average_build": 7923.635,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=dom --n-vs=1 --model-name=ce-1 --n-episodes=30 --n-train=1",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "custom",
+            "n_train": 1,
+            "n_episodes": 30,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "ce-1",
+            "train_rand": null
+        },
+        "initial_state": "control(a).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,3)).in_hand(b,domino(0,1)).in_hand(b,domino(0,2)).in_hand(b,domino(0,3)).stack(l,3).stack(r,3)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                105178.699
+            ],
+            "average_build": 105178.699,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=dom --n-vs=1 --model-name=ce-1 --n-episodes=30 --n-train=1",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "custom",
+            "n_train": 1,
+            "n_episodes": 30,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "ce-1",
+            "train_rand": null
+        },
+        "initial_state": "control(a).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,3)).in_hand(b,domino(0,1)).in_hand(b,domino(0,2)).in_hand(b,domino(0,3)).stack(l,3).stack(r,3)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                132667.936
+            ],
+            "average_build": 132667.936,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=dom --n-vs=1 --model-name=ce-1 --n-episodes=30 --n-train=1",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "custom",
+            "n_train": 1,
+            "n_episodes": 30,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "ce-1",
+            "train_rand": null
+        },
+        "initial_state": "control(a).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,3)).in_hand(b,domino(0,1)).in_hand(b,domino(0,2)).in_hand(b,domino(0,3)).stack(l,3).stack(r,3)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                113177.802
+            ],
+            "average_build": 113177.802,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=dom --n-vs=1 --model-name=ce-1 --n-episodes=30 --n-train=1",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "custom",
+            "n_train": 1,
+            "n_episodes": 30,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "ce-1",
+            "train_rand": null
+        },
+        "initial_state": "control(a).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,3)).in_hand(b,domino(0,1)).in_hand(b,domino(0,2)).in_hand(b,domino(0,3)).stack(l,3).stack(r,3)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                84104.52
+            ],
+            "average_build": 84104.52,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "load --style=alpha_zero-ce-1 --n=1 --game-name=dom --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "alpha_zero-ce-1"
+        },
+        "initial_state": "control(a).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,3)).in_hand(b,domino(0,1)).in_hand(b,domino(0,2)).in_hand(b,domino(0,3)).stack(l,3).stack(r,3)",
+        "results": {}
+    },
+    {
+        "command": "mcts --game-name=dom --iter=2000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 2000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(b).in_hand(b,domino(0,3)).stack(l,1).stack(r,2)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                2114.488
+            ],
+            "average_build": 2114.488,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 133,
+                "save_time": 575.922
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=dom --iter=10000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 10000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(b).in_hand(b,domino(0,3)).stack(l,1).stack(r,2)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                2106.023
+            ],
+            "average_build": 2106.023,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 133,
+                "save_time": 544.488
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=dom --iter=10000 --tree-img=testP.png",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "mcts",
+            "tree_image_file_name": "testP.png",
+            "tree_name": null,
+            "train_file": null,
+            "iter": 10000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(b).in_hand(b,domino(0,3)).stack(l,2).stack(r,1)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                2173.215
+            ],
+            "average_build": 2173.215,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 133,
+                "save_time": 569.846
+            }
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=dom --n-vs=1 --model-name=ce-1 --n-episodes=40 --n-train=2 --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "custom",
+            "n_train": 2,
+            "n_episodes": 40,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "ce-1",
+            "train_rand": null
+        },
+        "initial_state": "control(a).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,3)).in_hand(b,domino(0,1)).in_hand(b,domino(0,2)).in_hand(b,domino(0,3)).stack(l,3).stack(r,3)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                273790.547
+            ],
+            "average_build": 273790.547,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --model-name=mse --n-episodes=30 --n-train=4 --n-vs=1 --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "custom",
+            "n_train": 4,
+            "n_episodes": 30,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "mse",
+            "train_rand": null
+        },
+        "initial_state": "control(a).has(1,2).has(2,2).has(3,0).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                100236.555
+            ],
+            "average_build": 100236.555,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --model-name=mse --n-episodes=30 --n-train=4 --n-vs=1 --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "custom",
+            "n_train": 4,
+            "n_episodes": 30,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "mse",
+            "train_rand": null
+        },
+        "initial_state": "control(a).has(1,2).has(2,2).has(3,1).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                233845.049
+            ],
+            "average_build": 233845.049,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --model-name=mse --n-episodes=30 --n-train=4 --n-vs=1 --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "custom",
+            "n_train": 4,
+            "n_episodes": 30,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "mse",
+            "train_rand": null
+        },
+        "initial_state": "control(a).has(1,2).has(2,2).has(3,1).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                167647.61
+            ],
+            "average_build": 167647.61,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "load --style=alpha_zero-ce-5-sm --n=1 --game-name=ttt --log=debug --init=initial_S.lp",
+        "args": {
+            "log": "debug",
+            "game_name": "ttt",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": "initial_S.lp",
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "alpha_zero-ce-5-sm"
+        },
+        "initial_state": "control(a).free(cell(1,3)).free(cell(2,1)).free(cell(2,2)).free(cell(2,3)).free(cell(3,1)).free(cell(3,2)).has(a,cell(1,2)).has(b,cell(1,1)).has(b,cell(3,3))",
+        "results": {}
+    },
+    {
+        "command": "load --style=alpha_zero-ce-5-sm --n=1 --game-name=ttt --log=debug --init=initial_S.lp",
+        "args": {
+            "log": "debug",
+            "game_name": "ttt",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": "initial_S.lp",
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "alpha_zero-ce-5-sm"
+        },
+        "initial_state": "control(a).free(cell(1,3)).free(cell(2,1)).free(cell(2,2)).free(cell(2,3)).free(cell(3,1)).free(cell(3,2)).has(a,cell(1,2)).has(b,cell(1,1)).has(b,cell(3,3))",
+        "results": {}
+    },
+    {
+        "command": "load --style=alpha_zero-ce-5-sm --n=1 --game-name=ttt --log=debug --init=initial_S.lp",
+        "args": {
+            "log": "debug",
+            "game_name": "ttt",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": "initial_S.lp",
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "alpha_zero-ce-5-sm"
+        },
+        "initial_state": "control(a).free(cell(1,3)).free(cell(2,1)).free(cell(2,2)).free(cell(2,3)).free(cell(3,1)).free(cell(3,2)).has(a,cell(1,2)).has(b,cell(1,1)).has(b,cell(3,3))",
+        "results": {}
+    },
+    {
+        "command": "alpha_zero --game-name=nim --model-name=mse --model-name=small-penalized-mse --n-episodes=30 --n-train=4 --n-vs=1 --penalize-illegal --vis-tree",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "custom",
+            "n_train": 4,
+            "n_episodes": 30,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "small-penalized-mse",
+            "train_rand": null,
+            "vis_tree": true
+        },
+        "initial_state": "control(a).has(1,2).has(2,2).has(3,1).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                244081.997
+            ],
+            "average_build": 244081.997,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --model-name=small-ce --n-episodes=30 --n-train=4 --n-vs=1 --vis-tree",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "custom",
+            "n_train": 4,
+            "n_episodes": 30,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "small-ce",
+            "train_rand": null,
+            "vis_tree": true
+        },
+        "initial_state": "control(a).has(1,2).has(2,2).has(3,1).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                243321.426
+            ],
+            "average_build": 243321.426,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --model-name=small-penalized --n-episodes=30 --n-train=10 --n-vs=1 --penalize-illegal --vis-tree",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "custom",
+            "n_train": 10,
+            "n_episodes": 30,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "small-penalized",
+            "train_rand": null,
+            "vis_tree": true
+        },
+        "initial_state": "control(a).has(1,2).has(2,2).has(3,1).has(4,0)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                513746.817
+            ],
+            "average_build": 513746.817,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "load --game-name=dom --style=alpha_zero-small-penalized --rand=2",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 2,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "alpha_zero-small-penalized"
+        },
+        "initial_state": "RANDOM",
+        "results": {}
+    },
+    {
+        "command": "load --game-name=dom --style=alpha_zero-small-penalized --rand=2",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 2,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "alpha_zero-small-penalized"
+        },
+        "initial_state": "RANDOM",
+        "results": {}
+    },
+    {
+        "command": "load --game-name=nim --style=alpha_zero-small-penalized",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "alpha_zero-small-penalized"
+        },
+        "initial_state": "control(a).has(1,3).has(2,2).has(3,1).has(4,1)",
+        "results": {}
+    },
+    {
+        "command": "load --game-name=dom --style=alpha_zero-ce-5-penalized --rand=1",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "alpha_zero-ce-5-penalized"
+        },
+        "initial_state": "RANDOM",
+        "results": {}
+    },
+    {
+        "command": "load --game-name=dom --style=alpha_zero-ce-5-penalized --rand=1 --n=2",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 2,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "alpha_zero-ce-5-penalized"
+        },
+        "initial_state": "RANDOM",
+        "results": {}
+    },
+    {
+        "command": "load --game-name=dom --style=alpha_zero-ce-5-penalized --rand=1 --n=2",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 2,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "alpha_zero-ce-5-penalized"
+        },
+        "initial_state": "RANDOM",
+        "results": {}
+    },
+    {
+        "command": "load --game-name=dom --style=alpha_zero-ce-5-penalized --rand=1 --n=3",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 3,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "alpha_zero-ce-5-penalized"
+        },
+        "initial_state": "RANDOM",
+        "results": {}
+    },
+    {
+        "command": "load --game-name=dom --style=alpha_zero-ce-5-penalized --rand=1 --n=4",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 4,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "alpha_zero-ce-5-penalized"
+        },
+        "initial_state": "RANDOM",
+        "results": {}
+    },
+    {
+        "command": "load --game-name=dom --style=alpha_zero-ce-5-penalized --rand=1 --n=1",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "alpha_zero-ce-5-penalized"
+        },
+        "initial_state": "RANDOM",
+        "results": {}
+    },
+    {
+        "command": "load --game-name=dom --style=alpha_zero-ce-5-penalized --rand=2 --n=0",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 2,
+            "initial": null,
+            "num_repetitions": 0,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "alpha_zero-ce-5-penalized"
+        },
+        "initial_state": "RANDOM",
+        "results": {}
+    },
+    {
+        "command": "alpha_zero --game-name=nim --model-name=medium-penalized --n-episodes=10 --n-train=1 --n-vs=1 --penalize-illegal --vis-tree",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "custom",
+            "n_train": 1,
+            "n_episodes": 10,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "medium-penalized",
+            "train_rand": null,
+            "vis_tree": true
+        },
+        "initial_state": "control(a).has(1,0).has(2,0).has(3,2).has(4,1)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                11324.755
+            ],
+            "average_build": 11324.755,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "mcts --game-name=nim",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "mcts",
+            "tree_image_file_name": null,
+            "tree_name": null,
+            "train_file": null,
+            "iter": 100,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(b).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                118.292
+            ],
+            "average_build": 118.292,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 17,
+                "save_time": 0.039
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --tree-name=test",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "mcts",
+            "tree_image_file_name": null,
+            "tree_name": "test",
+            "train_file": null,
+            "iter": 100,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(b).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                119.036
+            ],
+            "average_build": 119.036,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 17,
+                "save_time": 0.896
+            }
+        }
+    },
+    {
+        "command": "mcts --game-name=nim --tree-name=test",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "mcts",
+            "tree_image_file_name": null,
+            "tree_name": "test",
+            "train_file": null,
+            "iter": 100,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(b).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                141.548
+            ],
+            "average_build": 141.548,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 17,
+                "save_time": 1.23
+            }
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --model-name=medium-penalized --n-episodes=10 --n-train=1 --n-vs=1 --penalize-illegal --vis-tree",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "custom",
+            "n_train": 1,
+            "n_episodes": 10,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "medium-penalized",
+            "train_rand": null,
+            "vis_tree": true
+        },
+        "initial_state": "control(a).has(1,0).has(2,0).has(3,2).has(4,1)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                13362.174
+            ],
+            "average_build": 13362.174,
+            "std": 0.0,
+            "special_results": null
+        }
     }
-
 ]

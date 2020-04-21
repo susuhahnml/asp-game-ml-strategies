@@ -16,6 +16,12 @@ from .step import Step
 from py_utils.logger import log
 import json
 class NodeBase(Node):
+    """
+    Class representing a basic node of a game tree.
+    Args:
+        step: The step in the node with an state and the action performed
+              in such state to take the game to this node
+    """
     def __init__(self, step, main_player, dic={}, parent = None, children = [], name=None):
         super().__init__(name, parent=parent, children = children)
         self.step = step
@@ -23,6 +29,9 @@ class NodeBase(Node):
 
     @classmethod
     def from_dic(cls, dic, game_def, main_player, parent = None, children = []):
+        """
+        Crates a node from a dictionary, used for loading trees from a file
+        """
         time_step = dic['time_step']
         state = State.from_facts(dic['step']['state'],game_def)
         action = None if dic['step']['action'] is None else Action.from_facts(dic['step']['action'],game_def)
@@ -30,17 +39,23 @@ class NodeBase(Node):
         return s
 
     def to_dic(self):
+        """
+        Transforms the node into a dictionary for serialization in a json file
+        """
         d = {"step": self.step.to_dic()}
         self.add_info_to_dic(d)
         return d
 
     def add_info_to_dic(self,dic):
         """
-        Adds its additional information to a dic
+        Adds its additional information to a dic. Can be used by subclasses to add information.
         """
         pass
 
-    def style(self,parent=None):
+    def style(self):
+        """
+        Returns the style of the node for visualization
+        """
         style = ['rounded','filled']
         if not (self.step.action is None):
             if self.step.action.player == self.main_player:
@@ -53,11 +68,9 @@ class NodeBase(Node):
     @property
     def ascii(self):
         """
-        Generate a label for the tree printing
+        Generate a label for visualization
         """
         if not self.step.action is None:
-            # l = "\n".join(["next({})".format(str(n)) for n in self.step.action.next_fluents])
-            # return l + "\n" + self.step.action.to_facts()
             return self.step.ascii
         else:
             if(self.step.state.is_terminal):
@@ -186,5 +199,8 @@ class Tree:
         return root_node
 
     def remove_leaves(self):
+        """
+        Removes all leaves from the tree
+        """
         leaves = self.root.leaves
         for l in leaves: l.parent = None 

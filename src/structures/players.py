@@ -10,6 +10,11 @@ from collections import defaultdict
 from structures.state import State, StateExpanded
 
 import os
+class IllegalActionError(Exception):
+    def __init__(self, message,action):
+        super().__init__(message)
+        self.action = action
+
 
 def player_approaches_sub_classes():
     """
@@ -145,3 +150,10 @@ class Player(abc.ABC):
             action (Action): The selected action. Should be one from the list of state.legal_actions
         """
         raise NotImplementedError
+
+    def show_info(self, initial_states, args):
+        """
+        Shows the info of a loaded player, can generate visualization and 
+        debugging material.
+        """
+        pass 

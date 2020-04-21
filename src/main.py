@@ -31,8 +31,12 @@ def add_default_params(parser):
         help="The name of the file with the initial state inside the game definition.")
     parser.add_argument("--num-repetitions","--n", type=int, default=1,
         help="Number of times the process will be repeated")
+    parser.add_argument("--init-limit", type=int, default=None,
+        help="Limit for the initial states, when used random initial states the random list will be cutetd after this number of elements")
     parser.add_argument("--benchmark-output-file", "--out",type=str, default="console",
         help="Output file to save the benchmarks of the process that was runned")
+    parser.add_argument("--penalize-illegal", default=False, action='store_true',
+        help="When this flag is passed, illegal actions should be penalized")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(formatter_class=CustomHelpFormatter)
@@ -57,6 +61,16 @@ if __name__ == "__main__":
         help="R|Playing style name for player b:\n• "+ "\n•  ".join(player_name_style_options))
     parser_vs.add_argument("--play-symmetry", default=False, action='store_true',
         help="When this flag is passed, all games will be played twice, one with player a starting and one with player b starting to increase fairness")
+    parser_vs.add_argument("--time-out-sec", type=int, default=3, 
+        help="Number of seconds for player timeout when choosing action")
+
+    # ---------------------------- Load parser ----------------------------
+    parser_load = subs.add_parser('load', 
+        help="Loads one player",conflict_handler='resolve',formatter_class=CustomHelpFormatter)
+    add_default_params(parser_load)
+    
+    parser_load.add_argument("--style", type=str, default="random",
+        help="R|Playing style name for player :\n• "+ "\n•  ".join(player_name_style_options))
 
     # ---------------------------- Parser for each approach ----------------------------
     
@@ -90,6 +104,9 @@ if __name__ == "__main__":
         log.info("Using default initial state {}".format(game_def.initial))
         initial_states = [game_def.initial]
 
+    if using_random and not args.init_limit is None:
+        assert args.init_limit<len(initial_states)
+        initial_states = initial_states[:args.init_limit]
     # ---------------------------- Computing VS ----------------------------
 
     if args.selected_approach == 'vs':
@@ -107,37 +124,16 @@ if __name__ == "__main__":
             Player.from_name_style(game_def,style_a,'b')
         ])
         
-        scores = [{'wins':0,'draws':0,'points':0,'response_times':[]},{'wins':0,'draws':0,'points':0,'response_times':[]}]
-        for i in tqdm(range(n)):
-            for turn, vs in enumerate(player_encounters):
-                idx = {'a':0+turn,'b':1-turn}
-                game_def.initial = initial_states[i%len(initial_states)]
-                match, metrics = Match.simulate(game_def,vs,ran_init=False)
-                goals = match.goals
-                for l,g in goals.items():
-                    scores[idx[l]]['points']+=g
-                    if g>0:
-                        scores[idx[l]]['wins']+=1
-                    elif g==0:
-                        scores[idx[l]]['draws']+=1
-                scores[idx['a']]['response_times'].append(metrics['a'])
-                scores[idx['b']]['response_times'].append(metrics['b'])
-        benchmarks = {}
-        
-        styles = [style_a,style_b]
-        players = ['a','b']
-        for i,p in enumerate(players):
-            benchmarks[p]={} 
-            benchmarks[p]['style_name']=styles[i]
-            benchmarks[p]['wins']=scores[i]['wins']
-            benchmarks[p]['wins']=scores[i]['wins']
-            benchmarks[p]['total_reward']=scores[i]['points']
-            response_times_np = np.array(scores[i]['response_times'])
-            benchmarks[p]['average_response']=round(np.mean(response_times_np),3)
-            benchmarks[p]['std']=round(np.std(response_times_np),3)
-            # benchmarks[p]['response_times']=scores[i]['response_times']
+        benchmarks= Match.vs(game_def,n,player_encounters,initial_states,[style_a,style_b],time_out_sec=args.time_out_sec,penalize_illegal=args.penalize_illegal)
+    
+    # ---------------------------- Computing Load ----------------------------
 
-
+    elif args.selected_approach == 'load':
+        style = args.style
+        log.info("Loading player {}".format(style))
+        player = Player.from_name_style(game_def,style,'a')
+        player.show_info(initial_states,args)
+        benchmarks ={}
 
     # ---------------------------- Computing Build for Approach ----------------------------
 

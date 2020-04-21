@@ -1,4 +1,10 @@
-
-% Starting player
 true(control(a)).
-true(free(cell(X,Y))):- X=1..3, Y=1..3.
+true(free(cell(1,3))).
+true(free(cell(2,1))).
+true(free(cell(2,2))).
+true(free(cell(2,3))).
+true(free(cell(3,2))).
+true(free(cell(1,2))).
+true(free(cell(3,1))).
+true(free(cell(1,1))).
+true(free(cell(3,3))).

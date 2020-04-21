@@ -7,7 +7,7 @@ import os
 from py_utils.train_utils import training_data_to_csv, remove_duplicates_training
 from random import randint
 from structures.tree import Tree
-from structures.treeMinmax import TreeMinmax
+from structures.tree_minmax import TreeMinmax
 from structures.action import Action
 class PrunedMinmaxPlayer(Player):
     """
@@ -168,7 +168,7 @@ class PrunedMinmaxPlayer(Player):
             'number_of_nodes':n_nodes,
             'save_time':save_time}
 
-    def choose_action(self,state):
+    def choose_action(self,state,time_step=None,penalize_illegal=False):
         """
         The player chooses an action given a current state.
 

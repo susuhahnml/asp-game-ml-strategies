@@ -1,7 +1,7 @@
 import time
 from structures.players import Player
 from structures.tree import Tree
-from structures.treeMinmax import TreeMinmax
+from structures.tree_minmax import TreeMinmax
 from approaches.minmax.minmax import minmax_from_game_def
 from py_utils.logger import log
 from structures.players import Player
@@ -108,7 +108,7 @@ class MinmaxPlayer(Player):
             'number_of_nodes':n_nodes,
             'save_time':save_time}
 
-    def choose_action(self,state):
+    def choose_action(self,state,time_step=None,penalize_illegal=False):
         """
         The player chooses an action given a current state.
 

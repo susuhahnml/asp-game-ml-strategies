@@ -50,7 +50,7 @@ class HumanPlayer(Player):
         Returns: 
             Boolean value indicating if the name_style is a match
         """
-        return name_style=="huamn"
+        return name_style=="human"
 
 
     @staticmethod
@@ -78,7 +78,7 @@ class HumanPlayer(Player):
         """
         pass
 
-    def choose_action(self,state):
+    def choose_action(self,state,time_step=None,penalize_illegal=False):
         """
         The player chooses an action given a current state.
 

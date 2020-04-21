@@ -2,7 +2,7 @@ import os
 import time
 from structures.players import Player
 from structures.tree import Tree
-from structures.treeMCTS import TreeMCTS
+from structures.tree_MCTS import TreeMCTS
 from py_utils.logger import log
 from structures.players import Player
 from random import randint
@@ -75,7 +75,7 @@ class MCTSPlayer(Player):
         approach_parser.add_argument("--tree-name", "--tree-name",type=str, default=None,
             help="Name of the file to save the computed tree, must have .json extention")
         approach_parser.add_argument("--train-file",type=str, default=None,
-            help="Name of the file to save the training data with mcts probabilites, must have .cvs extention")
+            help="Name of the file to save the training data with mcts probabilites, must have .csv extention")
         approach_parser.add_argument("--iter", type= int, default=100,
             help="Number of iteration to transverse the tree")
         approach_parser.add_argument("--main-player", type= str, default="a",
@@ -128,7 +128,14 @@ class MCTSPlayer(Player):
             'number_of_nodes':n_nodes,
             'save_time':save_time}
 
-    def choose_action(self,state):
+    def show_info(self, initial_states, args):
+        """
+        Shows the information for a loaded player
+        """
+        self.game_def.initial=initial_states[args.num_repetitions%len(initial_states)]
+        state = self.game_def.get_initial_state()
+
+    def choose_action(self,state,time_step=None,penalize_illegal=False):
         """
         The player chooses an action given a current state.
 
