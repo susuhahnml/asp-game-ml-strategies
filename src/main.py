@@ -37,7 +37,8 @@ def add_default_params(parser):
         help="Output file to save the benchmarks of the process that was runned")
     parser.add_argument("--penalize-illegal", default=False, action='store_true',
         help="When this flag is passed, illegal actions should be penalized")
-
+    parser.add_argument("--n-initial", type=int, default=None,
+                            help="Limits the number of initial states for training, will take the first n-initial states using the random seed provided by --train-rand")
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(formatter_class=CustomHelpFormatter)
     # ---------------------------- Default parser ----------------------------
@@ -107,6 +108,11 @@ if __name__ == "__main__":
     if using_random and not args.init_limit is None:
         assert args.init_limit<len(initial_states)
         initial_states = initial_states[:args.init_limit]
+    if not args.n_initial is None:
+        initial_states = initial_states[:min(args.n_initial,len(initial_states))]
+
+
+    args.initial_states=initial_states
     # ---------------------------- Computing VS ----------------------------
 
     if args.selected_approach == 'vs':
