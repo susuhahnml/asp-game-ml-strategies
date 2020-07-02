@@ -1,12 +1,13 @@
 from structures.players import Player
 from py_utils.logger import log
 from py_utils.colors import bcolors, paint
-from structures.players import Player
+from structures.players import Player, IllegalActionError
 from py_utils.logger import log
 from py_utils.colors import bcolors, paint
 from structures.players import Player
 import numpy as np
 from approaches.supervised_ml.net_supervised import NetSupervised
+from structures.tree_net import TreeNet
 class MLPlayer(Player):
 
     """
@@ -34,9 +35,9 @@ class MLPlayer(Player):
         """
         name = "Supervised Machine Learning player loaded from {}".format(name_style)
         super().__init__(game_def, name, main_player)
-        model_name = name_style[13:]
+        model_name = name_style[14:]
         self.net = NetSupervised(game_def,model_name)
-        self.net.load_model_from_file(model_name)
+        self.net.load_model_from_file()
 
 
     @classmethod
@@ -60,7 +61,7 @@ class MLPlayer(Player):
         Returns: 
             Boolean value indicating if the name_style is a match
         """
-        return name_style[:13]=="supervised_ml-"
+        return name_style[:14]=="supervised_ml-"
 
 
     @staticmethod
@@ -73,9 +74,9 @@ class MLPlayer(Player):
             approach_parser (argparser): An argparser used from the command line for
                 this specific approach. 
         """
-        approach_parser.add_argument("--architecture", type=str, default="dense",
+        approach_parser.add_argument("--architecture-name", type=str, default="default",
                             help="underlying neural network architecture;" +
-                            " Available: 'dense', 'dense-deep', 'dense-wide', 'resnet-50'")
+                            " Available: 'default'")
         approach_parser.add_argument("--n-epochs", type=int, default=50000,
                             help="total number of steps to take in environment")
         approach_parser.add_argument("--model-name", type=str, default="unnamed",
@@ -95,6 +96,7 @@ class MLPlayer(Player):
             args (NameSpace): A name space with all the attributes defined in add_parser_build_args
         """
         net = NetSupervised(game_def,args.model_name,model=None,args=args)
+        net.load_model_from_args()
         net.train()
         net.save_model()
 
@@ -109,22 +111,43 @@ class MLPlayer(Player):
         Returns:
             action (Action): The selected action. Should be one from the list of state.legal_actions
         """
-        state_masked = self.game_def.encoder.mask_state(state)
-        possible_actions_masked = [(str(a.action), self.game_def.encoder.mask_action(str(a.action))) for a in state.legal_actions]
-        inputs = [np.concatenate([state_masked,a]) for n,a in possible_actions_masked]
-        inputs = np.array(inputs)
-        v_predictions,r_predictions  = self.net.model.predict([inputs])
+
+        p = state.control
+        legal_actions_masked = self.game_def.encoder.mask_legal_actions(state)
+        pi = self.net.predict_state(state)
         
-        best = (None,-float("inf"))
-        for i,(n,p) in enumerate(possible_actions_masked):
-            v = v_predictions[i][0]
-            r = r_predictions[i][0]
-            if v>best[1]:
-                best = (n,v)
-            log.debug("Predictions for {} v={} r={}".format(n,v,r))
-        log.debug("Best prediction: {} ".format(best))
         
-        legal_action = state.get_legal_action_from_str(best[0])
-        if not legal_action:
-            log.error("ML Player select a non leagal action")
+        best_idx = np.argmax(pi)
+
+        # Require best prediction to be legal
+        if(legal_actions_masked[best_idx]==0 and penalize_illegal):
+            raise IllegalActionError("Invalid action",str(self.game_def.encoder.all_actions[best_idx]))
+
+        # Check best prediction from all legal
+        legal_actions_pi = legal_actions_masked*pi
+        if np.sum(legal_actions_pi)==0:
+            log.info("All legal actions were predicted with 0 by {} choosing random".format(self.name))
+            best_idx = randint(0,len(state.legal_actions)-1)
+            legal_action = state.legal_actions[best_idx]
+        else:
+            best_idx = np.argmax(legal_actions_pi)
+            best_name = self.game_def.encoder.all_actions[best_idx]
+            legal_action = state.get_legal_action_from_str(str(best_name))
         return legal_action
+
+
+    def visualize_net(self, state,name=None):
+        """
+        Visualizes the network of the player
+        """
+        tree = TreeNet.generate_from(self.game_def,self.net,state)
+        name = self.name if name is None else name
+        tree.print_in_file("{}/{}.png".format(self.game_def.name, name))
+
+    def show_info(self, initial_states, args):
+        """
+        Shows the information for a loaded player
+        """
+        self.game_def.initial=initial_states[args.num_repetitions%len(initial_states)]
+        state = self.game_def.get_initial_state()
+        self.visualize_net(state)
