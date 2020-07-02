@@ -4823,5 +4823,1630 @@
             "std": 0.0,
             "special_results": null
         }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --model-name=medium-penalized --n-episodes=100 --n-train=100 --n-vs=1 --penalize-illegal --vis-tree",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "custom",
+            "n_train": 100,
+            "n_episodes": 100,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "medium-penalized",
+            "train_rand": null,
+            "vis_tree": true
+        },
+        "initial_state": "control(a).has(1,0).has(2,0).has(3,2).has(4,1)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                46830091.287
+            ],
+            "average_build": 46830091.287,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "alpha_zero --game-name=nim --model-name=medium-penalized --n-episodes=10 --n-train=1 --n-vs=1 --penalize-illegal --vis-tree",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "selected_approach": "alpha_zero",
+            "architecture_name": "default",
+            "loss": "custom",
+            "n_train": 1,
+            "n_episodes": 10,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 1,
+            "n_mcts_simulations": 300,
+            "model_name": "medium-penalized",
+            "train_rand": null,
+            "vis_tree": true
+        },
+        "initial_state": "control(a).has(1,0).has(2,0).has(3,2).has(4,1)",
+        "results": {
+            "player": "alpha_zero",
+            "build": [
+                10598.048
+            ],
+            "average_build": 10598.048,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=dom --model-name=test_dqn_1 --train-rand=2",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "loss": "custom",
+            "n_train": 200,
+            "n_episodes": 100,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 150,
+            "n_mcts_simulations": 300,
+            "model_name": "test_dqn_1",
+            "train_rand": 2,
+            "vis_tree": false
+        },
+        "initial_state": "control(a).in_hand(a,domino(0,0)).in_hand(a,domino(0,1)).in_hand(a,domino(0,2)).in_hand(a,domino(1,1)).in_hand(a,domino(2,3)).in_hand(b,domino(0,3)).in_hand(b,domino(1,2)).in_hand(b,domino(1,3)).in_hand(b,domino(2,2)).stack(l,3).stack(r,3)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                1639.243
+            ],
+            "average_build": 1639.243,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=dom --model-name=test_dqn_1 --train-rand=2",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "loss": "custom",
+            "n_train": 200,
+            "n_episodes": 100,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 150,
+            "n_mcts_simulations": 300,
+            "model_name": "test_dqn_1",
+            "train_rand": 2,
+            "vis_tree": false
+        },
+        "initial_state": "control(a).in_hand(a,domino(0,1)).in_hand(a,domino(0,3)).in_hand(a,domino(1,1)).in_hand(a,domino(1,3)).in_hand(a,domino(2,3)).in_hand(b,domino(0,0)).in_hand(b,domino(0,2)).in_hand(b,domino(1,2)).in_hand(b,domino(2,2)).stack(l,3).stack(r,3)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                1656.188
+            ],
+            "average_build": 1656.188,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=dom --model-name=test_dqn_1 --train-rand=2",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "loss": "custom",
+            "n_train": 200,
+            "n_episodes": 100,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 150,
+            "n_mcts_simulations": 300,
+            "model_name": "test_dqn_1",
+            "train_rand": 2,
+            "vis_tree": false
+        },
+        "initial_state": "control(a).in_hand(a,domino(0,3)).in_hand(a,domino(1,1)).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,2)).in_hand(b,domino(0,0)).in_hand(b,domino(0,1)).in_hand(b,domino(0,2)).in_hand(b,domino(2,3)).stack(l,3).stack(r,3)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                1191.215
+            ],
+            "average_build": 1191.215,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=dom --model-name=test_dqn_1 --train-rand=2 --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "loss": "custom",
+            "n_train": 200,
+            "n_episodes": 100,
+            "n_epochs": 1500,
+            "batch_size": 200,
+            "lr": 0.01,
+            "n_vs": 150,
+            "n_mcts_simulations": 300,
+            "model_name": "test_dqn_1",
+            "train_rand": 2,
+            "vis_tree": false
+        },
+        "initial_state": "control(a).in_hand(a,domino(0,2)).in_hand(a,domino(1,1)).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,2)).in_hand(b,domino(0,0)).in_hand(b,domino(0,1)).in_hand(b,domino(0,3)).in_hand(b,domino(2,3)).stack(l,3).stack(r,3)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                1529.849
+            ],
+            "average_build": 1529.849,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=dom --model-name=test_dqn_1 --train-rand=2 --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 1000,
+            "eps": 0.1,
+            "train_rand": 2,
+            "n_initial": 10,
+            "model_name": "test_dqn_1",
+            "vis_tree": false
+        },
+        "initial_state": "control(a).in_hand(a,domino(0,0)).in_hand(a,domino(0,2)).in_hand(a,domino(0,3)).in_hand(a,domino(1,3)).in_hand(a,domino(2,3)).in_hand(b,domino(0,1)).in_hand(b,domino(1,1)).in_hand(b,domino(1,2)).in_hand(b,domino(2,2)).stack(l,3).stack(r,3)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                23563.182
+            ],
+            "average_build": 23563.182,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=dom --model-name=test_dqn_1 --train-rand=2 --log=debug --n-initial=1",
+        "args": {
+            "log": "debug",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 1000,
+            "eps": 0.1,
+            "train_rand": 2,
+            "n_initial": 1,
+            "model_name": "test_dqn_1",
+            "vis_tree": false
+        },
+        "initial_state": "control(a).in_hand(a,domino(0,2)).in_hand(a,domino(0,3)).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,2)).in_hand(b,domino(0,0)).in_hand(b,domino(0,1)).in_hand(b,domino(1,1)).in_hand(b,domino(2,3)).stack(l,3).stack(r,3)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                25726.042
+            ],
+            "average_build": 25726.042,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=dom --model-name=test_dqn_1 --train-rand=2 --log=debug --n-initial=1 --nb-steps=5000",
+        "args": {
+            "log": "debug",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 5000,
+            "eps": 0.1,
+            "train_rand": 2,
+            "n_initial": 1,
+            "model_name": "test_dqn_1",
+            "vis_tree": false
+        },
+        "initial_state": "control(a).in_hand(a,domino(0,2)).in_hand(a,domino(0,3)).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,2)).in_hand(b,domino(0,0)).in_hand(b,domino(0,1)).in_hand(b,domino(1,1)).in_hand(b,domino(2,3)).stack(l,3).stack(r,3)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                133254.556
+            ],
+            "average_build": 133254.556,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=nim --model-name=test_dqn_1 --train-rand=2 --log=debug --n-initial=1 --nb-steps=5000",
+        "args": {
+            "log": "debug",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 5000,
+            "eps": 0.1,
+            "train_rand": 2,
+            "n_initial": 1,
+            "model_name": "test_dqn_1",
+            "vis_tree": false
+        },
+        "initial_state": "control(a).has(1,1).has(2,4).has(3,7)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                106507.819
+            ],
+            "average_build": 106507.819,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "load --game-name=nim --style=dqn_rl-test_dqn_1 --rand=2 --n=0",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": 2,
+            "initial": null,
+            "num_repetitions": 0,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "dqn_rl-test_dqn_1"
+        },
+        "initial_state": "RANDOM",
+        "results": {}
+    },
+    {
+        "command": "load --game-name=nim --style=dqn_rl-test_dqn_1 --rand=2 --n=0",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": 2,
+            "initial": null,
+            "num_repetitions": 0,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "dqn_rl-test_dqn_1"
+        },
+        "initial_state": "RANDOM",
+        "results": {}
+    },
+    {
+        "command": "dqn_rl --game-name=nim --model-name=test_dqn_1 --log=debug --n-initial=1 --nb-steps=5000",
+        "args": {
+            "log": "debug",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 5000,
+            "eps": 0.1,
+            "train_rand": null,
+            "n_initial": 1,
+            "model_name": "test_dqn_1",
+            "vis_tree": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                124071.332
+            ],
+            "average_build": 124071.332,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "load --game-name=nim --style=dqn_rl-test_dqn_1 --n=0",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 0,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "dqn_rl-test_dqn_1"
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {}
+    },
+    {
+        "command": "dqn_rl --game-name=nim --model-name=test_dqn_1 --log=debug --n-initial=1 --nb-steps=5",
+        "args": {
+            "log": "debug",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 5,
+            "eps": 0.1,
+            "train_rand": null,
+            "n_initial": 1,
+            "model_name": "test_dqn_1",
+            "vis_tree": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                903.376
+            ],
+            "average_build": 903.376,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "load --game-name=nim --style=dqn_rl-test_dqn_1 --n=0",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 0,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "dqn_rl-test_dqn_1"
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {}
+    },
+    {
+        "command": "load --game-name=nim --style=dqn_rl-test_dqn_1 --n=0",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 0,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "dqn_rl-test_dqn_1"
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {}
+    },
+    {
+        "command": "load --game-name=nim --style=dqn_rl-test_dqn_1 --n=0",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 0,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "dqn_rl-test_dqn_1"
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {}
+    },
+    {
+        "command": "load --game-name=nim --style=dqn_rl-test_dqn_1 --n=0",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 0,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "dqn_rl-test_dqn_1"
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {}
+    },
+    {
+        "command": "load --game-name=nim --style=dqn_rl-test_dqn_1 --n=0",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 0,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "dqn_rl-test_dqn_1"
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {}
+    },
+    {
+        "command": "load --game-name=nim --style=dqn_rl-test_dqn_1 --n=0",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 0,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "dqn_rl-test_dqn_1"
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {}
+    },
+    {
+        "command": "load --game-name=nim --style=dqn_rl-test_dqn_1 --n=0",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 0,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "dqn_rl-test_dqn_1"
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {}
+    },
+    {
+        "command": "load --game-name=nim --style=dqn_rl-test_dqn_1 --n=0",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 0,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "dqn_rl-test_dqn_1"
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {}
+    },
+    {
+        "command": "dqn_rl --game-name=nim --model-name=test_dqn_1 --log=debug --n-initial=1 --nb-steps=5000",
+        "args": {
+            "log": "debug",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 5000,
+            "eps": 0.1,
+            "train_rand": null,
+            "n_initial": 1,
+            "model_name": "test_dqn_1",
+            "vis_tree": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                149328.264
+            ],
+            "average_build": 149328.264,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "load --game-name=nim --style=dqn_rl-test_dqn_1 --n=0",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 0,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "dqn_rl-test_dqn_1"
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {}
+    },
+    {
+        "command": "dqn_rl --game-name=dom --model-name=test_dqn_5000 --train-rand=2 --log=debug --n-initial=1 --nb-steps=5000",
+        "args": {
+            "log": "debug",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 5000,
+            "eps": 0.1,
+            "train_rand": 2,
+            "n_initial": 1,
+            "model_name": "test_dqn_5000",
+            "vis_tree": false
+        },
+        "initial_state": "control(a).in_hand(a,domino(0,2)).in_hand(a,domino(0,3)).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,2)).in_hand(b,domino(0,0)).in_hand(b,domino(0,1)).in_hand(b,domino(1,1)).in_hand(b,domino(2,3)).stack(l,3).stack(r,3)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                3798.41
+            ],
+            "average_build": 3798.41,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=dom --model-name=test_dqn_5000 --train-rand=2 --log=info --n-initial=1 --nb-steps=5000",
+        "args": {
+            "log": "info",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 5000,
+            "eps": 0.1,
+            "train_rand": 2,
+            "n_initial": 1,
+            "model_name": "test_dqn_5000",
+            "vis_tree": false
+        },
+        "initial_state": "control(a).in_hand(a,domino(0,2)).in_hand(a,domino(0,3)).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,2)).in_hand(b,domino(0,0)).in_hand(b,domino(0,1)).in_hand(b,domino(1,1)).in_hand(b,domino(2,3)).stack(l,3).stack(r,3)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                85979.144
+            ],
+            "average_build": 85979.144,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "load --game-name=dom --style=dqn_rl-test_dqn_5000 --rand=2 --n=0",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 2,
+            "initial": null,
+            "num_repetitions": 0,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "dqn_rl-test_dqn_5000"
+        },
+        "initial_state": "RANDOM",
+        "results": {}
+    },
+    {
+        "command": "load --game-name=dom --style=dqn_rl-test_dqn_5000 --rand=2 --n=0",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 2,
+            "initial": null,
+            "num_repetitions": 0,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "dqn_rl-test_dqn_5000"
+        },
+        "initial_state": "RANDOM",
+        "results": {}
+    },
+    {
+        "command": "load --game-name=dom --style=dqn_rl-test_dqn_5000 --rand=2 --n=0",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 2,
+            "initial": null,
+            "num_repetitions": 0,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "dqn_rl-test_dqn_5000"
+        },
+        "initial_state": "RANDOM",
+        "results": {}
+    },
+    {
+        "command": "load --game-name=dom --style=dqn_rl-test_dqn_5000 --rand=2 --n=0",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 2,
+            "initial": null,
+            "num_repetitions": 0,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "dqn_rl-test_dqn_5000"
+        },
+        "initial_state": "RANDOM",
+        "results": {}
+    },
+    {
+        "command": "load --game-name=nim --style=dqn_rl-test_dqn_1 --n=0",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 0,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "dqn_rl-test_dqn_1"
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {}
+    },
+    {
+        "command": "dqn_rl --game-name=nim --model-name=test_dqn_10000 --log=debug --n-initial=1 --nb-steps=10000",
+        "args": {
+            "log": "debug",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 10000,
+            "eps": 0.1,
+            "train_rand": null,
+            "n_initial": 1,
+            "model_name": "test_dqn_10000",
+            "vis_tree": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                10358.434
+            ],
+            "average_build": 10358.434,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=nim --model-name=test_dqn_10000 --n-initial=1 --nb-steps=10000",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 10000,
+            "eps": 0.1,
+            "train_rand": null,
+            "n_initial": 1,
+            "model_name": "test_dqn_10000",
+            "vis_tree": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                195676.131
+            ],
+            "average_build": 195676.131,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "load --game-name=nim --style=dqn_rl-test_dqn_10000 --n=0",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 0,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "dqn_rl-test_dqn_10000"
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {}
+    },
+    {
+        "command": "dqn_rl --game-name=nim --model-name=test_dqn_10000 --n-initial=1 --nb-steps=100",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 100,
+            "eps": 0.1,
+            "train_rand": null,
+            "n_initial": 1,
+            "model_name": "test_dqn_10000",
+            "vis_tree": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                1535.197
+            ],
+            "average_build": 1535.197,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=nim --model-name=test_dqn_10000 --n-initial=1 --nb-steps=100",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 100,
+            "eps": 0.1,
+            "train_rand": null,
+            "n_initial": 1,
+            "model_name": "test_dqn_10000",
+            "vis_tree": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                1491.191
+            ],
+            "average_build": 1491.191,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=nim --model-name=test_dqn_10000 --n-initial=1 --nb-steps=100",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 100,
+            "eps": 0.1,
+            "train_rand": null,
+            "n_initial": 1,
+            "model_name": "test_dqn_10000",
+            "vis_tree": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                1420.298
+            ],
+            "average_build": 1420.298,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=nim --model-name=test_dqn_10000 --n-initial=1 --nb-steps=100",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 100,
+            "eps": 0.1,
+            "train_rand": null,
+            "n_initial": 1,
+            "model_name": "test_dqn_10000",
+            "vis_tree": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                1511.708
+            ],
+            "average_build": 1511.708,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=nim --model-name=test_dqn_10000 --n-initial=1 --nb-steps=100",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 100,
+            "eps": 0.1,
+            "train_rand": null,
+            "n_initial": 1,
+            "model_name": "test_dqn_10000",
+            "vis_tree": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                1396.844
+            ],
+            "average_build": 1396.844,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=nim --model-name=test_dqn_10000 --n-initial=1 --nb-steps=100",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 100,
+            "eps": 0.1,
+            "train_rand": null,
+            "n_initial": 1,
+            "model_name": "test_dqn_10000",
+            "vis_tree": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                1662.823
+            ],
+            "average_build": 1662.823,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=nim --model-name=test_dqn_10000 --n-initial=1 --nb-steps=100",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 100,
+            "eps": 0.1,
+            "train_rand": null,
+            "n_initial": 1,
+            "model_name": "test_dqn_10000",
+            "vis_tree": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                2157.848
+            ],
+            "average_build": 2157.848,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=nim --model-name=test_dqn_10000 --n-initial=1 --nb-steps=1000",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 1000,
+            "eps": 0.1,
+            "train_rand": null,
+            "n_initial": 1,
+            "model_name": "test_dqn_10000",
+            "vis_tree": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                18096.094
+            ],
+            "average_build": 18096.094,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=nim --model-name=test_dqn_10000 --n-initial=1 --nb-steps=1000",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 1000,
+            "eps": 0.1,
+            "train_rand": null,
+            "n_initial": 1,
+            "model_name": "test_dqn_10000",
+            "vis_tree": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                21127.647
+            ],
+            "average_build": 21127.647,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=nim --model-name=test_dqn_10000 --n-initial=1 --nb-steps=1000",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 1000,
+            "eps": 0.1,
+            "train_rand": null,
+            "n_initial": 1,
+            "model_name": "test_dqn_10000",
+            "vis_tree": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                20604.925
+            ],
+            "average_build": 20604.925,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=nim --model-name=test_dqn_10000 --n-initial=1 --nb-steps=1000",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 1000,
+            "eps": 0.1,
+            "train_rand": null,
+            "n_initial": 1,
+            "model_name": "test_dqn_10000",
+            "vis_tree": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                21956.761
+            ],
+            "average_build": 21956.761,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=nim --model-name=test_dqn_10000 --n-initial=1 --nb-steps=10000",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 10000,
+            "eps": 0.1,
+            "train_rand": null,
+            "n_initial": 1,
+            "model_name": "test_dqn_10000",
+            "vis_tree": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                185912.528
+            ],
+            "average_build": 185912.528,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=nim --model-name=test_dqn_10000 --n-initial=1 --nb-steps=10000",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 10000,
+            "eps": 0.1,
+            "train_rand": null,
+            "n_initial": 1,
+            "model_name": "test_dqn_10000",
+            "vis_tree": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                4758.975
+            ],
+            "average_build": 4758.975,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=nim --model-name=test_dqn_10000 --n-initial=1 --nb-steps=1000",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 1000,
+            "eps": 0.1,
+            "train_rand": null,
+            "n_initial": 1,
+            "model_name": "test_dqn_10000",
+            "vis_tree": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                19587.844
+            ],
+            "average_build": 19587.844,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=nim --model-name=test_dqn_10000 --n-initial=1 --nb-steps=100",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 100,
+            "eps": 0.1,
+            "train_rand": null,
+            "n_initial": 1,
+            "model_name": "test_dqn_10000",
+            "vis_tree": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                2494.475
+            ],
+            "average_build": 2494.475,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=nim --model-name=test_dqn_10000 --n-initial=1 --nb-steps=100",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 100,
+            "eps": 0.1,
+            "train_rand": null,
+            "n_initial": 1,
+            "model_name": "test_dqn_10000",
+            "vis_tree": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                1982.196
+            ],
+            "average_build": 1982.196,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=nim --model-name=test_dqn_10000 --n-initial=1 --nb-steps=100",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 100,
+            "eps": 0.1,
+            "train_rand": null,
+            "n_initial": 1,
+            "model_name": "test_dqn_10000",
+            "vis_tree": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                2039.971
+            ],
+            "average_build": 2039.971,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=nim --model-name=test_dqn_10000 --n-initial=1 --nb-steps=1000",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 1000,
+            "eps": 0.1,
+            "train_rand": null,
+            "n_initial": 1,
+            "model_name": "test_dqn_10000",
+            "vis_tree": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                17977.573
+            ],
+            "average_build": 17977.573,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=nim --model-name=test_dqn_10000 --n-initial=1 --nb-steps=1000",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 1000,
+            "eps": 0.1,
+            "train_rand": null,
+            "n_initial": 1,
+            "model_name": "test_dqn_10000",
+            "vis_tree": false
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                20954.446
+            ],
+            "average_build": 20954.446,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "load --game-name=dom --style=dqn_rl-test_dqn_5000 --rand=2 --n=0",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 2,
+            "initial": null,
+            "num_repetitions": 0,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "load",
+            "style": "dqn_rl-test_dqn_5000"
+        },
+        "initial_state": "RANDOM",
+        "results": {}
+    },
+    {
+        "command": "dqn_rl --game-name=dom --model-name=test_dqn_5000 --train-rand=2 --log=info --n-initial=1 --nb-steps=1000",
+        "args": {
+            "log": "info",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 1000,
+            "eps": 0.1,
+            "train_rand": 2,
+            "n_initial": 1,
+            "model_name": "test_dqn_5000",
+            "vis_tree": false
+        },
+        "initial_state": "control(a).in_hand(a,domino(0,2)).in_hand(a,domino(0,3)).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,2)).in_hand(b,domino(0,0)).in_hand(b,domino(0,1)).in_hand(b,domino(1,1)).in_hand(b,domino(2,3)).stack(l,3).stack(r,3)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                21215.069
+            ],
+            "average_build": 21215.069,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=nim --model-name=test_dqn_50000 --n-initial=1 --nb-steps=50000",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": 1,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 50000,
+            "eps": 0.1,
+            "train_rand": null,
+            "model_name": "test_dqn_50000",
+            "vis_tree": false,
+            "initial_states": [
+                "./game_definitions/nim/default_initial.lp"
+            ]
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                944155.009
+            ],
+            "average_build": 944155.009,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=nim --model-name=test_dqn_500 --n-initial=1 --nb-steps=500",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": 1,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 500,
+            "eps": 0.1,
+            "train_rand": null,
+            "model_name": "test_dqn_500",
+            "vis_tree": false,
+            "initial_states": [
+                "./game_definitions/nim/default_initial.lp"
+            ]
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                8527.638
+            ],
+            "average_build": 8527.638,
+            "std": 0.0,
+            "special_results": null
+        }
     }
 ]

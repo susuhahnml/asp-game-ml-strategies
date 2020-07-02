@@ -136,3 +136,7 @@ class NetAlpha(Net):
             raise RuntimeError("A loaded model is required for predicting")
         state_masked = self.game_def.encoder.mask_state(state)
         return self.predict_single(state_masked)
+
+    
+    def predict_pi_v(self,state):
+        return self.predict_state(state)

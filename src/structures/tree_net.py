@@ -119,19 +119,25 @@ class TreeNet(Tree):
                 else:
                     state = n.step.next_state()
                 if state.is_terminal:
-                    pi, v = net.predict_state(state)
+                    pi, v = net.predict_pi_v(state)
                     n.v=v
                     continue
-                pi, v = net.predict_state(state)
+                pi, v = net.predict_pi_v(state)
                 n.v=v
                 legal_actions_masked = game_def.encoder.mask_legal_actions(state)
                 
-                max_prob = pi[np.argmax(legal_actions_masked*pi)]+0.01
+                illegal_print_th = 0.001 #Only illegal states with more than this amout in diference will be printed
+                general_print_th = 0.001 #Only states with at least this prob will be printed
+                max_prob = pi[np.argmax(legal_actions_masked*pi)]+illegal_print_th
 
                 
                 for i,p in enumerate(pi):
+                    if p<general_print_th:
+                        continue
+                
                     if p<=max_prob and legal_actions_masked[i]==0:
                         continue
+                    
                     action_str= str(game_def.encoder.all_actions[i])
                     if legal_actions_masked[i]==0:
                         action = Action.from_facts("does({},{}).".format(state.control,action_str),game_def)
