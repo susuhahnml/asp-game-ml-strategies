@@ -8,6 +8,9 @@ from structures.players import Player
 import numpy as np
 from approaches.supervised_ml.net_supervised import NetSupervised
 from structures.tree_net import TreeNet
+from random import randint
+
+
 class MLPlayer(Player):
 
     """
