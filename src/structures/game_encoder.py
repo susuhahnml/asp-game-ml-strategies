@@ -52,7 +52,7 @@ class GameEncoder:
         Returns a nparray with 1 in the action index and 0 in the rest
 
         Args:
-            action (Action): The action to be masked
+            action (str): The action to be masked
         """
         actions = np.zeros(len(self.all_actions))
         actions[self.actionstr_to_idx[action]] = 1

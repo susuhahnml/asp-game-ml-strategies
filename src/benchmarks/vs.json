@@ -4694,5 +4694,49 @@
                 "std": 0.002
             }
         }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --n=100 --pA-style=supervised_ml-test --rand=2 --init-limit=1 --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 2,
+            "initial": null,
+            "num_repetitions": 100,
+            "init_limit": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "supervised_ml-test",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "supervised_ml-test",
+                "wins": 0,
+                "total_reward": -200,
+                "average_response": 15.144,
+                "matches_lost_by_illegal": 200,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1
+                ],
+                "std": 2.119
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 200,
+                "total_reward": 200,
+                "average_response": 0.005,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.006
+            }
+        }
     }
 ]

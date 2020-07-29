@@ -19,6 +19,7 @@ import pdb
 from tensorflow.keras.models import model_from_json
 import os
 from structures.net import Net
+from approaches.supervised_ml.utils import *
 
 class NetSupervised(Net):
 
@@ -31,63 +32,99 @@ class NetSupervised(Net):
         action_size = self.game_def.encoder.action_size
         state_size = self.game_def.encoder.state_size
         if self.args.architecture_name=="default":
-            model = Sequential()
-            model.add(Dense(40,input_dim=action_size))
-            model.add(Activation('relu'))
-            model.add(Dense(state_size))
-            model.add(Activation('softmax'))
-            return model
+            #Loads only first model
+            dyn_model = Sequential()
+            dyn_model.add(Dense(120,input_dim=51, activation="relu", activity_regularizer=l2(0.01)))
+            dyn_model.add(Dense(30, activation='sigmoid'))
+            self.model = dyn_model
+            self.compile_model(self.model)
         else :
             raise NotImplementedError("Architecture named {} is not defined ".format(self.args.architecture_name))
 
     def compile_model(self,model):
         if model is None:
             raise RuntimeError("A loaded model is required for compiling")
-        model.compile(loss=['mean_squared_error','mean_squared_error'], optimizer=Adam(self.args.lr))
+        model.compile(loss='binary_crossentropy',
+                    optimizer='adam', # Root Mean Square Propagation
+                    metrics=['acc']) # Accuracy performance metric
 
     def train(self):
         if self.model is None:
             raise RuntimeError("A loaded model is required for training")
-        # action_size = game_def.encoder.action_size
-        # input_size = action_size + game_def.encoder.state_size
-        # training_path = './approaches/supervised_ml/train/{}/{}'.format(game_def.name, training_file)
-        # train_data, test_data = divide_data(training_path,input_size,action_size)
+        action_size = self.game_def.encoder.action_size
+        state_size = self.game_def.encoder.state_size
+        dyn_model = self.model
+        file_name = self.args.training_file
+        training_file_path = "approaches/supervised_ml/train_data/{}/{}".format(self.game_def.name,file_name)
+        train_data, test_data = divide_train_data(training_file_path,action_size, state_size, clean=True)
 
-        # # Train the base model to predict next state
-        # base_model = get_architecture(input_size,action_size,architecture_name)
+        es = EarlyStopping(monitor='loss', mode='min', verbose=0, patience=50, min_delta=0.0005)
+        
+        log.info("Training dynamics model...")
+        dyn_history = dyn_model.fit(train_data["input"], train_data["next"], epochs=50, batch_size=50, verbose=0, validation_split=0.1, callbacks=[es])
 
-        # base_model.compile(loss='categorical_crossentropy',
-        #             optimizer='adam',
-        #             metrics=['acc']) 
-        # log.info("Fittin model for {} epochs".format(epochs))
-        # base_model.fit(train_data[0], train_data[1], epochs=epochs, batch_size=10, verbose=0)
+        file_name_plot = "approaches/supervised_ml/saved_models/{}/{}_dynamic.pdf".format(self.game_def.name,self.model_name)
+        fig = show_acc_loss_curves(dyn_history)
+        fig.savefig(file_name_plot, format='pdf')
 
-        # #Test base model
-        # scores = base_model.evaluate(test_data[0], test_data[1])
-        # log.info("Base model scores -> %s: %.2f%%" % (base_model.metrics_names[1], scores[1]*100))
+        results = test_model(dyn_model, test_data, test="next")
+        log.info("Dynamics Network----- loss: {}, acc: {}".format(results[0],results[1]))
 
-        # # Remove last layer
-        # base_model.pop()
-        # base_model.pop()
+        # set hyperparameter search space
+        # optimiser = ["nag","adam"]
+        # learning_rate = [0.0001, 0.001, 0.01, 0.1]
+        # batch_size = [10, 500, 100, 500]
+        # reg_penalty = [0.01, 0.001, 0.0001]
+        # max_epochs = [5000]
+        # transfer = [True, False]
+        # add_layers = [True, False]
+        optimiser = ["adam"]
+        learning_rate = [0.001]
+        batch_size = [500]
+        reg_penalty = [0.001]
+        max_epochs = [5000]
+        transfer = [True]
+        add_layers = [True, False]
+        # create list of all different parameter combinations
+        param_grid = dict(optimiser = optimiser, learning_rate = learning_rate, batch_size = batch_size, 
+                        reg_penalty = reg_penalty, epochs = max_epochs, transfer = transfer, add_layers = add_layers)
+        combinations = list(product(*param_grid.values()))
 
-        # # Replace with v: Outcome of the game r: Reward of the game
-        # out_v = Dense(1, activation='tanh', name='v')(base_model.layers[-1].output)
-        # out_r = Dense(1, activation='tanh', name='r')(base_model.layers[-1].output)
-        # final_model = Model(base_model.input,[out_r,out_v])
 
-        # #Train final model
-        # final_model.compile(loss=['mean_squared_error','mean_squared_error'],
-        #     optimizer='adam',
-        #     metrics=['acc'])
-        # label = [train_data[2][:,0],train_data[2][:,1]]
-        # final_model.fit(train_data[0], label, epochs=epochs, batch_size=10, verbose=0)
+        model,history = run_3_fold_gridsearch(train_data, test_data, combinations, "grid_search_reg.csv", dyn_model)
 
-        # #Test final model
-        # label_test = [test_data[2][:,0],test_data[2][:,1]]
-        # scores = final_model.evaluate(test_data[0], label_test)
-        # log.info("Final model scores -> %s: %.2f%%" % (final_model.metrics_names[1], scores[1]*100))
-        # print(final_model.predict(train_data[0]))
+        file_name_plot = "approaches/supervised_ml/saved_models/{}/{}.pdf".format(self.game_def.name, self.model_name)
+        fig = show_acc_loss_curves(history)
+        fig.savefig(file_name_plot, format='pdf')
+
+
+
+        loss_test, acc_test = test_model(model, test_data, test="pred")    
+        loss_train, acc_train = test_model(model, train_data, test="pred")    
+
+        log.info("Final on train: loss: {} acc: {}".format(loss_train,acc_train))
+        log.info("Final on test: loss: {} acc: {}".format(loss_test,acc_test))
+        self.model = model
+        
 
     
-    def predict_single(self, values):
-        raise NotImplementedError
+    def predict_single(self, value):
+        return self.model.predict(np.array([value]))
+
+
+    def predict_state(self, state):
+        """
+        Makes a prediction for a single state
+        """
+        if self.model is None:
+            raise RuntimeError("A loaded model is required for predicting")
+        state_masked = self.game_def.encoder.mask_state(state)
+        outputs = []
+        for a in self.game_def.encoder.all_actions:
+            input_net = np.concatenate((state_masked,self.game_def.encoder.mask_action(str(a))))
+            outputs.append(self.predict_single(input_net)[0][0])
+        return outputs
+
+    def predict_pi_v(self,state):
+        pi = self.predict_state(state)
+        return pi,1

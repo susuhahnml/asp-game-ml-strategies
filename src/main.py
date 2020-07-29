@@ -164,6 +164,7 @@ if __name__ == "__main__":
             if not args.rules_file_name is None:
                 benchmarks['player'] = benchmarks['player']+'_learning'
     # ---------------------------- Saving Benchamarks ----------------------------
+    del args.initial_states
     command = ' '.join(sys.argv[1:])
     benchmarks_final= {
         'command':command,
