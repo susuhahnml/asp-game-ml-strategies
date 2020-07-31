@@ -7,7 +7,7 @@ from rl.callbacks import Callback
 from py_utils.logger import log
 
 class SaveTrackEpisodes(Callback):
-    def __init__(self, name):
+    def __init__(self, name, net):
         # Some algorithms compute multiple episodes at once since they are multi-threaded.
         # We therefore use a dictionary that is indexed by the episode to separate episodes
         # from each other.
@@ -18,6 +18,7 @@ class SaveTrackEpisodes(Callback):
         self.metrics = {}
         self.step = 0
         self.name = name
+        self.net = net
 
     def on_train_begin(self, logs):
         """ Print training values at beginning of training """
@@ -84,6 +85,11 @@ class SaveTrackEpisodes(Callback):
         del self.rewards[episode]
         del self.actions[episode]
         del self.metrics[episode]
+
+        if (episode%1000==0):
+            self.net.model=self.model.model 
+            self.net.save_model(model_name='{}-{}'.format(self.net.model_name,int(episode/1000)))
+            print(self.model.model)
 
     def on_train_end(self, logs):
         """ Print training time at end of training """

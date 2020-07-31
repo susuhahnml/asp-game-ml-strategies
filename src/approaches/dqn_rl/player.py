@@ -91,6 +91,8 @@ class DQNPlayer(Player):
                             help="Name of the model, used for saving and logging")
         approach_parser.add_argument("--vis-tree", default=False, action='store_true',
                             help="A visualization of each tree will be saved in every improved network")
+        approach_parser.add_argument("--strategy-opponent", type=str, default=None,
+                            help="The path to the strategy for the opponent, if nothing is provided will use a random player")
 
 
 

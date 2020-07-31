@@ -4738,5 +4738,2023 @@
                 "std": 0.006
             }
         }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --n=1 --pA-style=strategy-./approaches/dqn_rl/dom-asp-strategy.lp --rand=2 --init-limit=1 --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 2,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+                "wins": 1,
+                "total_reward": 0,
+                "average_response": 0.005,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.001
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 1,
+                "total_reward": 0,
+                "average_response": 0.016,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.001
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --n=1 --pA-style=strategy-./approaches/dqn_rl/dom-asp-strategy.lp --rand=2 --init-limit=1 --penalize-illegal --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 2,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+                "wins": 1,
+                "total_reward": 0,
+                "average_response": 0.005,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.001
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 1,
+                "total_reward": 0,
+                "average_response": 0.014,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.001
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --n=1 --pA-style=strategy-./approaches/dqn_rl/dom-asp-strategy.lp --pB-style=strategy-./approaches/dqn_rl/dom-asp-strategy.lp --rand=2 --init-limit=1 --penalize-illegal --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 2,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+            "pB_style": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+                "wins": 1,
+                "total_reward": 0,
+                "average_response": 0.006,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.0
+            },
+            "b": {
+                "style_name": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+                "wins": 1,
+                "total_reward": 0,
+                "average_response": 0.01,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.005
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --n=4 --pA-style=strategy-./approaches/dqn_rl/dom-asp-strategy.lp --pB-style=strategy-./approaches/dqn_rl/dom-asp-strategy.lp --rand=2 --init-limit=1 --penalize-illegal --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 2,
+            "initial": null,
+            "num_repetitions": 4,
+            "init_limit": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+            "pB_style": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+                "wins": 4,
+                "total_reward": 0,
+                "average_response": 0.007,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.001
+            },
+            "b": {
+                "style_name": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+                "wins": 4,
+                "total_reward": 0,
+                "average_response": 0.01,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.004
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --n=100 --pA-style=strategy-./approaches/dqn_rl/dom-asp-strategy.lp --rand=2 --init-limit=1 --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 2,
+            "initial": null,
+            "num_repetitions": 100,
+            "init_limit": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+                "wins": 119,
+                "total_reward": 38,
+                "average_response": 0.003,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.001
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 81,
+                "total_reward": -38,
+                "average_response": 0.01,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.003
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --n=100 --pA-style=strategy-./approaches/dqn_rl/dom-asp-strategy.lp --rand=2 --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 2,
+            "initial": null,
+            "num_repetitions": 100,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+                "wins": 112,
+                "total_reward": 24,
+                "average_response": 0.003,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.001
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 88,
+                "total_reward": -24,
+                "average_response": 0.01,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.003
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --n=4 --pA-style=strategy-./approaches/dqn_rl/dom-asp-strategy.lp --pB-style=strategy-./approaches/dqn_rl/dom-asp-strategy.lp --rand=2 --init-limit=1 --penalize-illegal --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 2,
+            "initial": null,
+            "num_repetitions": 4,
+            "init_limit": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+            "pB_style": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+                "wins": 4,
+                "total_reward": 0,
+                "average_response": 0.007,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.001
+            },
+            "b": {
+                "style_name": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+                "wins": 4,
+                "total_reward": 0,
+                "average_response": 0.008,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.004
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --n=4 --pA-style=strategy-./approaches/dqn_rl/dom-asp-strategy.lp --pB-style=strategy-./approaches/dqn_rl/dom-asp-strategy.lp --rand=2 --init-limit=1 --penalize-illegal --log=debug",
+        "args": {
+            "log": "debug",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 2,
+            "initial": null,
+            "num_repetitions": 4,
+            "init_limit": 1,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+            "pB_style": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+                "wins": 4,
+                "total_reward": 0,
+                "average_response": 0.008,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.003
+            },
+            "b": {
+                "style_name": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+                "wins": 4,
+                "total_reward": 0,
+                "average_response": 0.008,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.002
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --n=100 --pA-style=strategy-./approaches/dqn_rl/dom-asp-strategy.lp --rand=2 --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 2,
+            "initial": null,
+            "num_repetitions": 100,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+                "wins": 134,
+                "total_reward": 68,
+                "average_response": 0.003,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.001
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 66,
+                "total_reward": -68,
+                "average_response": 0.01,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.002
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --n=400 --pA-style=strategy-./approaches/dqn_rl/dom-asp-strategy.lp --rand=2 --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 2,
+            "initial": null,
+            "num_repetitions": 400,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+                "wins": 551,
+                "total_reward": 302,
+                "average_response": 0.004,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.002
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 249,
+                "total_reward": -302,
+                "average_response": 0.013,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.005
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --n=400 --pA-style=strategy-./approaches/dqn_rl/dom-asp-strategy.lp --rand=2 --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 2,
+            "initial": null,
+            "num_repetitions": 400,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+                "wins": 544,
+                "total_reward": 288,
+                "average_response": 0.004,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.001
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 256,
+                "total_reward": -288,
+                "average_response": 0.011,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.003
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --n=400 --pA-style=strategy-./approaches/dqn_rl/dom-asp-strategy.lp --rand=2 --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 2,
+            "initial": null,
+            "num_repetitions": 400,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+                "wins": 567,
+                "total_reward": 334,
+                "average_response": 0.003,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.001
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 233,
+                "total_reward": -334,
+                "average_response": 0.009,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.002
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --n=400 --pA-style=strategy-./approaches/dqn_rl/dom-asp-strategy.lp --rand=2 --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 2,
+            "initial": null,
+            "num_repetitions": 400,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+                "wins": 511,
+                "total_reward": 222,
+                "average_response": 0.004,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.001
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 289,
+                "total_reward": -222,
+                "average_response": 0.01,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.004
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --n=200 --pA-style=dqn_rl-test_dqn_500 --rand=2 --penalize-illegal --init-limit=10",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 2,
+            "initial": null,
+            "num_repetitions": 200,
+            "init_limit": 10,
+            "benchmark_output_file": "console",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "dqn_rl-test_dqn_500",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "dqn_rl-test_dqn_500",
+                "wins": 0,
+                "total_reward": -400,
+                "average_response": 1.47,
+                "matches_lost_by_illegal": 400,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    7
+                ],
+                "std": 2.46
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 400,
+                "total_reward": 400,
+                "average_response": 0.009,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.006
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --n=200 --pA-style=dqn_rl-test_dqn_500 --rand=2 --init-limit=10",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 2,
+            "initial": null,
+            "num_repetitions": 200,
+            "init_limit": 10,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "dqn_rl-test_dqn_500",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "dqn_rl-test_dqn_500",
+                "wins": 202,
+                "total_reward": 4,
+                "average_response": 1.387,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.904
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 198,
+                "total_reward": -4,
+                "average_response": 0.013,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.004
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --n=200 --pA-style=dqn_rl-test_dqn_500 --rand=2 --init-limit=10 --out=dqn-random-penalized.json",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 2,
+            "initial": null,
+            "num_repetitions": 200,
+            "init_limit": 10,
+            "benchmark_output_file": "dqn-random-penalized.json",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "dqn_rl-test_dqn_500",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "dqn_rl-test_dqn_500",
+                "wins": 202,
+                "total_reward": 4,
+                "average_response": 1.222,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.651
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 198,
+                "total_reward": -4,
+                "average_response": 0.011,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.001
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --n=200 --pA-style=strategy-./approaches/dqn_rl/dom-asp-strategy.lp --rand=2 --init-limit=10 --out=strategy-random-penalized.json",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 2,
+            "initial": null,
+            "num_repetitions": 200,
+            "init_limit": 10,
+            "benchmark_output_file": "strategy-random-penalized.json",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+                "wins": 294,
+                "total_reward": 188,
+                "average_response": 0.003,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.001
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 106,
+                "total_reward": -188,
+                "average_response": 0.01,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.002
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --n=200 --pA-style=strategy-./approaches/dqn_rl/dom-asp-strategy.lp --rand=2 --init-limit=10 --out=strategy-random-penalized.json --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 2,
+            "initial": null,
+            "num_repetitions": 200,
+            "init_limit": 10,
+            "benchmark_output_file": "strategy-random-penalized.json",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+                "wins": 289,
+                "total_reward": 178,
+                "average_response": 0.004,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.001
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 111,
+                "total_reward": -178,
+                "average_response": 0.01,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.002
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=dom --play-symmetry --n=200 --pA-style=dqn_rl-test_dqn_500 --rand=2 --init-limit=10 --out=dqn-random-penalized.json --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": 2,
+            "initial": null,
+            "num_repetitions": 200,
+            "init_limit": 10,
+            "benchmark_output_file": "dqn-random-penalized.json",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "dqn_rl-test_dqn_500",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "dqn_rl-test_dqn_500",
+                "wins": 0,
+                "total_reward": -400,
+                "average_response": 1.438,
+                "matches_lost_by_illegal": 399,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    7
+                ],
+                "std": 2.333
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 400,
+                "total_reward": 400,
+                "average_response": 0.009,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.007
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=nim --play-symmetry --rand=1 --n=100 --pA-style=alpha_zero-small-penalized --out=bechmark_alpha.json",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 100,
+            "init_limit": null,
+            "benchmark_output_file": "bechmark_alpha.json",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-small-penalized",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-small-penalized",
+                "wins": 99,
+                "total_reward": -2,
+                "average_response": 1.498,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 2.42
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 101,
+                "total_reward": 2,
+                "average_response": 0.01,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.002
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=nim --play-symmetry --rand=1 --n=100 --pA-style=alpha_zero-small-penalized --out=bechmark_alpha.json --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 100,
+            "init_limit": null,
+            "benchmark_output_file": "bechmark_alpha.json",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-small-penalized",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-small-penalized",
+                "wins": 99,
+                "total_reward": -2,
+                "average_response": 1.721,
+                "matches_lost_by_illegal": 8,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1,
+                    2
+                ],
+                "std": 1.543
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 101,
+                "total_reward": 2,
+                "average_response": 0.014,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.008
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=nim --play-symmetry --rand=1 --n=100 --pA-style=alpha_zero-small-penalized --out=bechmark_alpha.json --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 100,
+            "init_limit": null,
+            "benchmark_output_file": "bechmark_alpha.json",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-small-penalized",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-small-penalized",
+                "wins": 89,
+                "total_reward": -22,
+                "average_response": 1.612,
+                "matches_lost_by_illegal": 17,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4
+                ],
+                "std": 1.651
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 111,
+                "total_reward": 22,
+                "average_response": 0.013,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.004
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=nim --play-symmetry --rand=1 --n=100 --pA-style=alpha_zero-small-penalized --out=bechmark_alpha.json --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 100,
+            "init_limit": null,
+            "benchmark_output_file": "bechmark_alpha.json",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-small-penalized",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-small-penalized",
+                "wins": 81,
+                "total_reward": -38,
+                "average_response": 1.476,
+                "matches_lost_by_illegal": 14,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4
+                ],
+                "std": 1.29
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 119,
+                "total_reward": 38,
+                "average_response": 0.012,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.002
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=nim --play-symmetry --rand=1 --n=100 --pA-style=alpha_zero-small-penalized --out=bechmark_alpha.json --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 100,
+            "init_limit": null,
+            "benchmark_output_file": "bechmark_alpha.json",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-small-penalized",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-small-penalized",
+                "wins": 85,
+                "total_reward": -30,
+                "average_response": 1.561,
+                "matches_lost_by_illegal": 8,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1,
+                    5
+                ],
+                "std": 1.952
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 115,
+                "total_reward": 30,
+                "average_response": 0.012,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.004
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=nim --play-symmetry --rand=1 --n=100 --pA-style=alpha_zero-small-penalized --out=bechmark_alpha.json --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 100,
+            "init_limit": null,
+            "benchmark_output_file": "bechmark_alpha.json",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-small-penalized",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-small-penalized",
+                "wins": 99,
+                "total_reward": -2,
+                "average_response": 1.564,
+                "matches_lost_by_illegal": 8,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1,
+                    3,
+                    5
+                ],
+                "std": 3.372
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 101,
+                "total_reward": 2,
+                "average_response": 0.011,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.002
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=nim --play-symmetry --rand=1 --n=100 --pA-style=alpha_zero-small-penalized --out=bechmark_alpha.json --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 100,
+            "init_limit": null,
+            "benchmark_output_file": "bechmark_alpha.json",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-small-penalized",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-small-penalized",
+                "wins": 82,
+                "total_reward": -36,
+                "average_response": 2.949,
+                "matches_lost_by_illegal": 7,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1,
+                    2,
+                    4
+                ],
+                "std": 1.718
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 118,
+                "total_reward": 36,
+                "average_response": 0.026,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.01
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=nim --play-symmetry --rand=1 --n=100 --pA-style=alpha_zero-small-penalized --out=bechmark_alpha.json --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 100,
+            "init_limit": null,
+            "benchmark_output_file": "bechmark_alpha.json",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-small-penalized",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-small-penalized",
+                "wins": 79,
+                "total_reward": -42,
+                "average_response": 1.808,
+                "matches_lost_by_illegal": 14,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5
+                ],
+                "std": 1.593
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 121,
+                "total_reward": 42,
+                "average_response": 0.015,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.004
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=nim --play-symmetry --rand=1 --n=100 --pA-style=alpha_zero-small-penalized --out=bechmark_alpha.json --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 100,
+            "init_limit": null,
+            "benchmark_output_file": "bechmark_alpha.json",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-small-penalized",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-small-penalized",
+                "wins": 83,
+                "total_reward": -34,
+                "average_response": 1.725,
+                "matches_lost_by_illegal": 13,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    6
+                ],
+                "std": 1.735
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 117,
+                "total_reward": 34,
+                "average_response": 0.014,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.005
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=nim --play-symmetry --rand=1 --n=100 --pA-style=alpha_zero-small-penalized --out=bechmark_alpha.json --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 100,
+            "init_limit": null,
+            "benchmark_output_file": "bechmark_alpha.json",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-small-penalized",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-small-penalized",
+                "wins": 84,
+                "total_reward": -32,
+                "average_response": 1.884,
+                "matches_lost_by_illegal": 12,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4
+                ],
+                "std": 3.011
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 116,
+                "total_reward": 32,
+                "average_response": 0.014,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.005
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=nim --play-symmetry --rand=1 --n=100 --pA-style=alpha_zero-small-penalized --out=bechmark_alpha.json --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 100,
+            "init_limit": null,
+            "benchmark_output_file": "bechmark_alpha.json",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-small-penalized",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-small-penalized",
+                "wins": 82,
+                "total_reward": -36,
+                "average_response": 1.52,
+                "matches_lost_by_illegal": 10,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4
+                ],
+                "std": 1.608
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 118,
+                "total_reward": 36,
+                "average_response": 0.011,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.003
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=nim --play-symmetry --rand=1 --n=100 --pA-style=alpha_zero-small-penalized --out=bechmark_alpha.json --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 100,
+            "init_limit": null,
+            "benchmark_output_file": "bechmark_alpha.json",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-small-penalized",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-small-penalized",
+                "wins": 83,
+                "total_reward": -34,
+                "average_response": 1.64,
+                "matches_lost_by_illegal": 11,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    5
+                ],
+                "std": 3.038
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 117,
+                "total_reward": 34,
+                "average_response": 0.011,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.004
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=nim --play-symmetry --rand=1 --n=100 --pA-style=alpha_zero-small-penalized --out=bechmark_alpha.json --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 100,
+            "init_limit": null,
+            "benchmark_output_file": "bechmark_alpha.json",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-small-penalized",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-small-penalized",
+                "wins": 80,
+                "total_reward": -40,
+                "average_response": 1.578,
+                "matches_lost_by_illegal": 7,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1,
+                    2,
+                    4
+                ],
+                "std": 1.802
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 120,
+                "total_reward": 40,
+                "average_response": 0.012,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.003
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=nim --play-symmetry --rand=1 --n=100 --pA-style=alpha_zero-small-penalized --out=bechmark_alpha.json --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 100,
+            "init_limit": null,
+            "benchmark_output_file": "bechmark_alpha.json",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-small-penalized",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-small-penalized",
+                "wins": 88,
+                "total_reward": -24,
+                "average_response": 1.469,
+                "matches_lost_by_illegal": 6,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1,
+                    2,
+                    3
+                ],
+                "std": 1.668
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 112,
+                "total_reward": 24,
+                "average_response": 0.01,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.002
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=nim --play-symmetry --rand=1 --n=100 --pA-style=alpha_zero-small-penalized --out=bechmark_alpha2.json",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 100,
+            "init_limit": null,
+            "benchmark_output_file": "bechmark_alpha2.json",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-small-penalized",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-small-penalized",
+                "wins": 105,
+                "total_reward": 10,
+                "average_response": 1.401,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 1.19
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 95,
+                "total_reward": -10,
+                "average_response": 0.011,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.002
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=nim --play-symmetry --rand=1 --n=100 --pA-style=alpha_zero-small-penalized --out=bechmark_alpha3.json",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 100,
+            "init_limit": null,
+            "benchmark_output_file": "bechmark_alpha3.json",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-small-penalized",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-small-penalized",
+                "wins": 96,
+                "total_reward": -8,
+                "average_response": 1.398,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 1.469
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 104,
+                "total_reward": 8,
+                "average_response": 0.011,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.002
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=nim --play-symmetry --rand=1 --n=100 --pA-style=alpha_zero-small-penalized --out=bechmark_alpha3.json --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 100,
+            "init_limit": null,
+            "benchmark_output_file": "bechmark_alpha3.json",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-small-penalized",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-small-penalized",
+                "wins": 92,
+                "total_reward": -16,
+                "average_response": 1.539,
+                "matches_lost_by_illegal": 12,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4
+                ],
+                "std": 1.845
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 108,
+                "total_reward": 16,
+                "average_response": 0.011,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.003
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=nim --play-symmetry --rand=1 --n=100 --pA-style=alpha_zero-small-penalized --out=bechmark_alpha3.json --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 100,
+            "init_limit": null,
+            "benchmark_output_file": "bechmark_alpha3.json",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-small-penalized",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-small-penalized",
+                "wins": 99,
+                "total_reward": -2,
+                "average_response": 3.259,
+                "matches_lost_by_illegal": 15,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5
+                ],
+                "std": 2.1
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 101,
+                "total_reward": 2,
+                "average_response": 0.029,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.013
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=nim --play-symmetry --rand=1 --n=100 --pA-style=alpha_zero-small-penalized-mse --out=bechmark_alpha.json --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 100,
+            "init_limit": null,
+            "benchmark_output_file": "bechmark_alpha.json",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "alpha_zero-small-penalized-mse",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "alpha_zero-small-penalized-mse",
+                "wins": 73,
+                "total_reward": -54,
+                "average_response": 2.369,
+                "matches_lost_by_illegal": 65,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8
+                ],
+                "std": 1.862
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 127,
+                "total_reward": 54,
+                "average_response": 0.023,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.037
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=nim --play-symmetry --rand=1 --n=100 --pA-style=dqn_rl-test_dqn_5000_no_ass --out=1.json --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 100,
+            "init_limit": null,
+            "benchmark_output_file": "1.json",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "dqn_rl-test_dqn_5000_no_ass",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "dqn_rl-test_dqn_5000_no_ass",
+                "wins": 5,
+                "total_reward": -190,
+                "average_response": 1.596,
+                "matches_lost_by_illegal": 184,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6
+                ],
+                "std": 4.432
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 195,
+                "total_reward": 190,
+                "average_response": 0.008,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.005
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=nim --play-symmetry --rand=1 --n=100 --pA-style=dqn_rl-test_dqn_5000 --out=2.json --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 100,
+            "init_limit": null,
+            "benchmark_output_file": "2.json",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "dqn_rl-test_dqn_5000",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "dqn_rl-test_dqn_5000",
+                "wins": 42,
+                "total_reward": -116,
+                "average_response": 1.279,
+                "matches_lost_by_illegal": 98,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8
+                ],
+                "std": 1.49
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 158,
+                "total_reward": 116,
+                "average_response": 0.009,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.002
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=nim --play-symmetry --rand=1 --n=500 --pA-style=dqn_rl-test_dqn_5000 --out=2.json --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 500,
+            "init_limit": null,
+            "benchmark_output_file": "2.json",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "dqn_rl-test_dqn_5000",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "dqn_rl-test_dqn_5000",
+                "wins": 180,
+                "total_reward": -640,
+                "average_response": 1.276,
+                "matches_lost_by_illegal": 528,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8,
+                    9,
+                    10
+                ],
+                "std": 0.669
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 820,
+                "total_reward": 640,
+                "average_response": 0.01,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.004
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=nim --play-symmetry --rand=1 --n=500 --pA-style=dqn_rl-test_dqn_5000_no_ass --out=1.json --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 500,
+            "init_limit": null,
+            "benchmark_output_file": "1.json",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "dqn_rl-test_dqn_5000_no_ass",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "dqn_rl-test_dqn_5000_no_ass",
+                "wins": 9,
+                "total_reward": -982,
+                "average_response": 1.182,
+                "matches_lost_by_illegal": 930,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6,
+                    7,
+                    8
+                ],
+                "std": 1.511
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 991,
+                "total_reward": 982,
+                "average_response": 0.007,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.004
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=nim --play-symmetry --rand=1 --n=500 --pA-style=dqn_rl-test_dqn-0 --out=1.json --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 500,
+            "init_limit": null,
+            "benchmark_output_file": "1.json",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "dqn_rl-test_dqn-0",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "dqn_rl-test_dqn-0",
+                "wins": 0,
+                "total_reward": -1000,
+                "average_response": 1.212,
+                "matches_lost_by_illegal": 977,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5
+                ],
+                "std": 1.608
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 1000,
+                "total_reward": 1000,
+                "average_response": 0.006,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.005
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=nim --play-symmetry --rand=1 --n=500 --pA-style=dqn_rl-test_dqn-1 --out=2.json --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 500,
+            "init_limit": null,
+            "benchmark_output_file": "2.json",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "dqn_rl-test_dqn-1",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "dqn_rl-test_dqn-1",
+                "wins": 9,
+                "total_reward": -982,
+                "average_response": 1.229,
+                "matches_lost_by_illegal": 946,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5
+                ],
+                "std": 1.338
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 991,
+                "total_reward": 982,
+                "average_response": 0.007,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.005
+            }
+        }
+    },
+    {
+        "command": "vs --game-name=nim --play-symmetry --rand=1 --n=500 --pA-style=dqn_rl-test_dqn --out=3.json --penalize-illegal",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": 1,
+            "initial": null,
+            "num_repetitions": 500,
+            "init_limit": null,
+            "benchmark_output_file": "3.json",
+            "penalize_illegal": true,
+            "n_initial": null,
+            "selected_approach": "vs",
+            "pA_style": "dqn_rl-test_dqn",
+            "pB_style": "random",
+            "play_symmetry": true,
+            "time_out_sec": 3
+        },
+        "initial_state": "RANDOM",
+        "results": {
+            "a": {
+                "style_name": "dqn_rl-test_dqn",
+                "wins": 23,
+                "total_reward": -954,
+                "average_response": 1.198,
+                "matches_lost_by_illegal": 900,
+                "time_steps_lost_by_illegal": [
+                    0,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5,
+                    6
+                ],
+                "std": 1.293
+            },
+            "b": {
+                "style_name": "random",
+                "wins": 977,
+                "total_reward": 954,
+                "average_response": 0.007,
+                "matches_lost_by_illegal": 0,
+                "time_steps_lost_by_illegal": [],
+                "std": 0.005
+            }
+        }
     }
 ]

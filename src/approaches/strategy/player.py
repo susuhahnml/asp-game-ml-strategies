@@ -82,7 +82,7 @@ class StrategyPlayer(Player):
         """
         pass
 
-    def choose_action(self,state):
+    def choose_action(self,state,time_step=None,penalize_illegal=False):
         """
         The player chooses an action given a current state.
 

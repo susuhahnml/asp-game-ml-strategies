@@ -6846,5 +6846,1023 @@
         },
         "initial_state": "RANDOM",
         "results": {}
+    },
+    {
+        "command": "dqn_rl --game-name=dom --model-name=test_dqn_500 --nb-steps=500",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 500,
+            "eps": 0.1,
+            "train_rand": null,
+            "model_name": "test_dqn_500",
+            "vis_tree": false
+        },
+        "initial_state": "control(a).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,3)).in_hand(b,domino(0,1)).in_hand(b,domino(0,2)).in_hand(b,domino(0,3)).stack(l,3).stack(r,3)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                12820.039
+            ],
+            "average_build": 12820.039,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=dom --model-name=test_dqn_500 --nb-steps=500",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 500,
+            "eps": 0.1,
+            "train_rand": null,
+            "model_name": "test_dqn_500",
+            "vis_tree": false,
+            "strategy_opponent": null
+        },
+        "initial_state": "control(a).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,3)).in_hand(b,domino(0,1)).in_hand(b,domino(0,2)).in_hand(b,domino(0,3)).stack(l,3).stack(r,3)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                10622.764
+            ],
+            "average_build": 10622.764,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=dom --model-name=test_dqn_500 --nb-steps=500",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 500,
+            "eps": 0.1,
+            "train_rand": null,
+            "model_name": "test_dqn_500",
+            "vis_tree": false,
+            "strategy_opponent": null
+        },
+        "initial_state": "control(a).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,3)).in_hand(b,domino(0,1)).in_hand(b,domino(0,2)).in_hand(b,domino(0,3)).stack(l,3).stack(r,3)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                13272.078
+            ],
+            "average_build": 13272.078,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=dom --model-name=test_dqn_500 --nb-steps=500 --strategy-opponent=./approaches/dqn_rl/dom-asp-strategy.lp",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 500,
+            "eps": 0.1,
+            "train_rand": null,
+            "model_name": "test_dqn_500",
+            "vis_tree": false,
+            "strategy_opponent": "./approaches/dqn_rl/dom-asp-strategy.lp"
+        },
+        "initial_state": "control(a).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,3)).in_hand(b,domino(0,1)).in_hand(b,domino(0,2)).in_hand(b,domino(0,3)).stack(l,3).stack(r,3)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                11252.326
+            ],
+            "average_build": 11252.326,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=dom --model-name=test_dqn_500 --nb-steps=500 --strategy-opponent=./approaches/dqn_rl/dom-asp-strategy.lp",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 500,
+            "eps": 0.1,
+            "train_rand": null,
+            "model_name": "test_dqn_500",
+            "vis_tree": false,
+            "strategy_opponent": "./approaches/dqn_rl/dom-asp-strategy.lp"
+        },
+        "initial_state": "control(a).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,3)).in_hand(b,domino(0,1)).in_hand(b,domino(0,2)).in_hand(b,domino(0,3)).stack(l,3).stack(r,3)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                3917.636
+            ],
+            "average_build": 3917.636,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=dom --model-name=test_dqn_500 --nb-steps=1000 --strategy-opponent=./approaches/dqn_rl/dom-asp-strategy.lp",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 1000,
+            "eps": 0.1,
+            "train_rand": null,
+            "model_name": "test_dqn_500",
+            "vis_tree": false,
+            "strategy_opponent": "./approaches/dqn_rl/dom-asp-strategy.lp"
+        },
+        "initial_state": "control(a).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,3)).in_hand(b,domino(0,1)).in_hand(b,domino(0,2)).in_hand(b,domino(0,3)).stack(l,3).stack(r,3)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                25397.893
+            ],
+            "average_build": 25397.893,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "plot --game-name=dom --file=dqn-random-penalized.json --file=dqn-random-penalized.json",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "plot",
+            "file": [
+                "dqn-random-penalized.json",
+                "dqn-random-penalized.json"
+            ]
+        },
+        "initial_state": "control(a).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,3)).in_hand(b,domino(0,1)).in_hand(b,domino(0,2)).in_hand(b,domino(0,3)).stack(l,3).stack(r,3)",
+        "results": {}
+    },
+    {
+        "command": "plot --game-name=dom --file=dqn-random-penalized.json --file=dqn-random-penalized.json",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "plot",
+            "file": [
+                "dqn-random-penalized.json",
+                "dqn-random-penalized.json"
+            ]
+        },
+        "initial_state": "control(a).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,3)).in_hand(b,domino(0,1)).in_hand(b,domino(0,2)).in_hand(b,domino(0,3)).stack(l,3).stack(r,3)",
+        "results": {}
+    },
+    {
+        "command": "plot --game-name=dom --file=dqn-random-penalized.json --file=dqn-random-penalized.json",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "plot",
+            "file": [
+                "dqn-random-penalized.json",
+                "dqn-random-penalized.json"
+            ]
+        },
+        "initial_state": "control(a).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,3)).in_hand(b,domino(0,1)).in_hand(b,domino(0,2)).in_hand(b,domino(0,3)).stack(l,3).stack(r,3)",
+        "results": {}
+    },
+    {
+        "command": "plot --game-name=dom --file=dqn-random-penalized.json --file=dqn-random-penalized.json",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "plot",
+            "file": [
+                "dqn-random-penalized.json",
+                "dqn-random-penalized.json"
+            ]
+        },
+        "initial_state": "control(a).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,3)).in_hand(b,domino(0,1)).in_hand(b,domino(0,2)).in_hand(b,domino(0,3)).stack(l,3).stack(r,3)",
+        "results": {}
+    },
+    {
+        "command": "plot --game-name=dom --file=dqn-random-penalized.json --file=dqn-random-penalized.json",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "plot",
+            "file": [
+                "dqn-random-penalized.json",
+                "dqn-random-penalized.json"
+            ]
+        },
+        "initial_state": "control(a).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,3)).in_hand(b,domino(0,1)).in_hand(b,domino(0,2)).in_hand(b,domino(0,3)).stack(l,3).stack(r,3)",
+        "results": {}
+    },
+    {
+        "command": "plot --game-name=dom --file=dqn-random-penalized.json --file=dqn-random-penalized.json",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "plot",
+            "file": [
+                "dqn-random-penalized.json",
+                "dqn-random-penalized.json"
+            ]
+        },
+        "initial_state": "control(a).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,3)).in_hand(b,domino(0,1)).in_hand(b,domino(0,2)).in_hand(b,domino(0,3)).stack(l,3).stack(r,3)",
+        "results": {}
+    },
+    {
+        "command": "plot --game-name=dom --file=dqn-random-penalized.json --file=dqn-random-penalized.json --file=strategy-random-penalized.json",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "plot",
+            "file": [
+                "dqn-random-penalized.json",
+                "dqn-random-penalized.json",
+                "strategy-random-penalized.json"
+            ]
+        },
+        "initial_state": "control(a).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,3)).in_hand(b,domino(0,1)).in_hand(b,domino(0,2)).in_hand(b,domino(0,3)).stack(l,3).stack(r,3)",
+        "results": {}
+    },
+    {
+        "command": "plot --game-name=dom --file=dqn-random-penalized.json --file=dqn-random-penalized.json --file=strategy-random-penalized.json",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "plot",
+            "file": [
+                "dqn-random-penalized.json",
+                "dqn-random-penalized.json",
+                "strategy-random-penalized.json"
+            ]
+        },
+        "initial_state": "control(a).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,3)).in_hand(b,domino(0,1)).in_hand(b,domino(0,2)).in_hand(b,domino(0,3)).stack(l,3).stack(r,3)",
+        "results": {}
+    },
+    {
+        "command": "plot --game-name=dom --file=dqn-random-penalized.json --file=dqn-random-penalized.json --file=strategy-random-penalized.json",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "plot",
+            "file": [
+                "dqn-random-penalized.json",
+                "dqn-random-penalized.json",
+                "strategy-random-penalized.json"
+            ]
+        },
+        "initial_state": "control(a).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,3)).in_hand(b,domino(0,1)).in_hand(b,domino(0,2)).in_hand(b,domino(0,3)).stack(l,3).stack(r,3)",
+        "results": {}
+    },
+    {
+        "command": "plot --game-name=dom --file=dqn-random-penalized.json --file=dqn-random-penalized.json --file=strategy-random-penalized.json",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "plot",
+            "file": [
+                "dqn-random-penalized.json",
+                "dqn-random-penalized.json",
+                "strategy-random-penalized.json"
+            ]
+        },
+        "initial_state": "control(a).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,3)).in_hand(b,domino(0,1)).in_hand(b,domino(0,2)).in_hand(b,domino(0,3)).stack(l,3).stack(r,3)",
+        "results": {}
+    },
+    {
+        "command": "plot --game-name=dom --file=dqn-random-penalized.json --file=dqn-random-penalized.json --file=strategy-random-penalized.json",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "plot",
+            "file": [
+                "dqn-random-penalized.json",
+                "dqn-random-penalized.json",
+                "strategy-random-penalized.json"
+            ]
+        },
+        "initial_state": "control(a).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,3)).in_hand(b,domino(0,1)).in_hand(b,domino(0,2)).in_hand(b,domino(0,3)).stack(l,3).stack(r,3)",
+        "results": {}
+    },
+    {
+        "command": "plot --game-name=dom --file=dqn-random-penalized.json --file=dqn-random-penalized.json --file=strategy-random-penalized.json",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "plot",
+            "file": [
+                "dqn-random-penalized.json",
+                "dqn-random-penalized.json",
+                "strategy-random-penalized.json"
+            ]
+        },
+        "initial_state": "control(a).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,3)).in_hand(b,domino(0,1)).in_hand(b,domino(0,2)).in_hand(b,domino(0,3)).stack(l,3).stack(r,3)",
+        "results": {}
+    },
+    {
+        "command": "plot --game-name=dom --file=dqn-random-penalized.json --file=dqn-random-penalized.json --file=strategy-random-penalized.json",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "plot",
+            "file": [
+                "dqn-random-penalized.json",
+                "dqn-random-penalized.json",
+                "strategy-random-penalized.json"
+            ]
+        },
+        "initial_state": "control(a).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,3)).in_hand(b,domino(0,1)).in_hand(b,domino(0,2)).in_hand(b,domino(0,3)).stack(l,3).stack(r,3)",
+        "results": {}
+    },
+    {
+        "command": "plot --game-name=dom --file=dqn-random-penalized.json --file=dqn-random-penalized.json --file=strategy-random-penalized.json",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "plot",
+            "file": [
+                "dqn-random-penalized.json",
+                "dqn-random-penalized.json",
+                "strategy-random-penalized.json"
+            ]
+        },
+        "initial_state": "control(a).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,3)).in_hand(b,domino(0,1)).in_hand(b,domino(0,2)).in_hand(b,domino(0,3)).stack(l,3).stack(r,3)",
+        "results": {}
+    },
+    {
+        "command": "plot --game-name=dom --file=dqn-random-penalized.json --file=dqn-random-penalized.json --file=strategy-random-penalized.json",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "plot",
+            "file": [
+                "dqn-random-penalized.json",
+                "dqn-random-penalized.json",
+                "strategy-random-penalized.json"
+            ]
+        },
+        "initial_state": "control(a).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,3)).in_hand(b,domino(0,1)).in_hand(b,domino(0,2)).in_hand(b,domino(0,3)).stack(l,3).stack(r,3)",
+        "results": {}
+    },
+    {
+        "command": "plot --game-name=nim --file=bechmark_alpha2.json --file=bechmark_alpha3.json --file=bechmark_alpha.json",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "plot",
+            "file": [
+                "bechmark_alpha2.json",
+                "bechmark_alpha3.json",
+                "bechmark_alpha.json"
+            ]
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {}
+    },
+    {
+        "command": "plot --game-name=nim --file=bechmark_alpha2.json --file=bechmark_alpha3.json --file=bechmark_alpha.json",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "plot",
+            "file": [
+                "bechmark_alpha2.json",
+                "bechmark_alpha3.json",
+                "bechmark_alpha.json"
+            ]
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {}
+    },
+    {
+        "command": "plot --game-name=nim --file=bechmark_alpha2.json --file=bechmark_alpha3.json --file=bechmark_alpha.json",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "plot",
+            "file": [
+                "bechmark_alpha2.json",
+                "bechmark_alpha3.json",
+                "bechmark_alpha.json"
+            ]
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {}
+    },
+    {
+        "command": "plot --game-name=nim --file=bechmark_alpha2.json --file=bechmark_alpha3.json --file=bechmark_alpha.json",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "plot",
+            "file": [
+                "bechmark_alpha2.json",
+                "bechmark_alpha3.json",
+                "bechmark_alpha.json"
+            ]
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {}
+    },
+    {
+        "command": "plot --game-name=nim --file=bechmark_alpha2.json --file=bechmark_alpha3.json --file=bechmark_alpha.json",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "plot",
+            "file": [
+                "bechmark_alpha2.json",
+                "bechmark_alpha3.json",
+                "bechmark_alpha.json"
+            ]
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {}
+    },
+    {
+        "command": "plot --game-name=nim --file=bechmark_alpha2.json --file=bechmark_alpha3.json --file=bechmark_alpha.json",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "plot",
+            "file": [
+                "bechmark_alpha2.json",
+                "bechmark_alpha3.json",
+                "bechmark_alpha.json"
+            ]
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {}
+    },
+    {
+        "command": "plot --game-name=nim --file=bechmark_alpha2.json --file=bechmark_alpha3.json --file=bechmark_alpha.json",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "plot",
+            "file": [
+                "bechmark_alpha2.json",
+                "bechmark_alpha3.json",
+                "bechmark_alpha.json"
+            ]
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {}
+    },
+    {
+        "command": "plot --game-name=nim --file=bechmark_alpha2.json --file=bechmark_alpha3.json --file=bechmark_alpha.json",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "plot",
+            "file": [
+                "bechmark_alpha2.json",
+                "bechmark_alpha3.json",
+                "bechmark_alpha.json"
+            ]
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {}
+    },
+    {
+        "command": "dqn_rl --game-name=dom --model-name=dqn_5000_strategy --nb-steps=5000 --strategy-opponent=./approaches/dqn_rl/dom-asp-strategy.lp",
+        "args": {
+            "log": "INFO",
+            "game_name": "dom",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 5000,
+            "eps": 0.1,
+            "train_rand": null,
+            "model_name": "dqn_5000_strategy",
+            "vis_tree": false,
+            "strategy_opponent": "./approaches/dqn_rl/dom-asp-strategy.lp"
+        },
+        "initial_state": "control(a).in_hand(a,domino(1,2)).in_hand(a,domino(1,3)).in_hand(a,domino(2,3)).in_hand(b,domino(0,1)).in_hand(b,domino(0,2)).in_hand(b,domino(0,3)).stack(l,3).stack(r,3)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                125542.699
+            ],
+            "average_build": 125542.699,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=nim --model-name=test_dqn_5000 --n-initial=1 --nb-steps=5000",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": 1,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 5000,
+            "eps": 0.1,
+            "train_rand": null,
+            "model_name": "test_dqn_5000",
+            "vis_tree": false,
+            "strategy_opponent": null
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                81966.254
+            ],
+            "average_build": 81966.254,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=nim --model-name=test_dqn_5000_no_ass --n-initial=1 --nb-steps=5000",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": 1,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 5000,
+            "eps": 0.1,
+            "train_rand": null,
+            "model_name": "test_dqn_5000_no_ass",
+            "vis_tree": false,
+            "strategy_opponent": null
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                84117.875
+            ],
+            "average_build": 84117.875,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "plot --file=1.json --file=2.json",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "plot",
+            "file": [
+                "1.json",
+                "2.json"
+            ]
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {}
+    },
+    {
+        "command": "plot --file=1.json --file=2.json",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "plot",
+            "file": [
+                "1.json",
+                "2.json"
+            ]
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {}
+    },
+    {
+        "command": "dqn_rl --game-name=nim --model-name=test_dqn_5000 --n-initial=1 --nb-steps=2000",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": 1,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 2000,
+            "eps": 0.1,
+            "train_rand": null,
+            "model_name": "test_dqn_5000",
+            "vis_tree": false,
+            "strategy_opponent": null
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                13022.804
+            ],
+            "average_build": 13022.804,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=nim --model-name=test_dqn_5000 --n-initial=1 --nb-steps=2000",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": 1,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 2000,
+            "eps": 0.1,
+            "train_rand": null,
+            "model_name": "test_dqn_5000",
+            "vis_tree": false,
+            "strategy_opponent": null
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                39591.839
+            ],
+            "average_build": 39591.839,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=nim --model-name=test_dqn_5000 --n-initial=1 --nb-steps=2000",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": 1,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 2000,
+            "eps": 0.1,
+            "train_rand": null,
+            "model_name": "test_dqn_5000",
+            "vis_tree": false,
+            "strategy_opponent": null
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                35257.486
+            ],
+            "average_build": 35257.486,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "dqn_rl --game-name=nim --model-name=test_dqn --n-initial=1 --nb-steps=3000",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": 1,
+            "selected_approach": "dqn_rl",
+            "architecture_name": "default",
+            "nb_steps": 3000,
+            "eps": 0.1,
+            "train_rand": null,
+            "model_name": "test_dqn",
+            "vis_tree": false,
+            "strategy_opponent": null
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {
+            "player": "dqn_rl",
+            "build": [
+                55544.822
+            ],
+            "average_build": 55544.822,
+            "std": 0.0,
+            "special_results": null
+        }
+    },
+    {
+        "command": "plot --file=1.json --file=2.json --file=3.json",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": null,
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "plot",
+            "file": [
+                "1.json",
+                "2.json",
+                "3.json"
+            ]
+        },
+        "initial_state": "control(a).has(1,0).has(2,2).has(3,2).has(4,1)",
+        "results": {}
     }
 ]

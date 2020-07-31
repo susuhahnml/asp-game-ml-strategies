@@ -1,0 +1,48 @@
+{
+    "command": "vs --game-name=nim --play-symmetry --rand=1 --n=500 --pA-style=dqn_rl-test_dqn-1 --out=2.json --penalize-illegal",
+    "args": {
+        "log": "INFO",
+        "game_name": "nim",
+        "const": null,
+        "random_initial_state_seed": 1,
+        "initial": null,
+        "num_repetitions": 500,
+        "init_limit": null,
+        "benchmark_output_file": "2.json",
+        "penalize_illegal": true,
+        "n_initial": null,
+        "selected_approach": "vs",
+        "pA_style": "dqn_rl-test_dqn-1",
+        "pB_style": "random",
+        "play_symmetry": true,
+        "time_out_sec": 3
+    },
+    "initial_state": "RANDOM",
+    "results": {
+        "a": {
+            "style_name": "dqn_rl-test_dqn-1",
+            "wins": 9,
+            "total_reward": -982,
+            "average_response": 1.229,
+            "matches_lost_by_illegal": 946,
+            "time_steps_lost_by_illegal": [
+                0,
+                1,
+                2,
+                3,
+                4,
+                5
+            ],
+            "std": 1.338
+        },
+        "b": {
+            "style_name": "random",
+            "wins": 991,
+            "total_reward": 982,
+            "average_response": 0.007,
+            "matches_lost_by_illegal": 0,
+            "time_steps_lost_by_illegal": [],
+            "std": 0.005
+        }
+    }
+}

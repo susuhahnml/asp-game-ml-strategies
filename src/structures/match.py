@@ -160,6 +160,7 @@ class Match:
             {'wins':0,'draws':0,'points':0,'response_times':[],"matches_lost_by_illegal":0,"time_steps_lost_by_illegal":set()},
             {'wins':0,'draws':0,'points':0,'response_times':[],"matches_lost_by_illegal":0,
             "time_steps_lost_by_illegal":set()}]
+        players=['a','b']
         for i in range(n):
             for turn, vs in enumerate(player_encounters):
                 idx = {'a':0+turn,'b':1-turn}
@@ -178,7 +179,6 @@ class Match:
                     scores[idx[match.illegal_lost["player"]]]['matches_lost_by_illegal'] +=1
                     scores[idx[match.illegal_lost["player"]]]['time_steps_lost_by_illegal'].add(match.illegal_lost["time_step"])
         benchmarks = {}
-        players = ['a','b']
         for i,p in enumerate(players):
             benchmarks[p]={} 
             benchmarks[p]['style_name']=styles[i]

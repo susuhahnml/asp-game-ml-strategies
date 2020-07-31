@@ -83,13 +83,13 @@ class NetDQN(Net):
         action_size = self.game_def.encoder.action_size
         input_size = action_size + self.game_def.encoder.state_size
 
-        env = GymEnv(self.game_def,self.possible_initial_states)
+        env = GymEnv(self.game_def,self.possible_initial_states,opponent=self.args.strategy_opponent)
         policy = EpsGreedyQPolicy(eps = self.args.eps)  
         memory = SequentialMemory(limit=50000, window_length=1)      
         agent = DQNAgent(model=self.model, nb_actions=action_size, memory=memory, nb_steps_warmup=100, target_model_update=1e-2, policy=policy, processor=CustomProcessor())
         agent.compile(Adam(lr=1e-3), metrics=['mae'])
 		
-        training_logger = SaveTrackEpisodes(name="{}/{}".format(self.game_def.name,self.model_name))		   
+        training_logger = SaveTrackEpisodes(name="{}/{}".format(self.game_def.name,self.model_name),net=self)		   
         agent.fit(env, nb_steps=self.args.nb_steps, visualize=False, nb_max_episode_steps=99,verbose=1, callbacks=[training_logger])
         self.model = agent.model
         

@@ -1,0 +1,41 @@
+{
+    "command": "vs --game-name=dom --play-symmetry --n=200 --pA-style=strategy-./approaches/dqn_rl/dom-asp-strategy.lp --rand=2 --init-limit=10 --out=strategy-random-penalized.json --penalize-illegal",
+    "args": {
+        "log": "INFO",
+        "game_name": "dom",
+        "const": null,
+        "random_initial_state_seed": 2,
+        "initial": null,
+        "num_repetitions": 200,
+        "init_limit": 10,
+        "benchmark_output_file": "strategy-random-penalized.json",
+        "penalize_illegal": true,
+        "n_initial": null,
+        "selected_approach": "vs",
+        "pA_style": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+        "pB_style": "random",
+        "play_symmetry": true,
+        "time_out_sec": 3
+    },
+    "initial_state": "RANDOM",
+    "results": {
+        "a": {
+            "style_name": "strategy-./approaches/dqn_rl/dom-asp-strategy.lp",
+            "wins": 289,
+            "total_reward": 178,
+            "average_response": 0.004,
+            "matches_lost_by_illegal": 0,
+            "time_steps_lost_by_illegal": [],
+            "std": 0.001
+        },
+        "b": {
+            "style_name": "random",
+            "wins": 111,
+            "total_reward": -178,
+            "average_response": 0.01,
+            "matches_lost_by_illegal": 0,
+            "time_steps_lost_by_illegal": [],
+            "std": 0.002
+        }
+    }
+}

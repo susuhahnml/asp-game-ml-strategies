@@ -12,7 +12,7 @@ import json
 import tensorflow as tf
 import pandas as pd
 from keras.wrappers.scikit_learn import KerasClassifier
-from tensorflow.keras.layers import Dense, Activation, Flatten
+from tensorflow.keras.layers import Dense, Activation, Flatten, Dropout
 from tensorflow.keras.models import Sequential, Model
 from tensorflow.keras.optimizers import Adam
 import pdb
@@ -34,11 +34,12 @@ class NetSupervised(Net):
         if self.args.architecture_name=="default":
             #Loads only first model
             dyn_model = Sequential()
-            dyn_model.add(Dense(120,input_dim=51, activation="relu", activity_regularizer=l2(0.01)))
-            dyn_model.add(Dense(30, activation='sigmoid'))
+            dyn_model.add(Dense(120,input_dim=action_size+state_size, activation="relu", activity_regularizer=l2(0.01)))
+            dyn_model.add(Dropout(0.25))
+            dyn_model.add(Dense(state_size, activation='sigmoid'))
             self.model = dyn_model
             self.compile_model(self.model)
-        else :
+        else : 
             raise NotImplementedError("Architecture named {} is not defined ".format(self.args.architecture_name))
 
     def compile_model(self,model):
