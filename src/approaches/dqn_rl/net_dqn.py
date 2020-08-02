@@ -89,7 +89,7 @@ class NetDQN(Net):
         agent = DQNAgent(model=self.model, nb_actions=action_size, memory=memory, nb_steps_warmup=100, target_model_update=1e-2, policy=policy, processor=CustomProcessor())
         agent.compile(Adam(lr=1e-3), metrics=['mae'])
 		
-        training_logger = SaveTrackEpisodes(name="{}/{}".format(self.game_def.name,self.model_name),net=self)		   
+        training_logger = SaveTrackEpisodes(name="{}/{}".format(self.game_def.name,self.model_name),net=self,save_every=self.args.save_every)		   
         agent.fit(env, nb_steps=self.args.nb_steps, visualize=False, nb_max_episode_steps=99,verbose=1, callbacks=[training_logger])
         self.model = agent.model
         

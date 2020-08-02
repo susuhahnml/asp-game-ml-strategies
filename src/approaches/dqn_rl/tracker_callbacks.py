@@ -6,8 +6,10 @@ from csv import DictWriter
 from rl.callbacks import Callback
 from py_utils.logger import log
 
+import os
+
 class SaveTrackEpisodes(Callback):
-    def __init__(self, name, net):
+    def __init__(self, name, net, save_every=None):
         # Some algorithms compute multiple episodes at once since they are multi-threaded.
         # We therefore use a dictionary that is indexed by the episode to separate episodes
         # from each other.
@@ -19,6 +21,7 @@ class SaveTrackEpisodes(Callback):
         self.step = 0
         self.name = name
         self.net = net
+        self.save_every = save_every
 
     def on_train_begin(self, logs):
         """ Print training values at beginning of training """
@@ -86,10 +89,11 @@ class SaveTrackEpisodes(Callback):
         del self.actions[episode]
         del self.metrics[episode]
 
-        if (episode%1000==0):
-            self.net.model=self.model.model 
-            self.net.save_model(model_name='{}-{}'.format(self.net.model_name,int(episode/1000)))
-            print(self.model.model)
+        if (not self.save_every is None):
+            ep_nb = episode+1 if episode>0 else 0
+            if (ep_nb%self.save_every==0):
+                self.net.model=self.model.model 
+                self.net.save_model(model_name='{}/{}'.format(self.net.model_name,int(ep_nb/self.save_every)))
 
     def on_train_end(self, logs):
         """ Print training time at end of training """
@@ -117,4 +121,5 @@ class SaveTrackEpisodes(Callback):
         df['episodes']=df['index']*window_plot
         file_name_plot = "approaches/dqn_rl/saved_models/" + self.name + ".pdf"
         plot = df.plot(x='episodes', y='reward')
+        os.makedirs(os.path.dirname(file_name_plot), exist_ok=True)
         plot.get_figure().savefig(file_name_plot, format='pdf')

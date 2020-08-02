@@ -62,9 +62,11 @@ class NetSupervised(Net):
         es = EarlyStopping(monitor='loss', mode='min', verbose=0, patience=50, min_delta=0.0005)
         
         log.info("Training dynamics model...")
-        dyn_history = dyn_model.fit(train_data["input"], train_data["next"], epochs=50, batch_size=50, verbose=0, validation_split=0.1, callbacks=[es])
+        dyn_history = dyn_model.fit(train_data["input"], train_data["next"], epochs=500, batch_size=50, verbose=0, validation_split=0.1, callbacks=[es])
 
         file_name_plot = "approaches/supervised_ml/saved_models/{}/{}_dynamic.pdf".format(self.game_def.name,self.model_name)
+        os.makedirs(os.path.dirname(file_name_plot), exist_ok=True)
+        
         fig = show_acc_loss_curves(dyn_history)
         fig.savefig(file_name_plot, format='pdf')
 
@@ -92,10 +94,11 @@ class NetSupervised(Net):
         combinations = list(product(*param_grid.values()))
 
 
-        model,history = run_3_fold_gridsearch(train_data, test_data, combinations, "grid_search_reg.csv", dyn_model)
+        model,history = run_3_fold_gridsearch(train_data, test_data, combinations, "./approaches/supervised_ml/grid_search_reg.csv", dyn_model)
 
         file_name_plot = "approaches/supervised_ml/saved_models/{}/{}.pdf".format(self.game_def.name, self.model_name)
         fig = show_acc_loss_curves(history)
+        os.makedirs(os.path.dirname(file_name_plot), exist_ok=True)
         fig.savefig(file_name_plot, format='pdf')
 
 

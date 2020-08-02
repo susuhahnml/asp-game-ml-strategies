@@ -79,14 +79,14 @@ class DQNPlayer(Player):
         approach_parser.add_argument("--architecture-name", type=str, default="default",
                             help="underlying neural network architecture-name;" +
                             " Available: 'default'")
+        approach_parser.add_argument("--save-every", type=int, default=None,
+                            help="After how many steps should save intermediate models")
         approach_parser.add_argument("--nb-steps", type=int, default=1000,
                             help="Number of steps performed by the DQN")
         approach_parser.add_argument("--eps", type=float, default=0.1,
                             help="Epsilon value for EpsGreedyQPolicy")
         approach_parser.add_argument("--train-rand", type=int, default=None,
                             help="Random seed for creating initial states in training net")
-        # approach_parser.add_argument("--n-initial", type=int, default=10,
-        #                     help="Limits the number of initial states for training, will take the first n-initial states using the random seed provided by --train-rand")
         approach_parser.add_argument("--model-name", type=str, default="unnamed",
                             help="Name of the model, used for saving and logging")
         approach_parser.add_argument("--vis-tree", default=False, action='store_true',
@@ -108,19 +108,8 @@ class DQNPlayer(Player):
         """
         
         game_def.get_random_initial()
-        # using_random = not args.train_rand is None
-        # if(using_random):
-        #     log.info("Using random seed {} for initial states in training".format(args.train_rand))
-        #     game_def.get_random_initial()
-        #     initial_states = game_def.random_init
-        #     random.Random(args.train_rand).shuffle(initial_states)
-        # else:
-        #     log.info("Using default initial state in training {} ".format(game_def.initial))
-        #     initial_states = [game_def.initial]
 
-        # initial_states = initial_states[:min(args.n_initial,len(initial_states))]
         initial_states = args.initial_states
-        ##Where to take limit in initial states???
         
         net = NetDQN(game_def,args.model_name,model=None,args=args,possible_initial_states=initial_states)
         net.load_model_from_args()

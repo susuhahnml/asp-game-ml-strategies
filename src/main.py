@@ -40,6 +40,7 @@ def add_default_params(parser):
     parser.add_argument("--n-initial", type=int, default=None,
                             help="Limits the number of initial states for training, will take the first n-initial states using the random seed provided by --train-rand")
 if __name__ == "__main__":
+    ignore_benchmarks=False
     parser = argparse.ArgumentParser(formatter_class=CustomHelpFormatter)
     # ---------------------------- Default parser ----------------------------
     add_default_params(parser)
@@ -80,6 +81,9 @@ if __name__ == "__main__":
     
     parser_plot.add_argument("--file", type=str, action='append',
         help="Files used in plot, can be passed sever times")
+    
+    parser_plot.add_argument("--plot-out", type=str, default="plot",
+        help="Name of for the plot image saved in benchmarks/img")
 
 
     # ---------------------------- Parser for each approach ----------------------------
@@ -153,6 +157,7 @@ if __name__ == "__main__":
     # ---------------------------- Computing Plot ----------------------------
 
     elif args.selected_approach == 'plot':
+        ignore_benchmarks=True
         log.info("Plotting vs for benchamarks:")
         log.info(", ".join(args.file))
         plot_vs_benchmarks(args.file,args)
@@ -182,6 +187,8 @@ if __name__ == "__main__":
             if not args.rules_file_name is None:
                 benchmarks['player'] = benchmarks['player']+'_learning'
     # ---------------------------- Saving Benchamarks ----------------------------
+    if ignore_benchmarks:
+        exit(0)
     del args.initial_states
     command = ' '.join(sys.argv[1:])
     benchmarks_final= {

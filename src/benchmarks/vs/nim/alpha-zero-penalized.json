@@ -1,0 +1,46 @@
+{
+    "command": "vs --game-name=nim --initial=default_initial.lp --n-initial=10 --play-symmetry --n=100 --a=alpha_zero-penalized --out=alpha-zero-penalized.json --penalize-illegal",
+    "args": {
+        "log": "INFO",
+        "game_name": "nim",
+        "const": null,
+        "random_initial_state_seed": null,
+        "initial": "default_initial.lp",
+        "num_repetitions": 100,
+        "init_limit": null,
+        "benchmark_output_file": "alpha-zero-penalized.json",
+        "penalize_illegal": true,
+        "n_initial": 10,
+        "selected_approach": "vs",
+        "pA_style": "alpha_zero-penalized",
+        "pB_style": "random",
+        "play_symmetry": true,
+        "time_out_sec": 3
+    },
+    "initial_state": "control(a).has(1,0).has(2,3).has(3,3).has(4,1)",
+    "results": {
+        "a": {
+            "style_name": "alpha_zero-penalized",
+            "wins": 50,
+            "total_reward": -100,
+            "average_response": 1.356,
+            "matches_lost_by_illegal": 102,
+            "time_steps_lost_by_illegal": [
+                1,
+                2,
+                3,
+                4
+            ],
+            "std": 1.477
+        },
+        "b": {
+            "style_name": "random",
+            "wins": 150,
+            "total_reward": 100,
+            "average_response": 0.01,
+            "matches_lost_by_illegal": 0,
+            "time_steps_lost_by_illegal": [],
+            "std": 0.002
+        }
+    }
+}
