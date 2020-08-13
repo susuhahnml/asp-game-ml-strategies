@@ -4,47 +4,47 @@ Y=`tput setaf 3`
 B=`tput setaf 4`
 NC=`tput sgr0`
 set -e
-echo "$Y Running all benchmarks for Dominnoes...$NC"
+# echo "$Y Running all benchmarks for Dominnoes...$NC"
 
-echo "$Y    ----------------$NC"
-echo "$Y    | Building DQN $NC"
-echo "$Y    ----------------$NC"
-
-
-echo "$Y DQN against random...$NC"
-
-python main.py dqn_rl --game-name=dom --rand=2 --out="dqn-random" --train-rand=2 --nb-steps=1000000 --save-every=50000 --model-name=random
-
-echo "$Y DQN against strategy...$NC"
-
-python main.py dqn_rl --game-name=dom --rand=2 --out="dqn-strategy" --train-rand=2 --nb-steps=1000000 --save-every=50000 --strategy-opponent='./approaches/dqn_rl/dom-asp-strategy.lp' --model-name=strategy 
+# echo "$Y    ----------------$NC"
+# echo "$Y    | Building DQN $NC"
+# echo "$Y    ----------------$NC"
 
 
-echo ""
-echo ""
-echo ""
-echo "$Y    -----------------------$NC"
-echo "$Y    | Building Supervised $NC"
-echo "$Y    -----------------------$NC"
+# echo "$Y DQN against random...$NC"
 
-echo "$Y Supervised ...$NC"
+# python main.py dqn_rl --game-name=dom --rand=2 --out="dqn-random" --train-rand=2 --nb-steps=1000000 --save-every=50000 --model-name=random
 
-python main.py supervised_ml --game-name=dom --rand=2 --out="supervised" --n-epochs=5000 --model-name=transfer --training-file="corrected-200games-1000-iter.csv"
+# echo "$Y DQN against strategy...$NC"
 
-echo ""
-echo ""
-echo ""
-echo "$Y    ----------------------$NC"
-echo "$Y    | Building AlphaZero $NC"
-echo "$Y    ----------------------$NC"
+# python main.py dqn_rl --game-name=dom --rand=2 --out="dqn-strategy" --train-rand=2 --nb-steps=1000000 --save-every=50000 --strategy-opponent='./approaches/dqn_rl/dom-asp-strategy.lp' --model-name=strategy 
 
-echo "$Y Alpha zero not penalized ...$NC"
 
-python main.py alpha_zero --game-name=dom --rand=2 --out="alpha-not-penalized" --train-rand=2  --model-name=not-penalized --n-vs=200 --n-train=150 --n-episodes=100 --n-epochs=500 --n-mcts-simulations=500
+# echo ""
+# echo ""
+# echo ""
+# echo "$Y    -----------------------$NC"
+# echo "$Y    | Building Supervised $NC"
+# echo "$Y    -----------------------$NC"
 
-echo "$Y Alpha zero penalized ...$NC"
+# echo "$Y Supervised ...$NC"
 
-python main.py alpha_zero --game-name=dom --rand=2 --out="alpha-penalized" --train-rand=2  --model-name=penalized --n-vs=200 --n-train=150 --n-episodes=100 --n-epochs=500 --n-mcts-simulations=500 --penalize-illegal
+# python main.py supervised_ml --game-name=dom --rand=2 --out="supervised" --n-epochs=5000 --model-name=transfer --training-file="corrected-200games-1000-iter.csv"
+
+# echo ""
+# echo ""
+# echo ""
+# echo "$Y    ----------------------$NC"
+# echo "$Y    | Building AlphaZero $NC"
+# echo "$Y    ----------------------$NC"
+
+# echo "$Y Alpha zero not penalized ...$NC"
+
+# python main.py alpha_zero --game-name=dom --rand=2 --out="alpha-not-penalized" --train-rand=2  --model-name=not-penalized --n-vs=200 --n-train=150 --n-episodes=100 --n-epochs=500 --n-mcts-simulations=500
+
+# echo "$Y Alpha zero penalized ...$NC"
+
+# python main.py alpha_zero --game-name=dom --rand=2 --out="alpha-penalized" --train-rand=2  --model-name=penalized --n-vs=200 --n-train=150 --n-episodes=100 --n-epochs=500 --n-mcts-simulations=500 --penalize-illegal
 
 echo ""
 echo ""
@@ -99,15 +99,20 @@ echo "$Y    ---------------------$NC"
 echo "$Y    | Plotting results $NC"
 echo "$Y    ---------------------$NC"
 
-python main.py plot --game-name=dom --file="dqn-random" --plot-out="dqn-random"
-python main.py plot --game-name=dom --file="dqn-strategy" --plot-out="dqn-strategy"
+python main.py plot --game-name=dom --file="dqn-random" --plot-out="dqn-random" --plot-type="line"
+python main.py plot --game-name=dom --file="dqn-random" --plot-out="dqn-random" --plot-type="bar"
+python main.py plot --game-name=dom --file="dqn-strategy" --plot-out="dqn-strategy" --plot-type="line"
+python main.py plot --game-name=dom --file="dqn-strategy" --plot-out="dqn-strategy" --plot-type="bar"
 
-python main.py plot --game-name=dom --file="supervised-transfer" --plot-out="supervised-transfer"
+python main.py plot --game-name=dom --file="supervised-transfer" --plot-out="supervised-transfer" --plot-type="bar"
 
-python main.py plot --game-name=dom --file="supervised-transfer" --plot-out="supervised-transfer"
+python main.py plot --game-name=dom --file="supervised-transfer" --plot-out="supervised-transfer" --plot-type="bar"
 
-python main.py plot --game-name=dom --file="alpha-zero-not-penalized" --plot-out="alpha-zero-not-penalized"
-python main.py plot --game-name=dom --file="alpha-zero-penalized" --plot-out="alpha-zero-penalized"
+python main.py plot --game-name=dom --file="alpha-zero-not-penalized" --plot-out="alpha-zero-not-penalized" --plot-type="line"
+python main.py plot --game-name=dom --file="alpha-zero-not-penalized" --plot-out="alpha-zero-not-penalized" --plot-type="bar"
+
+python main.py plot --game-name=dom --file="alpha-zero-penalized" --plot-out="alpha-zero-penalized" --plot-type="line"
+python main.py plot --game-name=dom --file="alpha-zero-penalized" --plot-out="alpha-zero-penalized" --plot-type="bar"
 
 
 echo "$B    ------------------------------------------ $NC"
@@ -120,37 +125,37 @@ echo "$B    ------------------------------------------ $NC"
 
 
 
-####################################################################################
+# ####################################################################################
 
 
-echo "$B ------------------------------------------------------------------$NC"
-echo "$B Running all benchmarks for Nim...$NC"
+# echo "$B ------------------------------------------------------------------$NC"
+# echo "$B Running all benchmarks for Nim...$NC"
 
-echo "$B    ----------------$NC"
-echo "$B    | Building DQN $NC"
-echo "$B    ----------------$NC"
-
-
-echo "$B DQN against random...$NC"
-
-python main.py dqn_rl --game-name=nim --initial=default_initial.lp --out="dqn-random"  --nb-steps=1000000 --save-every=50000 --model-name=random
+# echo "$B    ----------------$NC"
+# echo "$B    | Building DQN $NC"
+# echo "$B    ----------------$NC"
 
 
+# echo "$B DQN against random...$NC"
 
-echo ""
-echo ""
-echo ""
-echo "$B    ----------------------$NC"
-echo "$B    | Building AlphaZero $NC"
-echo "$B    ----------------------$NC"
+# python main.py dqn_rl --game-name=nim --initial=default_initial.lp --out="dqn-random"  --nb-steps=1000000 --save-every=50000 --model-name=random
 
-echo "$B Alpha zero not penalized ...$NC"
 
-python main.py alpha_zero --game-name=nim --initial=default_initial.lp --out="alpha-not-penalized"   --model-name=not-penalized --n-vs=200 --n-train=150 --n-episodes=100 --n-epochs=500 --n-mcts-simulations=300
 
-echo "$B Alpha zero penalized ...$NC"
+# echo ""
+# echo ""
+# echo ""
+# echo "$B    ----------------------$NC"
+# echo "$B    | Building AlphaZero $NC"
+# echo "$B    ----------------------$NC"
 
-python main.py alpha_zero --game-name=nim --initial=default_initial.lp --out="alpha-penalized"   --model-name=penalized --n-vs=200 --n-train=150 --n-episodes=100 --n-epochs=500 --n-mcts-simulations=300 --penalize-illegal
+# echo "$B Alpha zero not penalized ...$NC"
+
+# python main.py alpha_zero --game-name=nim --initial=default_initial.lp --out="alpha-not-penalized"   --model-name=not-penalized --n-vs=200 --n-train=150 --n-episodes=100 --n-epochs=500 --n-mcts-simulations=300
+
+# echo "$B Alpha zero penalized ...$NC"
+
+# python main.py alpha_zero --game-name=nim --initial=default_initial.lp --out="alpha-penalized"   --model-name=penalized --n-vs=200 --n-train=150 --n-episodes=100 --n-epochs=500 --n-mcts-simulations=300 --penalize-illegal
 
 echo ""
 echo ""
@@ -200,10 +205,16 @@ echo "$B    ---------------------$NC"
 echo "$B    | Plotting results $NC"
 echo "$B    ---------------------$NC"
 
-python main.py plot --game-name=nim --file="dqn-random" --plot-out="dqn-random"
-
-python main.py plot --game-name=nim --file="alpha-zero-not-penalized" --plot-out="alpha-zero-not-penalized"
-python main.py plot --game-name=nim --file="alpha-zero-penalized" --plot-out="alpha-zero-penalized"
+python main.py plot --game-name=nim --file="dqn-random" --plot-out="dqn-random" --plot-type="line"
+python main.py plot --game-name=nim --file="dqn-random" --plot-out="dqn-random" --plot-type="bar"
 
 
-python main.py plot --game-name=nim --file="dqn-random.json" --file="alpha-zero-penalized.json" --file="alpha-zero-not-penalized.json" --plot-out="all"
+python main.py plot --game-name=nim --file="alpha-zero-not-penalized" --plot-out="alpha-zero-not-penalized" --plot-type="line"
+python main.py plot --game-name=nim --file="alpha-zero-not-penalized" --plot-out="alpha-zero-not-penalized" --plot-type="bar"
+
+
+python main.py plot --game-name=nim --file="alpha-zero-penalized" --plot-out="alpha-zero-penalized" --plot-type="line"
+python main.py plot --game-name=nim --file="alpha-zero-penalized" --plot-out="alpha-zero-penalized" --plot-type="bar"
+
+python main.py plot --game-name=nim --file="dqn-random.json" --file="alpha-zero-penalized.json" --file="alpha-zero-not-penalized.json" --plot-out="all" --plot-type="line"
+python main.py plot --game-name=nim --file="dqn-random.json" --file="alpha-zero-penalized.json" --file="alpha-zero-not-penalized.json" --plot-out="all" --plot-type="bar"

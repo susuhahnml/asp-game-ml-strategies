@@ -17,6 +17,7 @@ from structures.players import player_approaches_sub_classes, Player
 from structures.match import Match
 import signal
 from benchmarks.plot import plot_vs_benchmarks
+
 def add_default_params(parser):
     parser.add_argument("--log", type=str, default="INFO",
         help="Log level: 'info' 'debug' 'error'" )
@@ -84,6 +85,9 @@ if __name__ == "__main__":
     
     parser_plot.add_argument("--plot-out", type=str, default="plot",
         help="Name of for the plot image saved in benchmarks/img")
+
+    parser_plot.add_argument("--plot-type", type=str, default="bar",
+        help="Type of plot to be drawn (options: 'bar', 'line' or 'all')")
 
 
     # ---------------------------- Parser for each approach ----------------------------
