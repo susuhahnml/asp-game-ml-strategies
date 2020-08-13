@@ -1,5 +1,5 @@
 from structures.players import Player
-from random import randint
+import random
 
 
 class RandomPlayer(Player):
@@ -27,6 +27,7 @@ class RandomPlayer(Player):
                         from the command line. EXAMPLE approach_name<file-name>, in this case 
                         the initialization could use the name file to load player.
         """
+        random.seed(2)
         super().__init__(game_def, "Random player", main_player)
         #Must implement adding specific attributes of the class
 
@@ -90,5 +91,5 @@ class RandomPlayer(Player):
         Returns:
             action (Action): The selected action. Should be one from the list of state.legal_actions
         """
-        index = randint(0,len(state.legal_actions)-1)
+        index = random.randint(0,len(state.legal_actions)-1)
         return state.legal_actions[index]

@@ -24,13 +24,11 @@ def plot_vs_benchmarks(files,args):
     assert len(numbers_games)==1,"All benchmarks should play the same amount of games. Delete all benchmarks and images and run the vs script again."
 
     number_games = numbers_games.pop()
-    print(args)
     data = make_dataframe(all_bm, number_games)
 
     if args.plot_type == "bar":
         plt = plot_barchart(data)
         plt.title(make_title(args))
-        print(plt)
         save_plot(plt, args)
     elif args.plot_type == "line":
         plt = plot_linegraph(data)
@@ -61,7 +59,6 @@ def make_dataframe(dct, n_games):
     except:
         df['iter'] = df["player_name"]
         df['iter_int']  = df["player_name"]
-    print(df)
     return df
 
 def plot_barchart(df):
@@ -77,15 +74,18 @@ def plot_barchart(df):
     pwin = plt.bar(df['iter'], df['wins'], width=width_c,color='#1644AE')
     plt.axhline(y = n_games/2, color ="black", linestyle ="--")
 
-    plt.xlabel("iteration")
+    if type(['iter_int']) == 'int':
+        plt.xlabel("iteration")
+    else:
+        plt.xlabel("approach")
     plt.ylabel("number of games")
     plt.legend((pwin[0], pilegal[0]), ('Wins', 'Lost by Illegal'))
     plt.ylim((0, n_games))
     try:
         if df.shape[0] > 20:
-            plt.xticks(df['iter'], df['iter_int'], fontsize=6)
+            plt.xticks(df['iter'], [a.replace('_','\n').replace('-','\n') for a in df['iter_int']], fontsize=6)
         else:
-            plt.xticks(df['iter'], df['iter_int'])
+            plt.xticks(df['iter'], [a.replace('_','\n').replace('-','\n') for a in df['iter_int']])
     except:
         pass 
     plt.grid(zorder=0,axis='y')
@@ -103,14 +103,16 @@ def plot_linegraph(df):
     pilegal = plt.plot(df['iter_int'], df['ill_perc'],color='#FC755A')
     try:
         if df.shape[0] > 20:
-            plt.xticks(df['iter_int'], df['iter'], fontsize=6)
+            plt.xticks(df['iter_int'],[a.replace('_','\n').replace('-','\n') for a in df['iter_int']], fontsize=6)
         else:
-            plt.xticks(df['iter_int'], df['iter'])
+            plt.xticks(df['iter_int'],[a.replace('_','\n').replace('-','\n') for a in df['iter_int']])
     except:
         pass 
     plt.axhline(y = 0.5, color ="black", linestyle ="--")   
-
-    plt.xlabel("iteration")
+    if type(['iter_int']) == 'int':
+        plt.xlabel("iteration")
+    else:
+        plt.xlabel("approach")
     plt.ylabel("percentage")
     plt.legend((pwin[0], pilegal[0]), ('% games won', '% games lost with illegal action'))
     plt.ylim((-0.05, 1))

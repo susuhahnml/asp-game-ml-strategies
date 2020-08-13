@@ -44,7 +44,7 @@ set -e
 
 # echo "$Y Alpha zero penalized ...$NC"
 
-# python main.py alpha_zero --game-name=dom --rand=2 --out="alpha-penalized" --train-rand=2  --model-name=penalized --n-vs=200 --n-train=150 --n-episodes=100 --n-epochs=500 --n-mcts-simulations=500 --penalize-illegal
+# # python main.py alpha_zero --game-name=dom --rand=2 --out="alpha-penalized" --train-rand=2  --model-name=penalized --n-vs=200 --n-train=150 --n-episodes=100 --n-epochs=500 --n-mcts-simulations=500 --penalize-illegal
 
 echo ""
 echo ""
@@ -59,7 +59,7 @@ FILES="./approaches/dqn_rl/saved_models/dom/random/*.json"
 for f in $FILES
 do
     echo "$Y VS against random for $f..."
-    python main.py vs --game-name=dom --rand=2 --n-initial=10 --play-symmetry --n=250 --a=dqn_rl-random/$(basename -- $f .json) --out="dqn-random/$(basename -- $f).json" --penalize-illegal
+    python main.py vs --game-name=dom --rand=2 --n-initial=10 --play-symmetry --n=500 --a=dqn_rl-random/$(basename -- $f .json) --out="dqn-random/$(basename -- $f).json" --penalize-illegal
 done
 
 
@@ -67,12 +67,12 @@ FILES="./approaches/dqn_rl/saved_models/dom/strategy/*.json"
 for f in $FILES
 do
     echo "$Y VS against random for $f... $NC"
-    python main.py vs --game-name=dom --rand=2 --n-initial=10 --play-symmetry --n=250 --a=dqn_rl-strategy/$(basename -- $f .json) --out="dqn-strategy/$(basename -- $f).json" --penalize-illegal
+    python main.py vs --game-name=dom --rand=2 --n-initial=10 --play-symmetry --n=500 --a=dqn_rl-strategy/$(basename -- $f .json) --out="dqn-strategy/$(basename -- $f).json" --penalize-illegal
 done
 
 
 echo "$Y ------ VS Supervised $f... $NC"
-python main.py vs --game-name=dom --rand=2 --n-initial=10 --play-symmetry --n=250 --a=supervised_ml-transfer --out="supervised-transfer/transfer.json" --penalize-illegal
+python main.py vs --game-name=dom --rand=2 --n-initial=10 --play-symmetry --n=500 --a=supervised_ml-transfer --out="supervised-transfer/transfer.json" --penalize-illegal
 
 
 echo "$Y ------ VS Alpha zero $f... $NC"
@@ -80,7 +80,7 @@ FILES="./approaches/alpha_zero/saved_models/dom/not-penalized/*.json"
 for f in $FILES
 do
     echo "$Y VS against random for $f... $NC"
-    python main.py vs --game-name=dom --rand=2 --n-initial=10 --play-symmetry --n=250 --a=alpha_zero-not-penalized/$(basename -- $f .json) --out="alpha-zero-not-penalized/$(basename -- $f).json" --penalize-illegal
+    python main.py vs --game-name=dom --rand=2 --n-initial=10 --play-symmetry --n=500 --a=alpha_zero-not-penalized/$(basename -- $f .json) --out="alpha-zero-not-penalized/$(basename -- $f).json" --penalize-illegal
 done
 
 
@@ -88,8 +88,19 @@ FILES="./approaches/alpha_zero/saved_models/dom/penalized/*.json"
 for f in $FILES
 do
     echo "$Y VS against random for $f... $NC"
-    python main.py vs --game-name=dom --rand=2 --n-initial=10 --play-symmetry --n=250 --a=alpha_zero-penalized/$(basename -- $f .json) --out="alpha-zero-penalized/$(basename -- $f).json" --penalize-illegal
+    python main.py vs --game-name=dom --rand=2 --n-initial=10 --play-symmetry --n=500 --a=alpha_zero-penalized/$(basename -- $f .json) --out="alpha-zero-penalized/$(basename -- $f).json" --penalize-illegal
 done
+
+
+python main.py vs --game-name=dom --rand=2 --n-initial=10 --play-symmetry --n=500 --a=dqn_rl-strategy --out="dqn-strategy.json" --penalize-illegal
+
+python main.py vs --game-name=dom --rand=2 --n-initial=10 --play-symmetry --n=500 --a=dqn_rl-random --out="dqn-random.json" --penalize-illegal
+
+python main.py vs --game-name=dom --rand=2 --n-initial=10 --play-symmetry --n=500 --a=alpha_zero-not-penalized --out="alpha-zero-not-penalized.json" --penalize-illegal
+
+python main.py vs --game-name=dom --rand=2 --n-initial=10 --play-symmetry --n=500 --a=alpha_zero-penalized --out="alpha-zero-penalized.json" --penalize-illegal
+
+python main.py vs --game-name=dom --rand=2 --n-initial=10 --play-symmetry --n=500 --a=strategy-approaches/dqn_rl/dom-asp-strategy.lp --out="strategy.json" --penalize-illegal
 
 
 echo ""
@@ -114,13 +125,13 @@ python main.py plot --game-name=dom --file="alpha-zero-not-penalized" --plot-out
 python main.py plot --game-name=dom --file="alpha-zero-penalized" --plot-out="alpha-zero-penalized" --plot-type="line"
 python main.py plot --game-name=dom --file="alpha-zero-penalized" --plot-out="alpha-zero-penalized" --plot-type="bar"
 
+python main.py plot --game-name=dom --file="dqn-random.json" --file="dqn-strategy.json" --file="alpha-zero-penalized.json" --file="alpha-zero-not-penalized.json" --file="strategy.json" --plot-out="all" --plot-type="bar"
+python main.py plot --game-name=dom --file="dqn-random.json" --file="dqn-strategy.json" --file="alpha-zero-penalized.json" --file="alpha-zero-not-penalized.json" --file="strategy.json" --plot-out="all" --plot-type="line"
+
 
 echo "$B    ------------------------------------------ $NC"
 echo "$B    | Benchmarks for nim with one intial state $NC"
 echo "$B    ------------------------------------------ $NC"
-
-
-
 
 
 
@@ -170,11 +181,11 @@ FILES="./approaches/dqn_rl/saved_models/nim/random/*.json"
 for f in $FILES
 do
     echo "$B VS against random for $f..."
-    python main.py vs --game-name=nim --initial=default_initial.lp --n-initial=10 --play-symmetry --n=250 --a=dqn_rl-random/$(basename -- $f .json) --out="dqn-random/$(basename -- $f).json" --penalize-illegal
+    python main.py vs --game-name=nim --initial=default_initial.lp --n-initial=10 --play-symmetry --n=500 --a=dqn_rl-random/$(basename -- $f .json) --out="dqn-random/$(basename -- $f).json" --penalize-illegal
 done
 
 
-python main.py vs --game-name=nim --initial=default_initial.lp --n-initial=10 --play-symmetry --n=250 --a=dqn_rl-random --out="dqn-random.json" --penalize-illegal
+python main.py vs --game-name=nim --initial=default_initial.lp --n-initial=10 --play-symmetry --n=500 --a=dqn_rl-random --out="dqn-random.json" --penalize-illegal
 
 
 echo "$B ------ VS Alpha zero $f... $NC"
@@ -182,20 +193,20 @@ FILES="./approaches/alpha_zero/saved_models/nim/not-penalized/*.json"
 for f in $FILES
 do
     echo "$B VS against random for $f... $NC"
-    python main.py vs --game-name=nim --initial=default_initial.lp --n-initial=10 --play-symmetry --n=250 --a=alpha_zero-not-penalized/$(basename -- $f .json) --out="alpha-zero-not-penalized/$(basename -- $f).json" --penalize-illegal
+    python main.py vs --game-name=nim --initial=default_initial.lp --n-initial=10 --play-symmetry --n=500 --a=alpha_zero-not-penalized/$(basename -- $f .json) --out="alpha-zero-not-penalized/$(basename -- $f).json" --penalize-illegal
 done
 
-python main.py vs --game-name=nim --initial=default_initial.lp --n-initial=10 --play-symmetry --n=250 --a=alpha_zero-not-penalized --out="alpha-zero-not-penalized.json" --penalize-illegal
+python main.py vs --game-name=nim --initial=default_initial.lp --n-initial=10 --play-symmetry --n=500 --a=alpha_zero-not-penalized --out="alpha-zero-not-penalized.json" --penalize-illegal
 
 
 FILES="./approaches/alpha_zero/saved_models/nim/penalized/*.json"
 for f in $FILES
 do
     echo "$B VS against random for $f... $NC"
-    python main.py vs --game-name=nim --initial=default_initial.lp --n-initial=10 --play-symmetry --n=250 --a=alpha_zero-penalized/$(basename -- $f .json) --out="alpha-zero-penalized/$(basename -- $f).json" --penalize-illegal
+    python main.py vs --game-name=nim --initial=default_initial.lp --n-initial=10 --play-symmetry --n=500 --a=alpha_zero-penalized/$(basename -- $f .json) --out="alpha-zero-penalized/$(basename -- $f).json" --penalize-illegal
 done
 
-python main.py vs --game-name=nim --initial=default_initial.lp --n-initial=10 --play-symmetry --n=250 --a=alpha_zero-penalized --out="alpha-zero-penalized.json" --penalize-illegal
+python main.py vs --game-name=nim --initial=default_initial.lp --n-initial=10 --play-symmetry --n=500 --a=alpha_zero-penalized --out="alpha-zero-penalized.json" --penalize-illegal
 
 
 echo ""
