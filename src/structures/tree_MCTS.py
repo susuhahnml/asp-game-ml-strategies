@@ -105,7 +105,7 @@ class NodeMCTS(NodeBase):
         if parent is None:
             return format_str
         base = ' fillcolor="#466BCB{}"'
-        a = self.p
+        a = self.prob
         if a>0.98:
             base = base[:-3]+'"'
         else:
@@ -188,7 +188,7 @@ class TreeMCTS(Tree):
 
     ################## Standar functions for MCTS 
 
-    def run_mcts(self, n_iter, initial_node = None, expl=3 , check_early_stop=20):
+    def run_mcts(self, n_iter, initial_node = None, expl=0.3 , check_early_stop=20):
         """
         Runs a MCTS
 
@@ -222,7 +222,7 @@ class TreeMCTS(Tree):
         if node.n == 0:
             return math.inf
         r = node.q_value 
-        r += expl*(math.sqrt(node.parent.n/(1+node.n)))
+        r += expl*(math.sqrt(node.parent.n)/(1+node.n))
         return r
 
     def tree_traverse(self, node, expl):

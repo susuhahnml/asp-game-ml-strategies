@@ -1,4 +1,4 @@
-## Game play strategies powered by ASP THE CODE :clubs: :game_die:
+## Game strategies powered by ASP  :clubs: :game_die:
 
 Here we document our source code and its various functionalities. 
 
@@ -6,10 +6,10 @@ Here we document our source code and its various functionalities.
 
 1. [Dependencies](#1-Dependencies) 
 2. [Code structure](#2-Code-structure)
-3. [Main](#3-Main)
+3. [Integration of learning approaches](#3-Integration)
+4. [Main](#4-Main)
    a. [Build an approach](#Build-approach)
    b. [Simulate match](#Simulate-match)
-4. [Developments](#4-Developments)
 
 ### 1. Dependencies
 
@@ -29,27 +29,13 @@ $ pip install pytest
 
 #### ii. External dependencies
 
-The next steps involve setting up this repository for testing. To proceed, execute the following prompt-based script:
+The ASP system [clingo](https://potassco.org/clingo/) is required for the game dynamics. This system can be installed using `conda` with the command:
 
 ```shell
-$ ./init.sh
+$ conda install -c potassco clingo
 ```
 
-a. The first prompt will initialize a pre-commit hook, which will automatically update `requirements.txt` on every `git commit`.
 
-b. The next prompt will download and decompress an appropriate upstream binary for `clingo-5.4.0`, based on your OS. Alternatively, you could skip this step and install `clingo` via your OS's package manager, if it is available upstream.
-
-c. The next prompt will download and decompress an appropriate upstream binary for `ILASP-3.4.0`, based on your OS.
-
-**Note:** It is necessary to manually copy both decompressed binaries into a directory located on your `PATH` variable. Additionally, both binaries must be located in a directory owned by a user with the same access permissions, since `ILASP` will call `clingo` in our scripts. This action can be omitted for the `clingo` binary if you installed it via your package manager, but it would still need to be done for the `ILASP` binary.
-
-**Note:** If you are using the downloaded `clingo` binary in step "b" above, you would need to install python support for `clingo`. This step can be skipped if you installed `clingo` via your package manager.
-
-To install python support for `clingo`, you can run the following command using `conda`:
-
-```shell
-$ conda install -c potassco clingo 
-```
 
 ### 2. Code structure
 
@@ -94,6 +80,8 @@ Here we provide a tabular summary of our main code structure.
 |          | [arg_metav_formatter.py](py_utils/arg_metav_formatter.py) | Argparse formatter for cli information     |
 |          | [clingo_utils.py](py_utils/clingo_utils.py)               | Clingo bindings to be used in python with CLingo API       |
 |          | [colors.py](py_utils/colors.py)                           | Defining python colors for pretty-printing |
+|          | [logger.py](py_utils/logger.py)                           | Defines the logs of the framework |
+|          | [train_utils.py](py_utils/train_utils.py)                           | Common functions for training |
 
 #### v. `structures`
 
@@ -101,17 +89,28 @@ Here we provide a tabular summary of our main code structure.
 | :---:          | :---:                             | :---                                                                                                                                                                                 |
 | **structures** |                                   | Contains the structures used to model the games                                                                                                                                      |
 |            | [action.py](structures/action.py) | An action selected by a player. An extended class also includes the fluents of the next state once the action ins performed                                                          |
+|            | [game_def.py](structures/game_def.py)  | Defines the general class for game definitions                                     |
+|            | [game_encoder.py](structures/game_encoder.py)  | Defines the class used to vectorize a game state                                    |
+|            | [match.py](structures/match.py)   | A full match of a game, list of steps                                                                                                                                                |
+|            | [net.py](structures/net.py)   | A general class to manage networks                                                                                                                                               |
+|            | [players.py](structures/players.py)  | Defines the general behavior of  of a player approach                                    |
 |            | [state.py](structures/state.py)   | The state of the game, including board state, hows turn it is, if the game finished and if such, the goals reached. An extended class also includes all valid actions from the state |
 |            | [step.py](structures/step.py)     | The step on a match, includes the state and the action performed in such state                                                                                                       |
-|            | [match.py](structures/match.py)   | A full match of a game, list of steps                                                                                                                                                |
-|            | [tree.py](structures/tree.py)     | A full tree of a game created by steps, with all possible paths                                                                                                                      |
-|            | [game.py](structures/game.py)     | The game representation used for RL agents                                                                                                                                           |
-|            | [players.py](structures/players.py)  | Defines the general behavior of  of a player approach                                    |
-|            | [game_def.py](structures/game_def.py)  | Defines the general class for game definitions                                     |
+|            | [tree.py](structures/tree.py)     | A game tree created by steps, with all possible paths                                                                                                                      |
+|            | [treeMCTS.py](structures/tree_MCTS.py)     | A Monte carlo tree search tree.                                                                                                                    |
+|            | [tree_net.py](structures/tree_net.py)     | A game tree generated by a network.                                                                                                                    |
 
-### 3. Main
+### 3. Integration of learning approaches
 
-We provide two types of main functions. Both of them have the following arguments in common to define the game, the number of times they will be ran and where the benckmark's output. This command must me used under the `src` directory
+We consider as a learning approach, a process that is capable of creating a strategy given a game description and use such strategy latter on to choose actions during game play. A strategy might involve an additional ASP file, a pre-computed tree search, a machine learning model among many other.
+
+All approaches can be found inside the [approaches](src/approaches) directory. Every folder in this directory will automatically generate command-line arguments to run the building of the strategy and to play such approach against other, generating usefully benchmarks.
+
+The instructions to create a new strategic approach can be found [here](src/approaches/README.md). Please refer to the README.md file in each approach for any specific information.
+
+### 4. Main
+
+We provide three types of main functions. Both of them have the following arguments in common to define the game, the number of times they will be ran and where the benckmark's will be saved. All command must me used under the `src` directory.
 
 ```shell
 $ python main.py -h
@@ -168,7 +167,7 @@ It will give benchmarks for build times and special results. Benchmarks are save
 
 #### Simulate a match
 
-This command can be used to simulate a match with one type of player against another in an specific game definition. It requires the following additional arguments to define the kind of players.
+This command can be used to simulate a match with between two previously loaded players in an specific game definition. It requires the following additional arguments to define the kind of players.
 
 Example:
 ```shell
@@ -213,6 +212,14 @@ INFO:
 		                    response_times(ms): [0.022, 0.014, 0.015, 0.01, 0.009]
 ```
 
-### 4. Developments
 
-Further developments are summarized in our [changelog](/docs/changelog.md).
+#### Load a pre-trained player
+
+A saved player can be also loaded for further visualization or any specific analysis. For this, we use the command:
+
+```shell
+pytho main.py load --style=<Name of saved model>
+```
+
+
+**Note** We ask the user to refer to the help on the command line to up to date features.

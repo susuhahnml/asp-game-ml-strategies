@@ -88,7 +88,7 @@ class TreeZero(TreeMCTS):
         if node.n == 0:
             return math.inf
         r = node.q_value 
-        r += expl*p_model*(math.sqrt(node.parent.n/(1+node.n)))
+        r += expl*p_model*(math.sqrt(node.parent.n)/(1+node.n))
         return r
 
     def rollout(self, node):
@@ -125,7 +125,7 @@ class TreeZero(TreeMCTS):
 
 
     @staticmethod
-    def run_episode(game_def, net):
+    def run_episode(game_def, net, expl=0.3):
         """
         Runs one episode to generate examples.
         The full episode will run a MCTS simulation in the root
@@ -150,7 +150,7 @@ class TreeZero(TreeMCTS):
                 is_first = False
             root = TreeZero.node_class(Step(current_state,None,0),"a")
             tree = TreeZero(root,game_def,net)
-            tree.run_mcts(net.args.n_mcts_simulations,expl=3)
+            tree.run_mcts(net.args.n_mcts_simulations,expl=expl)
             # if j==1: tree.print_in_file("train-{}.png".format(j))
             if root.step.state.is_terminal:
                 examples.append((root.step.state,[game_def.encoder.mask_state(current_state), np.zeros(game_def.encoder.action_size), None]))
