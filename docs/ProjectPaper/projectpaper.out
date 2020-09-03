@@ -1,0 +1,31 @@
+\BOOKMARK [1][-]{section.1}{Theoretical Background: Computational Problem Solving and Combinatorial Games}{}% 1
+\BOOKMARK [2][-]{subsection.1.1}{What are combinatorial games?}{section.1}% 2
+\BOOKMARK [2][-]{subsection.1.2}{The relationship of combinatorial games and artificial intelligence}{section.1}% 3
+\BOOKMARK [2][-]{subsection.1.3}{Model dynamics and declarative programming languages}{section.1}% 4
+\BOOKMARK [1][-]{section.2}{Project Goal: Creation of an algorithm capable of playing dominoes using reinforcement learning}{}% 5
+\BOOKMARK [2][-]{subsection.2.1}{Why dominoes?}{section.2}% 6
+\BOOKMARK [2][-]{subsection.2.2}{Why Reinforcement Learning?}{section.2}% 7
+\BOOKMARK [1][-]{section.3}{Project Execution}{}% 8
+\BOOKMARK [2][-]{subsection.3.1}{Problem Formalisation}{section.3}% 9
+\BOOKMARK [3][-]{subsubsection.3.1.1}{Game Description Language \(GDL\) and Answer Set Programming \(ASP\)}{subsection.3.1}% 10
+\BOOKMARK [3][-]{subsubsection.3.1.2}{Game Encoding and Vector Representation for Dominoes}{subsection.3.1}% 11
+\BOOKMARK [2][-]{subsection.3.2}{Application of Q-Learning}{section.3}% 12
+\BOOKMARK [3][-]{subsubsection.3.2.1}{Algorithm Selection}{subsection.3.2}% 13
+\BOOKMARK [3][-]{subsubsection.3.2.2}{Implementation}{subsection.3.2}% 14
+\BOOKMARK [3][-]{subsubsection.3.2.3}{Benchmarking and results}{subsection.3.2}% 15
+\BOOKMARK [3][-]{subsubsection.3.2.4}{Resulting project modifications}{subsection.3.2}% 16
+\BOOKMARK [2][-]{subsection.3.3}{Application of Deep Supervised Transfer Learning}{section.3}% 17
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Deep Supervised Transfer Learning}{subsection.3.3}% 18
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Data Generation with Monte Carlo Tree Search}{subsection.3.3}% 19
+\BOOKMARK [3][-]{subsubsection.3.3.3}{Model Setup}{subsection.3.3}% 20
+\BOOKMARK [3][-]{subsubsection.3.3.4}{Benchmarking and Results}{subsection.3.3}% 21
+\BOOKMARK [3][-]{subsubsection.3.3.5}{Discussion}{subsection.3.3}% 22
+\BOOKMARK [2][-]{subsection.3.4}{Implementation of AlphaGo}{section.3}% 23
+\BOOKMARK [3][-]{subsubsection.3.4.1}{The AlphaGo Zero algorithm}{subsection.3.4}% 24
+\BOOKMARK [3][-]{subsubsection.3.4.2}{Specific implementation}{subsection.3.4}% 25
+\BOOKMARK [3][-]{subsubsection.3.4.3}{Benchmarking and Results}{subsection.3.4}% 26
+\BOOKMARK [3][-]{subsubsection.3.4.4}{Discussion}{subsection.3.4}% 27
+\BOOKMARK [1][-]{section.4}{Conclusion}{}% 28
+\BOOKMARK [1][-]{section.4}{References}{}% 29
+\BOOKMARK [1][-]{appendix.A}{Rules for Nim}{}% 30
+\BOOKMARK [1][-]{appendix.B}{Rules for Two-Player Dominoes without a draw pile}{}% 31

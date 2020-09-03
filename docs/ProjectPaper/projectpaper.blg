@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d (TeX Live 2016)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: projectpaper.aux
+The style file: apalike.bst
+Database file #1: domiknows.bib
+Warning--empty publisher in lifschitz_answer_2019
+You've used 18 entries,
+            1935 wiz_defined-function locations,
+            602 strings with 8597 characters,
+and the built_in function-call counts, 9115 in all, are:
+= -- 830
+> -- 576
+< -- 18
++ -- 205
+- -- 201
+* -- 816
+:= -- 1622
+add.period$ -- 68
+call.type$ -- 18
+change.case$ -- 174
+chr.to.int$ -- 18
+cite$ -- 19
+duplicate$ -- 310
+empty$ -- 539
+format.name$ -- 223
+if$ -- 1771
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 22
+newline$ -- 100
+num.names$ -- 66
+pop$ -- 164
+preamble$ -- 1
+purify$ -- 175
+quote$ -- 0
+skip$ -- 233
+stack$ -- 0
+substring$ -- 448
+swap$ -- 59
+text.length$ -- 9
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 100
+warning$ -- 1
+while$ -- 66
+width$ -- 0
+write$ -- 262
+(There was 1 warning)
