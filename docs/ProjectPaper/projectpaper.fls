@@ -1,0 +1,234 @@
+PWD /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper
+INPUT /usr/local/texlive/2016/texmf.cnf
+INPUT /usr/local/texlive/2016/texmf-dist/web2c/texmf.cnf
+INPUT /usr/local/texlive/2016/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/projectpaper.tex
+OUTPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/projectpaper.log
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/base/article.cls
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/base/article.cls
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/base/size12.clo
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/base/size12.clo
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/map/fontname/texfonts.map
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/booktabs/booktabs.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/booktabs/booktabs.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/threeparttable/threeparttable.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/threeparttable/threeparttable.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/hyperref.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/hyperref.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/auxhook.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/auxhook.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/pd1enc.def
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/pd1enc.def
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/url/url.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/url/url.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/hpdftex.def
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/hpdftex.def
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/caption/caption3.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/csquotes/csquotes.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/csquotes/csquotes.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/csquotes/csquotes.def
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/csquotes/csquotes.def
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/csquotes/csquotes.cfg
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/csquotes/csquotes.cfg
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/float/float.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/natbib/natbib.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/natbib/natbib.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsmath.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsmath.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amstext.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amstext.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsgen.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsbsy.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsbsy.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amssymb.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amssymb.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/geometry/geometry.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/geometry/geometry.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/tools/array.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/tools/array.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/tools/tabularx.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/tools/tabularx.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphicx.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphicx.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphics.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphics.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/graphics/trig.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/graphics/trig.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/pdftex-def/pdftex.def
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/pdftex-def/pdftex.def
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/caption/subcaption.sty
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/projectpaper.aux
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/projectpaper.aux
+OUTPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/projectpaper.aux
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/hyperref/nameref.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/projectpaper.out
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/projectpaper.out
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/projectpaper.out
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/projectpaper.out
+OUTPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/projectpaper.pdf
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/projectpaper.out
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/projectpaper.out
+OUTPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/projectpaper.out
+INPUT /usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+INPUT /usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/grfext.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/grfext.sty
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmr12.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
+INPUT /usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmr17.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/projectpaper.toc
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/projectpaper.toc
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmr8.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmr6.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmex10.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
+OUTPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/projectpaper.toc
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
+INPUT /usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/dominomatrix.png
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/dominomatrix.png
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/dominomatrix.png
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/encoding.png
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/encoding.png
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/encoding.png
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/mdp.png
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/mdp.png
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/mdp.png
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/dqn_both.jpg
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/dqn_both.jpg
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/dqn_both.jpg
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/trnsfr_bttr.png
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/trnsfr_bttr.png
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/trnsfr_bttr.png
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/mcts.png
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/mcts.png
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/mcts.png
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/hist_labels.png
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/hist_labels.png
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/hist_labels.png
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/src_tsk.png
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/src_tsk.png
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/src_tsk.png
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/trsnfr_both.jpg
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/trsnfr_both.jpg
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/trsnfr_both.jpg
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/means_aggr.jpg
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/means_aggr.jpg
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/means_aggr.jpg
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/gridsrch_comb.jpg
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/gridsrch_comb.jpg
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/gridsrch_comb.jpg
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmti12.tfm
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/selfplay.png
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/selfplay.png
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/selfplay.png
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/training.png
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/training.png
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/training.png
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/alphazero.png
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/alphazero.png
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/alphazero.png
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/nim-mcts.png
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/nim-mcts.png
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/nim-mcts.png
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/nim-rl.png
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/nim-rl.png
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/nim-rl.png
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/nim-alpha-zero.png
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/nim-alpha-zero.png
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/img/nim-alpha-zero.png
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/projectpaper.bbl
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/projectpaper.bbl
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/projectpaper.aux
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/projectpaper.out
+INPUT /Users/susana/School/Masters(Uni-Potsdam)/MasterCS/PM-ML (Dominoes RL)/asp-game-ml-strategies/docs/ProjectPaper/projectpaper.out
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb
+INPUT /usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb

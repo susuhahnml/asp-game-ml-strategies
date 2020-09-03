@@ -13,6 +13,7 @@
 \usepackage{url}
 \usepackage{array,tabularx}
 \usepackage{graphicx}
+\usepackage{subcaption}
 
 \graphicspath{/home/lks/Documents/Studium/Master/UP/Modules/PM2 (Reinforcement Dominoes)/Paper/ProjectPaper/img}
 
@@ -76,7 +77,8 @@ Generally a set of dominoes consists of n domino tiles, each made up of two squa
 Dominoes is played in various variants with varying rules. Most commonly it is played as a four-player game with tiles containing numbers from zero to six as shown in Figure \ref{fig:dom_set}. Since all players can never hold the same set of tiles, dominoes is a partisan game. This means that all players do not have the same set of available moves.
 
 \begin{figure}
-  \includegraphics[width=\linewidth]{img/dominomatrix.png}
+  \center
+  \includegraphics[width=0.65\linewidth]{img/dominomatrix.png}
   \caption{A so called ‘double-six’ domino set with which is the most common variant of dominoes is played.}
   \label{fig:dom_set}
 \end{figure}
@@ -152,7 +154,7 @@ Figure \ref{fig:encoding} shows an example of the final encoding used in our pro
 Before detailing our specific approach, it seems reasonable to recall the key concepts in Reinforcement Learning (RL). As discussed in section \ref{sec:rl}, Reinforcement Learning describes a formal framework for the machine learning of sequential decision making \citep{francois-lavet_introduction_2018}. Its core concept is the interaction of an artificial agent with a given environment. This process is called a Markov Decision Process which is pictured in Figure \ref{fig:mdp}. In our case, the agent interacts with the representation of the domino game (all dominoes in both players' hands, in the chain on the board and the numbers on both sides of the stack).
 
 \begin{figure}
-  \includegraphics[width=10cm]{img/mdp.png}
+  \includegraphics[width=8cm]{img/mdp.png}
   \centering 
   \caption{General depiction of a Markov Decision Process in which an agent interacts with an environment through actions based on a state observed in the environment. The environment also provides a reward to the agent.}
   \label{fig:mdp}
@@ -373,34 +375,37 @@ For benchmarking we would let each new network (every time the model evaluation 
 It becomes apparent from a first glance that these results are also rather disappointing. Both agents win basically no games and instead lose nearly every game. The non-penalised model starts promising but eventually also regresses. The poor performance of both models might be due to the fact that they learn a specific path from a specific set of starting states used during training which does not generalise well for other starting states. This could be solved by tweaking the exploration factor. However, we cannot be sure and the above results give little information on possible areas of improvement.
 
 \subsubsection{Discussion}
-As the third and last approach trying to find a model that would learn dominoes failed, we have to critically evaluate our methodology in order to find possible explanations for the poor behaviour, even when using state of the arts methods like AlphaGo Zero. One reason could be our deviations from the original model with a simpler architecture and without representing the game history in the game encoding. This leads towards a broader point about the game encoding used throughout the project. It does not include the information about the order in which the different tiles formed the chain and the corresponding stacks. In the future this could be expanded to represent the environment’s states in more detail.
-Another factor that might have hindered learning was the use of varying initial states throughout the project. This most likely massively increased the learning difficulty as it confronted the agent with the task of generalisation even before learning concrete relationships. This probably massively hindered the agents' understanding of basic game mechanics (and probably also held back the DQN from surpassing a random player). 
+As the third and last approach trying to find a model that would learn dominoes failed, we have to critically evaluate our methodology in order to find possible explanations for the poor behaviour, even when using state of the arts methods like AlphaGo Zero. One reason could be our deviations from the original model with a simpler architecture and without representing the game history in the encoding. This leads towards a broader point about the game encoding used throughout the project. It does not include the information about the order in which the different tiles formed the chain and the corresponding stacks. In the future this could be expanded to represent the environment’s states in more detail.
+Another factor that might have hindered learning was the use of varying initial states. This most likely massively increased the learning difficulty as it confronted the agent with the task of generalisation even before learning concrete relationships. This probably massively hindered the agents' understanding of basic game mechanics (and probably also held back the DQN from surpassing a random player). 
 
 
 \section{Conclusion}
 While we did not accomplish the project goal, we learned a lot about supervised and reinforcement learning as well as machine learning architectures in general. While some approaches tested in this project are definitely promising and could potentially be used effectively after a little more fine-tuning, we were mostly held back by the time it took us to find a promising approach. Instead of sticking with one and really immersing ourselves, we chose to try multiple approaches hoping that one would deliver the expected results. This was not the case, partly because we were limited by our personal hardware and thus training time but also because we made some decisions early on in the project that most likely negatively affected all approaches. They include but are not limited to training with a random initial state, a game encoding that does not represent the game’s history, and a model architecture that was not sophisticated enough to represent relationships as complicated as the rules and strategies needed to win a game of dominoes.
-However, our project was everything but pointless. What remains is a functioning framework for learning any kind of ASP-encodable game with any kind of implementable machine learning approach. We used it to apply the same approaches to the much simpler game Nim, the results of which are shown in Figures 16 to 17. We used the framework to generate visualisations for the game that show that at least for a simple fixed starting state all approaches manage to learn a winning strategy. In the future it would surely be promising to refine the framework by considering more behaviours from the original AlphaGo Zero or to use it to examine the effects of different game encodings and model architectures for the given approaches.
+However, our project was everything but pointless. What remains is a functioning framework for learning any kind of ASP-encodable game with any kind of implementable machine learning approach\footnote{The open source code for the project can be found in\\ \url{https://github.com/susuhahnml/asp-game-ml-strategies}}. We used it to apply the same approaches to the much simpler game Nim, the results of which are shown in Figure 15. We used the framework to generate visualisations for the game that show that at least for a simple fixed starting state all approaches manage to learn a winning strategy. In the future it would surely be promising to refine the framework by considering more behaviours from the original AlphaGo Zero or to use it to examine the effects of different game encodings and model architectures for the given approaches.
 
 \begin{figure}
-  \includegraphics[width=0.9\linewidth]{img/nim-mcts.png}
+  \centering
+\begin{subfigure}{\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{img/nim-mcts.png}
   \centering 
-  \caption{Game tree for Nim generated using my the MCTS algorithm, reaching early stopping after 81 iterations.}
-  \label{fig:nim-mcts}
+  \caption{Generated using my the MCTS algorithm, reaching early stopping after 81 iterations.}
+\end{subfigure}%
+\hspace{10px}
+\begin{subfigure}{.45\textwidth}
+  \includegraphics[width=0.9\linewidth]{img/nim-rl.png}
+  \centering 
+  \caption{Generated using the probabilities predicted by the our DQN approach.}
+\end{subfigure}
+\begin{subfigure}{.5\textwidth}
+  \centering
+  \includegraphics[width=\linewidth]{img/nim-alpha-zero.png}
+  \caption{Generated using the probabilities predicted by the our AlphaZero approach.}
+\end{subfigure}
+\caption{Games trees generated for the game of Nim with a small initial state. Darker blue corresponds to moves with higher probability according to the network. States are not expanded if already present on the tree or if their probability is close to 0.}
 \end{figure}
 
-\begin{figure}
-  \includegraphics[width=0.9\linewidth]{img/nim-alpha-zero.png}
-  \centering 
-  \caption{Game tree for Nim generated using the probabilities predicted by the our AlphaZero approach. Darker blue corresponds to moves with higher probability according to the network. States are not expanded if already present on the tree or if their probability is 0.}
-  \label{fig:nim-alphazero}
-\end{figure}
 
-\begin{figure}
-  \includegraphics[width=0.7\linewidth]{img/nim-rl.png}
-  \centering 
-  \caption{Game tree for Nim generated using the probabilities predicted by the our DQN approach. Darker blue corresponds to moves with higher probability according to the network. States are not expanded if already present on the tree or if their probability is 0.}
-  \label{fig:nim-rl}
-\end{figure}
 
 \addcontentsline{toc}{section}{References}
 \bibliographystyle{apalike}

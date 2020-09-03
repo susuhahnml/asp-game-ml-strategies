@@ -1475,5 +1475,40 @@
                 "save_time": 91.2
             }
         }
+    },
+    {
+        "command": "mcts --game-name=nim --tree-name=test --tree-img=mcts.png --init initial_S.lp --iter 3000",
+        "args": {
+            "log": "INFO",
+            "game_name": "nim",
+            "const": null,
+            "random_initial_state_seed": null,
+            "initial": "initial_S.lp",
+            "num_repetitions": 1,
+            "init_limit": null,
+            "benchmark_output_file": "console",
+            "penalize_illegal": false,
+            "n_initial": null,
+            "selected_approach": "mcts",
+            "tree_image_file_name": "mcts.png",
+            "tree_name": "test",
+            "train_file": null,
+            "iter": 3000,
+            "main_player": "a",
+            "first_build": false
+        },
+        "initial_state": "control(b).has(1,0).has(2,0).has(3,0).has(4,0)",
+        "results": {
+            "player": "mcts",
+            "build": [
+                406.837
+            ],
+            "average_build": 406.837,
+            "std": 0.0,
+            "special_results": {
+                "number_of_nodes": 30,
+                "save_time": 130.937
+            }
+        }
     }
 ]
