@@ -87,13 +87,13 @@ class NodeMCTS(NodeBase):
         p = round(self.prob,2)
         q = round(self.q_value,2)
         if not self.step.action is None:
-            return "〔t:{} n:{} p:{} q:{}〕\n{}".format(self.t,self.n,p,q, self.step.ascii)
+            return "〔t:{} n:{} p:{}〕\n{}".format(self.t,self.n,p, self.step.ascii)
         else:
             if(self.step.state.is_terminal):
-                return ("〔t:{} n:{} p:{} q:{}〕".format(self.t,self.n,p,q))
+                return ("〔t:{} n:{} p:{}〕".format(self.t,self.n,p))
             else:
                 other_player = "b" if self.main_player=="a" else "a"
-                s ="〔t:{} n:{} p:{} q:{}〕\nmax:{}\nmin:{}\n{}".format(self.t,self.n,p,q,self.main_player,other_player,self.step.ascii)
+                s ="〔t:{} n:{} p:{}〕\nmax:{}\nmin:{}\n{}".format(self.t,self.n,p,self.main_player,other_player,self.step.ascii)
                 return s
 
 

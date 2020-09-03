@@ -108,6 +108,7 @@ class MCTSPlayer(Player):
         t0 = time.time()
         if(not args.tree_image_file_name is None):
             file_name = '{}/{}'.format(game_def.name,args.tree_image_file_name)
+            tree.remove_leaves()
             tree.print_in_file(file_name=file_name)
             log.debug("Tree image saved in {}".format(file_name))
         n_nodes = tree.get_number_of_nodes()
