@@ -224,7 +224,7 @@ def plot_train_grid_search():
     col_list = ['optimiser', 'transfer', 'deepened', 'learning rate', 'batch size', 'loss_mean', 'loss_std',
         'loss_min', 'acc_mean', 'acc_std', 'epochs_mean', 'epochs_std']
     #Plot results of grid search
-    data_raw = pd.read_csv("grid_search_reg.csv", sep=";", index_col=0)
+    data_raw = pd.read_csv("./approaches/supervised_ml/grid_search_reg.csv", sep=";", index_col=0)
     data_raw.shape
     data = data_raw.copy()
 

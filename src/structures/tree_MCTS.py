@@ -87,13 +87,13 @@ class NodeMCTS(NodeBase):
         p = round(self.prob,2)
         q = round(self.q_value,2)
         if not self.step.action is None:
-            return "〔t:{} n:{} p:{} q:{}〕\n{}".format(self.t,self.n,p,q, self.step.ascii)
+            return "〔t:{} n:{} p:{}〕\n{}".format(self.t,self.n,p, self.step.ascii)
         else:
             if(self.step.state.is_terminal):
-                return ("〔t:{} n:{} p:{} q:{}〕".format(self.t,self.n,p,q))
+                return ("〔t:{} n:{} p:{}〕".format(self.t,self.n,p))
             else:
                 other_player = "b" if self.main_player=="a" else "a"
-                s ="〔t:{} n:{} p:{} q:{}〕\nmax:{}\nmin:{}\n{}".format(self.t,self.n,p,q,self.main_player,other_player,self.step.ascii)
+                s ="〔t:{} n:{} p:{}〕\nmax:{}\nmin:{}\n{}".format(self.t,self.n,p,self.main_player,other_player,self.step.ascii)
                 return s
 
 
@@ -105,7 +105,7 @@ class NodeMCTS(NodeBase):
         if parent is None:
             return format_str
         base = ' fillcolor="#466BCB{}"'
-        a = self.p
+        a = self.prob
         if a>0.98:
             base = base[:-3]+'"'
         else:
@@ -188,7 +188,7 @@ class TreeMCTS(Tree):
 
     ################## Standar functions for MCTS 
 
-    def run_mcts(self, n_iter, initial_node = None, expl=3 , check_early_stop=20):
+    def run_mcts(self, n_iter, initial_node = None, expl=0.3 , check_early_stop=20):
         """
         Runs a MCTS
 
@@ -222,7 +222,7 @@ class TreeMCTS(Tree):
         if node.n == 0:
             return math.inf
         r = node.q_value 
-        r += expl*(math.sqrt(node.parent.n/(1+node.n)))
+        r += expl*(math.sqrt(node.parent.n)/(1+node.n))
         return r
 
     def tree_traverse(self, node, expl):

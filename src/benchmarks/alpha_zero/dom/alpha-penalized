@@ -1,0 +1,38 @@
+{
+    "command": "alpha_zero --game-name=dom --rand=2 --out=alpha-penalized --train-rand=2 --model-name=penalized --n-vs=200 --n-train=2 --n-episodes=2 --n-epochs=100 --n-mcts-simulations=300 --penalize-illegal",
+    "args": {
+        "log": "INFO",
+        "game_name": "dom",
+        "const": null,
+        "random_initial_state_seed": 2,
+        "initial": null,
+        "num_repetitions": 1,
+        "init_limit": null,
+        "benchmark_output_file": "alpha-penalized",
+        "penalize_illegal": true,
+        "n_initial": null,
+        "selected_approach": "alpha_zero",
+        "architecture_name": "default",
+        "loss": "custom",
+        "n_train": 2,
+        "n_episodes": 2,
+        "n_epochs": 100,
+        "batch_size": 200,
+        "lr": 0.01,
+        "n_vs": 200,
+        "n_mcts_simulations": 300,
+        "model_name": "penalized",
+        "train_rand": 2,
+        "vis_tree": false
+    },
+    "initial_state": "RANDOM",
+    "results": {
+        "player": "alpha_zero",
+        "build": [
+            53114.644
+        ],
+        "average_build": 53114.644,
+        "std": 0.0,
+        "special_results": null
+    }
+}

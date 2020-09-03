@@ -1,0 +1,34 @@
+{
+    "command": "dqn_rl --game-name=dom --rand=2 --out=dqn-random --train-rand=2 --nb-steps=1000 --save-every=100 --model-name=random",
+    "args": {
+        "log": "INFO",
+        "game_name": "dom",
+        "const": null,
+        "random_initial_state_seed": 2,
+        "initial": null,
+        "num_repetitions": 1,
+        "init_limit": null,
+        "benchmark_output_file": "dqn-random",
+        "penalize_illegal": false,
+        "n_initial": null,
+        "selected_approach": "dqn_rl",
+        "architecture_name": "default",
+        "save_every": 100,
+        "nb_steps": 1000,
+        "eps": 0.1,
+        "train_rand": 2,
+        "model_name": "random",
+        "vis_tree": false,
+        "strategy_opponent": null
+    },
+    "initial_state": "RANDOM",
+    "results": {
+        "player": "dqn_rl",
+        "build": [
+            21763.654
+        ],
+        "average_build": 21763.654,
+        "std": 0.0,
+        "special_results": null
+    }
+}

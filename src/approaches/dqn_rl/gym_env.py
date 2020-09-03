@@ -6,7 +6,8 @@ import sys
 import copy
 from approaches.dqn_rl.game_state import GameState
 from approaches.random.player import RandomPlayer
-
+from approaches.strategy.player import StrategyPlayer
+from py_utils.logger import log
 class GymEnv(Env):
     """The abstract environment class that is used by all agents. This class has the exact
     same API that OpenAI Gym uses so that integrating with it is trivial. In contrast to the
@@ -20,13 +21,18 @@ class GymEnv(Env):
     Refer to the [Gym documentation](https://gym.openai.com/docs/#environments).
     """
 
-    def __init__(self,game_def,possible_initial_states, player_name="a"):
+    def __init__(self,game_def,possible_initial_states, player_name="a",opponent=None):
         self.game_def = game_def
         self.game_state= GameState(game_def,possible_initial_states)
         self.action_space = Discrete(self.game_def.encoder.action_size)
         self.observation_space = Tuple([Discrete(2) for i in range(0,self.game_def.encoder.state_size)])
         self.reward_range = (-100, 100)
-        self.opponent = RandomPlayer(game_def,"","b")
+        if opponent is None:
+            log.info("Using random player as opponent")
+            self.opponent = RandomPlayer(game_def,"","b")
+        else:
+            log.info("Loading strategy player as opponent from "+opponent)
+            self.opponent = StrategyPlayer(game_def,"startegy-"+opponent,"b")
 
 
 

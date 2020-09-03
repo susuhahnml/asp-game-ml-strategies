@@ -1,0 +1,38 @@
+{
+    "command": "alpha_zero --game-name=nim --initial=default_initial.lp --out=alpha-not-penalized --model-name=not-penalized --n-vs=200 --n-train=2 --n-episodes=2 --n-epochs=100 --n-mcts-simulations=300",
+    "args": {
+        "log": "INFO",
+        "game_name": "nim",
+        "const": null,
+        "random_initial_state_seed": null,
+        "initial": "default_initial.lp",
+        "num_repetitions": 1,
+        "init_limit": null,
+        "benchmark_output_file": "alpha-not-penalized",
+        "penalize_illegal": false,
+        "n_initial": null,
+        "selected_approach": "alpha_zero",
+        "architecture_name": "default",
+        "loss": "custom",
+        "n_train": 2,
+        "n_episodes": 2,
+        "n_epochs": 100,
+        "batch_size": 200,
+        "lr": 0.01,
+        "n_vs": 200,
+        "n_mcts_simulations": 300,
+        "model_name": "not-penalized",
+        "train_rand": null,
+        "vis_tree": false
+    },
+    "initial_state": "control(a).has(1,0).has(2,3).has(3,3).has(4,1)",
+    "results": {
+        "player": "alpha_zero",
+        "build": [
+            53287.502
+        ],
+        "average_build": 53287.502,
+        "std": 0.0,
+        "special_results": null
+    }
+}

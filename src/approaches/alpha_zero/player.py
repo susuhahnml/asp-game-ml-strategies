@@ -167,7 +167,7 @@ class AlphaZero(Player):
             if new_wins > old_wins:
                 log.info("{}--------------- New network is better {}vs{}------------------{}".format(bcolors.FAIL,new_wins,old_wins,bcolors.ENDC))
                 best_net = new_net
-                best_net.save_model()
+                best_net.save_model(model_name="{}/{}".format(best_net.model_name,i))
                 if args.vis_tree:
                     # Visualizing tree of best net
                     game_def.initial=initial_states[0]

@@ -6,3 +6,5 @@ tensorflow==2.0.1
 gym==0.17.0
 rl==3.0
 urwid==2.1.0
+keras-rl2==1.0.3
+keras==2.2.4

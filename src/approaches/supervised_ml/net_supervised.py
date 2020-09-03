@@ -12,7 +12,7 @@ import json
 import tensorflow as tf
 import pandas as pd
 from keras.wrappers.scikit_learn import KerasClassifier
-from tensorflow.keras.layers import Dense, Activation, Flatten
+from tensorflow.keras.layers import Dense, Activation, Flatten, Dropout
 from tensorflow.keras.models import Sequential, Model
 from tensorflow.keras.optimizers import Adam
 import pdb
@@ -34,11 +34,12 @@ class NetSupervised(Net):
         if self.args.architecture_name=="default":
             #Loads only first model
             dyn_model = Sequential()
-            dyn_model.add(Dense(120,input_dim=51, activation="relu", activity_regularizer=l2(0.01)))
-            dyn_model.add(Dense(30, activation='sigmoid'))
+            dyn_model.add(Dense(120,input_dim=action_size+state_size, activation="relu", activity_regularizer=l2(0.01)))
+            dyn_model.add(Dropout(0.25))
+            dyn_model.add(Dense(state_size, activation='sigmoid'))
             self.model = dyn_model
             self.compile_model(self.model)
-        else :
+        else : 
             raise NotImplementedError("Architecture named {} is not defined ".format(self.args.architecture_name))
 
     def compile_model(self,model):
@@ -61,9 +62,11 @@ class NetSupervised(Net):
         es = EarlyStopping(monitor='loss', mode='min', verbose=0, patience=50, min_delta=0.0005)
         
         log.info("Training dynamics model...")
-        dyn_history = dyn_model.fit(train_data["input"], train_data["next"], epochs=50, batch_size=50, verbose=0, validation_split=0.1, callbacks=[es])
+        dyn_history = dyn_model.fit(train_data["input"], train_data["next"], epochs=500, batch_size=50, verbose=0, validation_split=0.1, callbacks=[es])
 
         file_name_plot = "approaches/supervised_ml/saved_models/{}/{}_dynamic.pdf".format(self.game_def.name,self.model_name)
+        os.makedirs(os.path.dirname(file_name_plot), exist_ok=True)
+        
         fig = show_acc_loss_curves(dyn_history)
         fig.savefig(file_name_plot, format='pdf')
 
@@ -91,10 +94,11 @@ class NetSupervised(Net):
         combinations = list(product(*param_grid.values()))
 
 
-        model,history = run_3_fold_gridsearch(train_data, test_data, combinations, "grid_search_reg.csv", dyn_model)
+        model,history = run_3_fold_gridsearch(train_data, test_data, combinations, "./approaches/supervised_ml/grid_search_reg.csv", dyn_model)
 
         file_name_plot = "approaches/supervised_ml/saved_models/{}/{}.pdf".format(self.game_def.name, self.model_name)
         fig = show_acc_loss_curves(history)
+        os.makedirs(os.path.dirname(file_name_plot), exist_ok=True)
         fig.savefig(file_name_plot, format='pdf')
 
 

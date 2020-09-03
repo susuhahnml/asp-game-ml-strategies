@@ -1,0 +1,125 @@
+{
+    "main_player": "a",
+    "tree_values": {
+        "true(control(a)). true(has(1,1)). true(has(2,2)). true(has(3,2)). true(has(4,0)).": {
+            "does(a,remove(1,1)).": {
+                "t": 59,
+                "n": 77
+            },
+            "does(a,remove(3,1)).": {
+                "t": -1,
+                "n": 1
+            },
+            "does(a,remove(3,2)).": {
+                "t": -1,
+                "n": 1
+            },
+            "does(a,remove(2,2)).": {
+                "t": -1,
+                "n": 1
+            },
+            "does(a,remove(2,1)).": {
+                "t": -1,
+                "n": 1
+            }
+        },
+        "true(control(b)). true(has(1,0)). true(has(2,2)). true(has(3,2)). true(has(4,0)).": {
+            "does(b,remove(2,2)).": {
+                "t": -14,
+                "n": 18
+            },
+            "does(b,remove(3,2)).": {
+                "t": -14,
+                "n": 18
+            },
+            "does(b,remove(3,1)).": {
+                "t": -13,
+                "n": 17
+            },
+            "does(b,remove(2,1)).": {
+                "t": -17,
+                "n": 23
+            }
+        },
+        "true(control(a)). true(has(1,0)). true(has(2,0)). true(has(3,2)). true(has(4,0)).": {
+            "does(a,remove(3,2)).": {
+                "t": 16,
+                "n": 16
+            },
+            "does(a,remove(3,1)).": {
+                "t": -1,
+                "n": 1
+            }
+        },
+        "true(control(a)). true(has(1,0)). true(has(2,2)). true(has(3,0)). true(has(4,0)).": {
+            "does(a,remove(2,2)).": {
+                "t": 16,
+                "n": 16
+            },
+            "does(a,remove(2,1)).": {
+                "t": -1,
+                "n": 1
+            }
+        },
+        "true(control(a)). true(has(1,0)). true(has(2,2)). true(has(3,1)). true(has(4,0)).": {
+            "does(a,remove(3,1)).": {
+                "t": -1,
+                "n": 1
+            },
+            "does(a,remove(2,2)).": {
+                "t": -1,
+                "n": 1
+            },
+            "does(a,remove(2,1)).": {
+                "t": 14,
+                "n": 14
+            }
+        },
+        "true(control(b)). true(has(1,0)). true(has(2,1)). true(has(3,1)). true(has(4,0)).": {
+            "does(b,remove(2,1)).": {
+                "t": -9,
+                "n": 9
+            },
+            "does(b,remove(3,1)).": {
+                "t": -9,
+                "n": 9
+            }
+        },
+        "true(control(a)). true(has(1,0)). true(has(2,0)). true(has(3,1)). true(has(4,0)).": {
+            "does(a,remove(3,1)).": {
+                "t": 8,
+                "n": 8
+            }
+        },
+        "true(control(a)). true(has(1,0)). true(has(2,1)). true(has(3,0)). true(has(4,0)).": {
+            "does(a,remove(2,1)).": {
+                "t": 8,
+                "n": 8
+            }
+        },
+        "true(control(a)). true(has(1,0)). true(has(2,1)). true(has(3,2)). true(has(4,0)).": {
+            "does(a,remove(2,1)).": {
+                "t": 0,
+                "n": 2
+            },
+            "does(a,remove(3,2)).": {
+                "t": -1,
+                "n": 1
+            },
+            "does(a,remove(3,1)).": {
+                "t": 19,
+                "n": 19
+            }
+        },
+        "true(control(b)). true(has(1,0)). true(has(2,0)). true(has(3,2)). true(has(4,0)).": {
+            "does(b,remove(3,2)).": {
+                "t": 1,
+                "n": 1
+            },
+            "does(b,remove(3,1)).": {
+                "t": 0,
+                "n": 0
+            }
+        }
+    }
+}
