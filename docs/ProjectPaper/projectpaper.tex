@@ -379,8 +379,28 @@ Another factor that might have hindered learning was the use of varying initial 
 
 \section{Conclusion}
 While we did not accomplish the project goal, we learned a lot about supervised and reinforcement learning as well as machine learning architectures in general. While some approaches tested in this project are definitely promising and could potentially be used effectively after a little more fine-tuning, we were mostly held back by the time it took us to find a promising approach. Instead of sticking with one and really immersing ourselves, we chose to try multiple approaches hoping that one would deliver the expected results. This was not the case, partly because we were limited by our personal hardware and thus training time but also because we made some decisions early on in the project that most likely negatively affected all approaches. They include but are not limited to training with a random initial state, a game encoding that does not represent the game’s history, and a model architecture that was not sophisticated enough to represent relationships as complicated as the rules and strategies needed to win a game of dominoes.
-However, our project was everything but pointless. What remains is a functioning framework for learning any kind of ASP-encodable game with any kind of implementable machine learning approach. We used it to apply the same approaches to the much simpler game Nim, the results of which are shown in Figures X to X. We used the framework to generate visualisations for the game that show that at least for a fixed starting state all approaches manage to learn a winning strategy. In the future it would surely be promising to refine the framework by considering more behaviours from the original AlphaGo Zero or to use it to examine the effects of different game encodings and model architectures for the given approaches.
+However, our project was everything but pointless. What remains is a functioning framework for learning any kind of ASP-encodable game with any kind of implementable machine learning approach. We used it to apply the same approaches to the much simpler game Nim, the results of which are shown in Figures 16 to 17. We used the framework to generate visualisations for the game that show that at least for a simple fixed starting state all approaches manage to learn a winning strategy. In the future it would surely be promising to refine the framework by considering more behaviours from the original AlphaGo Zero or to use it to examine the effects of different game encodings and model architectures for the given approaches.
 
+\begin{figure}
+  \includegraphics[width=0.9\linewidth]{img/nim-mcts.png}
+  \centering 
+  \caption{Game tree for Nim generated using my the MCTS algorithm, reaching early stopping after 81 iterations.}
+  \label{fig:nim-mcts}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=0.9\linewidth]{img/nim-alpha-zero.png}
+  \centering 
+  \caption{Game tree for Nim generated using the probabilities predicted by the our AlphaZero approach. Darker blue corresponds to moves with higher probability according to the network. States are not expanded if already present on the tree or if their probability is 0.}
+  \label{fig:nim-alphazero}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=0.7\linewidth]{img/nim-rl.png}
+  \centering 
+  \caption{Game tree for Nim generated using the probabilities predicted by the our DQN approach. Darker blue corresponds to moves with higher probability according to the network. States are not expanded if already present on the tree or if their probability is 0.}
+  \label{fig:nim-rl}
+\end{figure}
 
 \addcontentsline{toc}{section}{References}
 \bibliographystyle{apalike}
